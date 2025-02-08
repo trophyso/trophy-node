@@ -25,9 +25,9 @@ The package needs to be configured with your account's API key, which is availab
 web interface. Set the API key with the following:
 
 ```javascript
-const TrophyClient = require('@trophyso/node');
+const { TrophyApiClient } = require('@trophyso/node');
 
-const trophy = new TrophyClient({ apiKey: 'your-api-key' });
+const trophy = new TrophyApiClient({ apiKey: 'your-api-key' });
 ```
 
 You can now access the Trophy API through the `trophy` object.
