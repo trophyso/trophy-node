@@ -7,10 +7,19 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "Trophy",
+    "trophy",
     "gamification",
-    "Node"
+    "node",
+    "api"
   ],
+  "homepage": "https://github.com/trophyso/trophy-node",
   "author": "Trophy (https://trophy.so)",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trophyso/trophy-node"
+  },
+  "engines": {
+    "node": ">=12.*"
+  }
 }
