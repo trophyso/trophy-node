@@ -16,7 +16,7 @@ information.
 Install the package with:
 
 ```bash
-npm install @trophy/trophy-node
+npm install @trophyso/node
 ```
 
 ## Usage
@@ -25,7 +25,7 @@ The package needs to be configured with your account's API key, which is availab
 web interface. Set the API key with the following:
 
 ```javascript
-const TrophyClient = require('@trophy/trophy-node');
+const TrophyClient = require('@trophyso/node');
 
 const trophy = new TrophyClient({ apiKey: 'your-api-key' });
 ```
