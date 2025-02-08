@@ -1,6 +1,6 @@
 {
   "name": "@trophyso/node",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "NodeJS SDK for the Trophy API",
   "main": "index.js",
   "scripts": {
