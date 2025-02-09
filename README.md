@@ -6,11 +6,6 @@ server-side JavaScript.
 Trophy provides APIs and tools for adding gamification to your application, keeping users engaged
 through rewards, achievements, streaks, and personalized communication.
 
-## Documentation
-
-See the [Trophy API Docs](https://trophy.docs.buildwithfern.com/overview/introduction) for more 
-information.
-
 ## Installation
 
 Install the package with:
@@ -46,3 +41,8 @@ trophy.metrics.event("words-written", {
 ## Usage with TypeScript
 
 Trophy maintains types for this SDK. You can use them without any additional configuration.
+
+## Documentation
+
+See the [Trophy API Docs](https://trophy.docs.buildwithfern.com/overview/introduction) for more
+information on the accessible endpoints.
