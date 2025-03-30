@@ -20,5 +20,5 @@ export interface MetricResponse {
     /** A list of the metric's achievements and the user's progress towards each. */
     achievements: TrophyApi.AchievementResponse[];
     /** The user's current streak for the metric, if the metric has streaks enabled. */
-    streak?: TrophyApi.StreakResponse;
+    currentStreak?: TrophyApi.StreakResponse;
 }

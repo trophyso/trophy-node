@@ -44,4 +44,5 @@ exports.EventResponse = core.serialization.object({
     achievements: core.serialization
         .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).EventResponseMetricsItem; })))
         .optional(),
+    currentStreak: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).StreakResponse; })).optional(),
 });

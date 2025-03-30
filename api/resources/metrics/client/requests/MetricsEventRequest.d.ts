@@ -6,16 +6,16 @@ import * as TrophyApi from "../../../..";
  * @example
  *     {
  *         user: {
- *             id: "18",
- *             email: "jk.rowling@harrypotter.com",
- *             tz: "Europe/London"
+ *             email: "user@example.com",
+ *             tz: "Europe/London",
+ *             id: "18"
  *         },
  *         value: 750
  *     }
  */
 export interface MetricsEventRequest {
     /** The user that triggered the event. */
-    user: TrophyApi.EventRequestUser;
+    user: TrophyApi.UpsertedUser;
     /** The value to add to the user's current total for the given metric. */
     value: number;
 }

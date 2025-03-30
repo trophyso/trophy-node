@@ -38,6 +38,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MetricsEventRequest = void 0;
 const core = __importStar(require("../../../../../core"));
 exports.MetricsEventRequest = core.serialization.object({
-    user: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../../..")))).EventRequestUser; })),
+    user: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../../..")))).UpsertedUser; })),
     value: core.serialization.number(),
 });

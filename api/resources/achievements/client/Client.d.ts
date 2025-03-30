@@ -26,9 +26,7 @@ export declare class Achievements {
      * @example
      *     await trophyApi.achievements.complete("finish-onboarding", {
      *         user: {
-     *             id: "18",
-     *             email: "jk.rowling@harrypotter.com",
-     *             tz: "Europe/London"
+     *             id: "user-id"
      *         }
      *     })
      */

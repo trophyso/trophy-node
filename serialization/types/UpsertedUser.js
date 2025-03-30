@@ -35,16 +35,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MetricResponse = void 0;
+exports.UpsertedUser = void 0;
 const core = __importStar(require("../../core"));
-exports.MetricResponse = core.serialization.object({
+exports.UpsertedUser = core.serialization
+    .object({
     id: core.serialization.string(),
-    key: core.serialization.string(),
-    name: core.serialization.string(),
-    emoji: core.serialization.string(),
-    streakFrequency: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).StreakFrequency; })),
-    status: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).MetricStatus; })),
-    current: core.serialization.number(),
-    achievements: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementResponse; }))),
-    currentStreak: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).StreakResponse; })).optional(),
-});
+})
+    .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).UpdatedUser; })));

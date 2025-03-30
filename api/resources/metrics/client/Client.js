@@ -58,9 +58,9 @@ class Metrics {
      * @example
      *     await trophyApi.metrics.event("words-written", {
      *         user: {
-     *             id: "18",
-     *             email: "jk.rowling@harrypotter.com",
-     *             tz: "Europe/London"
+     *             email: "user@example.com",
+     *             tz: "Europe/London",
+     *             id: "18"
      *         },
      *         value: 750
      *     })

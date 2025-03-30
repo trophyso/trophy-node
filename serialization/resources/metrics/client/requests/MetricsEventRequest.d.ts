@@ -7,7 +7,7 @@ import * as core from "../../../../../core";
 export declare const MetricsEventRequest: core.serialization.Schema<serializers.MetricsEventRequest.Raw, TrophyApi.MetricsEventRequest>;
 export declare namespace MetricsEventRequest {
     interface Raw {
-        user: serializers.EventRequestUser.Raw;
+        user: serializers.UpsertedUser.Raw;
         value: number;
     }
 }

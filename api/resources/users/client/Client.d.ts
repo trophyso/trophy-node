@@ -18,6 +18,41 @@ export declare class Users {
     protected readonly _options: Users.Options;
     constructor(_options: Users.Options);
     /**
+     * Create a new user.
+     * @throws {@link TrophyApi.BadRequestError}
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.users.create({
+     *         id: "user-id"
+     *     })
+     */
+    create(request: TrophyApi.UpsertedUser, requestOptions?: Users.RequestOptions): Promise<TrophyApi.User>;
+    /**
+     * Get a single user.
+     * @throws {@link TrophyApi.BadRequestError}
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.users.get("userId")
+     */
+    get(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.User>;
+    /**
+     * Update a user.
+     * @throws {@link TrophyApi.BadRequestError}
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.users.update("id", {
+     *         email: "user@example.com",
+     *         tz: "Europe/London"
+     *     })
+     */
+    update(id: string, request: TrophyApi.UpdatedUser, requestOptions?: Users.RequestOptions): Promise<TrophyApi.User>;
+    /**
      * Get a single user's progress against all active metrics.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}
@@ -26,7 +61,7 @@ export declare class Users {
      * @example
      *     await trophyApi.users.allmetrics("userId")
      */
-    allmetrics(userId: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.MetricResponse[]>;
+    allmetrics(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.MetricResponse[]>;
     /**
      * Get a user's progress against a single active metric.
      * @throws {@link TrophyApi.UnauthorizedError}
@@ -36,7 +71,7 @@ export declare class Users {
      * @example
      *     await trophyApi.users.singlemetric("userId", "key")
      */
-    singlemetric(userId: string, key: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.MetricResponse>;
+    singlemetric(id: string, key: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.MetricResponse>;
     /**
      * Get all of a user's completed achievements.
      * @throws {@link TrophyApi.UnauthorizedError}
@@ -46,5 +81,5 @@ export declare class Users {
      * @example
      *     await trophyApi.users.allachievements("userId")
      */
-    allachievements(userId: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.AchievementResponse[]>;
+    allachievements(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.AchievementResponse[]>;
 }

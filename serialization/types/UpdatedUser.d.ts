@@ -4,12 +4,12 @@
 import * as serializers from "..";
 import * as TrophyApi from "../../api";
 import * as core from "../../core";
-export declare const EventRequestUser: core.serialization.ObjectSchema<serializers.EventRequestUser.Raw, TrophyApi.EventRequestUser>;
-export declare namespace EventRequestUser {
+export declare const UpdatedUser: core.serialization.ObjectSchema<serializers.UpdatedUser.Raw, TrophyApi.UpdatedUser>;
+export declare namespace UpdatedUser {
     interface Raw {
-        id: string;
         email?: string | null;
         name?: string | null;
         tz?: string | null;
+        subscribeToEmails?: boolean | null;
     }
 }
