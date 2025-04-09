@@ -26,15 +26,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AchievementResponse = void 0;
+exports.OneOffAchievementResponse = void 0;
 const core = __importStar(require("../../core"));
-exports.AchievementResponse = core.serialization.object({
+exports.OneOffAchievementResponse = core.serialization.object({
     id: core.serialization.string(),
     name: core.serialization.string().optional(),
     badgeUrl: core.serialization.string().optional(),
-    metricId: core.serialization.string().optional(),
-    metricValue: core.serialization.number().optional(),
-    metricName: core.serialization.string().optional(),
     key: core.serialization.string().optional(),
     achievedAt: core.serialization.date().optional(),
 });

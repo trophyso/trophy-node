@@ -50,7 +50,7 @@ class Users {
         this._options = _options;
     }
     /**
-     * Create a new user.
+     * Identify a new user.
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}

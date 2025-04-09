@@ -18,7 +18,7 @@ export declare class Users {
     protected readonly _options: Users.Options;
     constructor(_options: Users.Options);
     /**
-     * Create a new user.
+     * Identify a new user.
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
@@ -81,5 +81,5 @@ export declare class Users {
      * @example
      *     await trophyApi.users.allachievements("userId")
      */
-    allachievements(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.AchievementResponse[]>;
+    allachievements(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.MultiStageAchievementResponse[]>;
 }

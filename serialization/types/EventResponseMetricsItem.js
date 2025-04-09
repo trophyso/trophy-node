@@ -40,6 +40,6 @@ const core = __importStar(require("../../core"));
 exports.EventResponseMetricsItem = core.serialization.object({
     metricId: core.serialization.string().optional(),
     completed: core.serialization
-        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementResponse; })))
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).MultiStageAchievementResponse; })))
         .optional(),
 });

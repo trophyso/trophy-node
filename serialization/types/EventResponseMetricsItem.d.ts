@@ -8,6 +8,6 @@ export declare const EventResponseMetricsItem: core.serialization.ObjectSchema<s
 export declare namespace EventResponseMetricsItem {
     interface Raw {
         metricId?: string | null;
-        completed?: serializers.AchievementResponse.Raw[] | null;
+        completed?: serializers.MultiStageAchievementResponse.Raw[] | null;
     }
 }

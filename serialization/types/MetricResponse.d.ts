@@ -14,7 +14,7 @@ export declare namespace MetricResponse {
         streakFrequency: serializers.StreakFrequency.Raw;
         status: serializers.MetricStatus.Raw;
         current: number;
-        achievements: serializers.AchievementResponse.Raw[];
+        achievements: serializers.MultiStageAchievementResponse.Raw[];
         currentStreak?: serializers.StreakResponse.Raw | null;
     }
 }

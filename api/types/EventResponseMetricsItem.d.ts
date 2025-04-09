@@ -6,5 +6,5 @@ export interface EventResponseMetricsItem {
     /** The ID of the metric. */
     metricId?: string;
     /** A list of any new achievements that the user has now completed as a result of this event being submitted. */
-    completed?: TrophyApi.AchievementResponse[];
+    completed?: TrophyApi.MultiStageAchievementResponse[];
 }
