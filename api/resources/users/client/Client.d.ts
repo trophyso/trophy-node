@@ -82,4 +82,14 @@ export declare class Users {
      *     await trophyApi.users.allachievements("userId")
      */
     allachievements(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.MultiStageAchievementResponse[]>;
+    /**
+     * Get a user's streak data.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.users.streak("userId", {})
+     */
+    streak(id: string, request?: TrophyApi.UsersStreakRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.StreakResponse>;
 }

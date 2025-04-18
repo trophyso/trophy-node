@@ -12,5 +12,5 @@ export interface EventResponse {
     /** Changes to achievements as a result of this event. */
     achievements?: TrophyApi.EventResponseMetricsItem[];
     /** The user's current streak for the metric, if the metric has streaks enabled. */
-    currentStreak?: TrophyApi.StreakResponse;
+    currentStreak?: TrophyApi.IncrementMetricStreakResponse;
 }

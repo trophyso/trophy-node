@@ -11,6 +11,6 @@ export declare namespace EventResponse {
         metricId: string;
         total: number;
         achievements?: serializers.EventResponseMetricsItem.Raw[] | null;
-        currentStreak?: serializers.StreakResponse.Raw | null;
+        currentStreak?: serializers.IncrementMetricStreakResponse.Raw | null;
     }
 }

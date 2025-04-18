@@ -35,16 +35,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EventResponse = void 0;
+exports.IncrementMetricStreakResponse = void 0;
 const core = __importStar(require("../../core"));
-exports.EventResponse = core.serialization.object({
-    eventId: core.serialization.string(),
-    metricId: core.serialization.string(),
-    total: core.serialization.number(),
-    achievements: core.serialization
-        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).EventResponseMetricsItem; })))
-        .optional(),
-    currentStreak: core.serialization
-        .lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).IncrementMetricStreakResponse; }))
-        .optional(),
-});
+exports.IncrementMetricStreakResponse = core.serialization
+    .object({
+    extended: core.serialization.boolean().optional(),
+})
+    .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).BaseStreakResponse; })));

@@ -11,10 +11,8 @@ export declare namespace MetricResponse {
         key: string;
         name: string;
         emoji: string;
-        streakFrequency: serializers.StreakFrequency.Raw;
         status: serializers.MetricStatus.Raw;
         current: number;
         achievements: serializers.MultiStageAchievementResponse.Raw[];
-        currentStreak?: serializers.StreakResponse.Raw | null;
     }
 }

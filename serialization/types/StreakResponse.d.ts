@@ -6,8 +6,7 @@ import * as TrophyApi from "../../api";
 import * as core from "../../core";
 export declare const StreakResponse: core.serialization.ObjectSchema<serializers.StreakResponse.Raw, TrophyApi.StreakResponse>;
 export declare namespace StreakResponse {
-    interface Raw {
-        length: number;
-        frequency: serializers.StreakFrequency.Raw;
+    interface Raw extends serializers.BaseStreakResponse.Raw {
+        streakHistory?: serializers.StreakResponseStreakHistoryItem.Raw[] | null;
     }
 }

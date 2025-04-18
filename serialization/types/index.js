@@ -16,6 +16,9 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./MetricStatus"), exports);
 __exportStar(require("./StreakFrequency"), exports);
+__exportStar(require("./BaseStreakResponse"), exports);
+__exportStar(require("./IncrementMetricStreakResponse"), exports);
+__exportStar(require("./StreakResponseStreakHistoryItem"), exports);
 __exportStar(require("./StreakResponse"), exports);
 __exportStar(require("./MultiStageAchievementResponse"), exports);
 __exportStar(require("./OneOffAchievementResponse"), exports);

@@ -512,5 +512,87 @@ class Users {
             }
         });
     }
+    /**
+     * Get a user's streak data.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.users.streak("userId", {})
+     */
+    streak(id, request = {}, requestOptions) {
+        var _a;
+        return __awaiter(this, void 0, void 0, function* () {
+            const { historyPeriods } = request;
+            const _queryParams = {};
+            if (historyPeriods != null) {
+                _queryParams["historyPeriods"] = historyPeriods.toString();
+            }
+            const _response = yield core.fetcher({
+                url: (0, url_join_1.default)((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Default, `users/${id}/streak`),
+                method: "GET",
+                headers: {
+                    "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
+                    "X-Fern-Language": "JavaScript",
+                },
+                contentType: "application/json",
+                queryParameters: _queryParams,
+                timeoutMs: (requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
+                maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
+            });
+            if (_response.ok) {
+                return yield serializers.StreakResponse.parseOrThrow(_response.body, {
+                    unrecognizedObjectKeys: "passthrough",
+                    allowUnrecognizedUnionMembers: true,
+                    allowUnrecognizedEnumValues: true,
+                    breadcrumbsPrefix: ["response"],
+                });
+            }
+            if (_response.error.reason === "status-code") {
+                switch (_response.error.statusCode) {
+                    case 401:
+                        throw new TrophyApi.UnauthorizedError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 404:
+                        throw new TrophyApi.NotFoundError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 422:
+                        throw new TrophyApi.UnprocessableEntityError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    default:
+                        throw new errors.TrophyApiError({
+                            statusCode: _response.error.statusCode,
+                            body: _response.error.body,
+                        });
+                }
+            }
+            switch (_response.error.reason) {
+                case "non-json":
+                    throw new errors.TrophyApiError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.rawBody,
+                    });
+                case "timeout":
+                    throw new errors.TrophyApiTimeoutError();
+                case "unknown":
+                    throw new errors.TrophyApiError({
+                        message: _response.error.errorMessage,
+                    });
+            }
+        });
+    }
 }
 exports.Users = Users;

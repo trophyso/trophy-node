@@ -42,9 +42,7 @@ exports.MetricResponse = core.serialization.object({
     key: core.serialization.string(),
     name: core.serialization.string(),
     emoji: core.serialization.string(),
-    streakFrequency: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).StreakFrequency; })),
     status: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).MetricStatus; })),
     current: core.serialization.number(),
     achievements: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).MultiStageAchievementResponse; }))),
-    currentStreak: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).StreakResponse; })).optional(),
 });
