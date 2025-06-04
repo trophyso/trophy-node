@@ -28,14 +28,14 @@ const trophy = new TrophyApiClient({ apiKey: 'your-api-key' });
 You can now access the Trophy API through the `trophy` object.
 
 ```javascript
-trophy.metrics.event("words-written", {
+trophy.metrics.event('words-written', {
   user: {
-    id: "18",
-    email: "jk.rowling@harrypotter.com",
-    tz: "Europe/London"
+    id: '18',
+    email: 'jk.rowling@harrypotter.com',
+    tz: 'Europe/London',
   },
-  value: 750
-})
+  value: 750,
+});
 ```
 
 ## Usage with TypeScript
@@ -44,5 +44,5 @@ Trophy maintains types for this SDK. You can use them without any additional con
 
 ## Documentation
 
-See the [Trophy API Docs](https://trophy.docs.buildwithfern.com/overview/introduction) for more
+See the [Trophy API Docs](https://docs.trophy.so) for more
 information on the accessible endpoints.
