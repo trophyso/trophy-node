@@ -81,7 +81,7 @@ export declare class Users {
      * @example
      *     await trophyApi.users.allachievements("userId")
      */
-    allachievements(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.MultiStageAchievementResponse[]>;
+    allachievements(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.AchievementResponse[]>;
     /**
      * Get a user's streak data.
      * @throws {@link TrophyApi.UnauthorizedError}

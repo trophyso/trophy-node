@@ -4,11 +4,11 @@
 import * as serializers from "..";
 import * as TrophyApi from "../../api";
 import * as core from "../../core";
-export declare const OneOffAchievementResponse: core.serialization.ObjectSchema<serializers.OneOffAchievementResponse.Raw, TrophyApi.OneOffAchievementResponse>;
-export declare namespace OneOffAchievementResponse {
+export declare const BaseAchievementResponse: core.serialization.ObjectSchema<serializers.BaseAchievementResponse.Raw, TrophyApi.BaseAchievementResponse>;
+export declare namespace BaseAchievementResponse {
     interface Raw {
         id: string;
-        name?: string | null;
+        name: string;
         badgeUrl?: string | null;
         key?: string | null;
         achievedAt?: string | null;

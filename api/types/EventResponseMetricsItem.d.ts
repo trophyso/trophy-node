@@ -3,8 +3,10 @@
  */
 import * as TrophyApi from "..";
 export interface EventResponseMetricsItem {
-    /** The ID of the metric. */
+    /** The trigger of the achievement, in this case either 'metric' or 'streak'. */
+    trigger?: string;
+    /** The ID of the metric that these achievements are associated with, if any. */
     metricId?: string;
     /** A list of any new achievements that the user has now completed as a result of this event being submitted. */
-    completed?: TrophyApi.MultiStageAchievementResponse[];
+    completed: TrophyApi.EventResponseMetricsItemCompletedItem[];
 }

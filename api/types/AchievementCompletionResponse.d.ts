@@ -5,5 +5,5 @@ import * as TrophyApi from "..";
 export interface AchievementCompletionResponse {
     /** The unique ID of the completion. */
     completionId: string;
-    achievement: TrophyApi.OneOffAchievementResponse;
+    achievement: TrophyApi.ApiAchievementResponse;
 }

@@ -10,9 +10,8 @@ export declare namespace MetricResponse {
         id: string;
         key: string;
         name: string;
-        emoji: string;
         status: serializers.MetricStatus.Raw;
         current: number;
-        achievements: serializers.MultiStageAchievementResponse.Raw[];
+        achievements: serializers.MetricAchievementResponse.Raw[];
     }
 }

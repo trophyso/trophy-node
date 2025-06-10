@@ -38,8 +38,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EventResponseMetricsItem = void 0;
 const core = __importStar(require("../../core"));
 exports.EventResponseMetricsItem = core.serialization.object({
+    trigger: core.serialization.string().optional(),
     metricId: core.serialization.string().optional(),
-    completed: core.serialization
-        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).MultiStageAchievementResponse; })))
-        .optional(),
+    completed: core.serialization.list(core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).EventResponseMetricsItemCompletedItem; }))),
 });

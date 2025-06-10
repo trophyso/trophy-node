@@ -7,7 +7,8 @@ import * as core from "../../core";
 export declare const EventResponseMetricsItem: core.serialization.ObjectSchema<serializers.EventResponseMetricsItem.Raw, TrophyApi.EventResponseMetricsItem>;
 export declare namespace EventResponseMetricsItem {
     interface Raw {
+        trigger?: string | null;
         metricId?: string | null;
-        completed?: serializers.MultiStageAchievementResponse.Raw[] | null;
+        completed: serializers.EventResponseMetricsItemCompletedItem.Raw[];
     }
 }

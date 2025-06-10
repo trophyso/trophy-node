@@ -9,12 +9,10 @@ export interface MetricResponse {
     key: string;
     /** The name of the metric. */
     name: string;
-    /** The emoji to represent the metric. */
-    emoji: string;
     /** The status of the metric. */
     status: TrophyApi.MetricStatus;
     /** The user's current total for the metric. */
     current: number;
     /** A list of the metric's achievements and the user's progress towards each. */
-    achievements: TrophyApi.MultiStageAchievementResponse[];
+    achievements: TrophyApi.MetricAchievementResponse[];
 }
