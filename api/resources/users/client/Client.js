@@ -291,9 +291,9 @@ class Users {
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.allmetrics("userId")
+     *     await trophyApi.users.allMetrics("userId")
      */
-    allmetrics(id, requestOptions) {
+    allMetrics(id, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
             const _response = yield core.fetcher({
@@ -308,7 +308,7 @@ class Users {
                 maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
             });
             if (_response.ok) {
-                return yield serializers.users.allmetrics.Response.parseOrThrow(_response.body, {
+                return yield serializers.users.allMetrics.Response.parseOrThrow(_response.body, {
                     unrecognizedObjectKeys: "passthrough",
                     allowUnrecognizedUnionMembers: true,
                     allowUnrecognizedEnumValues: true,
@@ -367,9 +367,9 @@ class Users {
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.singlemetric("userId", "key")
+     *     await trophyApi.users.singleMetric("userId", "key")
      */
-    singlemetric(id, key, requestOptions) {
+    singleMetric(id, key, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
             const _response = yield core.fetcher({
@@ -443,9 +443,9 @@ class Users {
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.allachievements("userId")
+     *     await trophyApi.users.allAchievements("userId")
      */
-    allachievements(id, requestOptions) {
+    allAchievements(id, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
             const _response = yield core.fetcher({
@@ -460,7 +460,7 @@ class Users {
                 maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
             });
             if (_response.ok) {
-                return yield serializers.users.allachievements.Response.parseOrThrow(_response.body, {
+                return yield serializers.users.allAchievements.Response.parseOrThrow(_response.body, {
                     unrecognizedObjectKeys: "passthrough",
                     allowUnrecognizedUnionMembers: true,
                     allowUnrecognizedEnumValues: true,

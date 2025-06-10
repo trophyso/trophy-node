@@ -1,2 +1,2 @@
-export * as allmetrics from "./allmetrics";
-export * as allachievements from "./allachievements";
+export * as allMetrics from "./allMetrics";
+export * as allAchievements from "./allAchievements";

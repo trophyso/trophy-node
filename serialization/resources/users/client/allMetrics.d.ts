@@ -4,7 +4,7 @@
 import * as serializers from "../../..";
 import * as TrophyApi from "../../../../api";
 import * as core from "../../../../core";
-export declare const Response: core.serialization.Schema<serializers.users.allmetrics.Response.Raw, TrophyApi.MetricResponse[]>;
+export declare const Response: core.serialization.Schema<serializers.users.allMetrics.Response.Raw, TrophyApi.MetricResponse[]>;
 export declare namespace Response {
     type Raw = serializers.MetricResponse.Raw[];
 }

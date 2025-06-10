@@ -23,6 +23,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.allachievements = exports.allmetrics = void 0;
-exports.allmetrics = __importStar(require("./allmetrics"));
-exports.allachievements = __importStar(require("./allachievements"));
+exports.allAchievements = exports.allMetrics = void 0;
+exports.allMetrics = __importStar(require("./allMetrics"));
+exports.allAchievements = __importStar(require("./allAchievements"));

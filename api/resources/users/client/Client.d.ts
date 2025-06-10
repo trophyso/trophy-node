@@ -59,9 +59,9 @@ export declare class Users {
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.allmetrics("userId")
+     *     await trophyApi.users.allMetrics("userId")
      */
-    allmetrics(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.MetricResponse[]>;
+    allMetrics(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.MetricResponse[]>;
     /**
      * Get a user's progress against a single active metric.
      * @throws {@link TrophyApi.UnauthorizedError}
@@ -69,9 +69,9 @@ export declare class Users {
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.singlemetric("userId", "key")
+     *     await trophyApi.users.singleMetric("userId", "key")
      */
-    singlemetric(id: string, key: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.MetricResponse>;
+    singleMetric(id: string, key: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.MetricResponse>;
     /**
      * Get all of a user's completed achievements.
      * @throws {@link TrophyApi.UnauthorizedError}
@@ -79,9 +79,9 @@ export declare class Users {
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.allachievements("userId")
+     *     await trophyApi.users.allAchievements("userId")
      */
-    allachievements(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.AchievementResponse[]>;
+    allAchievements(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.AchievementResponse[]>;
     /**
      * Get a user's streak data.
      * @throws {@link TrophyApi.UnauthorizedError}
