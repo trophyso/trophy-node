@@ -6,6 +6,8 @@ export interface AchievementResponse {
     id: string;
     /** The name of this achievement. */
     name: string;
+    /** The trigger of the achievement, either 'metric', 'streak', or 'api'. */
+    trigger: string;
     /** The URL of the badge image for the achievement, if one has been uploaded. */
     badgeUrl?: string;
     /** The date and time the achievement was completed, in ISO 8601 format. */

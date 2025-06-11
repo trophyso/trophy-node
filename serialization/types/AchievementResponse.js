@@ -31,6 +31,7 @@ const core = __importStar(require("../../core"));
 exports.AchievementResponse = core.serialization.object({
     id: core.serialization.string(),
     name: core.serialization.string(),
+    trigger: core.serialization.string(),
     badgeUrl: core.serialization.string().optional(),
     achievedAt: core.serialization.date().optional(),
     key: core.serialization.string().optional(),

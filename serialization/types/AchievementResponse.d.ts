@@ -9,6 +9,7 @@ export declare namespace AchievementResponse {
     interface Raw {
         id: string;
         name: string;
+        trigger: string;
         badgeUrl?: string | null;
         achievedAt?: string | null;
         key?: string | null;
