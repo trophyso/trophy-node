@@ -4,7 +4,17 @@
 import * as serializers from "..";
 import * as TrophyApi from "../../api";
 import * as core from "../../core";
-export declare const AchievementResponse: core.serialization.Schema<serializers.AchievementResponse.Raw, TrophyApi.AchievementResponse>;
+export declare const AchievementResponse: core.serialization.ObjectSchema<serializers.AchievementResponse.Raw, TrophyApi.AchievementResponse>;
 export declare namespace AchievementResponse {
-    type Raw = serializers.MetricAchievementResponse.Raw | serializers.StreakAchievementResponse.Raw | serializers.ApiAchievementResponse.Raw;
+    interface Raw {
+        id: string;
+        name: string;
+        badgeUrl?: string | null;
+        achievedAt?: string | null;
+        key?: string | null;
+        streakLength?: number | null;
+        metricId?: string | null;
+        metricValue?: number | null;
+        metricName?: string | null;
+    }
 }

@@ -42,7 +42,7 @@ exports.EventResponse = core.serialization.object({
     metricId: core.serialization.string(),
     total: core.serialization.number(),
     achievements: core.serialization
-        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).EventResponseMetricsItem; })))
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementResponse; })))
         .optional(),
     currentStreak: core.serialization
         .lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).IncrementMetricStreakResponse; }))
