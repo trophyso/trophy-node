@@ -10,7 +10,7 @@ export interface EventResponse {
     /** The user's new total progress against the metric. */
     total: number;
     /** Achievements completed as a result of this event. */
-    achievements?: TrophyApi.AchievementResponse[];
+    achievements?: TrophyApi.CompletedAchievementResponse[];
     /** The user's current streak for the metric, if the metric has streaks enabled. */
     currentStreak?: TrophyApi.IncrementMetricStreakResponse;
 }

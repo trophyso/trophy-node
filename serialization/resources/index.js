@@ -28,6 +28,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.metrics = exports.achievements = exports.users = void 0;
 exports.users = __importStar(require("./users"));
+__exportStar(require("./users/types"), exports);
 exports.achievements = __importStar(require("./achievements"));
 __exportStar(require("./achievements/client/requests"), exports);
 exports.metrics = __importStar(require("./metrics"));

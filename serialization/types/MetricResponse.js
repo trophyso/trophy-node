@@ -43,5 +43,5 @@ exports.MetricResponse = core.serialization.object({
     name: core.serialization.string(),
     status: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).MetricStatus; })),
     current: core.serialization.number(),
-    achievements: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementResponse; }))),
+    achievements: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).CompletedAchievementResponse; }))),
 });

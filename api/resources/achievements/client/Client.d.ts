@@ -18,6 +18,16 @@ export declare class Achievements {
     protected readonly _options: Achievements.Options;
     constructor(_options: Achievements.Options);
     /**
+     * Get all achievements and their completion stats.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.achievements.all()
+     */
+    all(requestOptions?: Achievements.RequestOptions): Promise<TrophyApi.AchievementWithStatsResponse[]>;
+    /**
      * Mark an achievement as completed for a user.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}
@@ -26,7 +36,8 @@ export declare class Achievements {
      * @example
      *     await trophyApi.achievements.complete("finish-onboarding", {
      *         user: {
-     *             id: "user-id"
+     *             email: "user@example.com",
+     *             tz: "Europe/London"
      *         }
      *     })
      */

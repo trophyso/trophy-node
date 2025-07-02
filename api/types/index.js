@@ -21,6 +21,8 @@ __exportStar(require("./IncrementMetricStreakResponse"), exports);
 __exportStar(require("./StreakResponseStreakHistoryItem"), exports);
 __exportStar(require("./StreakResponse"), exports);
 __exportStar(require("./AchievementResponse"), exports);
+__exportStar(require("./CompletedAchievementResponse"), exports);
+__exportStar(require("./AchievementWithStatsResponse"), exports);
 __exportStar(require("./MetricResponse"), exports);
 __exportStar(require("./UpdatedUser"), exports);
 __exportStar(require("./UpsertedUser"), exports);

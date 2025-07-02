@@ -12,6 +12,6 @@ export declare namespace MetricResponse {
         name: string;
         status: serializers.MetricStatus.Raw;
         current: number;
-        achievements: serializers.AchievementResponse.Raw[];
+        achievements: serializers.CompletedAchievementResponse.Raw[];
     }
 }

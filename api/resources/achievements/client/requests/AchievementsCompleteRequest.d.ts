@@ -6,11 +6,12 @@ import * as TrophyApi from "../../../..";
  * @example
  *     {
  *         user: {
- *             id: "user-id"
+ *             email: "user@example.com",
+ *             tz: "Europe/London"
  *         }
  *     }
  */
 export interface AchievementsCompleteRequest {
     /** The user that completed the achievement. */
-    user: TrophyApi.UpsertedUser;
+    user: TrophyApi.UpdatedUser;
 }

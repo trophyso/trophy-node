@@ -10,8 +10,8 @@ export declare namespace AchievementResponse {
         id: string;
         name: string;
         trigger: string;
+        description?: string | null;
         badgeUrl?: string | null;
-        achievedAt?: string | null;
         key?: string | null;
         streakLength?: number | null;
         metricId?: string | null;

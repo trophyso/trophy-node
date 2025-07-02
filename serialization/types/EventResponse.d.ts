@@ -10,7 +10,7 @@ export declare namespace EventResponse {
         eventId: string;
         metricId: string;
         total: number;
-        achievements?: serializers.AchievementResponse.Raw[] | null;
+        achievements?: serializers.CompletedAchievementResponse.Raw[] | null;
         currentStreak?: serializers.IncrementMetricStreakResponse.Raw | null;
     }
 }

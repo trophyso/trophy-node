@@ -7,6 +7,6 @@ import * as core from "../../../../../core";
 export declare const AchievementsCompleteRequest: core.serialization.Schema<serializers.AchievementsCompleteRequest.Raw, TrophyApi.AchievementsCompleteRequest>;
 export declare namespace AchievementsCompleteRequest {
     interface Raw {
-        user: serializers.UpsertedUser.Raw;
+        user: serializers.UpdatedUser.Raw;
     }
 }

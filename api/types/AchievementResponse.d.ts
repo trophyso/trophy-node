@@ -8,10 +8,10 @@ export interface AchievementResponse {
     name: string;
     /** The trigger of the achievement, either 'metric', 'streak', or 'api'. */
     trigger: string;
+    /** The description of this achievement. */
+    description?: string;
     /** The URL of the badge image for the achievement, if one has been uploaded. */
     badgeUrl?: string;
-    /** The date and time the achievement was completed, in ISO 8601 format. */
-    achievedAt?: Date;
     /** The key used to reference this achievement in the API (only applicable if trigger = 'api') */
     key?: string;
     /** The length of the streak required to complete the achievement (only applicable if trigger = 'streak') */

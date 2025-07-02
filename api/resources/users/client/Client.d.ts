@@ -73,6 +73,20 @@ export declare class Users {
      */
     singleMetric(id: string, key: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.MetricResponse>;
     /**
+     * Get a summary of metric events over time for a user.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.users.metricEventSummary("userId", "words-written", {
+     *         aggregation: TrophyApi.UsersMetricEventSummaryRequestAggregation.Daily,
+     *         startDate: "2024-01-01",
+     *         endDate: "2024-01-31"
+     *     })
+     */
+    metricEventSummary(id: string, key: string, request: TrophyApi.UsersMetricEventSummaryRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.UsersMetricEventSummaryResponseItem[]>;
+    /**
      * Get all of a user's completed achievements.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}
@@ -81,7 +95,7 @@ export declare class Users {
      * @example
      *     await trophyApi.users.allAchievements("userId")
      */
-    allAchievements(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.AchievementResponse[]>;
+    allAchievements(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.CompletedAchievementResponse[]>;
     /**
      * Get a user's streak data.
      * @throws {@link TrophyApi.UnauthorizedError}

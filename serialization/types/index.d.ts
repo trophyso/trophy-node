@@ -5,6 +5,8 @@ export * from "./IncrementMetricStreakResponse";
 export * from "./StreakResponseStreakHistoryItem";
 export * from "./StreakResponse";
 export * from "./AchievementResponse";
+export * from "./CompletedAchievementResponse";
+export * from "./AchievementWithStatsResponse";
 export * from "./MetricResponse";
 export * from "./UpdatedUser";
 export * from "./UpsertedUser";

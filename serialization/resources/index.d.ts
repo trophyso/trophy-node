@@ -1,4 +1,5 @@
 export * as users from "./users";
+export * from "./users/types";
 export * as achievements from "./achievements";
 export * from "./achievements/client/requests";
 export * as metrics from "./metrics";

@@ -38,5 +38,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AchievementsCompleteRequest = void 0;
 const core = __importStar(require("../../../../../core"));
 exports.AchievementsCompleteRequest = core.serialization.object({
-    user: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../../..")))).UpsertedUser; })),
+    user: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../../..")))).UpdatedUser; })),
 });
