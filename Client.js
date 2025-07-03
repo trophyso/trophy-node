@@ -7,6 +7,7 @@ exports.TrophyApiClient = void 0;
 const Client_1 = require("./api/resources/achievements/client/Client");
 const Client_2 = require("./api/resources/metrics/client/Client");
 const Client_3 = require("./api/resources/users/client/Client");
+const Client_4 = require("./api/resources/points/client/Client");
 class TrophyApiClient {
     constructor(_options) {
         this._options = _options;
@@ -22,6 +23,10 @@ class TrophyApiClient {
     get users() {
         var _a;
         return ((_a = this._users) !== null && _a !== void 0 ? _a : (this._users = new Client_3.Users(this._options)));
+    }
+    get points() {
+        var _a;
+        return ((_a = this._points) !== null && _a !== void 0 ? _a : (this._points = new Client_4.Points(this._options)));
     }
 }
 exports.TrophyApiClient = TrophyApiClient;

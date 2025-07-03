@@ -12,5 +12,7 @@ export interface EventResponse {
     /** Achievements completed as a result of this event. */
     achievements?: TrophyApi.CompletedAchievementResponse[];
     /** The user's current streak for the metric, if the metric has streaks enabled. */
-    currentStreak?: TrophyApi.IncrementMetricStreakResponse;
+    currentStreak?: TrophyApi.MetricEventStreakResponse;
+    /** The points added by this event, and a breakdown of the points awards that added points. */
+    points?: TrophyApi.PointsAward;
 }

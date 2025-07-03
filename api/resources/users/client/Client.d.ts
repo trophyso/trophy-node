@@ -106,4 +106,28 @@ export declare class Users {
      *     await trophyApi.users.streak("userId", {})
      */
     streak(id: string, request?: TrophyApi.UsersStreakRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.StreakResponse>;
+    /**
+     * Get a user's points.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.users.points("userId", {})
+     */
+    points(id: string, request?: TrophyApi.UsersPointsRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.GetUserPointsResponse>;
+    /**
+     * Get a summary of points awards over time for a user.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.users.pointsEventSummary("userId", {
+     *         aggregation: TrophyApi.UsersPointsEventSummaryRequestAggregation.Daily,
+     *         startDate: "2024-01-01",
+     *         endDate: "2024-01-31"
+     *     })
+     */
+    pointsEventSummary(id: string, request: TrophyApi.UsersPointsEventSummaryRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.UsersPointsEventSummaryResponseItem[]>;
 }

@@ -9,7 +9,7 @@ export declare namespace AchievementResponse {
     interface Raw {
         id: string;
         name: string;
-        trigger: string;
+        trigger: serializers.AchievementResponseTrigger.Raw;
         description?: string | null;
         badgeUrl?: string | null;
         key?: string | null;
@@ -17,5 +17,6 @@ export declare namespace AchievementResponse {
         metricId?: string | null;
         metricValue?: number | null;
         metricName?: string | null;
+        currentStreak?: serializers.MetricEventStreakResponse.Raw | null;
     }
 }
