@@ -9,6 +9,8 @@ export declare namespace PointsAward {
     interface Raw {
         id?: string | null;
         awarded?: number | null;
+        date?: string | null;
+        total?: number | null;
         trigger?: serializers.PointsTrigger.Raw | null;
     }
 }

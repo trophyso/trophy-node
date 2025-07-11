@@ -40,5 +40,7 @@ const core = __importStar(require("../../core"));
 exports.PointsAward = core.serialization.object({
     id: core.serialization.string().optional(),
     awarded: core.serialization.number().optional(),
+    date: core.serialization.string().optional(),
+    total: core.serialization.number().optional(),
     trigger: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsTrigger; })).optional(),
 });

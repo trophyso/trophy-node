@@ -7,5 +7,9 @@ export interface PointsAward {
     id?: string;
     /** The points awarded by this trigger */
     awarded?: number;
+    /** The date these points were awarded, in ISO 8601 format. */
+    date?: string;
+    /** The user's total points after this award occurred. */
+    total?: number;
     trigger?: TrophyApi.PointsTrigger;
 }

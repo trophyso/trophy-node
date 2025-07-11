@@ -47,5 +47,5 @@ exports.EventResponse = core.serialization.object({
     currentStreak: core.serialization
         .lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).MetricEventStreakResponse; }))
         .optional(),
-    points: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsAward; })).optional(),
+    points: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).MetricEventPointsResponse; })).optional(),
 });

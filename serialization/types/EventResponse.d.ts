@@ -12,6 +12,6 @@ export declare namespace EventResponse {
         total: number;
         achievements?: serializers.CompletedAchievementResponse.Raw[] | null;
         currentStreak?: serializers.MetricEventStreakResponse.Raw | null;
-        points?: serializers.PointsAward.Raw | null;
+        points?: serializers.MetricEventPointsResponse.Raw | null;
     }
 }
