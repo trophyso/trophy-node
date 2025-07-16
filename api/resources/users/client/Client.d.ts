@@ -40,9 +40,23 @@ export declare class Users {
      */
     get(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.User>;
     /**
+     * Upsert a user (create or update).
+     * @throws {@link TrophyApi.BadRequestError}
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.users.upsert("id", {
+     *         email: "user@example.com",
+     *         tz: "Europe/London"
+     *     })
+     */
+    upsert(id: string, request: TrophyApi.UpdatedUser, requestOptions?: Users.RequestOptions): Promise<TrophyApi.User>;
+    /**
      * Update a user.
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
