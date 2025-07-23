@@ -50,7 +50,7 @@ class Users {
         this._options = _options;
     }
     /**
-     * Identify a new user.
+     * Create a new user.
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
@@ -205,18 +205,18 @@ class Users {
         });
     }
     /**
-     * Upsert a user (create or update).
+     * Identify a user.
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.upsert("id", {
+     *     await trophyApi.users.identify("id", {
      *         email: "user@example.com",
      *         tz: "Europe/London"
      *     })
      */
-    upsert(id, request, requestOptions) {
+    identify(id, request, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
             const _response = yield core.fetcher({

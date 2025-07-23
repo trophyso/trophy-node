@@ -18,7 +18,7 @@ export declare class Users {
     protected readonly _options: Users.Options;
     constructor(_options: Users.Options);
     /**
-     * Identify a new user.
+     * Create a new user.
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
@@ -40,18 +40,18 @@ export declare class Users {
      */
     get(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.User>;
     /**
-     * Upsert a user (create or update).
+     * Identify a user.
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.upsert("id", {
+     *     await trophyApi.users.identify("id", {
      *         email: "user@example.com",
      *         tz: "Europe/London"
      *     })
      */
-    upsert(id: string, request: TrophyApi.UpdatedUser, requestOptions?: Users.RequestOptions): Promise<TrophyApi.User>;
+    identify(id: string, request: TrophyApi.UpdatedUser, requestOptions?: Users.RequestOptions): Promise<TrophyApi.User>;
     /**
      * Update a user.
      * @throws {@link TrophyApi.BadRequestError}
