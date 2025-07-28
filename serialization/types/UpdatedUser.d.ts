@@ -10,6 +10,7 @@ export declare namespace UpdatedUser {
         email?: string | null;
         name?: string | null;
         tz?: string | null;
+        deviceTokens?: string[] | null;
         subscribeToEmails?: boolean | null;
     }
 }

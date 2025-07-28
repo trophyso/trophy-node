@@ -11,6 +11,8 @@ export interface UpdatedUser {
     name?: string;
     /** The user's timezone (used for email scheduling). */
     tz?: string;
+    /** The user's device tokens, used for push notifications. */
+    deviceTokens?: string[];
     /** Whether the user should receive Trophy-powered emails. Cannot be false if an email is provided. */
     subscribeToEmails?: boolean;
 }
