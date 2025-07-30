@@ -13,6 +13,6 @@ export interface UpdatedUser {
     tz?: string;
     /** The user's device tokens, used for push notifications. */
     deviceTokens?: string[];
-    /** Whether the user should receive Trophy-powered emails. Cannot be false if an email is provided. */
+    /** Whether the user should receive Trophy-powered emails. If false, Trophy will not store the user's email address. */
     subscribeToEmails?: boolean;
 }
