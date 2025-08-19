@@ -12,5 +12,6 @@ export declare namespace UpdatedUser {
         tz?: string | null;
         deviceTokens?: string[] | null;
         subscribeToEmails?: boolean | null;
+        attributes?: Record<string, string> | null;
     }
 }

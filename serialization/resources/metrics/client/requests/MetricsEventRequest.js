@@ -40,4 +40,5 @@ const core = __importStar(require("../../../../../core"));
 exports.MetricsEventRequest = core.serialization.object({
     user: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../../..")))).UpsertedUser; })),
     value: core.serialization.number(),
+    attributes: core.serialization.record(core.serialization.string(), core.serialization.string()).optional(),
 });

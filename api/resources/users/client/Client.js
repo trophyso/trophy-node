@@ -213,7 +213,11 @@ class Users {
      * @example
      *     await trophyApi.users.identify("id", {
      *         email: "user@example.com",
-     *         tz: "Europe/London"
+     *         tz: "Europe/London",
+     *         attributes: {
+     *             "department": "engineering",
+     *             "role": "developer"
+     *         }
      *     })
      */
     identify(id, request, requestOptions) {
@@ -294,7 +298,11 @@ class Users {
      * @example
      *     await trophyApi.users.update("id", {
      *         email: "user@example.com",
-     *         tz: "Europe/London"
+     *         tz: "Europe/London",
+     *         attributes: {
+     *             "department": "engineering",
+     *             "role": "developer"
+     *         }
      *     })
      */
     update(id, request, requestOptions) {
@@ -611,17 +619,22 @@ class Users {
         });
     }
     /**
-     * Get all of a user's completed achievements.
+     * Get a user's achievements.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.allAchievements("userId")
+     *     await trophyApi.users.achievements("userId", {})
      */
-    allAchievements(id, requestOptions) {
+    achievements(id, request = {}, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
+            const { includeIncomplete } = request;
+            const _queryParams = {};
+            if (includeIncomplete != null) {
+                _queryParams["includeIncomplete"] = includeIncomplete;
+            }
             const _response = yield core.fetcher({
                 url: (0, url_join_1.default)((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Default, `users/${id}/achievements`),
                 method: "GET",
@@ -630,11 +643,12 @@ class Users {
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
+                queryParameters: _queryParams,
                 timeoutMs: (requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
                 maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
             });
             if (_response.ok) {
-                return yield serializers.users.allAchievements.Response.parseOrThrow(_response.body, {
+                return yield serializers.users.achievements.Response.parseOrThrow(_response.body, {
                     unrecognizedObjectKeys: "passthrough",
                     allowUnrecognizedUnionMembers: true,
                     allowUnrecognizedEnumValues: true,
@@ -769,15 +783,15 @@ class Users {
         });
     }
     /**
-     * Get a user's points.
+     * Get a user's points for a specific points system.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.points("userId", {})
+     *     await trophyApi.users.points("userId", "points-system-key", {})
      */
-    points(id, request = {}, requestOptions) {
+    points(id, key, request = {}, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
             const { awards } = request;
@@ -786,7 +800,7 @@ class Users {
                 _queryParams["awards"] = awards.toString();
             }
             const _response = yield core.fetcher({
-                url: (0, url_join_1.default)((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Default, `users/${id}/points`),
+                url: (0, url_join_1.default)((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Default, `users/${id}/points/${key}`),
                 method: "GET",
                 headers: {
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
@@ -851,19 +865,19 @@ class Users {
         });
     }
     /**
-     * Get a summary of points awards over time for a user.
+     * Get a summary of points awards over time for a user for a specific points system.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.pointsEventSummary("userId", {
+     *     await trophyApi.users.pointsEventSummary("userId", "points-system-key", {
      *         aggregation: TrophyApi.UsersPointsEventSummaryRequestAggregation.Daily,
      *         startDate: "2024-01-01",
      *         endDate: "2024-01-31"
      *     })
      */
-    pointsEventSummary(id, request, requestOptions) {
+    pointsEventSummary(id, key, request, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
             const { aggregation, startDate, endDate } = request;
@@ -872,7 +886,7 @@ class Users {
             _queryParams["startDate"] = startDate;
             _queryParams["endDate"] = endDate;
             const _response = yield core.fetcher({
-                url: (0, url_join_1.default)((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Default, `users/${id}/points/event-summary`),
+                url: (0, url_join_1.default)((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Default, `users/${id}/points/${key}/event-summary`),
                 method: "GET",
                 headers: {
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),

@@ -7,7 +7,11 @@ import * as core from "../../core";
 export declare const GetUserPointsResponse: core.serialization.ObjectSchema<serializers.GetUserPointsResponse.Raw, TrophyApi.GetUserPointsResponse>;
 export declare namespace GetUserPointsResponse {
     interface Raw {
-        total?: number | null;
-        awards?: serializers.PointsAward.Raw[] | null;
+        id: string;
+        name: string;
+        description?: string | null;
+        badgeUrl?: string | null;
+        total: number;
+        awards: serializers.PointsAward.Raw[];
     }
 }

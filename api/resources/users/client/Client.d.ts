@@ -48,7 +48,11 @@ export declare class Users {
      * @example
      *     await trophyApi.users.identify("id", {
      *         email: "user@example.com",
-     *         tz: "Europe/London"
+     *         tz: "Europe/London",
+     *         attributes: {
+     *             "department": "engineering",
+     *             "role": "developer"
+     *         }
      *     })
      */
     identify(id: string, request: TrophyApi.UpdatedUser, requestOptions?: Users.RequestOptions): Promise<TrophyApi.User>;
@@ -62,7 +66,11 @@ export declare class Users {
      * @example
      *     await trophyApi.users.update("id", {
      *         email: "user@example.com",
-     *         tz: "Europe/London"
+     *         tz: "Europe/London",
+     *         attributes: {
+     *             "department": "engineering",
+     *             "role": "developer"
+     *         }
      *     })
      */
     update(id: string, request: TrophyApi.UpdatedUser, requestOptions?: Users.RequestOptions): Promise<TrophyApi.User>;
@@ -101,15 +109,15 @@ export declare class Users {
      */
     metricEventSummary(id: string, key: string, request: TrophyApi.UsersMetricEventSummaryRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.UsersMetricEventSummaryResponseItem[]>;
     /**
-     * Get all of a user's completed achievements.
+     * Get a user's achievements.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.allAchievements("userId")
+     *     await trophyApi.users.achievements("userId", {})
      */
-    allAchievements(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.CompletedAchievementResponse[]>;
+    achievements(id: string, request?: TrophyApi.UsersAchievementsRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.CompletedAchievementResponse[]>;
     /**
      * Get a user's streak data.
      * @throws {@link TrophyApi.UnauthorizedError}
@@ -121,27 +129,27 @@ export declare class Users {
      */
     streak(id: string, request?: TrophyApi.UsersStreakRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.StreakResponse>;
     /**
-     * Get a user's points.
+     * Get a user's points for a specific points system.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.points("userId", {})
+     *     await trophyApi.users.points("userId", "points-system-key", {})
      */
-    points(id: string, request?: TrophyApi.UsersPointsRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.GetUserPointsResponse>;
+    points(id: string, key: string, request?: TrophyApi.UsersPointsRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.GetUserPointsResponse>;
     /**
-     * Get a summary of points awards over time for a user.
+     * Get a summary of points awards over time for a user for a specific points system.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.pointsEventSummary("userId", {
+     *     await trophyApi.users.pointsEventSummary("userId", "points-system-key", {
      *         aggregation: TrophyApi.UsersPointsEventSummaryRequestAggregation.Daily,
      *         startDate: "2024-01-01",
      *         endDate: "2024-01-31"
      *     })
      */
-    pointsEventSummary(id: string, request: TrophyApi.UsersPointsEventSummaryRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.UsersPointsEventSummaryResponseItem[]>;
+    pointsEventSummary(id: string, key: string, request: TrophyApi.UsersPointsEventSummaryRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.UsersPointsEventSummaryResponseItem[]>;
 }

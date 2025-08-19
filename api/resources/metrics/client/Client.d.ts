@@ -28,9 +28,17 @@ export declare class Metrics {
      *         user: {
      *             email: "user@example.com",
      *             tz: "Europe/London",
+     *             attributes: {
+     *                 "department": "engineering",
+     *                 "role": "developer"
+     *             },
      *             id: "18"
      *         },
-     *         value: 750
+     *         value: 750,
+     *         attributes: {
+     *             "category": "writing",
+     *             "source": "mobile-app"
+     *         }
      *     })
      */
     event(key: string, request: TrophyApi.MetricsEventRequest, requestOptions?: Metrics.RequestOptions): Promise<TrophyApi.EventResponse>;

@@ -21,17 +21,21 @@ export declare class Points {
      * Get a breakdown of the number of users with points in each range.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.points.summary()
+     *     await trophyApi.points.summary("points-system-key", {
+     *         userAttributes: "plan-type:premium,region:us-east"
+     *     })
      */
-    summary(requestOptions?: Points.RequestOptions): Promise<TrophyApi.PointsSummaryResponse>;
+    summary(key: string, request?: TrophyApi.PointsSummaryRequest, requestOptions?: Points.RequestOptions): Promise<TrophyApi.PointsSummaryResponse>;
     /**
-     * Get all points triggers.
+     * Get a points system with all its triggers.
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
      *
      * @example
-     *     await trophyApi.points.triggers()
+     *     await trophyApi.points.system("points-system-key")
      */
-    triggers(requestOptions?: Points.RequestOptions): Promise<TrophyApi.PointsTriggerResponse[]>;
+    system(key: string, requestOptions?: Points.RequestOptions): Promise<TrophyApi.PointsSystemResponse>;
 }

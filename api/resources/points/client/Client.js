@@ -53,21 +53,30 @@ class Points {
      * Get a breakdown of the number of users with points in each range.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.points.summary()
+     *     await trophyApi.points.summary("points-system-key", {
+     *         userAttributes: "plan-type:premium,region:us-east"
+     *     })
      */
-    summary(requestOptions) {
+    summary(key, request = {}, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
+            const { userAttributes } = request;
+            const _queryParams = {};
+            if (userAttributes != null) {
+                _queryParams["userAttributes"] = userAttributes;
+            }
             const _response = yield core.fetcher({
-                url: (0, url_join_1.default)((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Default, "points/summary"),
+                url: (0, url_join_1.default)((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Default, `points/${key}/summary`),
                 method: "GET",
                 headers: {
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
+                queryParameters: _queryParams,
                 timeoutMs: (requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
                 maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
             });
@@ -90,6 +99,13 @@ class Points {
                         }));
                     case 404:
                         throw new TrophyApi.NotFoundError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 422:
+                        throw new TrophyApi.UnprocessableEntityError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -118,17 +134,18 @@ class Points {
         });
     }
     /**
-     * Get all points triggers.
+     * Get a points system with all its triggers.
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
      *
      * @example
-     *     await trophyApi.points.triggers()
+     *     await trophyApi.points.system("points-system-key")
      */
-    triggers(requestOptions) {
+    system(key, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
             const _response = yield core.fetcher({
-                url: (0, url_join_1.default)((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Default, "points/triggers"),
+                url: (0, url_join_1.default)((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Default, `points/${key}`),
                 method: "GET",
                 headers: {
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
@@ -139,7 +156,7 @@ class Points {
                 maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
             });
             if (_response.ok) {
-                return yield serializers.points.triggers.Response.parseOrThrow(_response.body, {
+                return yield serializers.PointsSystemResponse.parseOrThrow(_response.body, {
                     unrecognizedObjectKeys: "passthrough",
                     allowUnrecognizedUnionMembers: true,
                     allowUnrecognizedEnumValues: true,
@@ -150,6 +167,13 @@ class Points {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 404:
+                        throw new TrophyApi.NotFoundError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,

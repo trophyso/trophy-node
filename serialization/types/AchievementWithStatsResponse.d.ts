@@ -8,6 +8,8 @@ export declare const AchievementWithStatsResponse: core.serialization.ObjectSche
 export declare namespace AchievementWithStatsResponse {
     interface Raw extends serializers.AchievementResponse.Raw {
         completions?: number | null;
-        completedPercentage?: number | null;
+        rarity?: number | null;
+        userAttributes?: serializers.AchievementWithStatsResponseUserAttributesItem.Raw[] | null;
+        eventAttribute?: serializers.AchievementWithStatsResponseEventAttribute.Raw | null;
     }
 }

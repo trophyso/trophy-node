@@ -35,3 +35,4 @@ exports.points = __importStar(require("./points"));
 __exportStar(require("./achievements/client/requests"), exports);
 __exportStar(require("./metrics/client/requests"), exports);
 __exportStar(require("./users/client/requests"), exports);
+__exportStar(require("./points/client/requests"), exports);

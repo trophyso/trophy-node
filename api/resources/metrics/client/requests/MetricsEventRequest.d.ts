@@ -8,9 +8,17 @@ import * as TrophyApi from "../../../..";
  *         user: {
  *             email: "user@example.com",
  *             tz: "Europe/London",
+ *             attributes: {
+ *                 "department": "engineering",
+ *                 "role": "developer"
+ *             },
  *             id: "18"
  *         },
- *         value: 750
+ *         value: 750,
+ *         attributes: {
+ *             "category": "writing",
+ *             "source": "mobile-app"
+ *         }
  *     }
  */
 export interface MetricsEventRequest {
@@ -18,4 +26,6 @@ export interface MetricsEventRequest {
     user: TrophyApi.UpsertedUser;
     /** The value to add to the user's current total for the given metric. */
     value: number;
+    /** Event attributes as key-value pairs. Keys must match existing event attributes set up in the Trophy dashboard. */
+    attributes?: Record<string, string>;
 }

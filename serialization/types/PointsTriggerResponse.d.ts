@@ -17,6 +17,8 @@ export declare namespace PointsTriggerResponse {
         streakLengthThreshold?: number | null;
         metricName?: string | null;
         achievementName?: string | null;
+        userAttributes?: serializers.PointsTriggerResponseUserAttributesItem.Raw[] | null;
+        eventAttribute?: serializers.PointsTriggerResponseEventAttribute.Raw | null;
         created?: string | null;
         updated?: string | null;
     }

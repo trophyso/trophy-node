@@ -6,5 +6,9 @@ export interface AchievementWithStatsResponse extends TrophyApi.AchievementRespo
     /** The number of users who have completed this achievement. */
     completions?: number;
     /** The percentage of all users who have completed this achievement. */
-    completedPercentage?: number;
+    rarity?: number;
+    /** User attribute filters that must be met for this achievement to be completed. Only present if the achievement has user attribute filters configured. */
+    userAttributes?: TrophyApi.AchievementWithStatsResponseUserAttributesItem[];
+    /** Event attribute filter that must be met for this achievement to be completed. Only present if the achievement has an event filter configured. */
+    eventAttribute?: TrophyApi.AchievementWithStatsResponseEventAttribute;
 }

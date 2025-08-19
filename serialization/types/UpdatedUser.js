@@ -34,4 +34,5 @@ exports.UpdatedUser = core.serialization.object({
     tz: core.serialization.string().optional(),
     deviceTokens: core.serialization.list(core.serialization.string()).optional(),
     subscribeToEmails: core.serialization.boolean().optional(),
+    attributes: core.serialization.record(core.serialization.string(), core.serialization.string()).optional(),
 });

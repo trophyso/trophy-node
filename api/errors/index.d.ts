@@ -1,4 +1,4 @@
 export * from "./UnauthorizedError";
-export * from "./NotFoundError";
 export * from "./UnprocessableEntityError";
+export * from "./NotFoundError";
 export * from "./BadRequestError";

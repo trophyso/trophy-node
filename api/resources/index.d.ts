@@ -6,3 +6,4 @@ export * as points from "./points";
 export * from "./achievements/client/requests";
 export * from "./metrics/client/requests";
 export * from "./users/client/requests";
+export * from "./points/client/requests";

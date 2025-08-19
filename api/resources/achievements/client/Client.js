@@ -52,7 +52,6 @@ class Achievements {
     /**
      * Get all achievements and their completion stats.
      * @throws {@link TrophyApi.UnauthorizedError}
-     * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
@@ -84,13 +83,6 @@ class Achievements {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
-                            unrecognizedObjectKeys: "passthrough",
-                            allowUnrecognizedUnionMembers: true,
-                            allowUnrecognizedEnumValues: true,
-                            breadcrumbsPrefix: ["response"],
-                        }));
-                    case 404:
-                        throw new TrophyApi.NotFoundError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -135,7 +127,8 @@ class Achievements {
      *     await trophyApi.achievements.complete("finish-onboarding", {
      *         user: {
      *             email: "user@example.com",
-     *             tz: "Europe/London"
+     *             tz: "Europe/London",
+     *             id: "user-id"
      *         }
      *     })
      */

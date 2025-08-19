@@ -48,6 +48,12 @@ exports.PointsTriggerResponse = core.serialization.object({
     streakLengthThreshold: core.serialization.number().optional(),
     metricName: core.serialization.string().optional(),
     achievementName: core.serialization.string().optional(),
+    userAttributes: core.serialization
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsTriggerResponseUserAttributesItem; })))
+        .optional(),
+    eventAttribute: core.serialization
+        .lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsTriggerResponseEventAttribute; }))
+        .optional(),
     created: core.serialization.date().optional(),
     updated: core.serialization.date().optional(),
 });

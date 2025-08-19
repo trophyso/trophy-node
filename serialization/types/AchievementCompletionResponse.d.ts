@@ -9,5 +9,6 @@ export declare namespace AchievementCompletionResponse {
     interface Raw {
         completionId: string;
         achievement: serializers.CompletedAchievementResponse.Raw;
+        points?: Record<string, serializers.MetricEventPointsResponse.Raw> | null;
     }
 }

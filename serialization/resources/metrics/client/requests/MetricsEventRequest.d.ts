@@ -9,5 +9,6 @@ export declare namespace MetricsEventRequest {
     interface Raw {
         user: serializers.UpsertedUser.Raw;
         value: number;
+        attributes?: Record<string, string> | null;
     }
 }

@@ -15,4 +15,6 @@ export interface UpdatedUser {
     deviceTokens?: string[];
     /** Whether the user should receive Trophy-powered emails. If false, Trophy will not store the user's email address. */
     subscribeToEmails?: boolean;
+    /** User attributes as key-value pairs. Keys must match existing user attributes set up in the Trophy dashboard. */
+    attributes?: Record<string, string>;
 }
