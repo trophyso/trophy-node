@@ -30,3 +30,4 @@ export * from "./PointsTriggerResponseUserAttributesItem";
 export * from "./PointsTriggerResponseEventAttribute";
 export * from "./PointsTriggerResponse";
 export * from "./PointsSystemResponse";
+export * from "./StreakRankingUser";

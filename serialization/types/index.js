@@ -46,3 +46,4 @@ __exportStar(require("./PointsTriggerResponseUserAttributesItem"), exports);
 __exportStar(require("./PointsTriggerResponseEventAttribute"), exports);
 __exportStar(require("./PointsTriggerResponse"), exports);
 __exportStar(require("./PointsSystemResponse"), exports);
+__exportStar(require("./StreakRankingUser"), exports);

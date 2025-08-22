@@ -6,6 +6,7 @@ import * as core from "./core";
 import { Achievements } from "./api/resources/achievements/client/Client";
 import { Metrics } from "./api/resources/metrics/client/Client";
 import { Users } from "./api/resources/users/client/Client";
+import { Streaks } from "./api/resources/streaks/client/Client";
 import { Points } from "./api/resources/points/client/Client";
 export declare namespace TrophyApiClient {
     interface Options {
@@ -26,6 +27,8 @@ export declare class TrophyApiClient {
     get metrics(): Metrics;
     protected _users: Users | undefined;
     get users(): Users;
+    protected _streaks: Streaks | undefined;
+    get streaks(): Streaks;
     protected _points: Points | undefined;
     get points(): Points;
 }
