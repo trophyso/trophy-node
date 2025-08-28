@@ -8,5 +8,6 @@ export declare const StreakResponse: core.serialization.ObjectSchema<serializers
 export declare namespace StreakResponse {
     interface Raw extends serializers.BaseStreakResponse.Raw {
         streakHistory?: serializers.StreakResponseStreakHistoryItem.Raw[] | null;
+        rank?: number | null;
     }
 }

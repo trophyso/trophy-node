@@ -42,5 +42,6 @@ exports.StreakResponse = core.serialization
     streakHistory: core.serialization
         .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).StreakResponseStreakHistoryItem; })))
         .optional(),
+    rank: core.serialization.number().optional(),
 })
     .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).BaseStreakResponse; })));
