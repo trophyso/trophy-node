@@ -17,6 +17,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./MetricStatus"), exports);
 __exportStar(require("./StreakFrequency"), exports);
 __exportStar(require("./BaseStreakResponse"), exports);
+__exportStar(require("./BulkStreakResponseItem"), exports);
+__exportStar(require("./BulkStreakResponse"), exports);
 __exportStar(require("./MetricEventStreakResponse"), exports);
 __exportStar(require("./StreakResponseStreakHistoryItem"), exports);
 __exportStar(require("./StreakResponse"), exports);

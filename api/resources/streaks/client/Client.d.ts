@@ -18,6 +18,15 @@ export declare class Streaks {
     protected readonly _options: Streaks.Options;
     constructor(_options: Streaks.Options);
     /**
+     * Get the streak lengths of a list of users, ranked by streak length from longest to shortest.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.streaks.list({})
+     */
+    list(request?: TrophyApi.StreaksListRequest, requestOptions?: Streaks.RequestOptions): Promise<TrophyApi.BulkStreakResponse>;
+    /**
      * Get the top users by streak length (active or longest).
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
