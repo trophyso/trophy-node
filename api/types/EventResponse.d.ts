@@ -15,4 +15,8 @@ export interface EventResponse {
     currentStreak?: TrophyApi.MetricEventStreakResponse;
     /** A map of points systems by key that were affected by this event. */
     points?: Record<string, TrophyApi.MetricEventPointsResponse>;
+    /** The idempotency key used for the event, if one was provided. */
+    idempotencyKey?: string;
+    /** Whether the event was replayed due to idempotency. */
+    idempotentReplayed?: boolean;
 }

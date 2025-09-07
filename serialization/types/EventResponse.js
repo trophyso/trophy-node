@@ -50,4 +50,6 @@ exports.EventResponse = core.serialization.object({
     points: core.serialization
         .record(core.serialization.string(), core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).MetricEventPointsResponse; })))
         .optional(),
+    idempotencyKey: core.serialization.string().optional(),
+    idempotentReplayed: core.serialization.boolean().optional(),
 });
