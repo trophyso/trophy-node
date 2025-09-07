@@ -34,6 +34,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -57,6 +68,7 @@ class Metrics {
      *
      * @example
      *     await trophyApi.metrics.event("words-written", {
+     *         idempotencyKey: "e4296e4b-8493-4bd1-9c30-5a1a9ac4d78f",
      *         user: {
      *             email: "user@example.com",
      *             tz: "Europe/London",
@@ -76,15 +88,17 @@ class Metrics {
     event(key, request, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
+            const { idempotencyKey } = request, _body = __rest(request, ["idempotencyKey"]);
             const _response = yield core.fetcher({
                 url: (0, url_join_1.default)((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Default, `metrics/${key}/event`),
                 method: "POST",
                 headers: {
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
+                    "Idempotency-Key": idempotencyKey != null ? idempotencyKey : undefined,
                 },
                 contentType: "application/json",
-                body: yield serializers.MetricsEventRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
+                body: yield serializers.MetricsEventRequest.jsonOrThrow(_body, { unrecognizedObjectKeys: "strip" }),
                 timeoutMs: (requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
                 maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
             });

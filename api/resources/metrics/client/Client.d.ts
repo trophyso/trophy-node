@@ -25,6 +25,7 @@ export declare class Metrics {
      *
      * @example
      *     await trophyApi.metrics.event("words-written", {
+     *         idempotencyKey: "e4296e4b-8493-4bd1-9c30-5a1a9ac4d78f",
      *         user: {
      *             email: "user@example.com",
      *             tz: "Europe/London",

@@ -5,6 +5,7 @@ import * as TrophyApi from "../../../..";
 /**
  * @example
  *     {
+ *         idempotencyKey: "e4296e4b-8493-4bd1-9c30-5a1a9ac4d78f",
  *         user: {
  *             email: "user@example.com",
  *             tz: "Europe/London",
@@ -22,6 +23,10 @@ import * as TrophyApi from "../../../..";
  *     }
  */
 export interface MetricsEventRequest {
+    /**
+     * The idempotency key for the event.
+     */
+    idempotencyKey?: string;
     /** The user that triggered the event. */
     user: TrophyApi.UpsertedUser;
     /** The value to add to the user's current total for the given metric. */
