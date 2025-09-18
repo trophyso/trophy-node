@@ -35,24 +35,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EventResponse = void 0;
+exports.LeaderboardResponse = void 0;
 const core = __importStar(require("../../core"));
-exports.EventResponse = core.serialization.object({
-    eventId: core.serialization.string(),
-    metricId: core.serialization.string(),
-    total: core.serialization.number(),
-    achievements: core.serialization
-        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).CompletedAchievementResponse; })))
-        .optional(),
-    currentStreak: core.serialization
-        .lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).MetricEventStreakResponse; }))
-        .optional(),
-    points: core.serialization
-        .record(core.serialization.string(), core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).MetricEventPointsResponse; })))
-        .optional(),
-    leaderboards: core.serialization
-        .record(core.serialization.string(), core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).MetricEventLeaderboardResponse; })))
-        .optional(),
-    idempotencyKey: core.serialization.string().optional(),
-    idempotentReplayed: core.serialization.boolean().optional(),
+exports.LeaderboardResponse = core.serialization.object({
+    id: core.serialization.string(),
+    name: core.serialization.string(),
+    key: core.serialization.string(),
+    status: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).LeaderboardResponseStatus; })).optional(),
+    rankBy: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).LeaderboardResponseRankBy; })),
+    metricKey: core.serialization.string().optional(),
+    metricName: core.serialization.string().optional(),
+    pointsSystemKey: core.serialization.string().optional(),
+    pointsSystemName: core.serialization.string().optional(),
+    description: core.serialization.string().optional(),
+    start: core.serialization.string(),
+    end: core.serialization.string().optional(),
+    maxParticipants: core.serialization.number(),
+    runUnit: core.serialization.string().optional(),
+    runInterval: core.serialization.number(),
 });

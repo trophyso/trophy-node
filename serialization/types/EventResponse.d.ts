@@ -13,6 +13,7 @@ export declare namespace EventResponse {
         achievements?: serializers.CompletedAchievementResponse.Raw[] | null;
         currentStreak?: serializers.MetricEventStreakResponse.Raw | null;
         points?: Record<string, serializers.MetricEventPointsResponse.Raw> | null;
+        leaderboards?: Record<string, serializers.MetricEventLeaderboardResponse.Raw> | null;
         idempotencyKey?: string | null;
         idempotentReplayed?: boolean | null;
     }

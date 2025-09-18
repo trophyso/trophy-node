@@ -8,6 +8,7 @@ import { Metrics } from "./api/resources/metrics/client/Client";
 import { Users } from "./api/resources/users/client/Client";
 import { Streaks } from "./api/resources/streaks/client/Client";
 import { Points } from "./api/resources/points/client/Client";
+import { Leaderboards } from "./api/resources/leaderboards/client/Client";
 export declare namespace TrophyApiClient {
     interface Options {
         environment?: core.Supplier<environments.TrophyApiEnvironment | string>;
@@ -31,4 +32,6 @@ export declare class TrophyApiClient {
     get streaks(): Streaks;
     protected _points: Points | undefined;
     get points(): Points;
+    protected _leaderboards: Leaderboards | undefined;
+    get leaderboards(): Leaderboards;
 }

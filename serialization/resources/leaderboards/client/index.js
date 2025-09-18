@@ -22,17 +22,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.metrics = exports.leaderboards = exports.achievements = exports.streaks = exports.users = void 0;
-exports.users = __importStar(require("./users"));
-__exportStar(require("./users/types"), exports);
-exports.streaks = __importStar(require("./streaks"));
-__exportStar(require("./streaks/types"), exports);
-exports.achievements = __importStar(require("./achievements"));
-exports.leaderboards = __importStar(require("./leaderboards"));
-__exportStar(require("./achievements/client/requests"), exports);
-exports.metrics = __importStar(require("./metrics"));
-__exportStar(require("./metrics/client/requests"), exports);
+exports.all = void 0;
+exports.all = __importStar(require("./all"));
