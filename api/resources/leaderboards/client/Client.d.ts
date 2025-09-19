@@ -39,16 +39,4 @@ export declare class Leaderboards {
      *     })
      */
     get(key: string, request?: TrophyApi.LeaderboardsGetRequest, requestOptions?: Leaderboards.RequestOptions): Promise<TrophyApi.LeaderboardResponseWithRankings>;
-    /**
-     * Get a user's rank, value, and history for a specific leaderboard.
-     * @throws {@link TrophyApi.UnauthorizedError}
-     * @throws {@link TrophyApi.NotFoundError}
-     * @throws {@link TrophyApi.UnprocessableEntityError}
-     *
-     * @example
-     *     await trophyApi.leaderboards.usersLeaderboards("user-123", "weekly-words", {
-     *         run: "2025-01-15"
-     *     })
-     */
-    usersLeaderboards(userId: string, key: string, request?: TrophyApi.UsersLeaderboardsRequest, requestOptions?: Leaderboards.RequestOptions): Promise<TrophyApi.UserLeaderboardResponse>;
 }
