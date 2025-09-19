@@ -957,11 +957,11 @@ class Users {
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.leaderboards("user-123", "weekly-words", {
+     *     await trophyApi.users.leaderboard("user-123", "weekly-words", {
      *         run: "2025-01-15"
      *     })
      */
-    leaderboards(id, key, request = {}, requestOptions) {
+    leaderboard(id, key, request = {}, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
             const { run } = request;

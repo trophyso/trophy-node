@@ -7,7 +7,7 @@
  *         run: "2025-01-15"
  *     }
  */
-export interface UsersLeaderboardsRequest {
+export interface UsersLeaderboardRequest {
     /**
      * Specific run date in YYYY-MM-DD format. If not provided, returns the current run.
      */
