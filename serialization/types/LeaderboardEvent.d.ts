@@ -7,7 +7,7 @@ import * as core from "../../core";
 export declare const LeaderboardEvent: core.serialization.ObjectSchema<serializers.LeaderboardEvent.Raw, TrophyApi.LeaderboardEvent>;
 export declare namespace LeaderboardEvent {
     interface Raw {
-        time: string;
+        timestamp?: string | null;
         previousRank?: number | null;
         rank?: number | null;
         previousValue?: number | null;

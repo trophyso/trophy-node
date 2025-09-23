@@ -6,7 +6,7 @@
  */
 export interface LeaderboardEvent {
     /** The timestamp when the event occurred. */
-    time: Date;
+    timestamp?: Date;
     /** The user's rank before this event, or null if they were not on the leaderboard. */
     previousRank?: number;
     /** The user's rank after this event, or null if they are no longer on the leaderboard. */
