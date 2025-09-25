@@ -11,4 +11,6 @@ export interface StreakResponseStreakHistoryItem {
     periodEnd: string;
     /** The length of the user's streak during this period. */
     length: number;
+    /** Whether the user used a streak freeze during this period. Only present if the organization has enabled streak freezes. */
+    usedFreeze?: boolean;
 }

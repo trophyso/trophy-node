@@ -9,9 +9,10 @@ import { Users } from "./api/resources/users/client/Client";
 import { Streaks } from "./api/resources/streaks/client/Client";
 import { Points } from "./api/resources/points/client/Client";
 import { Leaderboards } from "./api/resources/leaderboards/client/Client";
+import { Admin } from "./api/resources/admin/client/Client";
 export declare namespace TrophyApiClient {
     interface Options {
-        environment?: core.Supplier<environments.TrophyApiEnvironment | string>;
+        environment?: core.Supplier<environments.TrophyApiEnvironment | environments.TrophyApiEnvironmentUrls>;
         apiKey: core.Supplier<string>;
     }
     interface RequestOptions {
@@ -34,4 +35,6 @@ export declare class TrophyApiClient {
     get points(): Points;
     protected _leaderboards: Leaderboards | undefined;
     get leaderboards(): Leaderboards;
+    protected _admin: Admin | undefined;
+    get admin(): Admin;
 }

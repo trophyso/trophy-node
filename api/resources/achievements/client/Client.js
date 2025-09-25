@@ -61,7 +61,8 @@ class Achievements {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
             const _response = yield core.fetcher({
-                url: (0, url_join_1.default)((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Default, "achievements"),
+                url: (0, url_join_1.default)(((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Production)
+                    .api, "achievements"),
                 method: "GET",
                 headers: {
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
@@ -136,7 +137,8 @@ class Achievements {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
             const _response = yield core.fetcher({
-                url: (0, url_join_1.default)((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Default, `achievements/${key}/complete`),
+                url: (0, url_join_1.default)(((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Production)
+                    .api, `achievements/${key}/complete`),
                 method: "POST",
                 headers: {
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),

@@ -69,7 +69,8 @@ class Points {
                 _queryParams["userAttributes"] = userAttributes;
             }
             const _response = yield core.fetcher({
-                url: (0, url_join_1.default)((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Default, `points/${key}/summary`),
+                url: (0, url_join_1.default)(((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Production)
+                    .api, `points/${key}/summary`),
                 method: "GET",
                 headers: {
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
@@ -145,7 +146,8 @@ class Points {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
             const _response = yield core.fetcher({
-                url: (0, url_join_1.default)((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Default, `points/${key}`),
+                url: (0, url_join_1.default)(((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Production)
+                    .api, `points/${key}`),
                 method: "GET",
                 headers: {
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),

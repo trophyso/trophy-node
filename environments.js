@@ -5,5 +5,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TrophyApiEnvironment = void 0;
 exports.TrophyApiEnvironment = {
-    Default: "https://app.trophy.so/api",
+    Production: {
+        api: "api.trophy.so",
+        admin: "admin.trophy.so",
+    },
 };

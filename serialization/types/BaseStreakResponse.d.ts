@@ -13,5 +13,9 @@ export declare namespace BaseStreakResponse {
         periodStart?: string | null;
         periodEnd?: string | null;
         expires?: string | null;
+        freezes?: number | null;
+        maxFreezes?: number | null;
+        freezeAutoEarnInterval?: number | null;
+        freezeAutoEarnAmount?: number | null;
     }
 }

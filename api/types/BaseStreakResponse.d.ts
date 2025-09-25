@@ -15,4 +15,12 @@ export interface BaseStreakResponse {
     periodEnd?: string;
     /** The date the streak will expire if the user does not increment a metric. */
     expires?: string;
+    /** The number of available streak freezes. Only present if the organization has enabled streak freezes. */
+    freezes?: number;
+    /** The maximum number of streak freezes a user can have. Only present if the organization has enabled streak freezes. */
+    maxFreezes?: number;
+    /** The interval at which the user will earn streak freezes, in days. Only present if the organization has enabled streak freeze auto-earn. */
+    freezeAutoEarnInterval?: number;
+    /** The amount of streak freezes the user will earn per interval. Only present if the organization has enabled streak freeze auto-earn. */
+    freezeAutoEarnAmount?: number;
 }

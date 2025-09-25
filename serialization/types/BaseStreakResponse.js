@@ -44,4 +44,8 @@ exports.BaseStreakResponse = core.serialization.object({
     periodStart: core.serialization.string().optional(),
     periodEnd: core.serialization.string().optional(),
     expires: core.serialization.string().optional(),
+    freezes: core.serialization.number().optional(),
+    maxFreezes: core.serialization.number().optional(),
+    freezeAutoEarnInterval: core.serialization.number().optional(),
+    freezeAutoEarnAmount: core.serialization.number().optional(),
 });

@@ -57,3 +57,6 @@ __exportStar(require("./StreakRankingUser"), exports);
 __exportStar(require("./LeaderboardRanking"), exports);
 __exportStar(require("./LeaderboardEvent"), exports);
 __exportStar(require("./UserLeaderboardResponse"), exports);
+__exportStar(require("./CreateStreakFreezesResponse"), exports);
+__exportStar(require("./BulkInsertIssueLevel"), exports);
+__exportStar(require("./BulkInsertIssue"), exports);

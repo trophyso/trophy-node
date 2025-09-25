@@ -90,7 +90,8 @@ class Metrics {
         return __awaiter(this, void 0, void 0, function* () {
             const { idempotencyKey } = request, _body = __rest(request, ["idempotencyKey"]);
             const _response = yield core.fetcher({
-                url: (0, url_join_1.default)((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Default, `metrics/${key}/event`),
+                url: (0, url_join_1.default)(((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Production)
+                    .api, `metrics/${key}/event`),
                 method: "POST",
                 headers: {
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),

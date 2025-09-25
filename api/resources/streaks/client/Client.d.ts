@@ -6,7 +6,7 @@ import * as core from "../../../../core";
 import * as TrophyApi from "../../..";
 export declare namespace Streaks {
     interface Options {
-        environment?: core.Supplier<environments.TrophyApiEnvironment | string>;
+        environment?: core.Supplier<environments.TrophyApiEnvironment | environments.TrophyApiEnvironmentUrls>;
         apiKey: core.Supplier<string>;
     }
     interface RequestOptions {

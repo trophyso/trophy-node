@@ -41,3 +41,6 @@ export * from "./StreakRankingUser";
 export * from "./LeaderboardRanking";
 export * from "./LeaderboardEvent";
 export * from "./UserLeaderboardResponse";
+export * from "./CreateStreakFreezesResponse";
+export * from "./BulkInsertIssueLevel";
+export * from "./BulkInsertIssue";

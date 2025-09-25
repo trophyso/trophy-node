@@ -2,6 +2,7 @@ export * as users from "./users";
 export * from "./users/types";
 export * as streaks from "./streaks";
 export * from "./streaks/types";
+export * as admin from "./admin";
 export * as achievements from "./achievements";
 export * as metrics from "./metrics";
 export * as points from "./points";
