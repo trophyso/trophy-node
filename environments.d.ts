@@ -7,8 +7,8 @@ export interface TrophyApiEnvironmentUrls {
 }
 export declare const TrophyApiEnvironment: {
     readonly Production: {
-        readonly api: "api.trophy.so";
-        readonly admin: "admin.trophy.so";
+        readonly api: "https://api.trophy.so/v1";
+        readonly admin: "https://admin.trophy.so/v1";
     };
 };
 export declare type TrophyApiEnvironment = typeof TrophyApiEnvironment.Production;
