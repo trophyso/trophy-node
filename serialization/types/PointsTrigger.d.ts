@@ -14,5 +14,7 @@ export declare namespace PointsTrigger {
         metricThreshold?: number | null;
         streakLengthThreshold?: number | null;
         achievementName?: string | null;
+        timeUnit?: serializers.PointsTriggerTimeUnit.Raw | null;
+        timeInterval?: number | null;
     }
 }

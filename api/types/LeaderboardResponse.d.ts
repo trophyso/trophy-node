@@ -12,8 +12,6 @@ export interface LeaderboardResponse {
     name: string;
     /** The unique key used to reference the leaderboard in APIs. */
     key: string;
-    /** The status of the leaderboard. */
-    status?: TrophyApi.LeaderboardResponseStatus;
     /** What the leaderboard ranks by. */
     rankBy: TrophyApi.LeaderboardResponseRankBy;
     /** The key of the metric to rank by, if rankBy is 'metric'. */
@@ -25,7 +23,7 @@ export interface LeaderboardResponse {
     /** The name of the points system to rank by, if rankBy is 'points'. */
     pointsSystemName?: string;
     /** The user-facing description of the leaderboard. */
-    description?: string;
+    description: string;
     /** The start date of the leaderboard in YYYY-MM-DD format. */
     start: string;
     /** The end date of the leaderboard in YYYY-MM-DD format, or null if it runs forever. */
@@ -33,7 +31,7 @@ export interface LeaderboardResponse {
     /** The maximum number of participants in the leaderboard. */
     maxParticipants: number;
     /** The repetition type for recurring leaderboards, or null for one-time leaderboards. */
-    runUnit?: string;
+    runUnit?: TrophyApi.LeaderboardResponseRunUnit;
     /** The interval between repetitions, relative to the start date and repetition type. */
     runInterval: number;
 }

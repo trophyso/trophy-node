@@ -7,6 +7,6 @@ import * as core from "../../core";
 export declare const MetricEventPointsResponse: core.serialization.ObjectSchema<serializers.MetricEventPointsResponse.Raw, TrophyApi.MetricEventPointsResponse>;
 export declare namespace MetricEventPointsResponse {
     interface Raw extends serializers.GetUserPointsResponse.Raw {
-        added?: number | null;
+        added: number;
     }
 }

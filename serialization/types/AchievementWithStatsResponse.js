@@ -39,8 +39,8 @@ exports.AchievementWithStatsResponse = void 0;
 const core = __importStar(require("../../core"));
 exports.AchievementWithStatsResponse = core.serialization
     .object({
-    completions: core.serialization.number().optional(),
-    rarity: core.serialization.number().optional(),
+    completions: core.serialization.number(),
+    rarity: core.serialization.number(),
     userAttributes: core.serialization
         .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementWithStatsResponseUserAttributesItem; })))
         .optional(),

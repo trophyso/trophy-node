@@ -10,13 +10,13 @@ export interface EventResponse {
     /** The user's new total progress against the metric. */
     total: number;
     /** Achievements completed as a result of this event. */
-    achievements?: TrophyApi.CompletedAchievementResponse[];
+    achievements: TrophyApi.CompletedAchievementResponse[];
     /** The user's current streak. */
-    currentStreak?: TrophyApi.MetricEventStreakResponse;
+    currentStreak: TrophyApi.MetricEventStreakResponse;
     /** A map of points systems by key. */
-    points?: Record<string, TrophyApi.MetricEventPointsResponse>;
+    points: Record<string, TrophyApi.MetricEventPointsResponse>;
     /** A map of leaderboards by key. */
-    leaderboards?: Record<string, TrophyApi.MetricEventLeaderboardResponse>;
+    leaderboards: Record<string, TrophyApi.MetricEventLeaderboardResponse>;
     /** The idempotency key used for the event, if one was provided. */
     idempotencyKey?: string;
     /** Whether the event was replayed due to idempotency. */

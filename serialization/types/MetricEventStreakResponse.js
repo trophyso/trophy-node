@@ -39,6 +39,6 @@ exports.MetricEventStreakResponse = void 0;
 const core = __importStar(require("../../core"));
 exports.MetricEventStreakResponse = core.serialization
     .object({
-    extended: core.serialization.boolean().optional(),
+    extended: core.serialization.boolean(),
 })
     .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).BaseStreakResponse; })));

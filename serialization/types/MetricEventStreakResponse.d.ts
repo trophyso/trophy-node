@@ -7,6 +7,6 @@ import * as core from "../../core";
 export declare const MetricEventStreakResponse: core.serialization.ObjectSchema<serializers.MetricEventStreakResponse.Raw, TrophyApi.MetricEventStreakResponse>;
 export declare namespace MetricEventStreakResponse {
     interface Raw extends serializers.BaseStreakResponse.Raw {
-        extended?: boolean | null;
+        extended: boolean;
     }
 }

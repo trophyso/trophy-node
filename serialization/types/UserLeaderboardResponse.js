@@ -41,6 +41,5 @@ exports.UserLeaderboardResponse = core.serialization
     .object({
     rank: core.serialization.number().optional(),
     value: core.serialization.number().optional(),
-    history: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).LeaderboardEvent; }))),
 })
     .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).LeaderboardResponse; })));

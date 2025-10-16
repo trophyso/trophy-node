@@ -39,6 +39,7 @@ exports.LeaderboardResponseWithRankings = void 0;
 const core = __importStar(require("../../core"));
 exports.LeaderboardResponseWithRankings = core.serialization
     .object({
+    status: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).LeaderboardResponseWithRankingsStatus; })),
     rankings: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).LeaderboardRanking; }))),
 })
     .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).LeaderboardResponse; })));

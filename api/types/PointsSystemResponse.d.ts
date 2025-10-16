@@ -11,6 +11,8 @@ export interface PointsSystemResponse {
     description?: string;
     /** The URL of the badge image for the points system, if one has been uploaded. */
     badgeUrl?: string;
+    /** The maximum number of points a user can be awarded in this points system */
+    maxPoints?: number;
     /** Array of active triggers for this points system. */
     triggers: TrophyApi.PointsTriggerResponse[];
 }

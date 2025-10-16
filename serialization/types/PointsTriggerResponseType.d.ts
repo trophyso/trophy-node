@@ -6,5 +6,5 @@ import * as TrophyApi from "../../api";
 import * as core from "../../core";
 export declare const PointsTriggerResponseType: core.serialization.Schema<serializers.PointsTriggerResponseType.Raw, TrophyApi.PointsTriggerResponseType>;
 export declare namespace PointsTriggerResponseType {
-    type Raw = "metric" | "achievement" | "streak";
+    type Raw = "metric" | "achievement" | "streak" | "time" | "user_creation";
 }

@@ -39,8 +39,8 @@ exports.User = void 0;
 const core = __importStar(require("../../core"));
 exports.User = core.serialization
     .object({
-    control: core.serialization.boolean().optional(),
-    created: core.serialization.date().optional(),
-    updated: core.serialization.date().optional(),
+    control: core.serialization.boolean(),
+    created: core.serialization.date(),
+    updated: core.serialization.date(),
 })
     .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).UpsertedUser; })));

@@ -3,7 +3,9 @@
  */
 /**
  * @example
- *     {}
+ *     {
+ *         awards: 1
+ *     }
  */
 export interface UsersPointsRequest {
     /**

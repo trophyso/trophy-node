@@ -126,6 +126,8 @@ class Leaderboards {
      *
      * @example
      *     await trophyApi.leaderboards.get("weekly-words", {
+     *         offset: 1,
+     *         limit: 1,
      *         run: "2025-01-15",
      *         userId: "user-123"
      *     })

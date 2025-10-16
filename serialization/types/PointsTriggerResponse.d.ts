@@ -7,19 +7,21 @@ import * as core from "../../core";
 export declare const PointsTriggerResponse: core.serialization.ObjectSchema<serializers.PointsTriggerResponse.Raw, TrophyApi.PointsTriggerResponse>;
 export declare namespace PointsTriggerResponse {
     interface Raw {
-        id?: string | null;
-        type?: serializers.PointsTriggerResponseType.Raw | null;
-        points?: number | null;
-        status?: serializers.PointsTriggerResponseStatus.Raw | null;
+        id: string;
+        type: serializers.PointsTriggerResponseType.Raw;
+        points: number;
+        status: serializers.PointsTriggerResponseStatus.Raw;
         achievementId?: string | null;
         metricId?: string | null;
         metricThreshold?: number | null;
         streakLengthThreshold?: number | null;
         metricName?: string | null;
         achievementName?: string | null;
+        timeUnit?: serializers.PointsTriggerResponseTimeUnit.Raw | null;
+        timeInterval?: number | null;
         userAttributes?: serializers.PointsTriggerResponseUserAttributesItem.Raw[] | null;
         eventAttribute?: serializers.PointsTriggerResponseEventAttribute.Raw | null;
-        created?: string | null;
-        updated?: string | null;
+        created: string;
+        updated: string;
     }
 }

@@ -10,10 +10,10 @@ export declare namespace EventResponse {
         eventId: string;
         metricId: string;
         total: number;
-        achievements?: serializers.CompletedAchievementResponse.Raw[] | null;
-        currentStreak?: serializers.MetricEventStreakResponse.Raw | null;
-        points?: Record<string, serializers.MetricEventPointsResponse.Raw> | null;
-        leaderboards?: Record<string, serializers.MetricEventLeaderboardResponse.Raw> | null;
+        achievements: serializers.CompletedAchievementResponse.Raw[];
+        currentStreak: serializers.MetricEventStreakResponse.Raw;
+        points: Record<string, serializers.MetricEventPointsResponse.Raw>;
+        leaderboards: Record<string, serializers.MetricEventLeaderboardResponse.Raw>;
         idempotencyKey?: string | null;
         idempotentReplayed?: boolean | null;
     }

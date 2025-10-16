@@ -31,5 +31,5 @@ const core = __importStar(require("../../core"));
 exports.BulkStreakResponseItem = core.serialization.object({
     userId: core.serialization.string(),
     streakLength: core.serialization.number(),
-    extended: core.serialization.string().optional(),
+    extended: core.serialization.string(),
 });

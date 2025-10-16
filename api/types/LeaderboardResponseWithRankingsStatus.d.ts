@@ -4,8 +4,8 @@
 /**
  * The status of the leaderboard.
  */
-export declare type LeaderboardResponseStatus = "active" | "scheduled" | "finished";
-export declare const LeaderboardResponseStatus: {
+export declare type LeaderboardResponseWithRankingsStatus = "active" | "scheduled" | "finished";
+export declare const LeaderboardResponseWithRankingsStatus: {
     readonly Active: "active";
     readonly Scheduled: "scheduled";
     readonly Finished: "finished";

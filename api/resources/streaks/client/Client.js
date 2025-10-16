@@ -135,7 +135,10 @@ class Streaks {
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.streaks.rankings({})
+     *     await trophyApi.streaks.rankings({
+     *         limit: 1,
+     *         type: TrophyApi.StreaksRankingsRequestType.Active
+     *     })
      */
     rankings(request = {}, requestOptions) {
         var _a;

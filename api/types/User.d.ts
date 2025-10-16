@@ -7,9 +7,9 @@ import * as TrophyApi from "..";
  */
 export interface User extends TrophyApi.UpsertedUser {
     /** Whether the user is in the control group, meaning they do not receive emails or other communications from Trophy. */
-    control?: boolean;
+    control: boolean;
     /** The date and time the user was created, in ISO 8601 format. */
-    created?: Date;
+    created: Date;
     /** The date and time the user was last updated, in ISO 8601 format. */
-    updated?: Date;
+    updated: Date;
 }

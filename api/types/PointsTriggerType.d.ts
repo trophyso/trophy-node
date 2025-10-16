@@ -4,9 +4,11 @@
 /**
  * The type of trigger
  */
-export declare type PointsTriggerType = "metric" | "achievement" | "streak";
+export declare type PointsTriggerType = "metric" | "achievement" | "streak" | "time" | "user_creation";
 export declare const PointsTriggerType: {
     readonly Metric: "metric";
     readonly Achievement: "achievement";
     readonly Streak: "streak";
+    readonly Time: "time";
+    readonly UserCreation: "user_creation";
 };

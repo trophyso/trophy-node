@@ -7,5 +7,5 @@ import * as TrophyApi from "..";
  */
 export interface MetricEventStreakResponse extends TrophyApi.BaseStreakResponse {
     /** Whether this metric event increased the user's streak length. */
-    extended?: boolean;
+    extended: boolean;
 }

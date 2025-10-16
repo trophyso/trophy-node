@@ -4,13 +4,13 @@
 import * as TrophyApi from "..";
 export interface PointsTriggerResponse {
     /** The unique ID of the trigger. */
-    id?: string;
+    id: string;
     /** The type of trigger. */
-    type?: TrophyApi.PointsTriggerResponseType;
+    type: TrophyApi.PointsTriggerResponseType;
     /** The points awarded by this trigger. */
-    points?: number;
+    points: number;
     /** The status of the trigger. */
-    status?: TrophyApi.PointsTriggerResponseStatus;
+    status: TrophyApi.PointsTriggerResponseStatus;
     /** The unique ID of the achievement associated with this trigger, if the trigger is an achievement. */
     achievementId?: string;
     /** The unique ID of the metric associated with this trigger, if the trigger is a metric. */
@@ -23,12 +23,16 @@ export interface PointsTriggerResponse {
     metricName?: string;
     /** The name of the achievement associated with this trigger, if the trigger is an achievement. */
     achievementName?: string;
+    /** The time unit of the trigger, if the trigger is a time interval. */
+    timeUnit?: TrophyApi.PointsTriggerResponseTimeUnit;
+    /** The interval of the trigger in the time unit, if the trigger is a time interval. */
+    timeInterval?: number;
     /** User attribute filters that must be met for this trigger to activate. Only present if the trigger has user attribute filters configured. */
     userAttributes?: TrophyApi.PointsTriggerResponseUserAttributesItem[];
     /** Event attribute filter that must be met for this trigger to activate. Only present if the trigger has an event filter configured. */
     eventAttribute?: TrophyApi.PointsTriggerResponseEventAttribute;
     /** The date and time the trigger was created, in ISO 8601 format. */
-    created?: Date;
+    created: Date;
     /** The date and time the trigger was last updated, in ISO 8601 format. */
-    updated?: Date;
+    updated: Date;
 }

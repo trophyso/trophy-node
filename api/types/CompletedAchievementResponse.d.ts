@@ -4,5 +4,5 @@
 import * as TrophyApi from "..";
 export interface CompletedAchievementResponse extends TrophyApi.AchievementResponse {
     /** The date and time the achievement was completed, in ISO 8601 format. */
-    achievedAt?: Date;
+    achievedAt: Date;
 }

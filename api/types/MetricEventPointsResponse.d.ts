@@ -4,5 +4,5 @@
 import * as TrophyApi from "..";
 export interface MetricEventPointsResponse extends TrophyApi.GetUserPointsResponse {
     /** The points added by this event. */
-    added?: number;
+    added: number;
 }

@@ -39,6 +39,6 @@ exports.MetricEventPointsResponse = void 0;
 const core = __importStar(require("../../core"));
 exports.MetricEventPointsResponse = core.serialization
     .object({
-    added: core.serialization.number().optional(),
+    added: core.serialization.number(),
 })
     .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).GetUserPointsResponse; })));

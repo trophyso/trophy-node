@@ -45,4 +45,6 @@ exports.PointsTrigger = core.serialization.object({
     metricThreshold: core.serialization.number().optional(),
     streakLengthThreshold: core.serialization.number().optional(),
     achievementName: core.serialization.string().optional(),
+    timeUnit: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsTriggerTimeUnit; })).optional(),
+    timeInterval: core.serialization.number().optional(),
 });

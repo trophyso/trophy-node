@@ -17,4 +17,8 @@ export interface PointsTrigger {
     streakLengthThreshold?: number;
     /** If the trigger has type 'achievement', the name of the achievement */
     achievementName?: string;
+    /** If the trigger has type 'time', the unit of time after which to award points */
+    timeUnit?: TrophyApi.PointsTriggerTimeUnit;
+    /** If the trigger has type 'time', the numer of units of timeUnit after which to award points */
+    timeInterval?: number;
 }

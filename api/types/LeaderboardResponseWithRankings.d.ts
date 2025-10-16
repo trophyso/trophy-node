@@ -3,6 +3,8 @@
  */
 import * as TrophyApi from "..";
 export interface LeaderboardResponseWithRankings extends TrophyApi.LeaderboardResponse {
+    /** The status of the leaderboard. */
+    status: TrophyApi.LeaderboardResponseWithRankingsStatus;
     /** Array of user rankings for the leaderboard. */
     rankings: TrophyApi.LeaderboardRanking[];
 }

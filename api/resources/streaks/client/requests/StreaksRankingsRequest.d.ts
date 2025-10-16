@@ -4,7 +4,10 @@
 import * as TrophyApi from "../../../..";
 /**
  * @example
- *     {}
+ *     {
+ *         limit: 1,
+ *         type: TrophyApi.StreaksRankingsRequestType.Active
+ *     }
  */
 export interface StreaksRankingsRequest {
     /**

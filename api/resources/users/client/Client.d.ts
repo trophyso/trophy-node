@@ -25,6 +25,14 @@ export declare class Users {
      *
      * @example
      *     await trophyApi.users.create({
+     *         email: "user@example.com",
+     *         name: "User",
+     *         deviceTokens: ["token1", "token2"],
+     *         subscribeToEmails: true,
+     *         attributes: {
+     *             "department": "engineering",
+     *             "role": "developer"
+     *         },
      *         id: "user-id"
      *     })
      */
@@ -48,7 +56,10 @@ export declare class Users {
      * @example
      *     await trophyApi.users.identify("id", {
      *         email: "user@example.com",
+     *         name: "User",
      *         tz: "Europe/London",
+     *         deviceTokens: ["token1", "token2"],
+     *         subscribeToEmails: true,
      *         attributes: {
      *             "department": "engineering",
      *             "role": "developer"
@@ -66,7 +77,10 @@ export declare class Users {
      * @example
      *     await trophyApi.users.update("id", {
      *         email: "user@example.com",
+     *         name: "User",
      *         tz: "Europe/London",
+     *         deviceTokens: ["token1", "token2"],
+     *         subscribeToEmails: true,
      *         attributes: {
      *             "department": "engineering",
      *             "role": "developer"
@@ -115,7 +129,9 @@ export declare class Users {
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.achievements("userId", {})
+     *     await trophyApi.users.achievements("userId", {
+     *         includeIncomplete: "true"
+     *     })
      */
     achievements(id: string, request?: TrophyApi.UsersAchievementsRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.CompletedAchievementResponse[]>;
     /**
@@ -125,7 +141,9 @@ export declare class Users {
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.streak("userId", {})
+     *     await trophyApi.users.streak("userId", {
+     *         historyPeriods: 1
+     *     })
      */
     streak(id: string, request?: TrophyApi.UsersStreakRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.StreakResponse>;
     /**
@@ -135,7 +153,9 @@ export declare class Users {
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.points("userId", "points-system-key", {})
+     *     await trophyApi.users.points("userId", "points-system-key", {
+     *         awards: 1
+     *     })
      */
     points(id: string, key: string, request?: TrophyApi.UsersPointsRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.GetUserPointsResponse>;
     /**
@@ -163,5 +183,5 @@ export declare class Users {
      *         run: "2025-01-15"
      *     })
      */
-    leaderboard(id: string, key: string, request?: TrophyApi.UsersLeaderboardRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.UserLeaderboardResponse>;
+    leaderboard(id: string, key: string, request?: TrophyApi.UsersLeaderboardRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.UserLeaderboardResponseWithHistory>;
 }

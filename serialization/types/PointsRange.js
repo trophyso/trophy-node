@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PointsRange = void 0;
 const core = __importStar(require("../../core"));
 exports.PointsRange = core.serialization.object({
-    from: core.serialization.number().optional(),
-    to: core.serialization.number().optional(),
-    users: core.serialization.number().optional(),
+    from: core.serialization.number(),
+    to: core.serialization.number(),
+    users: core.serialization.number(),
 });

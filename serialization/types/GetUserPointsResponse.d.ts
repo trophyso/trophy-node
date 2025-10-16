@@ -8,9 +8,11 @@ export declare const GetUserPointsResponse: core.serialization.ObjectSchema<seri
 export declare namespace GetUserPointsResponse {
     interface Raw {
         id: string;
+        key: string;
         name: string;
         description?: string | null;
         badgeUrl?: string | null;
+        maxPoints?: number | null;
         total: number;
         awards: serializers.PointsAward.Raw[];
     }

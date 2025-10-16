@@ -39,6 +39,6 @@ exports.CompletedAchievementResponse = void 0;
 const core = __importStar(require("../../core"));
 exports.CompletedAchievementResponse = core.serialization
     .object({
-    achievedAt: core.serialization.date().optional(),
+    achievedAt: core.serialization.date(),
 })
     .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementResponse; })));

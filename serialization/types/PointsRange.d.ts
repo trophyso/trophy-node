@@ -7,8 +7,8 @@ import * as core from "../../core";
 export declare const PointsRange: core.serialization.ObjectSchema<serializers.PointsRange.Raw, TrophyApi.PointsRange>;
 export declare namespace PointsRange {
     interface Raw {
-        from?: number | null;
-        to?: number | null;
-        users?: number | null;
+        from: number;
+        to: number;
+        users: number;
     }
 }

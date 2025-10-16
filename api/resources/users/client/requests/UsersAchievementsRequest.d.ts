@@ -3,7 +3,9 @@
  */
 /**
  * @example
- *     {}
+ *     {
+ *         includeIncomplete: "true"
+ *     }
  */
 export interface UsersAchievementsRequest {
     /**

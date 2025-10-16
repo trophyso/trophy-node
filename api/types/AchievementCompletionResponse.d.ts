@@ -5,7 +5,7 @@ import * as TrophyApi from "..";
 export interface AchievementCompletionResponse {
     /** The unique ID of the completion. */
     completionId: string;
-    achievement: TrophyApi.CompletedAchievementResponse;
+    achievement: TrophyApi.AchievementCompletionResponseAchievement;
     /** A map of points systems by key that were affected by this achievement completion. */
-    points?: Record<string, TrophyApi.MetricEventPointsResponse>;
+    points: Record<string, TrophyApi.MetricEventPointsResponse>;
 }

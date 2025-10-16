@@ -9,6 +9,5 @@ export declare namespace UserLeaderboardResponse {
     interface Raw extends serializers.LeaderboardResponse.Raw {
         rank?: number | null;
         value?: number | null;
-        history: serializers.LeaderboardEvent.Raw[];
     }
 }

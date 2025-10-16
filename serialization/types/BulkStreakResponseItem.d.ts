@@ -9,6 +9,6 @@ export declare namespace BulkStreakResponseItem {
     interface Raw {
         userId: string;
         streakLength: number;
-        extended?: string | null;
+        extended: string;
     }
 }

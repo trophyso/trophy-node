@@ -4,9 +4,9 @@
 import * as TrophyApi from "..";
 export interface AchievementWithStatsResponse extends TrophyApi.AchievementResponse {
     /** The number of users who have completed this achievement. */
-    completions?: number;
+    completions: number;
     /** The percentage of all users who have completed this achievement. */
-    rarity?: number;
+    rarity: number;
     /** User attribute filters that must be met for this achievement to be completed. Only present if the achievement has user attribute filters configured. */
     userAttributes?: TrophyApi.AchievementWithStatsResponseUserAttributesItem[];
     /** Event attribute filter that must be met for this achievement to be completed. Only present if the achievement has an event filter configured. */

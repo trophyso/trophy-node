@@ -7,8 +7,8 @@ import * as core from "../../core";
 export declare const AchievementWithStatsResponse: core.serialization.ObjectSchema<serializers.AchievementWithStatsResponse.Raw, TrophyApi.AchievementWithStatsResponse>;
 export declare namespace AchievementWithStatsResponse {
     interface Raw extends serializers.AchievementResponse.Raw {
-        completions?: number | null;
-        rarity?: number | null;
+        completions: number;
+        rarity: number;
         userAttributes?: serializers.AchievementWithStatsResponseUserAttributesItem.Raw[] | null;
         eventAttribute?: serializers.AchievementWithStatsResponseEventAttribute.Raw | null;
     }

@@ -38,22 +38,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PointsTriggerResponse = void 0;
 const core = __importStar(require("../../core"));
 exports.PointsTriggerResponse = core.serialization.object({
-    id: core.serialization.string().optional(),
-    type: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsTriggerResponseType; })).optional(),
-    points: core.serialization.number().optional(),
-    status: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsTriggerResponseStatus; })).optional(),
+    id: core.serialization.string(),
+    type: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsTriggerResponseType; })),
+    points: core.serialization.number(),
+    status: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsTriggerResponseStatus; })),
     achievementId: core.serialization.string().optional(),
     metricId: core.serialization.string().optional(),
     metricThreshold: core.serialization.number().optional(),
     streakLengthThreshold: core.serialization.number().optional(),
     metricName: core.serialization.string().optional(),
     achievementName: core.serialization.string().optional(),
+    timeUnit: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsTriggerResponseTimeUnit; })).optional(),
+    timeInterval: core.serialization.number().optional(),
     userAttributes: core.serialization
         .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsTriggerResponseUserAttributesItem; })))
         .optional(),
     eventAttribute: core.serialization
         .lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsTriggerResponseEventAttribute; }))
         .optional(),
-    created: core.serialization.date().optional(),
-    updated: core.serialization.date().optional(),
+    created: core.serialization.date(),
+    updated: core.serialization.date(),
 });

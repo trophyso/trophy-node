@@ -25,7 +25,7 @@ export declare class Leaderboards {
      * @example
      *     await trophyApi.leaderboards.all()
      */
-    all(requestOptions?: Leaderboards.RequestOptions): Promise<TrophyApi.LeaderboardResponse[]>;
+    all(requestOptions?: Leaderboards.RequestOptions): Promise<TrophyApi.LeaderboardsAllResponseItem[]>;
     /**
      * Get a specific leaderboard by its key.
      * @throws {@link TrophyApi.UnauthorizedError}
@@ -34,6 +34,8 @@ export declare class Leaderboards {
      *
      * @example
      *     await trophyApi.leaderboards.get("weekly-words", {
+     *         offset: 1,
+     *         limit: 1,
      *         run: "2025-01-15",
      *         userId: "user-123"
      *     })

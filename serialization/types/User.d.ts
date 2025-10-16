@@ -7,8 +7,8 @@ import * as core from "../../core";
 export declare const User: core.serialization.ObjectSchema<serializers.User.Raw, TrophyApi.User>;
 export declare namespace User {
     interface Raw extends serializers.UpsertedUser.Raw {
-        control?: boolean | null;
-        created?: string | null;
-        updated?: string | null;
+        control: boolean;
+        created: string;
+        updated: string;
     }
 }

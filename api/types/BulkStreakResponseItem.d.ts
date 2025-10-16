@@ -7,5 +7,5 @@ export interface BulkStreakResponseItem {
     /** The length of the user's streak. */
     streakLength: number;
     /** The timestamp the streak was extended, as a string. */
-    extended?: string;
+    extended: string;
 }

@@ -7,6 +7,7 @@ import * as core from "../../core";
 export declare const LeaderboardResponseWithRankings: core.serialization.ObjectSchema<serializers.LeaderboardResponseWithRankings.Raw, TrophyApi.LeaderboardResponseWithRankings>;
 export declare namespace LeaderboardResponseWithRankings {
     interface Raw extends serializers.LeaderboardResponse.Raw {
+        status: serializers.LeaderboardResponseWithRankingsStatus.Raw;
         rankings: serializers.LeaderboardRanking.Raw[];
     }
 }

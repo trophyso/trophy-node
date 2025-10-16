@@ -10,6 +10,4 @@ export interface UserLeaderboardResponse extends TrophyApi.LeaderboardResponse {
     rank?: number;
     /** The user's current value in this leaderboard. Null if the user is not on the leaderboard. */
     value?: number;
-    /** An array of events showing the user's rank and value changes over time. */
-    history: TrophyApi.LeaderboardEvent[];
 }

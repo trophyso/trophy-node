@@ -12,11 +12,10 @@ export declare namespace AchievementResponse {
         trigger: serializers.AchievementResponseTrigger.Raw;
         description?: string | null;
         badgeUrl?: string | null;
-        key?: string | null;
+        key: string;
         streakLength?: number | null;
         metricId?: string | null;
         metricValue?: number | null;
         metricName?: string | null;
-        currentStreak?: serializers.MetricEventStreakResponse.Raw | null;
     }
 }

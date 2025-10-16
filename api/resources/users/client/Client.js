@@ -57,6 +57,14 @@ class Users {
      *
      * @example
      *     await trophyApi.users.create({
+     *         email: "user@example.com",
+     *         name: "User",
+     *         deviceTokens: ["token1", "token2"],
+     *         subscribeToEmails: true,
+     *         attributes: {
+     *             "department": "engineering",
+     *             "role": "developer"
+     *         },
      *         id: "user-id"
      *     })
      */
@@ -215,7 +223,10 @@ class Users {
      * @example
      *     await trophyApi.users.identify("id", {
      *         email: "user@example.com",
+     *         name: "User",
      *         tz: "Europe/London",
+     *         deviceTokens: ["token1", "token2"],
+     *         subscribeToEmails: true,
      *         attributes: {
      *             "department": "engineering",
      *             "role": "developer"
@@ -301,7 +312,10 @@ class Users {
      * @example
      *     await trophyApi.users.update("id", {
      *         email: "user@example.com",
+     *         name: "User",
      *         tz: "Europe/London",
+     *         deviceTokens: ["token1", "token2"],
+     *         subscribeToEmails: true,
      *         attributes: {
      *             "department": "engineering",
      *             "role": "developer"
@@ -632,7 +646,9 @@ class Users {
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.achievements("userId", {})
+     *     await trophyApi.users.achievements("userId", {
+     *         includeIncomplete: "true"
+     *     })
      */
     achievements(id, request = {}, requestOptions) {
         var _a;
@@ -715,7 +731,9 @@ class Users {
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.streak("userId", {})
+     *     await trophyApi.users.streak("userId", {
+     *         historyPeriods: 1
+     *     })
      */
     streak(id, request = {}, requestOptions) {
         var _a;
@@ -798,7 +816,9 @@ class Users {
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.users.points("userId", "points-system-key", {})
+     *     await trophyApi.users.points("userId", "points-system-key", {
+     *         awards: 1
+     *     })
      */
     points(id, key, request = {}, requestOptions) {
         var _a;
@@ -994,7 +1014,7 @@ class Users {
                 maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
             });
             if (_response.ok) {
-                return yield serializers.UserLeaderboardResponse.parseOrThrow(_response.body, {
+                return yield serializers.UserLeaderboardResponseWithHistory.parseOrThrow(_response.body, {
                     unrecognizedObjectKeys: "passthrough",
                     allowUnrecognizedUnionMembers: true,
                     allowUnrecognizedEnumValues: true,

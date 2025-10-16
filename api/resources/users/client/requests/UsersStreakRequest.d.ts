@@ -3,7 +3,9 @@
  */
 /**
  * @example
- *     {}
+ *     {
+ *         historyPeriods: 1
+ *     }
  */
 export interface UsersStreakRequest {
     /**

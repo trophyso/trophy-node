@@ -5,12 +5,16 @@ import * as TrophyApi from "..";
 export interface GetUserPointsResponse {
     /** The ID of the points system */
     id: string;
+    /** The key of the points system */
+    key: string;
     /** The name of the points system */
     name: string;
     /** The description of the points system */
     description?: string;
     /** The URL of the badge image for the points system */
     badgeUrl?: string;
+    /** The maximum number of points a user can be awarded in this points system */
+    maxPoints?: number;
     /** The user's total points */
     total: number;
     /** Array of trigger awards that added points. */

@@ -71,7 +71,10 @@ class Metrics {
      *         idempotencyKey: "e4296e4b-8493-4bd1-9c30-5a1a9ac4d78f",
      *         user: {
      *             email: "user@example.com",
+     *             name: "User",
      *             tz: "Europe/London",
+     *             deviceTokens: ["token1", "token2"],
+     *             subscribeToEmails: true,
      *             attributes: {
      *                 "department": "engineering",
      *                 "role": "developer"

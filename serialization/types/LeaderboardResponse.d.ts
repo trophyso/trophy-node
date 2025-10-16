@@ -10,17 +10,16 @@ export declare namespace LeaderboardResponse {
         id: string;
         name: string;
         key: string;
-        status?: serializers.LeaderboardResponseStatus.Raw | null;
         rankBy: serializers.LeaderboardResponseRankBy.Raw;
         metricKey?: string | null;
         metricName?: string | null;
         pointsSystemKey?: string | null;
         pointsSystemName?: string | null;
-        description?: string | null;
+        description: string;
         start: string;
         end?: string | null;
         maxParticipants: number;
-        runUnit?: string | null;
+        runUnit?: serializers.LeaderboardResponseRunUnit.Raw | null;
         runInterval: number;
     }
 }
