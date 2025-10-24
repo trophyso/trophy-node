@@ -11,10 +11,12 @@ export declare namespace MetricEventLeaderboardResponse {
         rank?: number | null;
         previousRank?: number | null;
         threshold: number;
+        breakdownAttributeValue?: string | null;
         id: string;
         name: string;
         key: string;
         rankBy: serializers.LeaderboardResponseRankBy.Raw;
+        breakdownAttribute?: string | null;
         metricKey?: string | null;
         metricName?: string | null;
         pointsSystemKey?: string | null;

@@ -55,11 +55,18 @@ class Achievements {
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.achievements.all()
+     *     await trophyApi.achievements.all({
+     *         userAttributes: "plan-type:premium,region:us-east"
+     *     })
      */
-    all(requestOptions) {
+    all(request = {}, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
+            const { userAttributes } = request;
+            const _queryParams = {};
+            if (userAttributes != null) {
+                _queryParams["userAttributes"] = userAttributes;
+            }
             const _response = yield core.fetcher({
                 url: (0, url_join_1.default)(((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Production)
                     .api, "achievements"),
@@ -69,6 +76,7 @@ class Achievements {
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
+                queryParameters: _queryParams,
                 timeoutMs: (requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
                 maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
             });

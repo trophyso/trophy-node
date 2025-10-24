@@ -11,6 +11,7 @@ export declare namespace LeaderboardResponse {
         name: string;
         key: string;
         rankBy: serializers.LeaderboardResponseRankBy.Raw;
+        breakdownAttribute?: string | null;
         metricKey?: string | null;
         metricName?: string | null;
         pointsSystemKey?: string | null;

@@ -129,13 +129,14 @@ class Leaderboards {
      *         offset: 1,
      *         limit: 1,
      *         run: "2025-01-15",
-     *         userId: "user-123"
+     *         userId: "user-123",
+     *         userAttributes: "city:London"
      *     })
      */
     get(key, request = {}, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
-            const { offset, limit, run, userId } = request;
+            const { offset, limit, run, userId, userAttributes } = request;
             const _queryParams = {};
             if (offset != null) {
                 _queryParams["offset"] = offset.toString();
@@ -148,6 +149,9 @@ class Leaderboards {
             }
             if (userId != null) {
                 _queryParams["userId"] = userId;
+            }
+            if (userAttributes != null) {
+                _queryParams["userAttributes"] = userAttributes;
             }
             const _response = yield core.fetcher({
                 url: (0, url_join_1.default)(((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Production)

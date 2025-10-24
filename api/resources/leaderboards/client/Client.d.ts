@@ -37,7 +37,8 @@ export declare class Leaderboards {
      *         offset: 1,
      *         limit: 1,
      *         run: "2025-01-15",
-     *         userId: "user-123"
+     *         userId: "user-123",
+     *         userAttributes: "city:London"
      *     })
      */
     get(key: string, request?: TrophyApi.LeaderboardsGetRequest, requestOptions?: Leaderboards.RequestOptions): Promise<TrophyApi.LeaderboardResponseWithRankings>;

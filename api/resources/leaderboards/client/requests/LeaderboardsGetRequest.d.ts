@@ -7,7 +7,8 @@
  *         offset: 1,
  *         limit: 1,
  *         run: "2025-01-15",
- *         userId: "user-123"
+ *         userId: "user-123",
+ *         userAttributes: "city:London"
  *     }
  */
 export interface LeaderboardsGetRequest {
@@ -27,4 +28,8 @@ export interface LeaderboardsGetRequest {
      * When provided, offset is relative to this user's position on the leaderboard. If the user is not found in the leaderboard, returns empty rankings array.
      */
     userId?: string;
+    /**
+     * Attribute key and value to filter the rankings by, separated by a colon. This parameter is required, and only valid for leaderboards with a breakdown attribute.
+     */
+    userAttributes?: string;
 }

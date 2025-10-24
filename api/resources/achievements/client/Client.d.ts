@@ -23,9 +23,11 @@ export declare class Achievements {
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.achievements.all()
+     *     await trophyApi.achievements.all({
+     *         userAttributes: "plan-type:premium,region:us-east"
+     *     })
      */
-    all(requestOptions?: Achievements.RequestOptions): Promise<TrophyApi.AchievementWithStatsResponse[]>;
+    all(request?: TrophyApi.AchievementsAllRequest, requestOptions?: Achievements.RequestOptions): Promise<TrophyApi.AchievementWithStatsResponse[]>;
     /**
      * Mark an achievement as completed for a user.
      * @throws {@link TrophyApi.UnauthorizedError}
