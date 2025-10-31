@@ -6,7 +6,14 @@ import * as TrophyApi from "../../api";
 import * as core from "../../core";
 export declare const User: core.serialization.ObjectSchema<serializers.User.Raw, TrophyApi.User>;
 export declare namespace User {
-    interface Raw extends serializers.UpsertedUser.Raw {
+    interface Raw {
+        id: string;
+        email?: string | null;
+        name?: string | null;
+        tz?: string | null;
+        deviceTokens: string[];
+        subscribeToEmails: boolean;
+        attributes: Record<string, string>;
         control: boolean;
         created: string;
         updated: string;

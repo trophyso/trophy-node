@@ -25,14 +25,6 @@ export declare class Users {
      *
      * @example
      *     await trophyApi.users.create({
-     *         email: "user@example.com",
-     *         name: "User",
-     *         deviceTokens: ["token1", "token2"],
-     *         subscribeToEmails: true,
-     *         attributes: {
-     *             "department": "engineering",
-     *             "role": "developer"
-     *         },
      *         id: "user-id"
      *     })
      */
@@ -56,10 +48,7 @@ export declare class Users {
      * @example
      *     await trophyApi.users.identify("id", {
      *         email: "user@example.com",
-     *         name: "User",
      *         tz: "Europe/London",
-     *         deviceTokens: ["token1", "token2"],
-     *         subscribeToEmails: true,
      *         attributes: {
      *             "department": "engineering",
      *             "role": "developer"
@@ -77,10 +66,7 @@ export declare class Users {
      * @example
      *     await trophyApi.users.update("id", {
      *         email: "user@example.com",
-     *         name: "User",
      *         tz: "Europe/London",
-     *         deviceTokens: ["token1", "token2"],
-     *         subscribeToEmails: true,
      *         attributes: {
      *             "department": "engineering",
      *             "role": "developer"

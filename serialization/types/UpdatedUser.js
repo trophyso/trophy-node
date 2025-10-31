@@ -29,10 +29,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdatedUser = void 0;
 const core = __importStar(require("../../core"));
 exports.UpdatedUser = core.serialization.object({
-    email: core.serialization.string(),
-    name: core.serialization.string(),
+    email: core.serialization.string().optional(),
+    name: core.serialization.string().optional(),
     tz: core.serialization.string().optional(),
-    deviceTokens: core.serialization.list(core.serialization.string()),
-    subscribeToEmails: core.serialization.boolean(),
-    attributes: core.serialization.record(core.serialization.string(), core.serialization.string()),
+    deviceTokens: core.serialization.list(core.serialization.string()).optional(),
+    subscribeToEmails: core.serialization.boolean().optional(),
+    attributes: core.serialization.record(core.serialization.string(), core.serialization.string()).optional(),
 });

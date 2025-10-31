@@ -7,11 +7,11 @@ import * as core from "../../core";
 export declare const UpdatedUser: core.serialization.ObjectSchema<serializers.UpdatedUser.Raw, TrophyApi.UpdatedUser>;
 export declare namespace UpdatedUser {
     interface Raw {
-        email: string;
-        name: string;
+        email?: string | null;
+        name?: string | null;
         tz?: string | null;
-        deviceTokens: string[];
-        subscribeToEmails: boolean;
-        attributes: Record<string, string>;
+        deviceTokens?: string[] | null;
+        subscribeToEmails?: boolean | null;
+        attributes?: Record<string, string> | null;
     }
 }

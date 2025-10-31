@@ -17,7 +17,7 @@ export interface LeaderboardsGetRequest {
      */
     offset?: number;
     /**
-     * Maximum number of rankings to return.
+     * Maximum number of rankings to return. Cannot be greater than the size of the leaderboard.
      */
     limit?: number;
     /**
@@ -29,7 +29,7 @@ export interface LeaderboardsGetRequest {
      */
     userId?: string;
     /**
-     * Attribute key and value to filter the rankings by, separated by a colon. This parameter is required, and only valid for leaderboards with a breakdown attribute.
+     * Attribute key and value to filter the rankings by, separated by a colon. For example, `city:London`. This parameter is required, and only valid for leaderboards with a breakdown attribute.
      */
     userAttributes?: string;
 }

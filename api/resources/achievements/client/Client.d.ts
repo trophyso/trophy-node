@@ -38,14 +38,7 @@ export declare class Achievements {
      *     await trophyApi.achievements.complete("finish-onboarding", {
      *         user: {
      *             email: "user@example.com",
-     *             name: "User",
      *             tz: "Europe/London",
-     *             deviceTokens: ["token1", "token2"],
-     *             subscribeToEmails: true,
-     *             attributes: {
-     *                 "department": "engineering",
-     *                 "role": "developer"
-     *             },
      *             id: "user-id"
      *         }
      *     })
