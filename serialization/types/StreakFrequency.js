@@ -28,4 +28,4 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.StreakFrequency = void 0;
 const core = __importStar(require("../../core"));
-exports.StreakFrequency = core.serialization.enum_(["daily", "weekly", "monthly", "yearly"]);
+exports.StreakFrequency = core.serialization.enum_(["daily", "weekly", "monthly"]);

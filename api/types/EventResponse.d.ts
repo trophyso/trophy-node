@@ -13,9 +13,9 @@ export interface EventResponse {
     achievements: TrophyApi.CompletedAchievementResponse[];
     /** The user's current streak. */
     currentStreak: TrophyApi.MetricEventStreakResponse;
-    /** A map of points systems by key. */
+    /** A map of points systems by key. Only contains points systems that were affected by the event. */
     points: Record<string, TrophyApi.MetricEventPointsResponse>;
-    /** A map of leaderboards by key. */
+    /** A map of leaderboards by key. Only contains leaderboards that were affected by the event. */
     leaderboards: Record<string, TrophyApi.MetricEventLeaderboardResponse>;
     /** The idempotency key used for the event, if one was provided. */
     idempotencyKey?: string;

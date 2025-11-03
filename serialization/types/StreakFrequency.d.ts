@@ -6,5 +6,5 @@ import * as TrophyApi from "../../api";
 import * as core from "../../core";
 export declare const StreakFrequency: core.serialization.Schema<serializers.StreakFrequency.Raw, TrophyApi.StreakFrequency>;
 export declare namespace StreakFrequency {
-    type Raw = "daily" | "weekly" | "monthly" | "yearly";
+    type Raw = "daily" | "weekly" | "monthly";
 }
