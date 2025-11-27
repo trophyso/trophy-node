@@ -52,9 +52,9 @@ exports.MetricEventLeaderboardResponse = core.serialization.object({
     metricName: core.serialization.string().optional(),
     pointsSystemKey: core.serialization.string().optional(),
     pointsSystemName: core.serialization.string().optional(),
-    description: core.serialization.string(),
+    description: core.serialization.string().optional(),
     start: core.serialization.string(),
     maxParticipants: core.serialization.number(),
     runUnit: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).LeaderboardResponseRunUnit; })).optional(),
-    runInterval: core.serialization.number(),
+    runInterval: core.serialization.number().optional(),
 });

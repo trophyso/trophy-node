@@ -25,7 +25,7 @@ export interface LeaderboardResponse {
     /** The name of the points system to rank by, if rankBy is 'points'. */
     pointsSystemName?: string;
     /** The user-facing description of the leaderboard. */
-    description: string;
+    description?: string;
     /** The start date of the leaderboard in YYYY-MM-DD format. */
     start: string;
     /** The end date of the leaderboard in YYYY-MM-DD format, or null if it runs forever. */
@@ -34,6 +34,6 @@ export interface LeaderboardResponse {
     maxParticipants: number;
     /** The repetition type for recurring leaderboards, or null for one-time leaderboards. */
     runUnit?: TrophyApi.LeaderboardResponseRunUnit;
-    /** The interval between repetitions, relative to the start date and repetition type. */
-    runInterval: number;
+    /** The interval between repetitions, relative to the start date and repetition type. Null for one-time leaderboards. */
+    runInterval?: number;
 }

@@ -21,10 +21,10 @@ export declare namespace MetricEventLeaderboardResponse {
         metricName?: string | null;
         pointsSystemKey?: string | null;
         pointsSystemName?: string | null;
-        description: string;
+        description?: string | null;
         start: string;
         maxParticipants: number;
         runUnit?: serializers.LeaderboardResponseRunUnit.Raw | null;
-        runInterval: number;
+        runInterval?: number | null;
     }
 }

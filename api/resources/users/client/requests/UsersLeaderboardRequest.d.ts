@@ -4,7 +4,8 @@
 /**
  * @example
  *     {
- *         run: "2025-01-15"
+ *         run: "2025-01-15",
+ *         numEvents: 1
  *     }
  */
 export interface UsersLeaderboardRequest {
@@ -12,4 +13,8 @@ export interface UsersLeaderboardRequest {
      * Specific run date in YYYY-MM-DD format. If not provided, returns the current run.
      */
     run?: string;
+    /**
+     * The number of events to return in the history array.
+     */
+    numEvents?: number;
 }

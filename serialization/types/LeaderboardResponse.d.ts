@@ -16,11 +16,11 @@ export declare namespace LeaderboardResponse {
         metricName?: string | null;
         pointsSystemKey?: string | null;
         pointsSystemName?: string | null;
-        description: string;
+        description?: string | null;
         start: string;
         end?: string | null;
         maxParticipants: number;
         runUnit?: serializers.LeaderboardResponseRunUnit.Raw | null;
-        runInterval: number;
+        runInterval?: number | null;
     }
 }

@@ -166,7 +166,8 @@ export declare class Users {
      *
      * @example
      *     await trophyApi.users.leaderboard("user-123", "weekly-words", {
-     *         run: "2025-01-15"
+     *         run: "2025-01-15",
+     *         numEvents: 1
      *     })
      */
     leaderboard(id: string, key: string, request?: TrophyApi.UsersLeaderboardRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.UserLeaderboardResponseWithHistory>;

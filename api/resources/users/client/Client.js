@@ -975,16 +975,20 @@ class Users {
      *
      * @example
      *     await trophyApi.users.leaderboard("user-123", "weekly-words", {
-     *         run: "2025-01-15"
+     *         run: "2025-01-15",
+     *         numEvents: 1
      *     })
      */
     leaderboard(id, key, request = {}, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
-            const { run } = request;
+            const { run, numEvents } = request;
             const _queryParams = {};
             if (run != null) {
                 _queryParams["run"] = run;
+            }
+            if (numEvents != null) {
+                _queryParams["numEvents"] = numEvents.toString();
             }
             const _response = yield core.fetcher({
                 url: (0, url_join_1.default)(((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Production)
