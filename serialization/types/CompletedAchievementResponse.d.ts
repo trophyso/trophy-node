@@ -7,6 +7,6 @@ import * as core from "../../core";
 export declare const CompletedAchievementResponse: core.serialization.ObjectSchema<serializers.CompletedAchievementResponse.Raw, TrophyApi.CompletedAchievementResponse>;
 export declare namespace CompletedAchievementResponse {
     interface Raw extends serializers.AchievementResponse.Raw {
-        achievedAt: string;
+        achievedAt?: string | null;
     }
 }
