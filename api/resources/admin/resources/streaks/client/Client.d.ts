@@ -3,6 +3,7 @@
  */
 import * as environments from "../../../../../../environments";
 import * as core from "../../../../../../core";
+import * as TrophyApi from "../../../../..";
 import { Freezes } from "../resources/freezes/client/Client";
 export declare namespace Streaks {
     interface Options {
@@ -17,6 +18,28 @@ export declare namespace Streaks {
 export declare class Streaks {
     protected readonly _options: Streaks.Options;
     constructor(_options: Streaks.Options);
+    /**
+     * Restore streaks for multiple users to the maximum length in the last 90 days (in the case of daily streaks), one year (in the case of weekly streaks), or two years (in the case of monthly streaks).
+     * @throws {@link TrophyApi.BadRequestError}
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.admin.streaks.restore({
+     *         userIds: ["user-123", "user-456"]
+     *     })
+     *
+     * @example
+     *     await trophyApi.admin.streaks.restore({
+     *         userIds: ["user-123", "user-456"]
+     *     })
+     *
+     * @example
+     *     await trophyApi.admin.streaks.restore({
+     *         userIds: ["user-123", "user-456"]
+     *     })
+     */
+    restore(request: TrophyApi.admin.RestoreStreaksRequest, requestOptions?: Streaks.RequestOptions): Promise<TrophyApi.RestoreStreaksResponse>;
     protected _freezes: Freezes | undefined;
     get freezes(): Freezes;
 }

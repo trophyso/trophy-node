@@ -41,4 +41,4 @@ exports.CompletedAchievementResponse = core.serialization
     .object({
     achievedAt: core.serialization.date().optional(),
 })
-    .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementResponse; })));
+    .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementWithStatsResponse; })));

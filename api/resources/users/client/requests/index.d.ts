@@ -4,3 +4,4 @@ export { UsersStreakRequest } from "./UsersStreakRequest";
 export { UsersPointsRequest } from "./UsersPointsRequest";
 export { UsersPointsEventSummaryRequest } from "./UsersPointsEventSummaryRequest";
 export { UsersLeaderboardRequest } from "./UsersLeaderboardRequest";
+export { UsersWrappedRequest } from "./UsersWrappedRequest";

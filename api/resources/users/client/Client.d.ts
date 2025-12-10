@@ -171,4 +171,16 @@ export declare class Users {
      *     })
      */
     leaderboard(id: string, key: string, request?: TrophyApi.UsersLeaderboardRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.UserLeaderboardResponseWithHistory>;
+    /**
+     * Get a user's year-in-review wrapped data.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.users.wrapped("user-123", {
+     *         year: 1
+     *     })
+     */
+    wrapped(id: string, request?: TrophyApi.UsersWrappedRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.WrappedResponse>;
 }
