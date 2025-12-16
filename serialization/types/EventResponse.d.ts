@@ -10,7 +10,7 @@ export declare namespace EventResponse {
         eventId: string;
         metricId: string;
         total: number;
-        achievements: serializers.CompletedAchievementResponse.Raw[];
+        achievements: serializers.UserAchievementResponse.Raw[];
         currentStreak: serializers.MetricEventStreakResponse.Raw;
         points: Record<string, serializers.MetricEventPointsResponse.Raw>;
         leaderboards: Record<string, serializers.MetricEventLeaderboardResponse.Raw>;

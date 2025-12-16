@@ -40,5 +40,5 @@ const core = __importStar(require("../../core"));
 exports.WebhooksAchievementCompletedPayload = core.serialization.object({
     type: core.serialization.stringLiteral("achievement.completed"),
     user: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).User; })),
-    achievement: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).CompletedAchievementResponse; })),
+    achievement: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).UserAchievementResponse; })),
 });

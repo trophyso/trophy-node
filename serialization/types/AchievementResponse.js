@@ -43,9 +43,15 @@ exports.AchievementResponse = core.serialization.object({
     trigger: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementResponseTrigger; })),
     description: core.serialization.string().optional(),
     badgeUrl: core.serialization.string().optional(),
-    key: core.serialization.string(),
+    key: core.serialization.string().optional(),
     streakLength: core.serialization.number().optional(),
     metricId: core.serialization.string().optional(),
     metricValue: core.serialization.number().optional(),
     metricName: core.serialization.string().optional(),
+    userAttributes: core.serialization
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementResponseUserAttributesItem; })))
+        .optional(),
+    eventAttribute: core.serialization
+        .lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementResponseEventAttribute; }))
+        .optional(),
 });

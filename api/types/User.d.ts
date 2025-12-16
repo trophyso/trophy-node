@@ -14,7 +14,7 @@ export interface User {
     /** The user's timezone. */
     tz?: string;
     /** The user's device tokens. */
-    deviceTokens: string[];
+    deviceTokens?: string[];
     /** Whether the user is opted into receiving Trophy-powered emails. */
     subscribeToEmails: boolean;
     /** User attributes as key-value pairs. Keys must match existing user attributes set up in the Trophy dashboard. */

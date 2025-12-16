@@ -35,11 +35,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WrappedActivityPeriod = void 0;
+exports.UserAchievementResponse = void 0;
 const core = __importStar(require("../../core"));
-exports.WrappedActivityPeriod = core.serialization.object({
-    metrics: core.serialization.record(core.serialization.string(), core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).WrappedMetric; }))),
-    points: core.serialization.record(core.serialization.string(), core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).WrappedPoints; }))),
-    achievements: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).UserAchievementResponse; }))),
-    leaderboards: core.serialization.record(core.serialization.string(), core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).UserLeaderboardResponse; }))),
-});
+exports.UserAchievementResponse = core.serialization
+    .object({
+    achievedAt: core.serialization.date().optional(),
+})
+    .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementResponse; })));

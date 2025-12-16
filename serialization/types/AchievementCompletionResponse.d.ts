@@ -8,7 +8,7 @@ export declare const AchievementCompletionResponse: core.serialization.ObjectSch
 export declare namespace AchievementCompletionResponse {
     interface Raw {
         completionId: string;
-        achievement: serializers.AchievementCompletionResponseAchievement.Raw;
+        achievement: serializers.UserAchievementResponse.Raw;
         points: Record<string, serializers.MetricEventPointsResponse.Raw>;
     }
 }

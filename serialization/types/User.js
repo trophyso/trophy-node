@@ -33,7 +33,7 @@ exports.User = core.serialization.object({
     email: core.serialization.string().optional(),
     name: core.serialization.string().optional(),
     tz: core.serialization.string().optional(),
-    deviceTokens: core.serialization.list(core.serialization.string()),
+    deviceTokens: core.serialization.list(core.serialization.string()).optional(),
     subscribeToEmails: core.serialization.boolean(),
     attributes: core.serialization.record(core.serialization.string(), core.serialization.string()),
     control: core.serialization.boolean(),

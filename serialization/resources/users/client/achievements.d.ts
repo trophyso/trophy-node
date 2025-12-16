@@ -4,7 +4,7 @@
 import * as serializers from "../../..";
 import * as TrophyApi from "../../../../api";
 import * as core from "../../../../core";
-export declare const Response: core.serialization.Schema<serializers.users.achievements.Response.Raw, TrophyApi.CompletedAchievementResponse[]>;
+export declare const Response: core.serialization.Schema<serializers.users.achievements.Response.Raw, TrophyApi.UserAchievementWithStatsResponse[]>;
 export declare namespace Response {
-    type Raw = serializers.CompletedAchievementResponse.Raw[];
+    type Raw = serializers.UserAchievementWithStatsResponse.Raw[];
 }

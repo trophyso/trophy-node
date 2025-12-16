@@ -9,6 +9,6 @@ export declare namespace WebhooksAchievementCompletedPayload {
     interface Raw {
         type: "achievement.completed";
         user: serializers.User.Raw;
-        achievement: serializers.CompletedAchievementResponse.Raw;
+        achievement: serializers.UserAchievementResponse.Raw;
     }
 }

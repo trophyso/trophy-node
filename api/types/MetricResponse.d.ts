@@ -14,5 +14,5 @@ export interface MetricResponse {
     /** The user's current total for the metric. */
     current: number;
     /** A list of the metric's achievements and the user's progress towards each. */
-    achievements: TrophyApi.CompletedAchievementResponse[];
+    achievements: TrophyApi.UserAchievementResponse[];
 }

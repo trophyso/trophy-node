@@ -39,6 +39,6 @@ exports.AchievementCompletionResponse = void 0;
 const core = __importStar(require("../../core"));
 exports.AchievementCompletionResponse = core.serialization.object({
     completionId: core.serialization.string(),
-    achievement: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementCompletionResponseAchievement; })),
+    achievement: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).UserAchievementResponse; })),
     points: core.serialization.record(core.serialization.string(), core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).MetricEventPointsResponse; }))),
 });

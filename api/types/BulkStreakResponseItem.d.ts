@@ -6,6 +6,6 @@ export interface BulkStreakResponseItem {
     userId: string;
     /** The length of the user's streak. */
     streakLength: number;
-    /** The timestamp the streak was extended, as a string. */
-    extended: string;
+    /** The timestamp the streak was extended, as a string. Null if the streak is not active. */
+    extended?: string;
 }
