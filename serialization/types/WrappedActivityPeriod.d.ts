@@ -9,7 +9,7 @@ export declare namespace WrappedActivityPeriod {
     interface Raw {
         metrics: Record<string, serializers.WrappedMetric.Raw>;
         points: Record<string, serializers.WrappedPoints.Raw>;
-        achievements: serializers.CompletedAchievementResponse.Raw[];
+        achievements: serializers.UserAchievementResponse.Raw[];
         leaderboards: Record<string, serializers.UserLeaderboardResponse.Raw>;
     }
 }

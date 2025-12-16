@@ -11,7 +11,7 @@ export declare namespace User {
         email?: string | null;
         name?: string | null;
         tz?: string | null;
-        deviceTokens: string[];
+        deviceTokens?: string[] | null;
         subscribeToEmails: boolean;
         attributes: Record<string, string>;
         control: boolean;

@@ -8,5 +8,5 @@ export interface WebhooksAchievementCompletedPayload {
     /** The user who completed the achievement. */
     user: TrophyApi.User;
     /** The achievement completion that occurred. */
-    achievement: TrophyApi.CompletedAchievementResponse;
+    achievement: TrophyApi.UserAchievementResponse;
 }

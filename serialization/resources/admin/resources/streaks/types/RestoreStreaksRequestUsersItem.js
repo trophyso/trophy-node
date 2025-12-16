@@ -26,9 +26,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AchievementWithStatsResponseUserAttributesItem = void 0;
-const core = __importStar(require("../../core"));
-exports.AchievementWithStatsResponseUserAttributesItem = core.serialization.object({
-    key: core.serialization.string(),
-    value: core.serialization.string(),
+exports.RestoreStreaksRequestUsersItem = void 0;
+const core = __importStar(require("../../../../../../core"));
+exports.RestoreStreaksRequestUsersItem = core.serialization.object({
+    id: core.serialization.string(),
 });

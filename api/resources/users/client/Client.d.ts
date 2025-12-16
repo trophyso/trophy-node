@@ -119,7 +119,7 @@ export declare class Users {
      *         includeIncomplete: "true"
      *     })
      */
-    achievements(id: string, request?: TrophyApi.UsersAchievementsRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.CompletedAchievementResponse[]>;
+    achievements(id: string, request?: TrophyApi.UsersAchievementsRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.UserAchievementWithStatsResponse[]>;
     /**
      * Get a user's streak data.
      * @throws {@link TrophyApi.UnauthorizedError}

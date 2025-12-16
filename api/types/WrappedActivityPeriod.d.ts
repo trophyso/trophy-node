@@ -11,7 +11,7 @@ export interface WrappedActivityPeriod {
     /** The user's points during this period, keyed by points system key. */
     points: Record<string, TrophyApi.WrappedPoints>;
     /** Achievements completed during this period. */
-    achievements: TrophyApi.CompletedAchievementResponse[];
+    achievements: TrophyApi.UserAchievementResponse[];
     /** The user's best leaderboard rankings during this period, keyed by leaderboard key. */
     leaderboards: Record<string, TrophyApi.UserLeaderboardResponse>;
 }

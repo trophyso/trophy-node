@@ -35,12 +35,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AchievementCompletionResponseAchievement = void 0;
+exports.UserAchievementWithStatsResponse = void 0;
 const core = __importStar(require("../../core"));
-exports.AchievementCompletionResponseAchievement = core.serialization
+exports.UserAchievementWithStatsResponse = core.serialization
     .object({
-    currentStreak: core.serialization
-        .lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).MetricEventStreakResponse; }))
-        .optional(),
+    achievedAt: core.serialization.date().optional(),
 })
-    .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).CompletedAchievementResponse; })));
+    .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementWithStatsResponse; })));

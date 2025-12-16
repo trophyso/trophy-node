@@ -58,17 +58,29 @@ class Streaks {
      *
      * @example
      *     await trophyApi.admin.streaks.restore({
-     *         userIds: ["user-123", "user-456"]
+     *         users: [{
+     *                 id: "user-123"
+     *             }, {
+     *                 id: "user-456"
+     *             }]
      *     })
      *
      * @example
      *     await trophyApi.admin.streaks.restore({
-     *         userIds: ["user-123", "user-456"]
+     *         users: [{
+     *                 id: "user-123"
+     *             }, {
+     *                 id: "user-456"
+     *             }]
      *     })
      *
      * @example
      *     await trophyApi.admin.streaks.restore({
-     *         userIds: ["user-123", "user-456"]
+     *         users: [{
+     *                 id: "user-123"
+     *             }, {
+     *                 id: "user-456"
+     *             }]
      *     })
      */
     restore(request, requestOptions) {

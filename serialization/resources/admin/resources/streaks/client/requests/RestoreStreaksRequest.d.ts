@@ -7,6 +7,6 @@ import * as core from "../../../../../../../core";
 export declare const RestoreStreaksRequest: core.serialization.Schema<serializers.admin.RestoreStreaksRequest.Raw, TrophyApi.admin.RestoreStreaksRequest>;
 export declare namespace RestoreStreaksRequest {
     interface Raw {
-        userIds: string[];
+        users: serializers.admin.RestoreStreaksRequestUsersItem.Raw[];
     }
 }

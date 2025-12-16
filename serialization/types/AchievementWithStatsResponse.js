@@ -41,11 +41,5 @@ exports.AchievementWithStatsResponse = core.serialization
     .object({
     completions: core.serialization.number(),
     rarity: core.serialization.number(),
-    userAttributes: core.serialization
-        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementWithStatsResponseUserAttributesItem; })))
-        .optional(),
-    eventAttribute: core.serialization
-        .lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementWithStatsResponseEventAttribute; }))
-        .optional(),
 })
     .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementResponse; })));

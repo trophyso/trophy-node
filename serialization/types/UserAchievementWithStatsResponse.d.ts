@@ -4,8 +4,8 @@
 import * as serializers from "..";
 import * as TrophyApi from "../../api";
 import * as core from "../../core";
-export declare const CompletedAchievementResponse: core.serialization.ObjectSchema<serializers.CompletedAchievementResponse.Raw, TrophyApi.CompletedAchievementResponse>;
-export declare namespace CompletedAchievementResponse {
+export declare const UserAchievementWithStatsResponse: core.serialization.ObjectSchema<serializers.UserAchievementWithStatsResponse.Raw, TrophyApi.UserAchievementWithStatsResponse>;
+export declare namespace UserAchievementWithStatsResponse {
     interface Raw extends serializers.AchievementWithStatsResponse.Raw {
         achievedAt?: string | null;
     }

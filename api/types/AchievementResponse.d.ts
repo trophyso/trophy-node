@@ -14,7 +14,7 @@ export interface AchievementResponse {
     /** The URL of the badge image for the achievement, if one has been uploaded. */
     badgeUrl?: string;
     /** The key used to reference this achievement in the API (only applicable if trigger = 'api') */
-    key: string;
+    key?: string;
     /** The length of the streak required to complete the achievement (only applicable if trigger = 'streak') */
     streakLength?: number;
     /** The ID of the metric associated with this achievement (only applicable if trigger = 'metric') */
@@ -23,4 +23,8 @@ export interface AchievementResponse {
     metricValue?: number;
     /** The name of the metric associated with this achievement (only applicable if trigger = 'metric') */
     metricName?: string;
+    /** User attribute filters that must be met for this achievement to be completed. Only present if the achievement has user attribute filters configured. */
+    userAttributes?: TrophyApi.AchievementResponseUserAttributesItem[];
+    /** Event attribute filter that must be met for this achievement to be completed. Only present if the achievement has an event filter configured. */
+    eventAttribute?: TrophyApi.AchievementResponseEventAttribute;
 }

@@ -9,7 +9,5 @@ export declare namespace AchievementWithStatsResponse {
     interface Raw extends serializers.AchievementResponse.Raw {
         completions: number;
         rarity: number;
-        userAttributes?: serializers.AchievementWithStatsResponseUserAttributesItem.Raw[] | null;
-        eventAttribute?: serializers.AchievementWithStatsResponseEventAttribute.Raw | null;
     }
 }
