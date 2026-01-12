@@ -1,0 +1,1 @@
+export { UpdateUserPreferencesRequest } from "./UpdateUserPreferencesRequest";

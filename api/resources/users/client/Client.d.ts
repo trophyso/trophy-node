@@ -75,6 +75,44 @@ export declare class Users {
      */
     update(id: string, request: TrophyApi.UpdatedUser, requestOptions?: Users.RequestOptions): Promise<TrophyApi.User>;
     /**
+     * Get a user's notification preferences.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.users.getPreferences("user-123")
+     */
+    getPreferences(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.UserPreferencesResponse>;
+    /**
+     * Update a user's notification preferences.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.users.updatePreferences("user-123", {
+     *         notifications: {
+     *             streakReminder: [TrophyApi.NotificationChannel.Email]
+     *         }
+     *     })
+     *
+     * @example
+     *     await trophyApi.users.updatePreferences("user-123", {
+     *         notifications: {
+     *             recap: [TrophyApi.NotificationChannel.Email]
+     *         }
+     *     })
+     *
+     * @example
+     *     await trophyApi.users.updatePreferences("user-123", {
+     *         notifications: {
+     *             achievementCompleted: [TrophyApi.NotificationChannel.Email, TrophyApi.NotificationChannel.Push]
+     *         }
+     *     })
+     */
+    updatePreferences(id: string, request?: TrophyApi.UpdateUserPreferencesRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.UserPreferencesResponse>;
+    /**
      * Get a single user's progress against all active metrics.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}

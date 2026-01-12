@@ -1,3 +1,4 @@
+export { UpdateUserPreferencesRequest } from "./UpdateUserPreferencesRequest";
 export { UsersMetricEventSummaryRequest } from "./UsersMetricEventSummaryRequest";
 export { UsersAchievementsRequest } from "./UsersAchievementsRequest";
 export { UsersStreakRequest } from "./UsersStreakRequest";
