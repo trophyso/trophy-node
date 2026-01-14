@@ -38,3 +38,4 @@ exports.achievements = __importStar(require("./achievements"));
 __exportStar(require("./achievements/client/requests"), exports);
 exports.metrics = __importStar(require("./metrics"));
 __exportStar(require("./metrics/client/requests"), exports);
+__exportStar(require("./users/client/requests"), exports);
