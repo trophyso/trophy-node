@@ -43,5 +43,6 @@ exports.PointsSystemResponse = core.serialization.object({
     description: core.serialization.string().optional(),
     badgeUrl: core.serialization.string().optional(),
     maxPoints: core.serialization.number().optional(),
+    boosts: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsBoost; }))),
     triggers: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsTriggerResponse; }))),
 });

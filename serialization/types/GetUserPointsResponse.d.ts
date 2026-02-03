@@ -14,6 +14,7 @@ export declare namespace GetUserPointsResponse {
         badgeUrl?: string | null;
         maxPoints?: number | null;
         total: number;
+        boosts: serializers.PointsBoost.Raw[];
         awards: serializers.PointsAward.Raw[];
     }
 }

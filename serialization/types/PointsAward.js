@@ -43,4 +43,7 @@ exports.PointsAward = core.serialization.object({
     date: core.serialization.string().optional(),
     total: core.serialization.number().optional(),
     trigger: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsTrigger; })).optional(),
+    boosts: core.serialization
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsBoost; })))
+        .optional(),
 });

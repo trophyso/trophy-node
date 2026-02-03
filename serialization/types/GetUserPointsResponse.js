@@ -45,5 +45,6 @@ exports.GetUserPointsResponse = core.serialization.object({
     badgeUrl: core.serialization.string().optional(),
     maxPoints: core.serialization.number().optional(),
     total: core.serialization.number(),
+    boosts: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsBoost; }))),
     awards: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsAward; }))),
 });

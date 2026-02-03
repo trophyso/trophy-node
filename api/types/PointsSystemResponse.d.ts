@@ -13,6 +13,8 @@ export interface PointsSystemResponse {
     badgeUrl?: string;
     /** The maximum number of points a user can be awarded in this points system */
     maxPoints?: number;
+    /** Array of active global boosts for this points system. */
+    boosts: TrophyApi.PointsBoost[];
     /** Array of active triggers for this points system. */
     triggers: TrophyApi.PointsTriggerResponse[];
 }

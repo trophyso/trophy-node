@@ -12,4 +12,6 @@ export interface PointsAward {
     /** The user's total points after this award occurred. */
     total?: number;
     trigger?: TrophyApi.PointsTrigger;
+    /** Array of points boosts that applied to this award. */
+    boosts?: TrophyApi.PointsBoost[];
 }
