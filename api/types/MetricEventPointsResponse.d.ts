@@ -3,7 +3,7 @@
  */
 import * as TrophyApi from "..";
 /**
- * Points system response for metric events. Unlike GetUserPointsResponse, this does not include boosts at the system level - boosts are only included in individual awards when they were applied.
+ * Points system response for metric events.
  */
 export interface MetricEventPointsResponse {
     /** The ID of the points system */
