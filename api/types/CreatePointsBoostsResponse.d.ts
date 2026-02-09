@@ -3,9 +3,11 @@
  */
 import * as TrophyApi from "..";
 /**
- * Response containing any issues encountered while creating points boosts.
+ * Response containing created boosts and any issues encountered while creating points boosts.
  */
 export interface CreatePointsBoostsResponse {
+    /** Array of successfully created boosts. */
+    created: TrophyApi.CreatedPointsBoost[];
     /** Array of issues encountered during boost creation. */
     issues: TrophyApi.BulkInsertIssue[];
 }

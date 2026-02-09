@@ -81,6 +81,8 @@ __exportStar(require("./UserLeaderboardResponse"), exports);
 __exportStar(require("./UserLeaderboardResponseWithHistory"), exports);
 __exportStar(require("./WebhookUserLeaderboardResponse"), exports);
 __exportStar(require("./CreateStreakFreezesResponse"), exports);
+__exportStar(require("./CreatedPointsBoostRounding"), exports);
+__exportStar(require("./CreatedPointsBoost"), exports);
 __exportStar(require("./CreatePointsBoostsResponse"), exports);
 __exportStar(require("./DeletePointsBoostsResponse"), exports);
 __exportStar(require("./RestoreStreaksResponse"), exports);

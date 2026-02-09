@@ -7,6 +7,6 @@ export interface WebhooksPointsChangedPayload {
     type: "points.changed";
     /** The user whose points increased or decreased. */
     user: TrophyApi.User;
-    /** The user's points after the event. */
-    points: TrophyApi.GetUserPointsResponse;
+    /** The user's points after the event (includes added amount for this event). */
+    points: TrophyApi.MetricEventPointsResponse;
 }

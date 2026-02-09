@@ -35,9 +35,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePointsBoostsResponse = void 0;
+exports.CreatedPointsBoost = void 0;
 const core = __importStar(require("../../core"));
-exports.CreatePointsBoostsResponse = core.serialization.object({
-    created: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).CreatedPointsBoost; }))),
-    issues: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).BulkInsertIssue; }))),
+exports.CreatedPointsBoost = core.serialization.object({
+    id: core.serialization.string(),
+    name: core.serialization.string(),
+    start: core.serialization.string(),
+    end: core.serialization.string().optional(),
+    multiplier: core.serialization.number(),
+    rounding: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).CreatedPointsBoostRounding; })),
+    userId: core.serialization.string(),
 });

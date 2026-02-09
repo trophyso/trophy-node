@@ -9,6 +9,6 @@ export declare namespace WebhooksPointsChangedPayload {
     interface Raw {
         type: "points.changed";
         user: serializers.User.Raw;
-        points: serializers.GetUserPointsResponse.Raw;
+        points: serializers.MetricEventPointsResponse.Raw;
     }
 }

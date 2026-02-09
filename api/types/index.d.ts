@@ -65,6 +65,8 @@ export * from "./UserLeaderboardResponse";
 export * from "./UserLeaderboardResponseWithHistory";
 export * from "./WebhookUserLeaderboardResponse";
 export * from "./CreateStreakFreezesResponse";
+export * from "./CreatedPointsBoostRounding";
+export * from "./CreatedPointsBoost";
 export * from "./CreatePointsBoostsResponse";
 export * from "./DeletePointsBoostsResponse";
 export * from "./RestoreStreaksResponse";

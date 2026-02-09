@@ -7,6 +7,7 @@ import * as core from "../../core";
 export declare const CreatePointsBoostsResponse: core.serialization.ObjectSchema<serializers.CreatePointsBoostsResponse.Raw, TrophyApi.CreatePointsBoostsResponse>;
 export declare namespace CreatePointsBoostsResponse {
     interface Raw {
+        created: serializers.CreatedPointsBoost.Raw[];
         issues: serializers.BulkInsertIssue.Raw[];
     }
 }
