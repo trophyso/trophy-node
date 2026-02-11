@@ -153,7 +153,7 @@ class Boosts {
         });
     }
     /**
-     * Archive multiple points boosts by ID. This sets the boost status to 'archived' rather than deleting the records.
+     * Archive multiple points boosts by ID.
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
      *

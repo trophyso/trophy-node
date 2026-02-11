@@ -7,7 +7,7 @@
  */
 export interface BoostsBatchDeleteRequest {
     /**
-     * Array of boost UUIDs to archive. Maximum 1000 IDs per request.
+     * A list of up to 100 boost IDs.
      */
     ids?: string | string[];
 }

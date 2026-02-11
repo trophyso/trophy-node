@@ -44,7 +44,7 @@ export declare class Boosts {
      */
     create(request: TrophyApi.admin.points.CreatePointsBoostsRequest, requestOptions?: Boosts.RequestOptions): Promise<TrophyApi.CreatePointsBoostsResponse>;
     /**
-     * Archive multiple points boosts by ID. This sets the boost status to 'archived' rather than deleting the records.
+     * Archive multiple points boosts by ID.
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
      *
