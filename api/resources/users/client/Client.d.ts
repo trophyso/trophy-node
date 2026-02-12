@@ -183,7 +183,7 @@ export declare class Users {
      */
     points(id: string, key: string, request?: TrophyApi.UsersPointsRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.GetUserPointsResponse>;
     /**
-     * Get active points boosts for a user in a specific points system. Returns both global boosts the user is eligible for and user-specific boosts. Only currently active boosts are included (not scheduled or finished).
+     * Get active points boosts for a user in a specific points system. Returns both global boosts the user is eligible for and user-specific boosts.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
