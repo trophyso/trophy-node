@@ -9,6 +9,7 @@ export declare namespace CreatedPointsBoost {
     interface Raw {
         id: string;
         name: string;
+        status: serializers.CreatedPointsBoostStatus.Raw;
         start: string;
         end?: string | null;
         multiplier: number;

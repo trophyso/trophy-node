@@ -30,7 +30,7 @@ export declare class Points {
      */
     summary(key: string, request?: TrophyApi.PointsSummaryRequest, requestOptions?: Points.RequestOptions): Promise<TrophyApi.PointsSummaryResponse>;
     /**
-     * Get a points system with all its triggers.
+     * Get a points system with its triggers.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}
      *
@@ -38,4 +38,15 @@ export declare class Points {
      *     await trophyApi.points.system("points-system-key")
      */
     system(key: string, requestOptions?: Points.RequestOptions): Promise<TrophyApi.PointsSystemResponse>;
+    /**
+     * Get all global boosts for a points system. Finished boosts are excluded by default.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     *
+     * @example
+     *     await trophyApi.points.boosts("points-system-key", {
+     *         includeFinished: true
+     *     })
+     */
+    boosts(key: string, request?: TrophyApi.PointsBoostsRequest, requestOptions?: Points.RequestOptions): Promise<TrophyApi.PointsBoost[]>;
 }

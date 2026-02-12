@@ -9,6 +9,7 @@ export declare namespace PointsBoostWebhookPayload {
     interface Raw {
         id: string;
         name: string;
+        status: serializers.PointsBoostWebhookPayloadStatus.Raw;
         pointsSystemId: string;
         pointsSystemKey: string;
         pointsSystemName: string;

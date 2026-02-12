@@ -40,6 +40,7 @@ const core = __importStar(require("../../core"));
 exports.CreatedPointsBoost = core.serialization.object({
     id: core.serialization.string(),
     name: core.serialization.string(),
+    status: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).CreatedPointsBoostStatus; })),
     start: core.serialization.string(),
     end: core.serialization.string().optional(),
     multiplier: core.serialization.number(),

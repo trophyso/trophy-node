@@ -50,16 +50,23 @@ class Leaderboards {
         this._options = _options;
     }
     /**
-     * Get all active leaderboards for your organization.
+     * Get all leaderboards for your organization. Finished leaderboards are excluded by default.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.leaderboards.all()
+     *     await trophyApi.leaderboards.all({
+     *         includeFinished: true
+     *     })
      */
-    all(requestOptions) {
+    all(request = {}, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
+            const { includeFinished } = request;
+            const _queryParams = {};
+            if (includeFinished != null) {
+                _queryParams["includeFinished"] = includeFinished.toString();
+            }
             const _response = yield core.fetcher({
                 url: (0, url_join_1.default)(((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Production)
                     .api, "leaderboards"),
@@ -69,6 +76,7 @@ class Leaderboards {
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
+                queryParameters: _queryParams,
                 timeoutMs: (requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
                 maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
             });

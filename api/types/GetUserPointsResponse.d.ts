@@ -17,8 +17,6 @@ export interface GetUserPointsResponse {
     maxPoints?: number;
     /** The user's total points */
     total: number;
-    /** Array of active points boosts applicable to this user for this points system. */
-    boosts: TrophyApi.PointsBoost[];
     /** Array of trigger awards that added points. */
     awards: TrophyApi.PointsAward[];
 }

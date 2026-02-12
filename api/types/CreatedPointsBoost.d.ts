@@ -10,6 +10,8 @@ export interface CreatedPointsBoost {
     id: string;
     /** The name of the boost. */
     name: string;
+    /** The status of the boost. */
+    status: TrophyApi.CreatedPointsBoostStatus;
     /** The start date (YYYY-MM-DD). */
     start: string;
     /** The end date (YYYY-MM-DD) or null if no end date. */

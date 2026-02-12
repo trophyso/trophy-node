@@ -38,10 +38,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PointsBoost = void 0;
 const core = __importStar(require("../../core"));
 exports.PointsBoost = core.serialization.object({
-    id: core.serialization.string().optional(),
-    name: core.serialization.string().optional(),
-    start: core.serialization.string().optional(),
+    id: core.serialization.string(),
+    name: core.serialization.string(),
+    status: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsBoostStatus; })),
+    start: core.serialization.string(),
     end: core.serialization.string().optional(),
-    multiplier: core.serialization.number().optional(),
-    rounding: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsBoostRounding; })).optional(),
+    multiplier: core.serialization.number(),
+    rounding: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsBoostRounding; })),
 });

@@ -35,17 +35,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PointsBoostWebhookPayload = void 0;
-const core = __importStar(require("../../core"));
-exports.PointsBoostWebhookPayload = core.serialization.object({
-    id: core.serialization.string(),
-    name: core.serialization.string(),
-    status: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsBoostWebhookPayloadStatus; })),
-    pointsSystemId: core.serialization.string(),
-    pointsSystemKey: core.serialization.string(),
-    pointsSystemName: core.serialization.string(),
-    start: core.serialization.string(),
-    end: core.serialization.string().optional(),
-    multiplier: core.serialization.number(),
-    rounding: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsBoostWebhookPayloadRounding; })),
-});
+exports.Response = void 0;
+const core = __importStar(require("../../../../core"));
+exports.Response = core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../..")))).PointsBoost; })));

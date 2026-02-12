@@ -18,14 +18,16 @@ export declare class Leaderboards {
     protected readonly _options: Leaderboards.Options;
     constructor(_options: Leaderboards.Options);
     /**
-     * Get all active leaderboards for your organization.
+     * Get all leaderboards for your organization. Finished leaderboards are excluded by default.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.leaderboards.all()
+     *     await trophyApi.leaderboards.all({
+     *         includeFinished: true
+     *     })
      */
-    all(requestOptions?: Leaderboards.RequestOptions): Promise<TrophyApi.LeaderboardsAllResponseItem[]>;
+    all(request?: TrophyApi.LeaderboardsAllRequest, requestOptions?: Leaderboards.RequestOptions): Promise<TrophyApi.LeaderboardsAllResponseItem[]>;
     /**
      * Get a specific leaderboard by its key.
      * @throws {@link TrophyApi.UnauthorizedError}

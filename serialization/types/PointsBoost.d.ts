@@ -7,11 +7,12 @@ import * as core from "../../core";
 export declare const PointsBoost: core.serialization.ObjectSchema<serializers.PointsBoost.Raw, TrophyApi.PointsBoost>;
 export declare namespace PointsBoost {
     interface Raw {
-        id?: string | null;
-        name?: string | null;
-        start?: string | null;
+        id: string;
+        name: string;
+        status: serializers.PointsBoostStatus.Raw;
+        start: string;
         end?: string | null;
-        multiplier?: number | null;
-        rounding?: serializers.PointsBoostRounding.Raw | null;
+        multiplier: number;
+        rounding: serializers.PointsBoostRounding.Raw;
     }
 }

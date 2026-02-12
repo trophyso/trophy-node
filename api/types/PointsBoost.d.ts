@@ -4,15 +4,17 @@
 import * as TrophyApi from "..";
 export interface PointsBoost {
     /** The ID of the points boost */
-    id?: string;
+    id: string;
     /** The name of the points boost */
-    name?: string;
+    name: string;
+    /** The status of the points boost */
+    status: TrophyApi.PointsBoostStatus;
     /** The start date of the points boost */
-    start?: string;
+    start: string;
     /** The end date of the points boost */
     end?: string;
     /** The multiplier of the points boost */
-    multiplier?: number;
+    multiplier: number;
     /** The rounding method of the points boost */
-    rounding?: TrophyApi.PointsBoostRounding;
+    rounding: TrophyApi.PointsBoostRounding;
 }

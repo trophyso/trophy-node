@@ -183,6 +183,16 @@ export declare class Users {
      */
     points(id: string, key: string, request?: TrophyApi.UsersPointsRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.GetUserPointsResponse>;
     /**
+     * Get active points boosts for a user in a specific points system. Returns both global boosts the user is eligible for and user-specific boosts. Only currently active boosts are included (not scheduled or finished).
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.users.pointsBoosts("userId", "points-system-key")
+     */
+    pointsBoosts(id: string, key: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.PointsBoost[]>;
+    /**
      * Get a summary of points awards over time for a user for a specific points system.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}

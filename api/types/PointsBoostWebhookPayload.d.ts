@@ -10,6 +10,8 @@ export interface PointsBoostWebhookPayload {
     id: string;
     /** The name of the points boost. */
     name: string;
+    /** The status of the points boost. */
+    status: TrophyApi.PointsBoostWebhookPayloadStatus;
     /** The ID of the points system this boost applies to. */
     pointsSystemId: string;
     /** The key of the points system this boost applies to. */
