@@ -4,7 +4,7 @@
 /**
  * Response containing the count of archived points boosts.
  */
-export interface DeletePointsBoostsResponse {
+export interface ArchivePointsBoostsResponse {
     /** The number of boosts that were archived. */
     archivedCount: number;
 }

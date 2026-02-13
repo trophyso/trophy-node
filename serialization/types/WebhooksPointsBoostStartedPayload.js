@@ -40,5 +40,5 @@ const core = __importStar(require("../../core"));
 exports.WebhooksPointsBoostStartedPayload = core.serialization.object({
     type: core.serialization.stringLiteral("points.boost_started"),
     timestamp: core.serialization.date(),
-    pointsBoost: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsBoostWebhookPayload; })),
+    boost: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsBoostWebhookPayload; })),
 });

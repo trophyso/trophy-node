@@ -158,9 +158,9 @@ class Boosts {
      * @throws {@link TrophyApi.UnauthorizedError}
      *
      * @example
-     *     await trophyApi.admin.points.boosts.batchDelete({})
+     *     await trophyApi.admin.points.boosts.batchArchive({})
      */
-    batchDelete(request = {}, requestOptions) {
+    batchArchive(request = {}, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
             const { ids } = request;
@@ -187,7 +187,7 @@ class Boosts {
                 maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
             });
             if (_response.ok) {
-                return yield serializers.DeletePointsBoostsResponse.parseOrThrow(_response.body, {
+                return yield serializers.ArchivePointsBoostsResponse.parseOrThrow(_response.body, {
                     unrecognizedObjectKeys: "passthrough",
                     allowUnrecognizedUnionMembers: true,
                     allowUnrecognizedEnumValues: true,
@@ -233,14 +233,14 @@ class Boosts {
         });
     }
     /**
-     * Archive a points boost by ID. This sets the boost status to 'archived' rather than deleting the record.
+     * Archive a points boost by ID.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}
      *
      * @example
-     *     await trophyApi.admin.points.boosts.delete("id")
+     *     await trophyApi.admin.points.boosts.archive("id")
      */
-    delete(id, requestOptions) {
+    archive(id, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
             const _response = yield core.fetcher({

@@ -49,16 +49,16 @@ export declare class Boosts {
      * @throws {@link TrophyApi.UnauthorizedError}
      *
      * @example
-     *     await trophyApi.admin.points.boosts.batchDelete({})
+     *     await trophyApi.admin.points.boosts.batchArchive({})
      */
-    batchDelete(request?: TrophyApi.admin.points.BoostsBatchDeleteRequest, requestOptions?: Boosts.RequestOptions): Promise<TrophyApi.DeletePointsBoostsResponse>;
+    batchArchive(request?: TrophyApi.admin.points.BoostsBatchArchiveRequest, requestOptions?: Boosts.RequestOptions): Promise<TrophyApi.ArchivePointsBoostsResponse>;
     /**
-     * Archive a points boost by ID. This sets the boost status to 'archived' rather than deleting the record.
+     * Archive a points boost by ID.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}
      *
      * @example
-     *     await trophyApi.admin.points.boosts.delete("id")
+     *     await trophyApi.admin.points.boosts.archive("id")
      */
-    delete(id: string, requestOptions?: Boosts.RequestOptions): Promise<void>;
+    archive(id: string, requestOptions?: Boosts.RequestOptions): Promise<void>;
 }

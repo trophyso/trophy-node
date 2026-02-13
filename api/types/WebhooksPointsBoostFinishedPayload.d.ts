@@ -8,5 +8,5 @@ export interface WebhooksPointsBoostFinishedPayload {
     /** When the event occurred (ISO 8601). */
     timestamp: Date;
     /** The points boost that finished. */
-    pointsBoost: TrophyApi.PointsBoostWebhookPayload;
+    boost: TrophyApi.PointsBoostWebhookPayload;
 }

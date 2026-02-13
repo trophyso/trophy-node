@@ -75,7 +75,7 @@ export * from "./CreatedPointsBoostStatus";
 export * from "./CreatedPointsBoostRounding";
 export * from "./CreatedPointsBoost";
 export * from "./CreatePointsBoostsResponse";
-export * from "./DeletePointsBoostsResponse";
+export * from "./ArchivePointsBoostsResponse";
 export * from "./RestoreStreaksResponse";
 export * from "./BulkInsertIssueLevel";
 export * from "./BulkInsertIssue";

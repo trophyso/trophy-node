@@ -5,7 +5,7 @@
  * @example
  *     {}
  */
-export interface BoostsBatchDeleteRequest {
+export interface BoostsBatchArchiveRequest {
     /**
      * A list of up to 100 boost IDs.
      */

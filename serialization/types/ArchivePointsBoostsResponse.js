@@ -26,8 +26,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeletePointsBoostsResponse = void 0;
+exports.ArchivePointsBoostsResponse = void 0;
 const core = __importStar(require("../../core"));
-exports.DeletePointsBoostsResponse = core.serialization.object({
+exports.ArchivePointsBoostsResponse = core.serialization.object({
     archivedCount: core.serialization.number(),
 });

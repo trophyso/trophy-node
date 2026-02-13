@@ -4,8 +4,8 @@
 import * as serializers from "..";
 import * as TrophyApi from "../../api";
 import * as core from "../../core";
-export declare const DeletePointsBoostsResponse: core.serialization.ObjectSchema<serializers.DeletePointsBoostsResponse.Raw, TrophyApi.DeletePointsBoostsResponse>;
-export declare namespace DeletePointsBoostsResponse {
+export declare const ArchivePointsBoostsResponse: core.serialization.ObjectSchema<serializers.ArchivePointsBoostsResponse.Raw, TrophyApi.ArchivePointsBoostsResponse>;
+export declare namespace ArchivePointsBoostsResponse {
     interface Raw {
         archivedCount: number;
     }

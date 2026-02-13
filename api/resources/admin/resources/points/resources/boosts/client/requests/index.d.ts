@@ -1,2 +1,2 @@
 export { CreatePointsBoostsRequest } from "./CreatePointsBoostsRequest";
-export { BoostsBatchDeleteRequest } from "./BoostsBatchDeleteRequest";
+export { BoostsBatchArchiveRequest } from "./BoostsBatchArchiveRequest";

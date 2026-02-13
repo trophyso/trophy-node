@@ -91,7 +91,7 @@ __exportStar(require("./CreatedPointsBoostStatus"), exports);
 __exportStar(require("./CreatedPointsBoostRounding"), exports);
 __exportStar(require("./CreatedPointsBoost"), exports);
 __exportStar(require("./CreatePointsBoostsResponse"), exports);
-__exportStar(require("./DeletePointsBoostsResponse"), exports);
+__exportStar(require("./ArchivePointsBoostsResponse"), exports);
 __exportStar(require("./RestoreStreaksResponse"), exports);
 __exportStar(require("./BulkInsertIssueLevel"), exports);
 __exportStar(require("./BulkInsertIssue"), exports);

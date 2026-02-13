@@ -9,6 +9,6 @@ export declare namespace WebhooksPointsBoostFinishedPayload {
     interface Raw {
         type: "points.boost_finished";
         timestamp: string;
-        pointsBoost: serializers.PointsBoostWebhookPayload.Raw;
+        boost: serializers.PointsBoostWebhookPayload.Raw;
     }
 }
