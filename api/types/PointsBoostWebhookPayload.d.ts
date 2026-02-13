@@ -12,6 +12,8 @@ export interface PointsBoostWebhookPayload {
     name: string;
     /** The status of the points boost. */
     status: TrophyApi.PointsBoostWebhookPayloadStatus;
+    /** The customer-facing user ID that the boost is scoped to, or null for global boosts. */
+    userId?: string;
     /** The ID of the points system this boost applies to. */
     pointsSystemId: string;
     /** The key of the points system this boost applies to. */

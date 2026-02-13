@@ -41,6 +41,7 @@ exports.PointsBoostWebhookPayload = core.serialization.object({
     id: core.serialization.string(),
     name: core.serialization.string(),
     status: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsBoostWebhookPayloadStatus; })),
+    userId: core.serialization.string().optional(),
     pointsSystemId: core.serialization.string(),
     pointsSystemKey: core.serialization.string(),
     pointsSystemName: core.serialization.string(),
