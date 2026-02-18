@@ -12,5 +12,6 @@ export declare namespace PointsAward {
         date?: string | null;
         total?: number | null;
         trigger?: serializers.PointsTrigger.Raw | null;
+        boosts?: serializers.PointsBoost.Raw[] | null;
     }
 }

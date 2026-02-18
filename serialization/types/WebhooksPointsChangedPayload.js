@@ -40,5 +40,5 @@ const core = __importStar(require("../../core"));
 exports.WebhooksPointsChangedPayload = core.serialization.object({
     type: core.serialization.stringLiteral("points.changed"),
     user: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).User; })),
-    points: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).GetUserPointsResponse; })),
+    points: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).MetricEventPointsResponse; })),
 });
