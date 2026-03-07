@@ -14,6 +14,7 @@ export declare namespace AchievementResponse {
         badgeUrl?: string | null;
         key?: string | null;
         streakLength?: number | null;
+        achievementIds?: string[] | null;
         metricId?: string | null;
         metricValue?: number | null;
         metricName?: string | null;

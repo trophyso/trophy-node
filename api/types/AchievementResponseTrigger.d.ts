@@ -4,9 +4,10 @@
 /**
  * The trigger of the achievement.
  */
-export declare type AchievementResponseTrigger = "metric" | "streak" | "api";
+export declare type AchievementResponseTrigger = "metric" | "streak" | "api" | "achievement";
 export declare const AchievementResponseTrigger: {
     readonly Metric: "metric";
     readonly Streak: "streak";
     readonly Api: "api";
+    readonly Achievement: "achievement";
 };
