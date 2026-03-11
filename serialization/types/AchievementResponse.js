@@ -45,6 +45,7 @@ exports.AchievementResponse = core.serialization.object({
     badgeUrl: core.serialization.string().optional(),
     key: core.serialization.string().optional(),
     streakLength: core.serialization.number().optional(),
+    achievementIds: core.serialization.list(core.serialization.string()).optional(),
     metricId: core.serialization.string().optional(),
     metricValue: core.serialization.number().optional(),
     metricName: core.serialization.string().optional(),

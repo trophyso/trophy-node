@@ -17,6 +17,8 @@ export interface AchievementResponse {
     key?: string;
     /** The length of the streak required to complete the achievement (only applicable if trigger = 'streak') */
     streakLength?: number;
+    /** The IDs of the prerequisite achievements that must be completed to earn this achievement (only applicable if trigger = 'achievement') */
+    achievementIds?: string[];
     /** The ID of the metric associated with this achievement (only applicable if trigger = 'metric') */
     metricId?: string;
     /** The value of the metric required to complete the achievement (only applicable if trigger = 'metric') */

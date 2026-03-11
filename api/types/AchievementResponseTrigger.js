@@ -8,4 +8,5 @@ exports.AchievementResponseTrigger = {
     Metric: "metric",
     Streak: "streak",
     Api: "api",
+    Achievement: "achievement",
 };
