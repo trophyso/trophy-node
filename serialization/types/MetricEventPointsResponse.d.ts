@@ -14,6 +14,7 @@ export declare namespace MetricEventPointsResponse {
         badgeUrl?: string | null;
         maxPoints?: number | null;
         total: number;
+        level?: serializers.PointsLevel.Raw | null;
         added: number;
         awards: serializers.PointsAward.Raw[];
     }

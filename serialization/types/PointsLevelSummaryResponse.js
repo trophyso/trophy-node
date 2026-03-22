@@ -35,16 +35,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetUserPointsResponse = void 0;
+exports.PointsLevelSummaryResponse = void 0;
 const core = __importStar(require("../../core"));
-exports.GetUserPointsResponse = core.serialization.object({
-    id: core.serialization.string(),
-    key: core.serialization.string(),
-    name: core.serialization.string(),
-    description: core.serialization.string().optional(),
-    badgeUrl: core.serialization.string().optional(),
-    maxPoints: core.serialization.number().optional(),
-    total: core.serialization.number(),
-    level: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsLevel; })).optional(),
-    awards: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsAward; }))),
-});
+exports.PointsLevelSummaryResponse = core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsLevelSummaryResponseItem; })));

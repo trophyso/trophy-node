@@ -17,6 +17,8 @@ export interface GetUserPointsResponse {
     maxPoints?: number;
     /** The user's total points */
     total: number;
+    /** The user's current level in this points system, or null if no levels are configured or the user hasn't reached any level yet. */
+    level?: TrophyApi.PointsLevel;
     /** Array of trigger awards that added points. */
     awards: TrophyApi.PointsAward[];
 }

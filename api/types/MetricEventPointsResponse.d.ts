@@ -20,6 +20,8 @@ export interface MetricEventPointsResponse {
     maxPoints?: number;
     /** The user's total points */
     total: number;
+    /** The user's current level in this points system, or null if no levels are configured or the user hasn't reached any level yet. */
+    level?: TrophyApi.PointsLevel;
     /** The points added by this event. */
     added: number;
     /** Array of trigger awards that added points. */

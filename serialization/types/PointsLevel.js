@@ -25,26 +25,14 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetUserPointsResponse = void 0;
+exports.PointsLevel = void 0;
 const core = __importStar(require("../../core"));
-exports.GetUserPointsResponse = core.serialization.object({
+exports.PointsLevel = core.serialization.object({
     id: core.serialization.string(),
     key: core.serialization.string(),
     name: core.serialization.string(),
-    description: core.serialization.string().optional(),
+    description: core.serialization.string(),
     badgeUrl: core.serialization.string().optional(),
-    maxPoints: core.serialization.number().optional(),
-    total: core.serialization.number(),
-    level: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsLevel; })).optional(),
-    awards: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsAward; }))),
+    points: core.serialization.number(),
 });

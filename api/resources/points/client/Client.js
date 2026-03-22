@@ -280,5 +280,151 @@ class Points {
             }
         });
     }
+    /**
+     * Get all levels for a points system.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     *
+     * @example
+     *     await trophyApi.points.levels("points-system-key")
+     */
+    levels(key, requestOptions) {
+        var _a;
+        return __awaiter(this, void 0, void 0, function* () {
+            const _response = yield core.fetcher({
+                url: (0, url_join_1.default)(((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Production)
+                    .api, `points/${key}/levels`),
+                method: "GET",
+                headers: {
+                    "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
+                    "X-Fern-Language": "JavaScript",
+                },
+                contentType: "application/json",
+                timeoutMs: (requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
+                maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
+            });
+            if (_response.ok) {
+                return yield serializers.points.levels.Response.parseOrThrow(_response.body, {
+                    unrecognizedObjectKeys: "passthrough",
+                    allowUnrecognizedUnionMembers: true,
+                    allowUnrecognizedEnumValues: true,
+                    breadcrumbsPrefix: ["response"],
+                });
+            }
+            if (_response.error.reason === "status-code") {
+                switch (_response.error.statusCode) {
+                    case 401:
+                        throw new TrophyApi.UnauthorizedError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 404:
+                        throw new TrophyApi.NotFoundError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    default:
+                        throw new errors.TrophyApiError({
+                            statusCode: _response.error.statusCode,
+                            body: _response.error.body,
+                        });
+                }
+            }
+            switch (_response.error.reason) {
+                case "non-json":
+                    throw new errors.TrophyApiError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.rawBody,
+                    });
+                case "timeout":
+                    throw new errors.TrophyApiTimeoutError();
+                case "unknown":
+                    throw new errors.TrophyApiError({
+                        message: _response.error.errorMessage,
+                    });
+            }
+        });
+    }
+    /**
+     * Get a breakdown of the number of users at each level in a points system.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.points.levelSummary("points-system-key")
+     */
+    levelSummary(key, requestOptions) {
+        var _a;
+        return __awaiter(this, void 0, void 0, function* () {
+            const _response = yield core.fetcher({
+                url: (0, url_join_1.default)(((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Production)
+                    .api, `points/${key}/level-summary`),
+                method: "GET",
+                headers: {
+                    "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
+                    "X-Fern-Language": "JavaScript",
+                },
+                contentType: "application/json",
+                timeoutMs: (requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
+                maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
+            });
+            if (_response.ok) {
+                return yield serializers.PointsLevelSummaryResponse.parseOrThrow(_response.body, {
+                    unrecognizedObjectKeys: "passthrough",
+                    allowUnrecognizedUnionMembers: true,
+                    allowUnrecognizedEnumValues: true,
+                    breadcrumbsPrefix: ["response"],
+                });
+            }
+            if (_response.error.reason === "status-code") {
+                switch (_response.error.statusCode) {
+                    case 401:
+                        throw new TrophyApi.UnauthorizedError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 404:
+                        throw new TrophyApi.NotFoundError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 422:
+                        throw new TrophyApi.UnprocessableEntityError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    default:
+                        throw new errors.TrophyApiError({
+                            statusCode: _response.error.statusCode,
+                            body: _response.error.body,
+                        });
+                }
+            }
+            switch (_response.error.reason) {
+                case "non-json":
+                    throw new errors.TrophyApiError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.rawBody,
+                    });
+                case "timeout":
+                    throw new errors.TrophyApiTimeoutError();
+                case "unknown":
+                    throw new errors.TrophyApiError({
+                        message: _response.error.errorMessage,
+                    });
+            }
+        });
+    }
 }
 exports.Points = Points;

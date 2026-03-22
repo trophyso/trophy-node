@@ -45,6 +45,7 @@ exports.MetricEventPointsResponse = core.serialization.object({
     badgeUrl: core.serialization.string().optional(),
     maxPoints: core.serialization.number().optional(),
     total: core.serialization.number(),
+    level: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsLevel; })).optional(),
     added: core.serialization.number(),
     awards: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsAward; }))),
 });
