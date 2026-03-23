@@ -6,13 +6,7 @@ import * as TrophyApi from "../../api";
 import * as core from "../../core";
 export declare const MetricEventPointsResponse: core.serialization.ObjectSchema<serializers.MetricEventPointsResponse.Raw, TrophyApi.MetricEventPointsResponse>;
 export declare namespace MetricEventPointsResponse {
-    interface Raw {
-        id: string;
-        key: string;
-        name: string;
-        description?: string | null;
-        badgeUrl?: string | null;
-        maxPoints?: number | null;
+    interface Raw extends serializers.PointsResponse.Raw {
         total: number;
         level?: serializers.PointsLevel.Raw | null;
         added: number;

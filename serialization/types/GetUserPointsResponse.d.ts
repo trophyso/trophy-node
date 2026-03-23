@@ -6,13 +6,7 @@ import * as TrophyApi from "../../api";
 import * as core from "../../core";
 export declare const GetUserPointsResponse: core.serialization.ObjectSchema<serializers.GetUserPointsResponse.Raw, TrophyApi.GetUserPointsResponse>;
 export declare namespace GetUserPointsResponse {
-    interface Raw {
-        id: string;
-        key: string;
-        name: string;
-        description?: string | null;
-        badgeUrl?: string | null;
-        maxPoints?: number | null;
+    interface Raw extends serializers.PointsResponse.Raw {
         total: number;
         level?: serializers.PointsLevel.Raw | null;
         awards: serializers.PointsAward.Raw[];

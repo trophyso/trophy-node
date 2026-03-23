@@ -35,13 +35,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MetricEventPointsResponse = void 0;
+exports.WebhooksPointsLevelChangedPayload = void 0;
 const core = __importStar(require("../../core"));
-exports.MetricEventPointsResponse = core.serialization
-    .object({
-    total: core.serialization.number(),
-    level: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsLevel; })).optional(),
-    added: core.serialization.number(),
-    awards: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsAward; }))),
-})
-    .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsResponse; })));
+exports.WebhooksPointsLevelChangedPayload = core.serialization.object({
+    type: core.serialization.stringLiteral("points.level_changed"),
+    user: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).User; })),
+    points: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).WebhooksPointsLevelChangedPayloadPoints; })),
+    previousLevel: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsLevel; })).optional(),
+    newLevel: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsLevel; })).optional(),
+});
