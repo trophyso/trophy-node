@@ -49,4 +49,23 @@ export declare class Points {
      *     })
      */
     boosts(key: string, request?: TrophyApi.PointsBoostsRequest, requestOptions?: Points.RequestOptions): Promise<TrophyApi.PointsBoost[]>;
+    /**
+     * Get all levels for a points system.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     *
+     * @example
+     *     await trophyApi.points.levels("points-system-key")
+     */
+    levels(key: string, requestOptions?: Points.RequestOptions): Promise<TrophyApi.PointsLevel[]>;
+    /**
+     * Get a breakdown of the number of users at each level in a points system.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.points.levelSummary("points-system-key")
+     */
+    levelSummary(key: string, requestOptions?: Points.RequestOptions): Promise<TrophyApi.PointsLevelSummaryResponse>;
 }

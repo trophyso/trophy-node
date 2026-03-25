@@ -3,23 +3,13 @@
  */
 import * as TrophyApi from "..";
 /**
- * Points system response for metric events.
+ * Points system response for metric events and achievement completions.
  */
-export interface MetricEventPointsResponse {
-    /** The ID of the points system */
-    id: string;
-    /** The key of the points system */
-    key: string;
-    /** The name of the points system */
-    name: string;
-    /** The description of the points system */
-    description?: string;
-    /** The URL of the badge image for the points system */
-    badgeUrl?: string;
-    /** The maximum number of points a user can be awarded in this points system */
-    maxPoints?: number;
+export interface MetricEventPointsResponse extends TrophyApi.PointsResponse {
     /** The user's total points */
     total: number;
+    /** The user's new level, included only when the level changed as a result of this event. */
+    level?: TrophyApi.PointsLevel;
     /** The points added by this event. */
     added: number;
     /** Array of trigger awards that added points. */
