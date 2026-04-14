@@ -29,8 +29,10 @@ export interface PointsTriggerResponse {
     timeInterval?: number;
     /** User attribute filters that must be met for this trigger to activate. Only present if the trigger has user attribute filters configured. */
     userAttributes?: TrophyApi.PointsTriggerResponseUserAttributesItem[];
-    /** Event attribute filter that must be met for this trigger to activate. Only present if the trigger has an event filter configured. */
+    /** Deprecated. Event attribute filter that must be met for this trigger to activate. Only present if the trigger has an event filter configured. */
     eventAttribute?: TrophyApi.PointsTriggerResponseEventAttribute;
+    /** Event attribute filters that must be met for this trigger to activate. Present when the trigger uses one or more event attribute filters. */
+    eventAttributes?: TrophyApi.PointsTriggerResponseEventAttributesItem[];
     /** The date and time the trigger was created, in ISO 8601 format. */
     created: Date;
     /** The date and time the trigger was last updated, in ISO 8601 format. */

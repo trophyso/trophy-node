@@ -21,6 +21,7 @@ export declare namespace PointsTriggerResponse {
         timeInterval?: number | null;
         userAttributes?: serializers.PointsTriggerResponseUserAttributesItem.Raw[] | null;
         eventAttribute?: serializers.PointsTriggerResponseEventAttribute.Raw | null;
+        eventAttributes?: serializers.PointsTriggerResponseEventAttributesItem.Raw[] | null;
         created: string;
         updated: string;
     }

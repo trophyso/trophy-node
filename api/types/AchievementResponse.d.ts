@@ -27,6 +27,8 @@ export interface AchievementResponse {
     metricName?: string;
     /** User attribute filters that must be met for this achievement to be completed. Only present if the achievement has user attribute filters configured. */
     userAttributes?: TrophyApi.AchievementResponseUserAttributesItem[];
-    /** Event attribute filter that must be met for this achievement to be completed. Only present if the achievement has an event filter configured. */
+    /** Deprecated. Event attribute filter that must be met for this achievement to be completed. Only present if the achievement has an event filter configured. */
     eventAttribute?: TrophyApi.AchievementResponseEventAttribute;
+    /** Event attribute filters that must be met for this achievement to be completed. Present when the achievement uses one or more event attribute filters. */
+    eventAttributes?: TrophyApi.AchievementResponseEventAttributesItem[];
 }

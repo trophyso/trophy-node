@@ -56,6 +56,9 @@ exports.PointsTriggerResponse = core.serialization.object({
     eventAttribute: core.serialization
         .lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsTriggerResponseEventAttribute; }))
         .optional(),
+    eventAttributes: core.serialization
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsTriggerResponseEventAttributesItem; })))
+        .optional(),
     created: core.serialization.date(),
     updated: core.serialization.date(),
 });

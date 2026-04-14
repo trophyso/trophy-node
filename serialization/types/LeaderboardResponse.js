@@ -43,6 +43,9 @@ exports.LeaderboardResponse = core.serialization.object({
     key: core.serialization.string(),
     rankBy: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).LeaderboardResponseRankBy; })),
     breakdownAttribute: core.serialization.string().optional(),
+    breakdownAttributes: core.serialization
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).LeaderboardResponseBreakdownAttributesItem; })))
+        .optional(),
     metricKey: core.serialization.string().optional(),
     metricName: core.serialization.string().optional(),
     pointsSystemKey: core.serialization.string().optional(),

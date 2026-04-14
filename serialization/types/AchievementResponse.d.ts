@@ -20,5 +20,6 @@ export declare namespace AchievementResponse {
         metricName?: string | null;
         userAttributes?: serializers.AchievementResponseUserAttributesItem.Raw[] | null;
         eventAttribute?: serializers.AchievementResponseEventAttribute.Raw | null;
+        eventAttributes?: serializers.AchievementResponseEventAttributesItem.Raw[] | null;
     }
 }

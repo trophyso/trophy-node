@@ -14,8 +14,10 @@ export interface LeaderboardResponse {
     key: string;
     /** What the leaderboard ranks by. */
     rankBy: TrophyApi.LeaderboardResponseRankBy;
-    /** The key of the attribute to break down this leaderboard by. */
+    /** Deprecated. The key of the attribute to break down this leaderboard by. */
     breakdownAttribute?: string;
+    /** The user attribute keys and names that define this leaderboard breakdown. Present when the leaderboard is broken down by one or more user attributes. */
+    breakdownAttributes?: TrophyApi.LeaderboardResponseBreakdownAttributesItem[];
     /** The key of the metric to rank by, if rankBy is 'metric'. */
     metricKey?: string;
     /** The name of the metric to rank by, if rankBy is 'metric'. */

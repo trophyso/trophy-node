@@ -55,4 +55,7 @@ exports.AchievementResponse = core.serialization.object({
     eventAttribute: core.serialization
         .lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementResponseEventAttribute; }))
         .optional(),
+    eventAttributes: core.serialization
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementResponseEventAttributesItem; })))
+        .optional(),
 });
