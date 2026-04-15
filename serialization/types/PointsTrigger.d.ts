@@ -7,15 +7,22 @@ import * as core from "../../core";
 export declare const PointsTrigger: core.serialization.ObjectSchema<serializers.PointsTrigger.Raw, TrophyApi.PointsTrigger>;
 export declare namespace PointsTrigger {
     interface Raw {
-        id?: string | null;
-        type?: serializers.PointsTriggerType.Raw | null;
-        points?: number | null;
+        id: string;
+        type: serializers.PointsTriggerType.Raw;
+        points: number;
+        status: serializers.PointsTriggerStatus.Raw;
+        achievementId?: string | null;
+        metricId?: string | null;
         metricName?: string | null;
         metricThreshold?: number | null;
         streakLengthThreshold?: number | null;
         achievementName?: string | null;
         timeUnit?: serializers.PointsTriggerTimeUnit.Raw | null;
         timeInterval?: number | null;
+        userAttributes: serializers.PointsTriggerUserAttributesItem.Raw[];
+        eventAttribute?: serializers.PointsTriggerEventAttribute.Raw | null;
         eventAttributes?: serializers.PointsTriggerEventAttributesItem.Raw[] | null;
+        created: string;
+        updated: string;
     }
 }

@@ -26,6 +26,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PointsTriggerResponseStatus = void 0;
+exports.PointsTriggerEventAttribute = void 0;
 const core = __importStar(require("../../core"));
-exports.PointsTriggerResponseStatus = core.serialization.enum_(["active", "archived"]);
+exports.PointsTriggerEventAttribute = core.serialization.object({
+    key: core.serialization.string(),
+    value: core.serialization.string(),
+});

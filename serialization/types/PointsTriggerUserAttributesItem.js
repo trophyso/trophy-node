@@ -26,9 +26,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PointsTriggerResponseUserAttributesItem = void 0;
+exports.PointsTriggerUserAttributesItem = void 0;
 const core = __importStar(require("../../core"));
-exports.PointsTriggerResponseUserAttributesItem = core.serialization.object({
+exports.PointsTriggerUserAttributesItem = core.serialization.object({
     key: core.serialization.string(),
     value: core.serialization.string(),
 });
