@@ -26,9 +26,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LeaderboardResponseBreakdownAttributesItem = void 0;
+exports.MetricEventLeaderboardResponseBreakdownAttributeValuesItem = void 0;
 const core = __importStar(require("../../core"));
-exports.LeaderboardResponseBreakdownAttributesItem = core.serialization.object({
+exports.MetricEventLeaderboardResponseBreakdownAttributeValuesItem = core.serialization.object({
     key: core.serialization.string(),
-    name: core.serialization.string(),
+    value: core.serialization.string(),
 });

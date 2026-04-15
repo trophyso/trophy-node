@@ -43,14 +43,15 @@ exports.MetricEventLeaderboardResponse = core.serialization.object({
     previousRank: core.serialization.number().optional(),
     threshold: core.serialization.number(),
     breakdownAttributeValue: core.serialization.string().optional(),
+    breakdownAttributeValues: core.serialization
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).MetricEventLeaderboardResponseBreakdownAttributeValuesItem; })))
+        .optional(),
     id: core.serialization.string(),
     name: core.serialization.string(),
     key: core.serialization.string(),
     rankBy: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).LeaderboardResponseRankBy; })),
     breakdownAttribute: core.serialization.string().optional(),
-    breakdownAttributes: core.serialization
-        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).LeaderboardResponseBreakdownAttributesItem; })))
-        .optional(),
+    breakdownAttributes: core.serialization.list(core.serialization.string()).optional(),
     metricKey: core.serialization.string().optional(),
     metricName: core.serialization.string().optional(),
     pointsSystemKey: core.serialization.string().optional(),
