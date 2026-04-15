@@ -23,6 +23,7 @@ export * from "./StreakResponseStreakHistoryItem";
 export * from "./StreakResponse";
 export * from "./PointsTriggerType";
 export * from "./PointsTriggerTimeUnit";
+export * from "./PointsTriggerEventAttributesItem";
 export * from "./PointsTrigger";
 export * from "./PointsAward";
 export * from "./PointsBoostStatus";

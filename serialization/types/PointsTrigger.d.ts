@@ -16,5 +16,6 @@ export declare namespace PointsTrigger {
         achievementName?: string | null;
         timeUnit?: serializers.PointsTriggerTimeUnit.Raw | null;
         timeInterval?: number | null;
+        eventAttributes?: serializers.PointsTriggerEventAttributesItem.Raw[] | null;
     }
 }

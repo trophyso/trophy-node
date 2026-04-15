@@ -47,4 +47,7 @@ exports.PointsTrigger = core.serialization.object({
     achievementName: core.serialization.string().optional(),
     timeUnit: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsTriggerTimeUnit; })).optional(),
     timeInterval: core.serialization.number().optional(),
+    eventAttributes: core.serialization
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PointsTriggerEventAttributesItem; })))
+        .optional(),
 });

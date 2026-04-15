@@ -39,6 +39,7 @@ __exportStar(require("./StreakResponseStreakHistoryItem"), exports);
 __exportStar(require("./StreakResponse"), exports);
 __exportStar(require("./PointsTriggerType"), exports);
 __exportStar(require("./PointsTriggerTimeUnit"), exports);
+__exportStar(require("./PointsTriggerEventAttributesItem"), exports);
 __exportStar(require("./PointsTrigger"), exports);
 __exportStar(require("./PointsAward"), exports);
 __exportStar(require("./PointsBoostStatus"), exports);
