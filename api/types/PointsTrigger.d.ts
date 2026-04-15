@@ -21,6 +21,6 @@ export interface PointsTrigger {
     timeUnit?: TrophyApi.PointsTriggerTimeUnit;
     /** If the trigger has type 'time', the numer of units of timeUnit after which to award points */
     timeInterval?: number;
-    /** If the trigger has type 'metric', the event attributes that must match for the trigger to award points. Null when the trigger is metric-based and has no event attribute filters. Omitted for non-metric triggers. */
+    /** If the trigger has type 'metric', the event attributes that must match for the trigger to award points. Empty when the trigger is metric-based and has no event attribute filters. Omitted for non-metric triggers. */
     eventAttributes?: TrophyApi.PointsTriggerEventAttributesItem[];
 }
