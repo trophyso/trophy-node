@@ -25,10 +25,10 @@ export interface AchievementResponse {
     metricValue?: number;
     /** The name of the metric associated with this achievement (only applicable if trigger = 'metric') */
     metricName?: string;
-    /** User attribute filters that must be met for this achievement to be completed. Only present if the achievement has user attribute filters configured. */
-    userAttributes?: TrophyApi.AchievementResponseUserAttributesItem[];
+    /** User attribute filters that must be met for this achievement to be completed. */
+    userAttributes: TrophyApi.AchievementResponseUserAttributesItem[];
     /** Deprecated. Event attribute filter that must be met for this achievement to be completed. Only present if the achievement has an event filter configured. */
     eventAttribute?: TrophyApi.AchievementResponseEventAttribute;
-    /** Event attribute filters that must be met for this achievement to be completed. Present when the achievement uses one or more event attribute filters. */
+    /** Event attribute filters that must be met for this achievement to be completed. Omitted for non-metric achievements. */
     eventAttributes?: TrophyApi.AchievementResponseEventAttributesItem[];
 }

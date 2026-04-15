@@ -19,7 +19,7 @@ export declare namespace PointsTriggerResponse {
         achievementName?: string | null;
         timeUnit?: serializers.PointsTriggerResponseTimeUnit.Raw | null;
         timeInterval?: number | null;
-        userAttributes?: serializers.PointsTriggerResponseUserAttributesItem.Raw[] | null;
+        userAttributes: serializers.PointsTriggerResponseUserAttributesItem.Raw[];
         eventAttribute?: serializers.PointsTriggerResponseEventAttribute.Raw | null;
         eventAttributes?: serializers.PointsTriggerResponseEventAttributesItem.Raw[] | null;
         created: string;

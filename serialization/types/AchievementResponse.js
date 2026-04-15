@@ -49,9 +49,7 @@ exports.AchievementResponse = core.serialization.object({
     metricId: core.serialization.string().optional(),
     metricValue: core.serialization.number().optional(),
     metricName: core.serialization.string().optional(),
-    userAttributes: core.serialization
-        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementResponseUserAttributesItem; })))
-        .optional(),
+    userAttributes: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementResponseUserAttributesItem; }))),
     eventAttribute: core.serialization
         .lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AchievementResponseEventAttribute; }))
         .optional(),
