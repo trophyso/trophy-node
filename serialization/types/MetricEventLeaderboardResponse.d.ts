@@ -18,7 +18,7 @@ export declare namespace MetricEventLeaderboardResponse {
         key: string;
         rankBy: serializers.LeaderboardResponseRankBy.Raw;
         breakdownAttribute?: string | null;
-        breakdownAttributes?: string[] | null;
+        breakdownAttributes: string[];
         metricKey?: string | null;
         metricName?: string | null;
         pointsSystemKey?: string | null;
