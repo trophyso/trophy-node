@@ -26,6 +26,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PointsTriggerResponseType = void 0;
+exports.MetricEventLeaderboardResponseBreakdownAttributeValuesItem = void 0;
 const core = __importStar(require("../../core"));
-exports.PointsTriggerResponseType = core.serialization.enum_(["metric", "achievement", "streak", "time", "user_creation"]);
+exports.MetricEventLeaderboardResponseBreakdownAttributeValuesItem = core.serialization.object({
+    key: core.serialization.string(),
+    value: core.serialization.string(),
+});

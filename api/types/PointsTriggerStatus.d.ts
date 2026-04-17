@@ -4,8 +4,9 @@
 /**
  * The status of the trigger.
  */
-export declare type PointsTriggerResponseStatus = "active" | "archived";
-export declare const PointsTriggerResponseStatus: {
+export declare type PointsTriggerStatus = "active" | "inactive" | "archived";
+export declare const PointsTriggerStatus: {
     readonly Active: "active";
+    readonly Inactive: "inactive";
     readonly Archived: "archived";
 };

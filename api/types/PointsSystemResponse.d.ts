@@ -14,5 +14,5 @@ export interface PointsSystemResponse {
     /** The maximum number of points a user can be awarded in this points system */
     maxPoints?: number;
     /** Array of active triggers for this points system. */
-    triggers: TrophyApi.PointsTriggerResponse[];
+    triggers: TrophyApi.PointsTrigger[];
 }

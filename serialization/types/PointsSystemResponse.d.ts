@@ -12,6 +12,6 @@ export declare namespace PointsSystemResponse {
         description?: string | null;
         badgeUrl?: string | null;
         maxPoints?: number | null;
-        triggers: serializers.PointsTriggerResponse.Raw[];
+        triggers: serializers.PointsTrigger.Raw[];
     }
 }

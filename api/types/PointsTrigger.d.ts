@@ -4,11 +4,17 @@
 import * as TrophyApi from "..";
 export interface PointsTrigger {
     /** The ID of the trigger */
-    id?: string;
+    id: string;
     /** The type of trigger */
-    type?: TrophyApi.PointsTriggerType;
+    type: TrophyApi.PointsTriggerType;
     /** The points awarded by this trigger. */
-    points?: number;
+    points: number;
+    /** The status of the trigger. */
+    status: TrophyApi.PointsTriggerStatus;
+    /** The unique ID of the achievement associated with this trigger, if the trigger is an achievement. */
+    achievementId?: string;
+    /** The unique ID of the metric associated with this trigger, if the trigger is a metric. */
+    metricId?: string;
     /** If the trigger has type 'metric', the name of the metric */
     metricName?: string;
     /** If the trigger has type 'metric', the threshold of the metric that triggers the points */
@@ -21,4 +27,14 @@ export interface PointsTrigger {
     timeUnit?: TrophyApi.PointsTriggerTimeUnit;
     /** If the trigger has type 'time', the numer of units of timeUnit after which to award points */
     timeInterval?: number;
+    /** User attribute filters that must be met for this trigger to award points. Empty when the trigger has no user attribute filters configured. */
+    userAttributes: TrophyApi.PointsTriggerUserAttributesItem[];
+    /** Deprecated. Event attribute filter that must be met for this trigger to award points. Only present if the trigger has an event filter configured. */
+    eventAttribute?: TrophyApi.PointsTriggerEventAttribute;
+    /** If the trigger has type 'metric', the event attributes that must match for the trigger to award points. Empty when the trigger is metric-based and has no event attribute filters. Omitted for non-metric triggers. */
+    eventAttributes?: TrophyApi.PointsTriggerEventAttributesItem[];
+    /** The date and time the trigger was created, in ISO 8601 format. */
+    created: Date;
+    /** The date and time the trigger was last updated, in ISO 8601 format. */
+    updated: Date;
 }

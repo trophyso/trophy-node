@@ -11,8 +11,10 @@ export interface MetricEventLeaderboardResponse {
     previousRank?: number;
     /** The minimum value required to enter the leaderboard according to its current rankings. */
     threshold: number;
-    /** For leaderboards with a breakdown attribute, the value of the attribute for the user. */
+    /** Deprecated. For leaderboards with a single breakdown attribute, the value of that attribute for the user. */
     breakdownAttributeValue?: string;
+    /** For leaderboards with breakdown attributes, the user's values for each breakdown attribute. */
+    breakdownAttributeValues?: TrophyApi.MetricEventLeaderboardResponseBreakdownAttributeValuesItem[];
     /** The unique ID of the leaderboard. */
     id: string;
     /** The user-facing name of the leaderboard. */
@@ -21,8 +23,10 @@ export interface MetricEventLeaderboardResponse {
     key: string;
     /** What the leaderboard ranks by. */
     rankBy: TrophyApi.LeaderboardResponseRankBy;
-    /** The key of the attribute to break down this leaderboard by. */
+    /** Deprecated. The key of the attribute to break down this leaderboard by. */
     breakdownAttribute?: string;
+    /** The user attribute keys that this leaderboard is broken down by. */
+    breakdownAttributes: string[];
     /** The key of the metric to rank by, if rankBy is 'metric'. */
     metricKey?: string;
     /** The name of the metric to rank by, if rankBy is 'metric'. */

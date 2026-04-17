@@ -18,7 +18,8 @@ export declare namespace AchievementResponse {
         metricId?: string | null;
         metricValue?: number | null;
         metricName?: string | null;
-        userAttributes?: serializers.AchievementResponseUserAttributesItem.Raw[] | null;
+        userAttributes: serializers.AchievementResponseUserAttributesItem.Raw[];
         eventAttribute?: serializers.AchievementResponseEventAttribute.Raw | null;
+        eventAttributes?: serializers.AchievementResponseEventAttributesItem.Raw[] | null;
     }
 }

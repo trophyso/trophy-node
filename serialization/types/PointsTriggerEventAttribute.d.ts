@@ -4,8 +4,8 @@
 import * as serializers from "..";
 import * as TrophyApi from "../../api";
 import * as core from "../../core";
-export declare const PointsTriggerResponseEventAttribute: core.serialization.ObjectSchema<serializers.PointsTriggerResponseEventAttribute.Raw, TrophyApi.PointsTriggerResponseEventAttribute>;
-export declare namespace PointsTriggerResponseEventAttribute {
+export declare const PointsTriggerEventAttribute: core.serialization.ObjectSchema<serializers.PointsTriggerEventAttribute.Raw, TrophyApi.PointsTriggerEventAttribute>;
+export declare namespace PointsTriggerEventAttribute {
     interface Raw {
         key: string;
         value: string;

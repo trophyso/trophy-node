@@ -26,6 +26,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PointsTriggerResponseTimeUnit = void 0;
+exports.PointsTriggerEventAttribute = void 0;
 const core = __importStar(require("../../core"));
-exports.PointsTriggerResponseTimeUnit = core.serialization.enum_(["hour", "day"]);
+exports.PointsTriggerEventAttribute = core.serialization.object({
+    key: core.serialization.string(),
+    value: core.serialization.string(),
+});
