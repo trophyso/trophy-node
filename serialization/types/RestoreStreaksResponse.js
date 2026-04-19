@@ -39,5 +39,5 @@ exports.RestoreStreaksResponse = void 0;
 const core = __importStar(require("../../core"));
 exports.RestoreStreaksResponse = core.serialization.object({
     restoredUsers: core.serialization.list(core.serialization.string()),
-    issues: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).BulkInsertIssue; }))),
+    issues: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AdminIssue; }))),
 });

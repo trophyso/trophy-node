@@ -7,6 +7,6 @@ import * as core from "../../core";
 export declare const CreateStreakFreezesResponse: core.serialization.ObjectSchema<serializers.CreateStreakFreezesResponse.Raw, TrophyApi.CreateStreakFreezesResponse>;
 export declare namespace CreateStreakFreezesResponse {
     interface Raw {
-        issues: serializers.BulkInsertIssue.Raw[];
+        issues: serializers.AdminIssue.Raw[];
     }
 }

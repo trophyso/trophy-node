@@ -24,6 +24,6 @@ import * as TrophyApi from "../../../../../../../..";
 export interface CreatePointsBoostsRequest {
     /** The key of the points system to create boosts for. */
     systemKey: string;
-    /** Array of boosts to create. Maximum 1,000 boosts per request. */
+    /** Array of boosts to create. Maximum 100 boosts per request. */
     boosts: TrophyApi.admin.points.CreatePointsBoostsRequestBoostsItem[];
 }

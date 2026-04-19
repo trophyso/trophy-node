@@ -39,5 +39,5 @@ exports.CreatePointsBoostsResponse = void 0;
 const core = __importStar(require("../../core"));
 exports.CreatePointsBoostsResponse = core.serialization.object({
     created: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).CreatedPointsBoost; }))),
-    issues: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).BulkInsertIssue; }))),
+    issues: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AdminIssue; }))),
 });

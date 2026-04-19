@@ -8,6 +8,6 @@ export declare const CreatePointsBoostsResponse: core.serialization.ObjectSchema
 export declare namespace CreatePointsBoostsResponse {
     interface Raw {
         created: serializers.CreatedPointsBoost.Raw[];
-        issues: serializers.BulkInsertIssue.Raw[];
+        issues: serializers.AdminIssue.Raw[];
     }
 }

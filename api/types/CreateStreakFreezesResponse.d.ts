@@ -7,5 +7,5 @@ import * as TrophyApi from "..";
  */
 export interface CreateStreakFreezesResponse {
     /** Array of issues encountered during freeze creation. */
-    issues: TrophyApi.BulkInsertIssue[];
+    issues: TrophyApi.AdminIssue[];
 }

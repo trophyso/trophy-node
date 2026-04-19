@@ -4,7 +4,7 @@
 import * as serializers from "..";
 import * as TrophyApi from "../../api";
 import * as core from "../../core";
-export declare const BulkInsertIssueLevel: core.serialization.Schema<serializers.BulkInsertIssueLevel.Raw, TrophyApi.BulkInsertIssueLevel>;
-export declare namespace BulkInsertIssueLevel {
+export declare const AdminIssueSeverity: core.serialization.Schema<serializers.AdminIssueSeverity.Raw, TrophyApi.AdminIssueSeverity>;
+export declare namespace AdminIssueSeverity {
     type Raw = "error" | "warning";
 }

@@ -76,17 +76,6 @@ class Freezes {
      *                 userId: "user-123"
      *             }]
      *     })
-     *
-     * @example
-     *     await trophyApi.admin.streaks.freezes.create({
-     *         freezes: [{
-     *                 userId: "user-123"
-     *             }, {
-     *                 userId: "user-456"
-     *             }, {
-     *                 userId: "user-123"
-     *             }]
-     *     })
      */
     create(request, requestOptions) {
         var _a;

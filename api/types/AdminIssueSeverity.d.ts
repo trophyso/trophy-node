@@ -4,8 +4,8 @@
 /**
  * The severity level of the issue.
  */
-export declare type BulkInsertIssueLevel = "error" | "warning";
-export declare const BulkInsertIssueLevel: {
+export declare type AdminIssueSeverity = "error" | "warning";
+export declare const AdminIssueSeverity: {
     readonly Error: "error";
     readonly Warning: "warning";
 };
