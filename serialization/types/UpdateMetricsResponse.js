@@ -35,11 +35,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PatchMetricRequestItem = void 0;
+exports.UpdateMetricsResponse = void 0;
 const core = __importStar(require("../../core"));
-exports.PatchMetricRequestItem = core.serialization.object({
-    id: core.serialization.string(),
-    name: core.serialization.string().optional(),
-    unitType: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PatchMetricRequestItemUnitType; })).optional(),
-    units: core.serialization.string().optional(),
+exports.UpdateMetricsResponse = core.serialization.object({
+    updated: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).CreatedMetric; }))),
+    issues: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AdminIssue; }))),
 });

@@ -3,15 +3,15 @@
  */
 import * as TrophyApi from "..";
 /**
- * A metric patch object. `id` is required; `name`, `unitType`, and `units` are optional. `key` cannot be changed through this endpoint.
+ * A metric update object. `id` is required; `name`, `unitType`, and `units` are optional. `key` cannot be changed through this endpoint.
  */
-export interface PatchMetricRequestItem {
-    /** The UUID of the metric to patch. */
+export interface UpdateMetricRequestItem {
+    /** The UUID of the metric to update. */
     id: string;
     /** The updated metric name. */
     name?: string;
     /** The updated metric unit type. */
-    unitType?: TrophyApi.PatchMetricRequestItemUnitType;
+    unitType?: TrophyApi.UpdateMetricRequestItemUnitType;
     /** The updated units value. For `unitType: currency`, this must be a supported `MetricCurrency` code such as `USD`. */
     units?: string;
 }

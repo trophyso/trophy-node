@@ -289,33 +289,33 @@ class Metrics {
         });
     }
     /**
-     * Patch metrics in bulk by ID.
+     * Update metrics in bulk by ID.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.admin.metrics.patch([{
+     *     await trophyApi.admin.metrics.update([{
      *             id: "550e8400-e29b-41d4-a716-446655440000",
      *             name: "Invites Completed",
      *             units: "invites"
      *         }, {
      *             id: "550e8400-e29b-41d4-a716-446655440001",
-     *             unitType: TrophyApi.PatchMetricRequestItemUnitType.Number,
+     *             unitType: TrophyApi.UpdateMetricRequestItemUnitType.Number,
      *             units: "dollars"
      *         }])
      *
      * @example
-     *     await trophyApi.admin.metrics.patch([{
+     *     await trophyApi.admin.metrics.update([{
      *             id: "550e8400-e29b-41d4-a716-446655440000",
      *             name: "Invites Completed",
      *             units: "invites"
      *         }, {
      *             id: "550e8400-e29b-41d4-a716-446655440001",
-     *             unitType: TrophyApi.PatchMetricRequestItemUnitType.Number,
+     *             unitType: TrophyApi.UpdateMetricRequestItemUnitType.Number,
      *             units: "dollars"
      *         }])
      */
-    patch(request, requestOptions) {
+    update(request, requestOptions) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
             const _response = yield core.fetcher({
@@ -327,12 +327,12 @@ class Metrics {
                     "X-Fern-Language": "JavaScript",
                 },
                 contentType: "application/json",
-                body: yield serializers.PatchMetricsRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
+                body: yield serializers.UpdateMetricsRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
                 timeoutMs: (requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
                 maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
             });
             if (_response.ok) {
-                return yield serializers.PatchMetricsResponse.parseOrThrow(_response.body, {
+                return yield serializers.UpdateMetricsResponse.parseOrThrow(_response.body, {
                     unrecognizedObjectKeys: "passthrough",
                     allowUnrecognizedUnionMembers: true,
                     allowUnrecognizedEnumValues: true,

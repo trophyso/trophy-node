@@ -4,8 +4,8 @@
 import * as serializers from "..";
 import * as TrophyApi from "../../api";
 import * as core from "../../core";
-export declare const PatchMetricsResponse: core.serialization.ObjectSchema<serializers.PatchMetricsResponse.Raw, TrophyApi.PatchMetricsResponse>;
-export declare namespace PatchMetricsResponse {
+export declare const UpdateMetricsResponse: core.serialization.ObjectSchema<serializers.UpdateMetricsResponse.Raw, TrophyApi.UpdateMetricsResponse>;
+export declare namespace UpdateMetricsResponse {
     interface Raw {
         updated: serializers.CreatedMetric.Raw[];
         issues: serializers.AdminIssue.Raw[];

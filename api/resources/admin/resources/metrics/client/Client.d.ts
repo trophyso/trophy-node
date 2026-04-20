@@ -56,33 +56,33 @@ export declare class Metrics {
      */
     delete(request?: TrophyApi.admin.MetricsDeleteRequest, requestOptions?: Metrics.RequestOptions): Promise<TrophyApi.DeleteMetricsResponse>;
     /**
-     * Patch metrics in bulk by ID.
+     * Update metrics in bulk by ID.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.admin.metrics.patch([{
+     *     await trophyApi.admin.metrics.update([{
      *             id: "550e8400-e29b-41d4-a716-446655440000",
      *             name: "Invites Completed",
      *             units: "invites"
      *         }, {
      *             id: "550e8400-e29b-41d4-a716-446655440001",
-     *             unitType: TrophyApi.PatchMetricRequestItemUnitType.Number,
+     *             unitType: TrophyApi.UpdateMetricRequestItemUnitType.Number,
      *             units: "dollars"
      *         }])
      *
      * @example
-     *     await trophyApi.admin.metrics.patch([{
+     *     await trophyApi.admin.metrics.update([{
      *             id: "550e8400-e29b-41d4-a716-446655440000",
      *             name: "Invites Completed",
      *             units: "invites"
      *         }, {
      *             id: "550e8400-e29b-41d4-a716-446655440001",
-     *             unitType: TrophyApi.PatchMetricRequestItemUnitType.Number,
+     *             unitType: TrophyApi.UpdateMetricRequestItemUnitType.Number,
      *             units: "dollars"
      *         }])
      */
-    patch(request: TrophyApi.PatchMetricsRequest, requestOptions?: Metrics.RequestOptions): Promise<TrophyApi.PatchMetricsResponse>;
+    update(request: TrophyApi.UpdateMetricsRequest, requestOptions?: Metrics.RequestOptions): Promise<TrophyApi.UpdateMetricsResponse>;
     /**
      * Get a metric by ID.
      * @throws {@link TrophyApi.UnauthorizedError}

@@ -4,8 +4,8 @@
 /**
  * The updated metric unit type.
  */
-export declare type PatchMetricRequestItemUnitType = "number" | "currency";
-export declare const PatchMetricRequestItemUnitType: {
+export declare type UpdateMetricRequestItemUnitType = "number" | "currency";
+export declare const UpdateMetricRequestItemUnitType: {
     readonly Number: "number";
     readonly Currency: "currency";
 };

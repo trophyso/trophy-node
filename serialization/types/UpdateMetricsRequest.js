@@ -35,6 +35,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PatchMetricsRequest = void 0;
+exports.UpdateMetricsRequest = void 0;
 const core = __importStar(require("../../core"));
-exports.PatchMetricsRequest = core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).PatchMetricRequestItem; })));
+exports.UpdateMetricsRequest = core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).UpdateMetricRequestItem; })));

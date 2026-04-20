@@ -4,12 +4,12 @@
 import * as serializers from "..";
 import * as TrophyApi from "../../api";
 import * as core from "../../core";
-export declare const PatchMetricRequestItem: core.serialization.ObjectSchema<serializers.PatchMetricRequestItem.Raw, TrophyApi.PatchMetricRequestItem>;
-export declare namespace PatchMetricRequestItem {
+export declare const UpdateMetricRequestItem: core.serialization.ObjectSchema<serializers.UpdateMetricRequestItem.Raw, TrophyApi.UpdateMetricRequestItem>;
+export declare namespace UpdateMetricRequestItem {
     interface Raw {
         id: string;
         name?: string | null;
-        unitType?: serializers.PatchMetricRequestItemUnitType.Raw | null;
+        unitType?: serializers.UpdateMetricRequestItemUnitType.Raw | null;
         units?: string | null;
     }
 }
