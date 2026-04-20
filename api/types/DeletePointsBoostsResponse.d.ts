@@ -3,10 +3,10 @@
  */
 import * as TrophyApi from "..";
 /**
- * Response containing the points boosts that were archived and any per-item issues.
+ * Response containing the points boosts that were deleted and any per-item issues.
  */
 export interface DeletePointsBoostsResponse {
-    /** Array of archived points boosts represented by ID. */
+    /** Array of deleted points boosts represented by ID. */
     deleted: TrophyApi.DeletedResource[];
     /** Array of issues encountered during boost archival. */
     issues: TrophyApi.AdminIssue[];
