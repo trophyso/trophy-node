@@ -8,6 +8,6 @@ export declare const RestoreStreaksResponse: core.serialization.ObjectSchema<ser
 export declare namespace RestoreStreaksResponse {
     interface Raw {
         restoredUsers: string[];
-        issues: serializers.BulkInsertIssue.Raw[];
+        issues: serializers.AdminIssue.Raw[];
     }
 }

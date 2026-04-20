@@ -9,5 +9,5 @@ export interface CreatePointsBoostsResponse {
     /** Array of successfully created boosts. */
     created: TrophyApi.CreatedPointsBoost[];
     /** Array of issues encountered during boost creation. */
-    issues: TrophyApi.BulkInsertIssue[];
+    issues: TrophyApi.AdminIssue[];
 }

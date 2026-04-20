@@ -187,7 +187,7 @@ class Boosts {
                 maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
             });
             if (_response.ok) {
-                return yield serializers.ArchivePointsBoostsResponse.parseOrThrow(_response.body, {
+                return yield serializers.DeletePointsBoostsResponse.parseOrThrow(_response.body, {
                     unrecognizedObjectKeys: "passthrough",
                     allowUnrecognizedUnionMembers: true,
                     allowUnrecognizedEnumValues: true,
@@ -234,6 +234,7 @@ class Boosts {
     }
     /**
      * Archive a points boost by ID.
+     * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}
      *
@@ -256,10 +257,22 @@ class Boosts {
                 maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
             });
             if (_response.ok) {
-                return;
+                return yield serializers.DeletePointsBoostsResponse.parseOrThrow(_response.body, {
+                    unrecognizedObjectKeys: "passthrough",
+                    allowUnrecognizedUnionMembers: true,
+                    allowUnrecognizedEnumValues: true,
+                    breadcrumbsPrefix: ["response"],
+                });
             }
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
+                    case 400:
+                        throw new TrophyApi.BadRequestError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
                     case 401:
                         throw new TrophyApi.UnauthorizedError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
