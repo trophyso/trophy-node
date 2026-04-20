@@ -4,6 +4,7 @@
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
 import { Streaks } from "../resources/streaks/client/Client";
+import { Metrics } from "../resources/metrics/client/Client";
 import { Points } from "../resources/points/client/Client";
 export declare namespace Admin {
     interface Options {
@@ -20,6 +21,8 @@ export declare class Admin {
     constructor(_options: Admin.Options);
     protected _streaks: Streaks | undefined;
     get streaks(): Streaks;
+    protected _metrics: Metrics | undefined;
+    get metrics(): Metrics;
     protected _points: Points | undefined;
     get points(): Points;
 }

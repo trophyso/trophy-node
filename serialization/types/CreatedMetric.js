@@ -35,12 +35,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MetricResponse = void 0;
+exports.CreatedMetric = void 0;
 const core = __importStar(require("../../core"));
-exports.MetricResponse = core.serialization.object({
+exports.CreatedMetric = core.serialization.object({
     id: core.serialization.string(),
-    key: core.serialization.string(),
     name: core.serialization.string(),
-    current: core.serialization.number(),
-    achievements: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).UserAchievementResponse; }))),
+    key: core.serialization.string(),
+    unitType: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).CreatedMetricUnitType; })),
+    units: core.serialization.string(),
 });
