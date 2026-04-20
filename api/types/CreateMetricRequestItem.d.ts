@@ -8,7 +8,7 @@ import * as TrophyApi from "..";
 export interface CreateMetricRequestItem {
     /** The metric name. */
     name: string;
-    /** The metric key. */
+    /** The metric key. Only alphanumeric characters, hyphens, and underscores are permitted. */
     key: string;
     /** The metric unit type. Defaults to `number`. */
     unitType?: TrophyApi.CreateMetricRequestItemUnitType;
