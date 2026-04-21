@@ -8,6 +8,6 @@ import * as TrophyApi from "..";
 export interface DeletePointsBoostsResponse {
     /** Array of deleted points boosts represented by ID. */
     deleted: TrophyApi.DeletedResource[];
-    /** Array of issues encountered during boost archival. */
+    /** Array of issues encountered during boost deletion. */
     issues: TrophyApi.AdminIssue[];
 }
