@@ -10,12 +10,12 @@ export declare namespace CreateLeaderboardRequestItem {
         name: string;
         key: string;
         description?: string | null;
-        status: serializers.CreateLeaderboardRequestItemStatus.Raw;
+        status?: serializers.CreateLeaderboardRequestItemStatus.Raw | null;
         rankBy: serializers.CreateLeaderboardRequestItemRankBy.Raw;
         metricId?: string | null;
         pointsSystemId?: string | null;
         maxParticipants?: number | null;
-        start: string;
+        start?: string | null;
         end?: string | null;
         breakdownAttributes?: string[] | null;
         runUnit?: serializers.CreateLeaderboardRequestItemRunUnit.Raw | null;

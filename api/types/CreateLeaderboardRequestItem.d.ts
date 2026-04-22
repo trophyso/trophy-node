@@ -12,8 +12,8 @@ export interface CreateLeaderboardRequestItem {
     key: string;
     /** The leaderboard description. */
     description?: string;
-    /** The initial status. `active` behaves the same as activating or scheduling the leaderboard in the dashboard. */
-    status: TrophyApi.CreateLeaderboardRequestItemStatus;
+    /** The initial status. Defaults to `inactive`. `active` behaves the same as activating or scheduling the leaderboard in the dashboard. */
+    status?: TrophyApi.CreateLeaderboardRequestItemStatus;
     /** What the leaderboard ranks by. */
     rankBy: TrophyApi.CreateLeaderboardRequestItemRankBy;
     /** The metric ID to rank by when `rankBy` is `metric`. */
@@ -22,8 +22,8 @@ export interface CreateLeaderboardRequestItem {
     pointsSystemId?: string;
     /** The maximum number of participants. Defaults to `1000`. */
     maxParticipants?: number;
-    /** The leaderboard start date in YYYY-MM-DD format. */
-    start: string;
+    /** The leaderboard start date in YYYY-MM-DD format. Defaults to today when omitted. */
+    start?: string;
     /** The optional leaderboard end date in YYYY-MM-DD format. */
     end?: string;
     /** The UUIDs of the active user attributes to break rankings down by. */
