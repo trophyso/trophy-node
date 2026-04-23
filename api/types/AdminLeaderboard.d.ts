@@ -14,7 +14,7 @@ export interface AdminLeaderboard {
     key: string;
     /** The leaderboard description. */
     description?: string;
-    /** The current status of the leaderboard. A leaderboard in the `active` status is either scheduled (if the start date is in the future), finished (if the end date is in the past), or live. */
+    /** The current user-facing status of the leaderboard. */
     status: TrophyApi.AdminLeaderboardStatus;
     /** What the leaderboard ranks by. */
     rankBy: TrophyApi.AdminLeaderboardRankBy;

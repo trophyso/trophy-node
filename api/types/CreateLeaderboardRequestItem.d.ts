@@ -12,7 +12,7 @@ export interface CreateLeaderboardRequestItem {
     key: string;
     /** The leaderboard description. */
     description?: string;
-    /** The initial status. Defaults to `inactive`. `active` behaves the same as activating or scheduling the leaderboard in the dashboard. */
+    /** The initial user-facing status. Defaults to `inactive`. Use `scheduled` for leaderboards that should be active in the future and `finished` only when creating a leaderboard with an end date in the past. */
     status?: TrophyApi.CreateLeaderboardRequestItemStatus;
     /** What the leaderboard ranks by. */
     rankBy: TrophyApi.CreateLeaderboardRequestItemRankBy;

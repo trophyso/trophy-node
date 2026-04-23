@@ -5,6 +5,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateLeaderboardRequestItemStatus = void 0;
 exports.UpdateLeaderboardRequestItemStatus = {
-    Active: "active",
     Inactive: "inactive",
+    Active: "active",
+    Scheduled: "scheduled",
+    Finished: "finished",
 };

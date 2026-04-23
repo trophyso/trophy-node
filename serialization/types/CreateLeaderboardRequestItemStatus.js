@@ -28,4 +28,4 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateLeaderboardRequestItemStatus = void 0;
 const core = __importStar(require("../../core"));
-exports.CreateLeaderboardRequestItemStatus = core.serialization.enum_(["active", "inactive"]);
+exports.CreateLeaderboardRequestItemStatus = core.serialization.enum_(["inactive", "active", "scheduled", "finished"]);

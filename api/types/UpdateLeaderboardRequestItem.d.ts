@@ -14,7 +14,7 @@ export interface UpdateLeaderboardRequestItem {
     key?: string;
     /** The updated leaderboard description. */
     description?: string;
-    /** The target status. `active` and `inactive` behave the same as the dashboard activate, schedule, deactivate, and finish actions. */
+    /** The target user-facing status. `scheduled` activates a leaderboard whose start date is in the future. `finished` behaves like the dashboard finish action. */
     status?: TrophyApi.UpdateLeaderboardRequestItemStatus;
     /** The updated ranking criterion. This can only be changed while the leaderboard is inactive. */
     rankBy?: TrophyApi.UpdateLeaderboardRequestItemRankBy;

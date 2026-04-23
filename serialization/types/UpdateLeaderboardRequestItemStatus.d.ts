@@ -6,5 +6,5 @@ import * as TrophyApi from "../../api";
 import * as core from "../../core";
 export declare const UpdateLeaderboardRequestItemStatus: core.serialization.Schema<serializers.UpdateLeaderboardRequestItemStatus.Raw, TrophyApi.UpdateLeaderboardRequestItemStatus>;
 export declare namespace UpdateLeaderboardRequestItemStatus {
-    type Raw = "active" | "inactive";
+    type Raw = "inactive" | "active" | "scheduled" | "finished";
 }

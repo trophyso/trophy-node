@@ -37,9 +37,9 @@ export declare class Leaderboards {
      *         }, {
      *             name: "Streak Legends",
      *             key: "streak-legends",
-     *             status: TrophyApi.CreateLeaderboardRequestItemStatus.Active,
+     *             status: TrophyApi.CreateLeaderboardRequestItemStatus.Scheduled,
      *             rankBy: TrophyApi.CreateLeaderboardRequestItemRankBy.Streak,
-     *             start: "2026-04-20"
+     *             start: "2026-04-27"
      *         }])
      */
     create(request: TrophyApi.CreateLeaderboardsRequest, requestOptions?: Leaderboards.RequestOptions): Promise<TrophyApi.CreateLeaderboardsResponse>;
@@ -50,7 +50,7 @@ export declare class Leaderboards {
      */
     delete(request?: TrophyApi.admin.LeaderboardsDeleteRequest, requestOptions?: Leaderboards.RequestOptions): Promise<TrophyApi.DeleteLeaderboardsResponse>;
     /**
-     * Update leaderboards in bulk by ID. Updating `status` behaves the same as activating, deactivating, or finishing a leaderboard in the dashboard.
+     * Update leaderboards in bulk by ID. Updating `status` behaves the same as activating, scheduling, deactivating, or finishing a leaderboard in the dashboard.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -62,7 +62,7 @@ export declare class Leaderboards {
      *             status: TrophyApi.UpdateLeaderboardRequestItemStatus.Active
      *         }, {
      *             id: "550e8400-e29b-41d4-a716-446655440101",
-     *             status: TrophyApi.UpdateLeaderboardRequestItemStatus.Inactive
+     *             status: TrophyApi.UpdateLeaderboardRequestItemStatus.Finished
      *         }])
      */
     update(request: TrophyApi.UpdateLeaderboardsRequest, requestOptions?: Leaderboards.RequestOptions): Promise<TrophyApi.UpdateLeaderboardsResponse>;
