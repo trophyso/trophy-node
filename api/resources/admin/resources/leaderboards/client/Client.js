@@ -42,12 +42,93 @@ exports.Leaderboards = void 0;
 const environments = __importStar(require("../../../../../../environments"));
 const core = __importStar(require("../../../../../../core"));
 const TrophyApi = __importStar(require("../../../../.."));
-const serializers = __importStar(require("../../../../../../serialization"));
 const url_join_1 = __importDefault(require("url-join"));
+const serializers = __importStar(require("../../../../../../serialization"));
 const errors = __importStar(require("../../../../../../errors"));
 class Leaderboards {
     constructor(_options) {
         this._options = _options;
+    }
+    /**
+     * List leaderboards.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.admin.leaderboards.list({
+     *         limit: 1,
+     *         skip: 1
+     *     })
+     */
+    list(request = {}, requestOptions) {
+        var _a;
+        return __awaiter(this, void 0, void 0, function* () {
+            const { limit, skip } = request;
+            const _queryParams = {};
+            if (limit != null) {
+                _queryParams["limit"] = limit.toString();
+            }
+            if (skip != null) {
+                _queryParams["skip"] = skip.toString();
+            }
+            const _response = yield core.fetcher({
+                url: (0, url_join_1.default)(((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Production)
+                    .admin, "leaderboards"),
+                method: "GET",
+                headers: {
+                    "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
+                    "X-Fern-Language": "JavaScript",
+                },
+                contentType: "application/json",
+                queryParameters: _queryParams,
+                timeoutMs: (requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
+                maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
+            });
+            if (_response.ok) {
+                return yield serializers.ListLeaderboardsResponse.parseOrThrow(_response.body, {
+                    unrecognizedObjectKeys: "passthrough",
+                    allowUnrecognizedUnionMembers: true,
+                    allowUnrecognizedEnumValues: true,
+                    breadcrumbsPrefix: ["response"],
+                });
+            }
+            if (_response.error.reason === "status-code") {
+                switch (_response.error.statusCode) {
+                    case 401:
+                        throw new TrophyApi.UnauthorizedError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 422:
+                        throw new TrophyApi.UnprocessableEntityError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    default:
+                        throw new errors.TrophyApiError({
+                            statusCode: _response.error.statusCode,
+                            body: _response.error.body,
+                        });
+                }
+            }
+            switch (_response.error.reason) {
+                case "non-json":
+                    throw new errors.TrophyApiError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.rawBody,
+                    });
+                case "timeout":
+                    throw new errors.TrophyApiTimeoutError();
+                case "unknown":
+                    throw new errors.TrophyApiError({
+                        message: _response.error.errorMessage,
+                    });
+            }
+        });
     }
     /**
      * Create leaderboards in bulk. Maximum 100 leaderboards per request.
@@ -257,6 +338,86 @@ class Leaderboards {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 422:
+                        throw new TrophyApi.UnprocessableEntityError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    default:
+                        throw new errors.TrophyApiError({
+                            statusCode: _response.error.statusCode,
+                            body: _response.error.body,
+                        });
+                }
+            }
+            switch (_response.error.reason) {
+                case "non-json":
+                    throw new errors.TrophyApiError({
+                        statusCode: _response.error.statusCode,
+                        body: _response.error.rawBody,
+                    });
+                case "timeout":
+                    throw new errors.TrophyApiTimeoutError();
+                case "unknown":
+                    throw new errors.TrophyApiError({
+                        message: _response.error.errorMessage,
+                    });
+            }
+        });
+    }
+    /**
+     * Get a leaderboard by ID.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.admin.leaderboards.get("550e8400-e29b-41d4-a716-446655440100")
+     *
+     * @example
+     *     await trophyApi.admin.leaderboards.get("550e8400-e29b-41d4-a716-446655440100")
+     */
+    get(id, requestOptions) {
+        var _a;
+        return __awaiter(this, void 0, void 0, function* () {
+            const _response = yield core.fetcher({
+                url: (0, url_join_1.default)(((_a = (yield core.Supplier.get(this._options.environment))) !== null && _a !== void 0 ? _a : environments.TrophyApiEnvironment.Production)
+                    .admin, `leaderboards/${id}`),
+                method: "GET",
+                headers: {
+                    "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
+                    "X-Fern-Language": "JavaScript",
+                },
+                contentType: "application/json",
+                timeoutMs: (requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
+                maxRetries: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries,
+            });
+            if (_response.ok) {
+                return yield serializers.AdminLeaderboard.parseOrThrow(_response.body, {
+                    unrecognizedObjectKeys: "passthrough",
+                    allowUnrecognizedUnionMembers: true,
+                    allowUnrecognizedEnumValues: true,
+                    breadcrumbsPrefix: ["response"],
+                });
+            }
+            if (_response.error.reason === "status-code") {
+                switch (_response.error.statusCode) {
+                    case 401:
+                        throw new TrophyApi.UnauthorizedError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 404:
+                        throw new TrophyApi.NotFoundError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,

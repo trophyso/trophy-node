@@ -18,6 +18,18 @@ export declare class Leaderboards {
     protected readonly _options: Leaderboards.Options;
     constructor(_options: Leaderboards.Options);
     /**
+     * List leaderboards.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.admin.leaderboards.list({
+     *         limit: 1,
+     *         skip: 1
+     *     })
+     */
+    list(request?: TrophyApi.admin.LeaderboardsListRequest, requestOptions?: Leaderboards.RequestOptions): Promise<TrophyApi.ListLeaderboardsResponse>;
+    /**
      * Create leaderboards in bulk. Maximum 100 leaderboards per request.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
@@ -66,4 +78,17 @@ export declare class Leaderboards {
      *         }])
      */
     update(request: TrophyApi.UpdateLeaderboardsRequest, requestOptions?: Leaderboards.RequestOptions): Promise<TrophyApi.UpdateLeaderboardsResponse>;
+    /**
+     * Get a leaderboard by ID.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.admin.leaderboards.get("550e8400-e29b-41d4-a716-446655440100")
+     *
+     * @example
+     *     await trophyApi.admin.leaderboards.get("550e8400-e29b-41d4-a716-446655440100")
+     */
+    get(id: string, requestOptions?: Leaderboards.RequestOptions): Promise<TrophyApi.AdminLeaderboard>;
 }

@@ -4,30 +4,30 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Admin = void 0;
-const Client_1 = require("../resources/leaderboards/client/Client");
-const Client_2 = require("../resources/streaks/client/Client");
-const Client_3 = require("../resources/attributes/client/Client");
-const Client_4 = require("../resources/metrics/client/Client");
+const Client_1 = require("../resources/attributes/client/Client");
+const Client_2 = require("../resources/metrics/client/Client");
+const Client_3 = require("../resources/leaderboards/client/Client");
+const Client_4 = require("../resources/streaks/client/Client");
 const Client_5 = require("../resources/points/client/Client");
 class Admin {
     constructor(_options) {
         this._options = _options;
     }
-    get leaderboards() {
-        var _a;
-        return ((_a = this._leaderboards) !== null && _a !== void 0 ? _a : (this._leaderboards = new Client_1.Leaderboards(this._options)));
-    }
-    get streaks() {
-        var _a;
-        return ((_a = this._streaks) !== null && _a !== void 0 ? _a : (this._streaks = new Client_2.Streaks(this._options)));
-    }
     get attributes() {
         var _a;
-        return ((_a = this._attributes) !== null && _a !== void 0 ? _a : (this._attributes = new Client_3.Attributes(this._options)));
+        return ((_a = this._attributes) !== null && _a !== void 0 ? _a : (this._attributes = new Client_1.Attributes(this._options)));
     }
     get metrics() {
         var _a;
-        return ((_a = this._metrics) !== null && _a !== void 0 ? _a : (this._metrics = new Client_4.Metrics(this._options)));
+        return ((_a = this._metrics) !== null && _a !== void 0 ? _a : (this._metrics = new Client_2.Metrics(this._options)));
+    }
+    get leaderboards() {
+        var _a;
+        return ((_a = this._leaderboards) !== null && _a !== void 0 ? _a : (this._leaderboards = new Client_3.Leaderboards(this._options)));
+    }
+    get streaks() {
+        var _a;
+        return ((_a = this._streaks) !== null && _a !== void 0 ? _a : (this._streaks = new Client_4.Streaks(this._options)));
     }
     get points() {
         var _a;

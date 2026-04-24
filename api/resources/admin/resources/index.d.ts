@@ -1,10 +1,10 @@
 export * as streaks from "./streaks";
 export * from "./streaks/types";
 export * as points from "./points";
-export * as leaderboards from "./leaderboards";
 export * as attributes from "./attributes";
 export * as metrics from "./metrics";
-export * from "./leaderboards/client/requests";
-export * from "./streaks/client/requests";
+export * as leaderboards from "./leaderboards";
 export * from "./attributes/client/requests";
 export * from "./metrics/client/requests";
+export * from "./leaderboards/client/requests";
+export * from "./streaks/client/requests";
