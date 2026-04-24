@@ -131,7 +131,7 @@ class Metrics {
         });
     }
     /**
-     * Create metrics in bulk.
+     * Create metrics.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -209,7 +209,7 @@ class Metrics {
         });
     }
     /**
-     * Delete metrics in bulk by ID.
+     * Delete metrics by ID.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -289,7 +289,7 @@ class Metrics {
         });
     }
     /**
-     * Update metrics in bulk by ID.
+     * Update metrics by ID.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *

@@ -131,7 +131,7 @@ class Leaderboards {
         });
     }
     /**
-     * Create leaderboards in bulk. Maximum 100 leaderboards per request.
+     * Create leaderboards. Maximum 100 leaderboards per request.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -218,7 +218,7 @@ class Leaderboards {
         });
     }
     /**
-     * Delete leaderboards in bulk by ID.
+     * Delete leaderboards by ID.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      */
@@ -295,7 +295,7 @@ class Leaderboards {
         });
     }
     /**
-     * Update leaderboards in bulk by ID. Updating `status` behaves the same as activating, scheduling, deactivating, or finishing a leaderboard in the dashboard.
+     * Update leaderboards by ID. Updating `status` behaves the same as activating, scheduling, deactivating, or finishing a leaderboard in the dashboard.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *

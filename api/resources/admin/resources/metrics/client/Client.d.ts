@@ -30,7 +30,7 @@ export declare class Metrics {
      */
     list(request?: TrophyApi.admin.MetricsListRequest, requestOptions?: Metrics.RequestOptions): Promise<TrophyApi.ListMetricsResponse>;
     /**
-     * Create metrics in bulk.
+     * Create metrics.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -47,7 +47,7 @@ export declare class Metrics {
      */
     create(request: TrophyApi.CreateMetricsRequest, requestOptions?: Metrics.RequestOptions): Promise<TrophyApi.CreateMetricsResponse>;
     /**
-     * Delete metrics in bulk by ID.
+     * Delete metrics by ID.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -56,7 +56,7 @@ export declare class Metrics {
      */
     delete(request?: TrophyApi.admin.MetricsDeleteRequest, requestOptions?: Metrics.RequestOptions): Promise<TrophyApi.DeleteMetricsResponse>;
     /**
-     * Update metrics in bulk by ID.
+     * Update metrics by ID.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
