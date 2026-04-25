@@ -131,7 +131,7 @@ class Attributes {
         });
     }
     /**
-     * Create attributes in bulk.
+     * Create attributes.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -209,7 +209,7 @@ class Attributes {
         });
     }
     /**
-     * Delete attributes in bulk by ID.
+     * Delete attributes by ID.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -289,7 +289,7 @@ class Attributes {
         });
     }
     /**
-     * Update attributes in bulk by ID.
+     * Update attributes by ID.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *

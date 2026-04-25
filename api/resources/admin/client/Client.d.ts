@@ -3,9 +3,10 @@
  */
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import { Streaks } from "../resources/streaks/client/Client";
 import { Attributes } from "../resources/attributes/client/Client";
 import { Metrics } from "../resources/metrics/client/Client";
+import { Leaderboards } from "../resources/leaderboards/client/Client";
+import { Streaks } from "../resources/streaks/client/Client";
 import { Points } from "../resources/points/client/Client";
 export declare namespace Admin {
     interface Options {
@@ -20,12 +21,14 @@ export declare namespace Admin {
 export declare class Admin {
     protected readonly _options: Admin.Options;
     constructor(_options: Admin.Options);
-    protected _streaks: Streaks | undefined;
-    get streaks(): Streaks;
     protected _attributes: Attributes | undefined;
     get attributes(): Attributes;
     protected _metrics: Metrics | undefined;
     get metrics(): Metrics;
+    protected _leaderboards: Leaderboards | undefined;
+    get leaderboards(): Leaderboards;
+    protected _streaks: Streaks | undefined;
+    get streaks(): Streaks;
     protected _points: Points | undefined;
     get points(): Points;
 }

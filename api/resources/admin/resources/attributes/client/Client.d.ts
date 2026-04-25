@@ -30,7 +30,7 @@ export declare class Attributes {
      */
     list(request?: TrophyApi.admin.AttributesListRequest, requestOptions?: Attributes.RequestOptions): Promise<TrophyApi.ListAttributesResponse>;
     /**
-     * Create attributes in bulk.
+     * Create attributes.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -47,7 +47,7 @@ export declare class Attributes {
      */
     create(request: TrophyApi.CreateAttributesRequest, requestOptions?: Attributes.RequestOptions): Promise<TrophyApi.CreateAttributesResponse>;
     /**
-     * Delete attributes in bulk by ID.
+     * Delete attributes by ID.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -56,7 +56,7 @@ export declare class Attributes {
      */
     delete(request?: TrophyApi.admin.AttributesDeleteRequest, requestOptions?: Attributes.RequestOptions): Promise<TrophyApi.DeleteAttributesResponse>;
     /**
-     * Update attributes in bulk by ID.
+     * Update attributes by ID.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
