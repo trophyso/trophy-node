@@ -18,38 +18,85 @@ export declare class Boosts {
     protected readonly _options: Boosts.Options;
     constructor(_options: Boosts.Options);
     /**
-     * Create points boosts for multiple users.
-     * @throws {@link TrophyApi.BadRequestError}
+     * List points boosts for a system.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.admin.points.boosts.create({
-     *         systemKey: "xp",
-     *         boosts: [{
-     *                 userId: "user-123",
-     *                 name: "Double XP Weekend",
-     *                 start: "2024-01-01",
-     *                 end: "2024-01-03",
-     *                 multiplier: 2
-     *             }, {
-     *                 userId: "user-456",
-     *                 name: "Holiday Bonus",
-     *                 start: "2024-12-25",
-     *                 multiplier: 1.5,
-     *                 rounding: TrophyApi.admin.points.CreatePointsBoostsRequestBoostsItemRounding.Up
-     *             }]
+     *     await trophyApi.admin.points.boosts.list("550e8400-e29b-41d4-a716-446655440000", {
+     *         limit: 1,
+     *         skip: 1
      *     })
      */
-    create(request: TrophyApi.admin.points.CreatePointsBoostsRequest, requestOptions?: Boosts.RequestOptions): Promise<TrophyApi.CreatePointsBoostsResponse>;
+    list(systemId: string, request?: TrophyApi.admin.points.BoostsListRequest, requestOptions?: Boosts.RequestOptions): Promise<TrophyApi.ListPointsBoostsResponse>;
     /**
-     * Delete multiple points boosts by ID.
-     * @throws {@link TrophyApi.BadRequestError}
+     * Create points boosts.
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await trophyApi.admin.points.boosts.delete({})
+     *     await trophyApi.admin.points.boosts.create("550e8400-e29b-41d4-a716-446655440000", [{
+     *             userId: "user-123",
+     *             name: "Double XP Weekend",
+     *             start: "2024-01-01",
+     *             end: "2024-01-03",
+     *             multiplier: 2
+     *         }])
+     *
+     * @example
+     *     await trophyApi.admin.points.boosts.create("550e8400-e29b-41d4-a716-446655440000", [{
+     *             name: "Global Holiday Bonus",
+     *             start: "2024-12-25",
+     *             multiplier: 1.5,
+     *             rounding: TrophyApi.CreatePointsBoostsRequestItemRounding.Up
+     *         }])
+     *
+     * @example
+     *     await trophyApi.admin.points.boosts.create("550e8400-e29b-41d4-a716-446655440000", [{
+     *             name: "Premium User Boost",
+     *             start: "2024-01-01",
+     *             multiplier: 2,
+     *             userAttributes: [{
+     *                     attributeId: "550e8400-e29b-41d4-a716-446655440000",
+     *                     attributeValue: "premium"
+     *                 }]
+     *         }])
      */
-    delete(request?: TrophyApi.admin.points.BoostsDeleteRequest, requestOptions?: Boosts.RequestOptions): Promise<TrophyApi.DeletePointsBoostsResponse>;
+    create(systemId: string, request: TrophyApi.CreatePointsBoostsRequest, requestOptions?: Boosts.RequestOptions): Promise<TrophyApi.CreatePointsBoostsResponse>;
+    /**
+     * Delete multiple points boosts by ID.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.admin.points.boosts.delete(undefined, {})
+     */
+    delete(systemId: string, request?: TrophyApi.admin.points.BoostsDeleteRequest, requestOptions?: Boosts.RequestOptions): Promise<TrophyApi.DeletePointsBoostsResponse>;
+    /**
+     * Update multiple points boosts.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.admin.points.boosts.update("550e8400-e29b-41d4-a716-446655440000", [{
+     *             id: "550e8400-e29b-41d4-a716-446655440000",
+     *             name: "Updated Boost Name",
+     *             multiplier: 3
+     *         }])
+     */
+    update(systemId: string, request: TrophyApi.PatchPointsBoostsRequest, requestOptions?: Boosts.RequestOptions): Promise<TrophyApi.PatchPointsBoostsResponse>;
+    /**
+     * Get a single points boost by ID.
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.admin.points.boosts.get("550e8400-e29b-41d4-a716-446655440000", "660f9500-f30c-42e5-b827-557766550001")
+     */
+    get(systemId: string, id: string, requestOptions?: Boosts.RequestOptions): Promise<TrophyApi.AdminPointsBoost>;
 }

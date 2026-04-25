@@ -28,5 +28,4 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.boosts = void 0;
 exports.boosts = __importStar(require("./boosts"));
-__exportStar(require("./boosts/types"), exports);
 __exportStar(require("./boosts/client/requests"), exports);
