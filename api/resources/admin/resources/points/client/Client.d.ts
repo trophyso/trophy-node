@@ -4,6 +4,7 @@
 import * as environments from "../../../../../../environments";
 import * as core from "../../../../../../core";
 import { Boosts } from "../resources/boosts/client/Client";
+import { Levels } from "../resources/levels/client/Client";
 export declare namespace Points {
     interface Options {
         environment?: core.Supplier<environments.TrophyApiEnvironment | environments.TrophyApiEnvironmentUrls>;
@@ -19,4 +20,6 @@ export declare class Points {
     constructor(_options: Points.Options);
     protected _boosts: Boosts | undefined;
     get boosts(): Boosts;
+    protected _levels: Levels | undefined;
+    get levels(): Levels;
 }

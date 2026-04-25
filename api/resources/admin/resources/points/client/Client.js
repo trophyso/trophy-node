@@ -5,6 +5,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Points = void 0;
 const Client_1 = require("../resources/boosts/client/Client");
+const Client_2 = require("../resources/levels/client/Client");
 class Points {
     constructor(_options) {
         this._options = _options;
@@ -12,6 +13,10 @@ class Points {
     get boosts() {
         var _a;
         return ((_a = this._boosts) !== null && _a !== void 0 ? _a : (this._boosts = new Client_1.Boosts(this._options)));
+    }
+    get levels() {
+        var _a;
+        return ((_a = this._levels) !== null && _a !== void 0 ? _a : (this._levels = new Client_2.Levels(this._options)));
     }
 }
 exports.Points = Points;
