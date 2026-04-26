@@ -3,6 +3,7 @@
  */
 import * as environments from "../../../../../../environments";
 import * as core from "../../../../../../core";
+import { Systems } from "../resources/systems/client/Client";
 import { Boosts } from "../resources/boosts/client/Client";
 import { Levels } from "../resources/levels/client/Client";
 import { Triggers } from "../resources/triggers/client/Client";
@@ -19,6 +20,8 @@ export declare namespace Points {
 export declare class Points {
     protected readonly _options: Points.Options;
     constructor(_options: Points.Options);
+    protected _systems: Systems | undefined;
+    get systems(): Systems;
     protected _boosts: Boosts | undefined;
     get boosts(): Boosts;
     protected _levels: Levels | undefined;

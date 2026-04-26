@@ -4,24 +4,29 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Points = void 0;
-const Client_1 = require("../resources/boosts/client/Client");
-const Client_2 = require("../resources/levels/client/Client");
-const Client_3 = require("../resources/triggers/client/Client");
+const Client_1 = require("../resources/systems/client/Client");
+const Client_2 = require("../resources/boosts/client/Client");
+const Client_3 = require("../resources/levels/client/Client");
+const Client_4 = require("../resources/triggers/client/Client");
 class Points {
     constructor(_options) {
         this._options = _options;
     }
+    get systems() {
+        var _a;
+        return ((_a = this._systems) !== null && _a !== void 0 ? _a : (this._systems = new Client_1.Systems(this._options)));
+    }
     get boosts() {
         var _a;
-        return ((_a = this._boosts) !== null && _a !== void 0 ? _a : (this._boosts = new Client_1.Boosts(this._options)));
+        return ((_a = this._boosts) !== null && _a !== void 0 ? _a : (this._boosts = new Client_2.Boosts(this._options)));
     }
     get levels() {
         var _a;
-        return ((_a = this._levels) !== null && _a !== void 0 ? _a : (this._levels = new Client_2.Levels(this._options)));
+        return ((_a = this._levels) !== null && _a !== void 0 ? _a : (this._levels = new Client_3.Levels(this._options)));
     }
     get triggers() {
         var _a;
-        return ((_a = this._triggers) !== null && _a !== void 0 ? _a : (this._triggers = new Client_3.Triggers(this._options)));
+        return ((_a = this._triggers) !== null && _a !== void 0 ? _a : (this._triggers = new Client_4.Triggers(this._options)));
     }
 }
 exports.Points = Points;
