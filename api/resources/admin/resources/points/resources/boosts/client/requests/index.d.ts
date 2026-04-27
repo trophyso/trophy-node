@@ -1,2 +1,2 @@
-export { CreatePointsBoostsRequest } from "./CreatePointsBoostsRequest";
+export { BoostsListRequest } from "./BoostsListRequest";
 export { BoostsDeleteRequest } from "./BoostsDeleteRequest";

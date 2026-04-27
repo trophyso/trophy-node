@@ -1,1 +1,0 @@
-export { CreatePointsBoostsRequest } from "./CreatePointsBoostsRequest";

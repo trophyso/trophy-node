@@ -7,7 +7,7 @@ import * as TrophyApi from "..";
  */
 export interface CreatePointsBoostsResponse {
     /** Array of successfully created boosts. */
-    created: TrophyApi.CreatedPointsBoost[];
+    created: TrophyApi.AdminPointsBoost[];
     /** Array of issues encountered during boost creation. */
     issues: TrophyApi.AdminIssue[];
 }
