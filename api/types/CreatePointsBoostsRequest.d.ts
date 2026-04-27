@@ -5,4 +5,4 @@ import * as TrophyApi from "..";
 /**
  * Array of points boosts to create. Maximum 100 boosts per request. Each boost may optionally target a specific user via `userId` or filter by user attributes via `userAttributes`. These two fields are mutually exclusive — providing `userAttributes` when `userId` is set will result in an error. Omitting both creates a global boost.
  */
-export declare type CreatePointsBoostsRequest = TrophyApi.CreatePointsBoostsRequestItem[];
+export declare type CreatePointsBoostsRequest = TrophyApi.CreatePointsBoostRequestItem[];

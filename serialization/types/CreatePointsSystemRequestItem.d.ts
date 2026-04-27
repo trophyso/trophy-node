@@ -12,8 +12,8 @@ export declare namespace CreatePointsSystemRequestItem {
         description?: string | null;
         badge?: serializers.CreatePointsSystemRequestItemBadge.Raw | null;
         maxPoints?: number | null;
-        levels?: unknown[] | null;
-        boosts?: unknown[] | null;
-        triggers?: unknown[] | null;
+        levels?: serializers.CreatePointsLevelRequestItem.Raw[] | null;
+        boosts?: serializers.CreatePointsBoostRequestItem.Raw[] | null;
+        triggers?: serializers.CreatePointsTriggerRequestItem.Raw[] | null;
     }
 }

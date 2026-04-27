@@ -14,7 +14,7 @@ export declare namespace AdminPointsTrigger {
         userAttributes: serializers.AdminPointsTriggerUserAttributesItem.Raw[];
         metricId?: string | null;
         metricThreshold?: number | null;
-        eventAttributes: serializers.AdminPointsTriggerEventAttributesItem.Raw[];
+        eventAttributes?: serializers.AdminPointsTriggerEventAttributesItem.Raw[] | null;
         achievementId?: string | null;
         streakLength?: number | null;
         timeUnit?: serializers.AdminPointsTriggerTimeUnit.Raw | null;

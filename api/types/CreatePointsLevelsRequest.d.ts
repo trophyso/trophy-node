@@ -5,4 +5,4 @@ import * as TrophyApi from "..";
 /**
  * Array of points levels to create. Maximum 100 levels per request.
  */
-export declare type CreatePointsLevelsRequest = TrophyApi.CreatePointsLevelsRequestItem[];
+export declare type CreatePointsLevelsRequest = TrophyApi.CreatePointsLevelRequestItem[];

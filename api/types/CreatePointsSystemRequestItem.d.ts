@@ -17,9 +17,9 @@ export interface CreatePointsSystemRequestItem {
     /** Optional maximum points a user can earn. */
     maxPoints?: number;
     /** Optional array of levels to create alongside the system. */
-    levels?: unknown[];
+    levels?: TrophyApi.CreatePointsLevelRequestItem[];
     /** Optional array of boosts to create alongside the system. */
-    boosts?: unknown[];
+    boosts?: TrophyApi.CreatePointsBoostRequestItem[];
     /** Optional array of triggers to create alongside the system. */
-    triggers?: unknown[];
+    triggers?: TrophyApi.CreatePointsTriggerRequestItem[];
 }

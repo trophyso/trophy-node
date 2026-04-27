@@ -37,4 +37,4 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreatePointsTriggersRequest = void 0;
 const core = __importStar(require("../../core"));
-exports.CreatePointsTriggersRequest = core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).CreatePointsTriggersRequestItem; })));
+exports.CreatePointsTriggersRequest = core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).CreatePointsTriggerRequestItem; })));

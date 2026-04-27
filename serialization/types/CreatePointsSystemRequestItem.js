@@ -45,7 +45,13 @@ exports.CreatePointsSystemRequestItem = core.serialization.object({
         .lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).CreatePointsSystemRequestItemBadge; }))
         .optional(),
     maxPoints: core.serialization.number().optional(),
-    levels: core.serialization.list(core.serialization.unknown()).optional(),
-    boosts: core.serialization.list(core.serialization.unknown()).optional(),
-    triggers: core.serialization.list(core.serialization.unknown()).optional(),
+    levels: core.serialization
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).CreatePointsLevelRequestItem; })))
+        .optional(),
+    boosts: core.serialization
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).CreatePointsBoostRequestItem; })))
+        .optional(),
+    triggers: core.serialization
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).CreatePointsTriggerRequestItem; })))
+        .optional(),
 });

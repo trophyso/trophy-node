@@ -45,7 +45,9 @@ exports.AdminPointsTrigger = core.serialization.object({
     userAttributes: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AdminPointsTriggerUserAttributesItem; }))),
     metricId: core.serialization.string().optional(),
     metricThreshold: core.serialization.number().optional(),
-    eventAttributes: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AdminPointsTriggerEventAttributesItem; }))),
+    eventAttributes: core.serialization
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AdminPointsTriggerEventAttributesItem; })))
+        .optional(),
     achievementId: core.serialization.string().optional(),
     streakLength: core.serialization.number().optional(),
     timeUnit: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AdminPointsTriggerTimeUnit; })).optional(),

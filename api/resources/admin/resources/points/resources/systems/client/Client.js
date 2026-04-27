@@ -139,7 +139,16 @@ class Systems {
      *     await trophyApi.admin.points.systems.create([{
      *             name: "XP",
      *             key: "xp",
-     *             description: "Experience points"
+     *             description: "Experience points",
+     *             levels: [{
+     *                     name: "Bronze",
+     *                     key: "bronze",
+     *                     points: 100
+     *                 }, {
+     *                     name: "Silver",
+     *                     key: "silver",
+     *                     points: 500
+     *                 }]
      *         }])
      */
     create(request, requestOptions) {
@@ -210,6 +219,9 @@ class Systems {
      * Delete (archive) points systems by ID.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.admin.points.systems.delete({})
      */
     delete(request = {}, requestOptions) {
         var _a;

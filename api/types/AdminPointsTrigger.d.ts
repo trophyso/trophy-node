@@ -16,19 +16,19 @@ export interface AdminPointsTrigger {
     status: TrophyApi.AdminPointsTriggerStatus;
     /** User attribute filters applied to the trigger. */
     userAttributes: TrophyApi.AdminPointsTriggerUserAttributesItem[];
-    /** The UUID of the metric, or null if not a metric trigger. */
+    /** The UUID of the metric. Only present for metric triggers. */
     metricId?: string;
-    /** The metric threshold, or null if not a metric trigger. */
+    /** The metric threshold. Only present for metric triggers. */
     metricThreshold?: number;
-    /** Event attribute filters applied to the trigger. */
-    eventAttributes: TrophyApi.AdminPointsTriggerEventAttributesItem[];
-    /** The UUID of the achievement, or null if not an achievement trigger. */
+    /** Event attribute filters applied to the trigger. Only present for metric triggers. */
+    eventAttributes?: TrophyApi.AdminPointsTriggerEventAttributesItem[];
+    /** The UUID of the achievement. Only present for achievement triggers. */
     achievementId?: string;
-    /** The streak length, or null if not a streak trigger. */
+    /** The streak length. Only present for streak triggers. */
     streakLength?: number;
-    /** The time unit, or null if not a time trigger. */
+    /** The time unit. Only present for time triggers. */
     timeUnit?: TrophyApi.AdminPointsTriggerTimeUnit;
-    /** The time interval, or null if not a time trigger. */
+    /** The time interval. Only present for time triggers. */
     timeInterval?: number;
     /** Whether metric events that would reduce the user's points below zero are blocked. */
     blockIfOutOfPoints: boolean;

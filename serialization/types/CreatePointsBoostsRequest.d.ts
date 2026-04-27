@@ -6,5 +6,5 @@ import * as TrophyApi from "../../api";
 import * as core from "../../core";
 export declare const CreatePointsBoostsRequest: core.serialization.Schema<serializers.CreatePointsBoostsRequest.Raw, TrophyApi.CreatePointsBoostsRequest>;
 export declare namespace CreatePointsBoostsRequest {
-    type Raw = serializers.CreatePointsBoostsRequestItem.Raw[];
+    type Raw = serializers.CreatePointsBoostRequestItem.Raw[];
 }

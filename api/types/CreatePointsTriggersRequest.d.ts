@@ -5,4 +5,4 @@ import * as TrophyApi from "..";
 /**
  * Array of points triggers to create. Maximum 100 triggers per request.
  */
-export declare type CreatePointsTriggersRequest = TrophyApi.CreatePointsTriggersRequestItem[];
+export declare type CreatePointsTriggersRequest = TrophyApi.CreatePointsTriggerRequestItem[];

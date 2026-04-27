@@ -158,7 +158,7 @@ class Boosts {
      *             name: "Global Holiday Bonus",
      *             start: "2024-12-25",
      *             multiplier: 1.5,
-     *             rounding: TrophyApi.CreatePointsBoostsRequestItemRounding.Up
+     *             rounding: TrophyApi.CreatePointsBoostRequestItemRounding.Up
      *         }])
      *
      * @example

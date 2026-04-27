@@ -146,7 +146,7 @@ class Triggers {
      *
      * @example
      *     await trophyApi.admin.points.triggers.create("550e8400-e29b-41d4-a716-446655440000", [{
-     *             type: TrophyApi.CreatePointsTriggersRequestItemType.Metric,
+     *             type: TrophyApi.CreatePointsTriggerRequestItemType.Metric,
      *             points: 10
      *         }])
      */
