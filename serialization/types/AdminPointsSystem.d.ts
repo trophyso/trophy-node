@@ -14,8 +14,5 @@ export declare namespace AdminPointsSystem {
         status: serializers.AdminPointsSystemStatus.Raw;
         badge?: serializers.AdminPointsSystemBadge.Raw | null;
         maxPoints?: number | null;
-        levels?: serializers.AdminPointsLevel.Raw[] | null;
-        boosts?: serializers.AdminPointsBoost.Raw[] | null;
-        triggers?: serializers.AdminPointsTrigger.Raw[] | null;
     }
 }

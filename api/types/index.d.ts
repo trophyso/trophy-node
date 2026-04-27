@@ -189,6 +189,7 @@ export * from "./CreatePointsSystemRequestItem";
 export * from "./AdminPointsSystemStatus";
 export * from "./AdminPointsSystemBadge";
 export * from "./AdminPointsSystem";
+export * from "./CreatedAdminPointsSystem";
 export * from "./ListPointsSystemsResponse";
 export * from "./CreatePointsSystemsResponse";
 export * from "./UpdatePointsSystemsRequest";

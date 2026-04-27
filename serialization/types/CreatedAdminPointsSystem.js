@@ -35,9 +35,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePointsSystemsResponse = void 0;
+exports.CreatedAdminPointsSystem = void 0;
 const core = __importStar(require("../../core"));
-exports.CreatePointsSystemsResponse = core.serialization.object({
-    created: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).CreatedAdminPointsSystem; }))),
-    issues: core.serialization.list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AdminIssue; }))),
-});
+exports.CreatedAdminPointsSystem = core.serialization
+    .object({
+    levels: core.serialization
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AdminPointsLevel; })))
+        .optional(),
+    boosts: core.serialization
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AdminPointsBoost; })))
+        .optional(),
+    triggers: core.serialization
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AdminPointsTrigger; })))
+        .optional(),
+})
+    .extend(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AdminPointsSystem; })));

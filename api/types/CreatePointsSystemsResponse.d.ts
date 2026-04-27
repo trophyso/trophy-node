@@ -7,7 +7,7 @@ import * as TrophyApi from "..";
  */
 export interface CreatePointsSystemsResponse {
     /** Array of successfully created points systems. */
-    created: TrophyApi.AdminPointsSystem[];
+    created: TrophyApi.CreatedAdminPointsSystem[];
     /** Array of issues encountered during creation. */
     issues: TrophyApi.AdminIssue[];
 }

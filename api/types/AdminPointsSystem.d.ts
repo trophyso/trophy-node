@@ -20,10 +20,4 @@ export interface AdminPointsSystem {
     badge?: TrophyApi.AdminPointsSystemBadge;
     /** The maximum points a user can earn. */
     maxPoints?: number;
-    /** Levels created alongside the system (only present in creation response when levels were provided). */
-    levels?: TrophyApi.AdminPointsLevel[];
-    /** Boosts created alongside the system (only present in creation response when boosts were provided). */
-    boosts?: TrophyApi.AdminPointsBoost[];
-    /** Triggers created alongside the system (only present in creation response when triggers were provided). */
-    triggers?: TrophyApi.AdminPointsTrigger[];
 }

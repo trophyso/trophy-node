@@ -205,6 +205,7 @@ __exportStar(require("./CreatePointsSystemRequestItem"), exports);
 __exportStar(require("./AdminPointsSystemStatus"), exports);
 __exportStar(require("./AdminPointsSystemBadge"), exports);
 __exportStar(require("./AdminPointsSystem"), exports);
+__exportStar(require("./CreatedAdminPointsSystem"), exports);
 __exportStar(require("./ListPointsSystemsResponse"), exports);
 __exportStar(require("./CreatePointsSystemsResponse"), exports);
 __exportStar(require("./UpdatePointsSystemsRequest"), exports);

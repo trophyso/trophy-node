@@ -45,13 +45,4 @@ exports.AdminPointsSystem = core.serialization.object({
     status: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AdminPointsSystemStatus; })),
     badge: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AdminPointsSystemBadge; })).optional(),
     maxPoints: core.serialization.number().optional(),
-    levels: core.serialization
-        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AdminPointsLevel; })))
-        .optional(),
-    boosts: core.serialization
-        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AdminPointsBoost; })))
-        .optional(),
-    triggers: core.serialization
-        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AdminPointsTrigger; })))
-        .optional(),
 });
