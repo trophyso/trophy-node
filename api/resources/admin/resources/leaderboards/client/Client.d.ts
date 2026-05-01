@@ -59,6 +59,9 @@ export declare class Leaderboards {
      * Delete leaderboards by ID.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.admin.leaderboards.delete({})
      */
     delete(request?: TrophyApi.admin.LeaderboardsDeleteRequest, requestOptions?: Leaderboards.RequestOptions): Promise<TrophyApi.DeleteLeaderboardsResponse>;
     /**

@@ -221,6 +221,9 @@ class Leaderboards {
      * Delete leaderboards by ID.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.admin.leaderboards.delete({})
      */
     delete(request = {}, requestOptions) {
         var _a;
