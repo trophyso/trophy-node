@@ -68,6 +68,9 @@ class Users {
                     .api, "users"),
                 method: "POST",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -146,6 +149,9 @@ class Users {
                     .api, `users/${id}`),
                 method: "GET",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -230,6 +236,9 @@ class Users {
                     .api, `users/${id}`),
                 method: "PUT",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -316,6 +325,9 @@ class Users {
                     .api, `users/${id}`),
                 method: "PATCH",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -401,6 +413,9 @@ class Users {
                     .api, `users/${id}/preferences`),
                 method: "GET",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -496,6 +511,9 @@ class Users {
                     .api, `users/${id}/preferences`),
                 method: "PATCH",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -576,6 +594,9 @@ class Users {
                     .api, `users/${id}/metrics`),
                 method: "GET",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -653,6 +674,9 @@ class Users {
                     .api, `users/${id}/metrics/${key}`),
                 method: "GET",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -739,6 +763,9 @@ class Users {
                     .api, `users/${id}/metrics/${key}/event-summary`),
                 method: "GET",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -824,6 +851,9 @@ class Users {
                     .api, `users/${id}/achievements`),
                 method: "GET",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -909,6 +939,9 @@ class Users {
                     .api, `users/${id}/streak`),
                 method: "GET",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -994,6 +1027,9 @@ class Users {
                     .api, `users/${id}/points/${key}`),
                 method: "GET",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -1072,6 +1108,9 @@ class Users {
                     .api, `users/${id}/points/${key}/boosts`),
                 method: "GET",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -1158,6 +1197,9 @@ class Users {
                     .api, `users/${id}/points/${key}/event-summary`),
                 method: "GET",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -1247,6 +1289,9 @@ class Users {
                     .api, `users/${id}/leaderboards/${key}`),
                 method: "GET",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -1332,6 +1377,9 @@ class Users {
                     .api, `users/${id}/wrapped`),
                 method: "GET",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },

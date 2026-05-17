@@ -75,6 +75,9 @@ class Streaks {
                     .api, "streaks"),
                 method: "GET",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -156,6 +159,9 @@ class Streaks {
                     .api, "streaks/rankings"),
                 method: "GET",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },

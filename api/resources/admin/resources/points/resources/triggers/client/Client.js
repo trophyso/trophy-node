@@ -77,6 +77,9 @@ class Triggers {
                     .admin, `points/${systemId}/triggers`),
                 method: "GET",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -158,6 +161,9 @@ class Triggers {
                     .admin, `points/${systemId}/triggers`),
                 method: "POST",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -248,6 +254,9 @@ class Triggers {
                     .admin, `points/${systemId}/triggers`),
                 method: "DELETE",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -328,6 +337,9 @@ class Triggers {
                     .admin, `points/${systemId}/triggers`),
                 method: "PATCH",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -408,6 +420,9 @@ class Triggers {
                     .admin, `points/${systemId}/triggers/${id}`),
                 method: "GET",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
