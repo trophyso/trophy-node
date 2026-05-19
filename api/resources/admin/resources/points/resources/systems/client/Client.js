@@ -76,6 +76,9 @@ class Systems {
                     .admin, "points"),
                 method: "GET",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -159,6 +162,9 @@ class Systems {
                     .admin, "points"),
                 method: "POST",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -241,6 +247,9 @@ class Systems {
                     .admin, "points"),
                 method: "DELETE",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -314,6 +323,9 @@ class Systems {
                     .admin, "points"),
                 method: "PATCH",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },
@@ -387,6 +399,9 @@ class Systems {
                     .admin, `points/${id}`),
                 method: "GET",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                 },

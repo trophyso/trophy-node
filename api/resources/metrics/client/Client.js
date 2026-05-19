@@ -94,6 +94,9 @@ class Metrics {
                     .api, `metrics/${key}/event`),
                 method: "POST",
                 headers: {
+                    "Tenant-ID": (yield core.Supplier.get(this._options.tenantId)) != null
+                        ? yield core.Supplier.get(this._options.tenantId)
+                        : undefined,
                     "X-API-KEY": yield core.Supplier.get(this._options.apiKey),
                     "X-Fern-Language": "JavaScript",
                     "Idempotency-Key": idempotencyKey != null ? idempotencyKey : undefined,

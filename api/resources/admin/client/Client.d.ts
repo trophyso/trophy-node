@@ -7,11 +7,13 @@ import { Attributes } from "../resources/attributes/client/Client";
 import { Metrics } from "../resources/metrics/client/Client";
 import { Leaderboards } from "../resources/leaderboards/client/Client";
 import { Streaks } from "../resources/streaks/client/Client";
+import { Tenants } from "../resources/tenants/client/Client";
 import { Points } from "../resources/points/client/Client";
 export declare namespace Admin {
     interface Options {
         environment?: core.Supplier<environments.TrophyApiEnvironment | environments.TrophyApiEnvironmentUrls>;
         apiKey: core.Supplier<string>;
+        tenantId?: core.Supplier<string | undefined>;
     }
     interface RequestOptions {
         timeoutInSeconds?: number;
@@ -29,6 +31,8 @@ export declare class Admin {
     get leaderboards(): Leaderboards;
     protected _streaks: Streaks | undefined;
     get streaks(): Streaks;
+    protected _tenants: Tenants | undefined;
+    get tenants(): Tenants;
     protected _points: Points | undefined;
     get points(): Points;
 }

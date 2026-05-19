@@ -20,7 +20,7 @@ export interface AdminPointsBoost {
     multiplier: number;
     /** How boosted points are rounded. */
     rounding: TrophyApi.AdminPointsBoostRounding;
-    /** The customer ID of the user the boost was created for, or null for global/attribute-filtered boosts. */
+    /** The ID of the user the boost was created for, or null for global/attribute-filtered boosts. */
     userId?: string;
     /** User attribute filters applied to the boost. Only present for non-user-specific boosts (i.e. when `userId` is null). Empty array if no filters are set. */
     userAttributes?: TrophyApi.AdminPointsBoostUserAttributesItem[];

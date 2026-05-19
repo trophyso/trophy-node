@@ -14,6 +14,7 @@ export declare namespace TrophyApiClient {
     interface Options {
         environment?: core.Supplier<environments.TrophyApiEnvironment | environments.TrophyApiEnvironmentUrls>;
         apiKey: core.Supplier<string>;
+        tenantId?: core.Supplier<string | undefined>;
     }
     interface RequestOptions {
         timeoutInSeconds?: number;

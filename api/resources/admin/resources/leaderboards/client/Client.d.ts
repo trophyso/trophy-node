@@ -8,6 +8,7 @@ export declare namespace Leaderboards {
     interface Options {
         environment?: core.Supplier<environments.TrophyApiEnvironment | environments.TrophyApiEnvironmentUrls>;
         apiKey: core.Supplier<string>;
+        tenantId?: core.Supplier<string | undefined>;
     }
     interface RequestOptions {
         timeoutInSeconds?: number;
@@ -59,6 +60,9 @@ export declare class Leaderboards {
      * Delete leaderboards by ID.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await trophyApi.admin.leaderboards.delete({})
      */
     delete(request?: TrophyApi.admin.LeaderboardsDeleteRequest, requestOptions?: Leaderboards.RequestOptions): Promise<TrophyApi.DeleteLeaderboardsResponse>;
     /**

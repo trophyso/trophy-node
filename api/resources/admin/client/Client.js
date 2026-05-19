@@ -8,7 +8,8 @@ const Client_1 = require("../resources/attributes/client/Client");
 const Client_2 = require("../resources/metrics/client/Client");
 const Client_3 = require("../resources/leaderboards/client/Client");
 const Client_4 = require("../resources/streaks/client/Client");
-const Client_5 = require("../resources/points/client/Client");
+const Client_5 = require("../resources/tenants/client/Client");
+const Client_6 = require("../resources/points/client/Client");
 class Admin {
     constructor(_options) {
         this._options = _options;
@@ -29,9 +30,13 @@ class Admin {
         var _a;
         return ((_a = this._streaks) !== null && _a !== void 0 ? _a : (this._streaks = new Client_4.Streaks(this._options)));
     }
+    get tenants() {
+        var _a;
+        return ((_a = this._tenants) !== null && _a !== void 0 ? _a : (this._tenants = new Client_5.Tenants(this._options)));
+    }
     get points() {
         var _a;
-        return ((_a = this._points) !== null && _a !== void 0 ? _a : (this._points = new Client_5.Points(this._options)));
+        return ((_a = this._points) !== null && _a !== void 0 ? _a : (this._points = new Client_6.Points(this._options)));
     }
 }
 exports.Admin = Admin;
