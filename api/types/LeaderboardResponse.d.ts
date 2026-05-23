@@ -33,7 +33,7 @@ export interface LeaderboardResponse {
     /** The end date of the leaderboard in YYYY-MM-DD format, or null if it runs forever. */
     end?: string;
     /** The maximum number of participants in the leaderboard. */
-    maxParticipants: number;
+    maxParticipants?: number;
     /** The repetition type for recurring leaderboards, or null for one-time leaderboards. */
     runUnit?: TrophyApi.LeaderboardResponseRunUnit;
     /** The interval between repetitions, relative to the start date and repetition type. Null for one-time leaderboards. */

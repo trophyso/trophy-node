@@ -20,7 +20,7 @@ export declare namespace LeaderboardResponse {
         description?: string | null;
         start: string;
         end?: string | null;
-        maxParticipants: number;
+        maxParticipants?: number | null;
         runUnit?: serializers.LeaderboardResponseRunUnit.Raw | null;
         runInterval?: number | null;
     }

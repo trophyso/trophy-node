@@ -23,7 +23,7 @@ export interface AdminLeaderboard {
     /** The points system ID used when `rankBy` is `points`. */
     pointsSystemId?: string;
     /** The maximum number of participants. */
-    maxParticipants: number;
+    maxParticipants?: number;
     /** The leaderboard start date in YYYY-MM-DD format. */
     start: string;
     /** The optional leaderboard end date in YYYY-MM-DD format. */
