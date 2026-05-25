@@ -46,7 +46,7 @@ exports.AdminLeaderboard = core.serialization.object({
     rankBy: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).AdminLeaderboardRankBy; })),
     metricId: core.serialization.string().optional(),
     pointsSystemId: core.serialization.string().optional(),
-    maxParticipants: core.serialization.number(),
+    maxParticipants: core.serialization.number().optional(),
     start: core.serialization.string(),
     end: core.serialization.string().optional(),
     breakdownAttributes: core.serialization.list(core.serialization.string()),

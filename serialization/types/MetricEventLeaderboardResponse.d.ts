@@ -25,7 +25,7 @@ export declare namespace MetricEventLeaderboardResponse {
         pointsSystemName?: string | null;
         description?: string | null;
         start: string;
-        maxParticipants: number;
+        maxParticipants?: number | null;
         runUnit?: serializers.LeaderboardResponseRunUnit.Raw | null;
         runInterval?: number | null;
     }

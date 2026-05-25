@@ -51,7 +51,7 @@ exports.LeaderboardResponse = core.serialization.object({
     description: core.serialization.string().optional(),
     start: core.serialization.string(),
     end: core.serialization.string().optional(),
-    maxParticipants: core.serialization.number(),
+    maxParticipants: core.serialization.number().optional(),
     runUnit: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).LeaderboardResponseRunUnit; })).optional(),
     runInterval: core.serialization.number().optional(),
 });

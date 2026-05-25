@@ -15,7 +15,7 @@ export declare namespace AdminLeaderboard {
         rankBy: serializers.AdminLeaderboardRankBy.Raw;
         metricId?: string | null;
         pointsSystemId?: string | null;
-        maxParticipants: number;
+        maxParticipants?: number | null;
         start: string;
         end?: string | null;
         breakdownAttributes: string[];
