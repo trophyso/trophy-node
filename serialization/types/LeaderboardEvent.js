@@ -29,7 +29,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LeaderboardEvent = void 0;
 const core = __importStar(require("../../core"));
 exports.LeaderboardEvent = core.serialization.object({
-    timestamp: core.serialization.date().optional(),
+    date: core.serialization.string(),
+    timestamp: core.serialization.date(),
     previousRank: core.serialization.number().optional(),
     rank: core.serialization.number().optional(),
     previousValue: core.serialization.number().optional(),

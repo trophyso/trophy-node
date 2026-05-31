@@ -14,7 +14,7 @@ export interface UsersLeaderboardRequest {
      */
     run?: string;
     /**
-     * The number of events to return in the history array.
+     * The number of days to return in the leaderboard history for the user.
      */
     numEvents?: number;
 }
