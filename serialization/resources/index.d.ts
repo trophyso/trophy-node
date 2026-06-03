@@ -1,7 +1,5 @@
 export * as users from "./users";
 export * from "./users/types";
-export * as streaks from "./streaks";
-export * from "./streaks/types";
 export * as leaderboards from "./leaderboards";
 export * from "./leaderboards/types";
 export * as admin from "./admin";

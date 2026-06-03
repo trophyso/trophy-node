@@ -84,7 +84,6 @@ __exportStar(require("./EventResponse"), exports);
 __exportStar(require("./PointsRange"), exports);
 __exportStar(require("./PointsSummaryResponse"), exports);
 __exportStar(require("./PointsSystemResponse"), exports);
-__exportStar(require("./StreakRankingUser"), exports);
 __exportStar(require("./LeaderboardRanking"), exports);
 __exportStar(require("./LeaderboardEvent"), exports);
 __exportStar(require("./UserLeaderboardResponse"), exports);
