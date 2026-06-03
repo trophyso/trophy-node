@@ -208,7 +208,7 @@ export declare class Users {
      */
     pointsEventSummary(id: string, key: string, request: TrophyApi.UsersPointsEventSummaryRequest, requestOptions?: Users.RequestOptions): Promise<TrophyApi.UsersPointsEventSummaryResponseItem[]>;
     /**
-     * Get a user's rank, value, and history for a specific leaderboard.
+     * Get a user's rank, value, and daily ranking history for a specific leaderboard.
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
