@@ -68,7 +68,6 @@ export * from "./EventResponse";
 export * from "./PointsRange";
 export * from "./PointsSummaryResponse";
 export * from "./PointsSystemResponse";
-export * from "./StreakRankingUser";
 export * from "./LeaderboardRanking";
 export * from "./LeaderboardEvent";
 export * from "./UserLeaderboardResponse";

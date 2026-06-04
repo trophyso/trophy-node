@@ -27,16 +27,4 @@ export declare class Streaks {
      *     await trophyApi.streaks.list({})
      */
     list(request?: TrophyApi.StreaksListRequest, requestOptions?: Streaks.RequestOptions): Promise<TrophyApi.BulkStreakResponse>;
-    /**
-     * Get the top users by streak length (active or longest).
-     * @throws {@link TrophyApi.UnauthorizedError}
-     * @throws {@link TrophyApi.UnprocessableEntityError}
-     *
-     * @example
-     *     await trophyApi.streaks.rankings({
-     *         limit: 1,
-     *         type: TrophyApi.StreaksRankingsRequestType.Active
-     *     })
-     */
-    rankings(request?: TrophyApi.StreaksRankingsRequest, requestOptions?: Streaks.RequestOptions): Promise<TrophyApi.StreakRankingUser[]>;
 }
