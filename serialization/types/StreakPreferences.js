@@ -35,9 +35,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserPreferencesResponse = void 0;
+exports.StreakPreferences = void 0;
 const core = __importStar(require("../../core"));
-exports.UserPreferencesResponse = core.serialization.object({
-    notifications: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).NotificationPreferences; })),
-    streak: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).StreakPreferences; })).optional(),
+exports.StreakPreferences = core.serialization.object({
+    evaluationMode: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).StreakEvaluationModePreference; })).optional(),
+    metrics: core.serialization
+        .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).StreakMetricPreference; })))
+        .optional(),
 });

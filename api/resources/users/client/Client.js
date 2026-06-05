@@ -477,8 +477,9 @@ class Users {
         });
     }
     /**
-     * Update a user's notification preferences.
+     * Update a user's notification and streak preferences. Streak preferences require streak customization to be enabled in your Trophy dashboard settings.
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -500,6 +501,17 @@ class Users {
      *     await trophyApi.users.updatePreferences("user-123", {
      *         notifications: {
      *             achievementCompleted: [TrophyApi.NotificationChannel.Email, TrophyApi.NotificationChannel.Push]
+     *         }
+     *     })
+     *
+     * @example
+     *     await trophyApi.users.updatePreferences("user-123", {
+     *         streak: {
+     *             evaluationMode: TrophyApi.StreakEvaluationModePreference.Or,
+     *             metrics: [{
+     *                     key: "words-written",
+     *                     threshold: 500
+     *                 }]
      *         }
      *     })
      */
@@ -536,6 +548,13 @@ class Users {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            breadcrumbsPrefix: ["response"],
+                        }));
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(yield serializers.ErrorBody.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,

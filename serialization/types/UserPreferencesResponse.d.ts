@@ -8,5 +8,6 @@ export declare const UserPreferencesResponse: core.serialization.ObjectSchema<se
 export declare namespace UserPreferencesResponse {
     interface Raw {
         notifications: serializers.NotificationPreferences.Raw;
+        streak?: serializers.StreakPreferences.Raw | null;
     }
 }

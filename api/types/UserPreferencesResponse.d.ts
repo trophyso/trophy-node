@@ -7,4 +7,5 @@ import * as TrophyApi from "..";
  */
 export interface UserPreferencesResponse {
     notifications: TrophyApi.NotificationPreferences;
+    streak?: TrophyApi.StreakPreferences;
 }

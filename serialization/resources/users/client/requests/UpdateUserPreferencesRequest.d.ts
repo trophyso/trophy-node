@@ -8,5 +8,6 @@ export declare const UpdateUserPreferencesRequest: core.serialization.Schema<ser
 export declare namespace UpdateUserPreferencesRequest {
     interface Raw {
         notifications?: serializers.NotificationPreferences.Raw | null;
+        streak?: serializers.StreakPreferences.Raw | null;
     }
 }
