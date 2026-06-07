@@ -18,3 +18,4 @@ __exportStar(require("./UnauthorizedError"), exports);
 __exportStar(require("./UnprocessableEntityError"), exports);
 __exportStar(require("./NotFoundError"), exports);
 __exportStar(require("./BadRequestError"), exports);
+__exportStar(require("./ForbiddenError"), exports);

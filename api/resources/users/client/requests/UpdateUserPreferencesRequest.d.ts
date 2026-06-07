@@ -23,7 +23,19 @@ import * as TrophyApi from "../../../..";
  *             achievementCompleted: [TrophyApi.NotificationChannel.Email, TrophyApi.NotificationChannel.Push]
  *         }
  *     }
+ *
+ * @example
+ *     {
+ *         streak: {
+ *             evaluationMode: TrophyApi.StreakEvaluationModePreference.Or,
+ *             metrics: [{
+ *                     key: "words-written",
+ *                     threshold: 500
+ *                 }]
+ *         }
+ *     }
  */
 export interface UpdateUserPreferencesRequest {
     notifications?: TrophyApi.NotificationPreferences;
+    streak?: TrophyApi.StreakPreferences;
 }

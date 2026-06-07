@@ -86,8 +86,9 @@ export declare class Users {
      */
     getPreferences(id: string, requestOptions?: Users.RequestOptions): Promise<TrophyApi.UserPreferencesResponse>;
     /**
-     * Update a user's notification preferences.
+     * Update a user's notification and streak preferences. Streak preferences require streak customization to be enabled in your Trophy dashboard settings.
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -109,6 +110,17 @@ export declare class Users {
      *     await trophyApi.users.updatePreferences("user-123", {
      *         notifications: {
      *             achievementCompleted: [TrophyApi.NotificationChannel.Email, TrophyApi.NotificationChannel.Push]
+     *         }
+     *     })
+     *
+     * @example
+     *     await trophyApi.users.updatePreferences("user-123", {
+     *         streak: {
+     *             evaluationMode: TrophyApi.StreakEvaluationModePreference.Or,
+     *             metrics: [{
+     *                     key: "words-written",
+     *                     threshold: 500
+     *                 }]
      *         }
      *     })
      */

@@ -41,4 +41,5 @@ exports.UpdateUserPreferencesRequest = core.serialization.object({
     notifications: core.serialization
         .lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../../..")))).NotificationPreferences; }))
         .optional(),
+    streak: core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("../../../..")))).StreakPreferences; })).optional(),
 });
