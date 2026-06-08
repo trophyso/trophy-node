@@ -7,6 +7,7 @@ import * as core from "../../core";
 export declare const StreakPreferences: core.serialization.ObjectSchema<serializers.StreakPreferences.Raw, TrophyApi.StreakPreferences>;
 export declare namespace StreakPreferences {
     interface Raw {
+        enabled?: boolean | null;
         evaluationMode?: serializers.StreakEvaluationModePreference.Raw | null;
         metrics?: serializers.StreakMetricPreference.Raw[] | null;
     }
