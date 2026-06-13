@@ -38,6 +38,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.StreakPreferences = void 0;
 const core = __importStar(require("../../core"));
 exports.StreakPreferences = core.serialization.object({
+    enabled: core.serialization.boolean().optional(),
     evaluationMode: core.serialization.lazy(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).StreakEvaluationModePreference; })).optional(),
     metrics: core.serialization
         .list(core.serialization.lazyObject(() => __awaiter(void 0, void 0, void 0, function* () { return (yield Promise.resolve().then(() => __importStar(require("..")))).StreakMetricPreference; })))
