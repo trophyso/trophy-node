@@ -8,142 +8,318 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.fetcher = void 0;
-const form_data_1 = __importDefault(require("form-data"));
-const qs_1 = __importDefault(require("qs"));
-const INITIAL_RETRY_DELAY = 1;
-const MAX_RETRY_DELAY = 60;
-const DEFAULT_MAX_RETRIES = 2;
-function fetcherImpl(args) {
-    var _a, _b;
-    return __awaiter(this, void 0, void 0, function* () {
-        const headers = {};
-        if (args.body !== undefined && args.contentType != null) {
-            headers["Content-Type"] = args.contentType;
-        }
-        if (args.headers != null) {
-            for (const [key, value] of Object.entries(args.headers)) {
-                if (value != null) {
-                    headers[key] = value;
-                }
-            }
-        }
-        const url = Object.keys((_a = args.queryParameters) !== null && _a !== void 0 ? _a : {}).length > 0
-            ? `${args.url}?${qs_1.default.stringify(args.queryParameters, { arrayFormat: "repeat" })}`
-            : args.url;
-        let body = undefined;
-        if (args.body instanceof form_data_1.default) {
-            // @ts-expect-error
-            body = args.body;
+exports.fetcherImpl = fetcherImpl;
+const json_1 = require("../json");
+const logger_1 = require("../logging/logger");
+const createRequestUrl_1 = require("./createRequestUrl");
+const EndpointSupplier_1 = require("./EndpointSupplier");
+const getErrorResponseBody_1 = require("./getErrorResponseBody");
+const getFetchFn_1 = require("./getFetchFn");
+const getRequestBody_1 = require("./getRequestBody");
+const getResponseBody_1 = require("./getResponseBody");
+const Headers_1 = require("./Headers");
+const makeRequest_1 = require("./makeRequest");
+const RawResponse_1 = require("./RawResponse");
+const requestWithRetries_1 = require("./requestWithRetries");
+const SENSITIVE_HEADERS = new Set([
+    "authorization",
+    "www-authenticate",
+    "x-api-key",
+    "api-key",
+    "apikey",
+    "x-api-token",
+    "x-auth-token",
+    "auth-token",
+    "cookie",
+    "set-cookie",
+    "proxy-authorization",
+    "proxy-authenticate",
+    "x-csrf-token",
+    "x-xsrf-token",
+    "x-session-token",
+    "x-access-token",
+]);
+function redactHeaders(headers) {
+    const filtered = {};
+    for (const [key, value] of headers instanceof Headers_1.Headers ? headers.entries() : Object.entries(headers)) {
+        if (SENSITIVE_HEADERS.has(key.toLowerCase())) {
+            filtered[key] = "[REDACTED]";
         }
         else {
-            body = JSON.stringify(args.body);
+            filtered[key] = value;
         }
-        const fetchFn = typeof fetch == "function" ? fetch : require("node-fetch");
-        const makeRequest = () => __awaiter(this, void 0, void 0, function* () {
-            const controller = new AbortController();
-            let abortId = undefined;
-            if (args.timeoutMs != null) {
-                abortId = setTimeout(() => controller.abort(), args.timeoutMs);
+    }
+    return filtered;
+}
+const SENSITIVE_QUERY_PARAMS = new Set([
+    "api_key",
+    "api-key",
+    "apikey",
+    "token",
+    "access_token",
+    "access-token",
+    "auth_token",
+    "auth-token",
+    "password",
+    "passwd",
+    "secret",
+    "api_secret",
+    "api-secret",
+    "apisecret",
+    "key",
+    "session",
+    "session_id",
+    "session-id",
+]);
+function redactQueryParameters(queryParameters) {
+    if (queryParameters == null) {
+        return undefined;
+    }
+    const redacted = {};
+    for (const [key, value] of Object.entries(queryParameters)) {
+        redacted[key] = SENSITIVE_QUERY_PARAMS.has(key.toLowerCase()) ? "[REDACTED]" : value;
+    }
+    return redacted;
+}
+function redactUrl(url) {
+    const protocolIndex = url.indexOf("://");
+    if (protocolIndex === -1)
+        return url;
+    const afterProtocol = protocolIndex + 3;
+    // Find the first delimiter that marks the end of the authority section
+    const pathStart = url.indexOf("/", afterProtocol);
+    let queryStart = url.indexOf("?", afterProtocol);
+    let fragmentStart = url.indexOf("#", afterProtocol);
+    const firstDelimiter = Math.min(pathStart === -1 ? url.length : pathStart, queryStart === -1 ? url.length : queryStart, fragmentStart === -1 ? url.length : fragmentStart);
+    // Find the LAST @ before the delimiter (handles multiple @ in credentials)
+    let atIndex = -1;
+    for (let i = afterProtocol; i < firstDelimiter; i++) {
+        if (url[i] === "@") {
+            atIndex = i;
+        }
+    }
+    if (atIndex !== -1) {
+        url = `${url.slice(0, afterProtocol)}[REDACTED]@${url.slice(atIndex + 1)}`;
+    }
+    // Recalculate queryStart since url might have changed
+    queryStart = url.indexOf("?");
+    if (queryStart === -1)
+        return url;
+    fragmentStart = url.indexOf("#", queryStart);
+    const queryEnd = fragmentStart !== -1 ? fragmentStart : url.length;
+    const queryString = url.slice(queryStart + 1, queryEnd);
+    if (queryString.length === 0)
+        return url;
+    // FAST PATH: Quick check if any sensitive keywords present
+    // Using indexOf is faster than regex for simple substring matching
+    const lower = queryString.toLowerCase();
+    const hasSensitive = lower.includes("token") ||
+        lower.includes("key") ||
+        lower.includes("password") ||
+        lower.includes("passwd") ||
+        lower.includes("secret") ||
+        lower.includes("session") ||
+        lower.includes("auth");
+    if (!hasSensitive) {
+        return url;
+    }
+    // SLOW PATH: Parse and redact
+    const redactedParams = [];
+    const params = queryString.split("&");
+    for (const param of params) {
+        const equalIndex = param.indexOf("=");
+        if (equalIndex === -1) {
+            redactedParams.push(param);
+            continue;
+        }
+        const key = param.slice(0, equalIndex);
+        let shouldRedact = SENSITIVE_QUERY_PARAMS.has(key.toLowerCase());
+        if (!shouldRedact && key.includes("%")) {
+            try {
+                const decodedKey = decodeURIComponent(key);
+                shouldRedact = SENSITIVE_QUERY_PARAMS.has(decodedKey.toLowerCase());
             }
-            const response = yield fetchFn(url, {
-                method: args.method,
-                headers,
-                body,
-                signal: controller.signal,
-                credentials: args.withCredentials ? "include" : undefined,
-            });
-            if (abortId != null) {
-                clearTimeout(abortId);
+            catch (_a) { }
+        }
+        redactedParams.push(shouldRedact ? `${key}=[REDACTED]` : param);
+    }
+    return url.slice(0, queryStart + 1) + redactedParams.join("&") + url.slice(queryEnd);
+}
+function getHeaders(args) {
+    return __awaiter(this, void 0, void 0, function* () {
+        var _a;
+        const newHeaders = new Headers_1.Headers();
+        newHeaders.set("Accept", args.responseType === "json"
+            ? "application/json"
+            : args.responseType === "text"
+                ? "text/plain"
+                : args.responseType === "sse"
+                    ? "text/event-stream"
+                    : "*/*");
+        if (args.body !== undefined && args.contentType != null) {
+            newHeaders.set("Content-Type", args.contentType);
+        }
+        if (args.headers == null) {
+            return newHeaders;
+        }
+        for (const [key, value] of Object.entries(args.headers)) {
+            const result = yield EndpointSupplier_1.EndpointSupplier.get(value, { endpointMetadata: (_a = args.endpointMetadata) !== null && _a !== void 0 ? _a : {} });
+            if (typeof result === "string") {
+                newHeaders.set(key, result);
+                continue;
             }
-            return response;
+            if (result == null) {
+                continue;
+            }
+            newHeaders.set(key, `${result}`);
+        }
+        return newHeaders;
+    });
+}
+function fetcherImpl(args) {
+    return __awaiter(this, void 0, void 0, function* () {
+        var _a, _b, _c;
+        let url = args.url;
+        if (args.queryString != null && args.queryString.length > 0) {
+            url = `${url}?${args.queryString}`;
+        }
+        else {
+            url = (0, createRequestUrl_1.createRequestUrl)(args.url, args.queryParameters);
+        }
+        const requestBody = yield (0, getRequestBody_1.getRequestBody)({
+            body: args.body,
+            type: (_a = args.requestType) !== null && _a !== void 0 ? _a : "other",
         });
+        const fetchFn = (_b = args.fetchFn) !== null && _b !== void 0 ? _b : (yield (0, getFetchFn_1.getFetchFn)());
+        const headers = yield getHeaders(args);
+        const logger = (0, logger_1.createLogger)(args.logging);
+        if (logger.isDebug()) {
+            const metadata = {
+                method: args.method,
+                url: redactUrl(url),
+                headers: redactHeaders(headers),
+                queryParameters: redactQueryParameters(args.queryParameters),
+                hasBody: requestBody != null,
+            };
+            logger.debug("Making HTTP request", metadata);
+        }
         try {
-            let response = yield makeRequest();
-            for (let i = 0; i < ((_b = args.maxRetries) !== null && _b !== void 0 ? _b : DEFAULT_MAX_RETRIES); ++i) {
-                if (response.status === 408 ||
-                    response.status === 409 ||
-                    response.status === 429 ||
-                    response.status >= 500) {
-                    const delay = Math.min(INITIAL_RETRY_DELAY * Math.pow(i, 2), MAX_RETRY_DELAY);
-                    yield new Promise((resolve) => setTimeout(resolve, delay));
-                    response = yield makeRequest();
-                }
-                else {
-                    break;
-                }
-            }
-            let body;
-            if (response.body != null && args.responseType === "blob") {
-                body = yield response.blob();
-            }
-            else if (response.body != null && args.responseType === "streaming") {
-                body = response.body;
-            }
-            else {
-                const text = yield response.text();
-                if (text.length > 0) {
-                    try {
-                        body = JSON.parse(text);
-                    }
-                    catch (err) {
-                        return {
-                            ok: false,
-                            error: {
-                                reason: "non-json",
-                                statusCode: response.status,
-                                rawBody: text,
-                            },
-                        };
-                    }
-                }
-            }
+            const response = yield (0, requestWithRetries_1.requestWithRetries)(() => __awaiter(this, void 0, void 0, function* () {
+                return (0, makeRequest_1.makeRequest)(fetchFn, url, args.method, headers, requestBody, args.timeoutMs, args.abortSignal, args.withCredentials, args.duplex, args.responseType === "streaming" || args.responseType === "sse");
+            }), args.maxRetries);
             if (response.status >= 200 && response.status < 400) {
+                if (logger.isDebug()) {
+                    const metadata = {
+                        method: args.method,
+                        url: redactUrl(url),
+                        statusCode: response.status,
+                        responseHeaders: redactHeaders(response.headers),
+                    };
+                    logger.debug("HTTP request succeeded", metadata);
+                }
+                const body = yield (0, getResponseBody_1.getResponseBody)(response, args.responseType);
                 return {
                     ok: true,
                     body: body,
                     headers: response.headers,
+                    rawResponse: (0, RawResponse_1.toRawResponse)(response),
                 };
             }
             else {
+                if (logger.isError()) {
+                    const metadata = {
+                        method: args.method,
+                        url: redactUrl(url),
+                        statusCode: response.status,
+                        responseHeaders: redactHeaders(Object.fromEntries(response.headers.entries())),
+                    };
+                    logger.error("HTTP request failed with error status", metadata);
+                }
                 return {
                     ok: false,
                     error: {
                         reason: "status-code",
                         statusCode: response.status,
-                        body,
+                        body: yield (0, getErrorResponseBody_1.getErrorResponseBody)(response),
                     },
+                    rawResponse: (0, RawResponse_1.toRawResponse)(response),
                 };
             }
         }
         catch (error) {
-            if (error instanceof Error && error.name === "AbortError") {
+            if ((_c = args.abortSignal) === null || _c === void 0 ? void 0 : _c.aborted) {
+                if (logger.isError()) {
+                    const metadata = {
+                        method: args.method,
+                        url: redactUrl(url),
+                    };
+                    logger.error("HTTP request was aborted", metadata);
+                }
+                return {
+                    ok: false,
+                    error: {
+                        reason: "unknown",
+                        errorMessage: "The user aborted a request",
+                        cause: error,
+                    },
+                    rawResponse: RawResponse_1.abortRawResponse,
+                };
+            }
+            else if (error instanceof Error && error.name === "AbortError") {
+                if (logger.isError()) {
+                    const metadata = {
+                        method: args.method,
+                        url: redactUrl(url),
+                        timeoutMs: args.timeoutMs,
+                    };
+                    logger.error("HTTP request timed out", metadata);
+                }
                 return {
                     ok: false,
                     error: {
                         reason: "timeout",
+                        cause: error,
                     },
+                    rawResponse: RawResponse_1.abortRawResponse,
                 };
             }
             else if (error instanceof Error) {
+                if (logger.isError()) {
+                    const metadata = {
+                        method: args.method,
+                        url: redactUrl(url),
+                        errorMessage: error.message,
+                    };
+                    logger.error("HTTP request failed with error", metadata);
+                }
                 return {
                     ok: false,
                     error: {
                         reason: "unknown",
                         errorMessage: error.message,
+                        cause: error,
                     },
+                    rawResponse: RawResponse_1.unknownRawResponse,
                 };
+            }
+            if (logger.isError()) {
+                const metadata = {
+                    method: args.method,
+                    url: redactUrl(url),
+                    error: (0, json_1.toJson)(error),
+                };
+                logger.error("HTTP request failed with unknown error", metadata);
             }
             return {
                 ok: false,
                 error: {
                     reason: "unknown",
-                    errorMessage: JSON.stringify(error),
+                    errorMessage: (0, json_1.toJson)(error),
+                    cause: error,
                 },
+                rawResponse: RawResponse_1.unknownRawResponse,
             };
         }
     });

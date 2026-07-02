@@ -1,2 +1,2 @@
-export { SystemsListRequest } from "./SystemsListRequest";
-export { SystemsDeleteRequest } from "./SystemsDeleteRequest";
+export type { SystemsDeleteRequest } from "./SystemsDeleteRequest";
+export type { SystemsListRequest } from "./SystemsListRequest";

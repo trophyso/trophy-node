@@ -1,2 +1,2 @@
-export { BoostsListRequest } from "./BoostsListRequest";
-export { BoostsDeleteRequest } from "./BoostsDeleteRequest";
+export type { BoostsDeleteRequest } from "./BoostsDeleteRequest";
+export type { BoostsListRequest } from "./BoostsListRequest";

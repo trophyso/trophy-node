@@ -1,2 +1,2 @@
-export { MetricsListRequest } from "./MetricsListRequest";
-export { MetricsDeleteRequest } from "./MetricsDeleteRequest";
+export type { MetricsDeleteRequest } from "./MetricsDeleteRequest";
+export type { MetricsListRequest } from "./MetricsListRequest";

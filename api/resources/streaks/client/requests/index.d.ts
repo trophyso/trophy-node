@@ -1,1 +1,1 @@
-export { StreaksListRequest } from "./StreaksListRequest";
+export type { StreaksListRequest } from "./StreaksListRequest";

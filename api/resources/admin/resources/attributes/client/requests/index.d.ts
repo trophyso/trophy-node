@@ -1,2 +1,2 @@
-export { AttributesListRequest } from "./AttributesListRequest";
-export { AttributesDeleteRequest } from "./AttributesDeleteRequest";
+export type { AttributesDeleteRequest } from "./AttributesDeleteRequest";
+export type { AttributesListRequest } from "./AttributesListRequest";

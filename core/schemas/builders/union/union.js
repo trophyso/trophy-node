@@ -1,42 +1,24 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.union = void 0;
+exports.union = union;
 const Schema_1 = require("../../Schema");
 const getErrorMessageForIncorrectType_1 = require("../../utils/getErrorMessageForIncorrectType");
 const isPlainObject_1 = require("../../utils/isPlainObject");
 const keys_1 = require("../../utils/keys");
 const maybeSkipValidation_1 = require("../../utils/maybeSkipValidation");
-const enum_1 = require("../enum");
+const index_1 = require("../enum/index");
 const object_like_1 = require("../object-like");
-const schema_utils_1 = require("../schema-utils");
+const index_2 = require("../schema-utils/index");
+// eslint-disable-next-line @typescript-eslint/unbound-method
+const _hasOwn = Object.prototype.hasOwnProperty;
 function union(discriminant, union) {
     const rawDiscriminant = typeof discriminant === "string" ? discriminant : discriminant.rawDiscriminant;
     const parsedDiscriminant = typeof discriminant === "string"
         ? discriminant
         : discriminant.parsedDiscriminant;
-    const discriminantValueSchema = (0, enum_1.enum_)((0, keys_1.keys)(union));
+    const discriminantValueSchema = (0, index_1.enum_)((0, keys_1.keys)(union));
     const baseSchema = {
-        parse: (raw, opts) => __awaiter(this, void 0, void 0, function* () {
+        parse: (raw, opts) => {
             return transformAndValidateUnion({
                 value: raw,
                 discriminant: rawDiscriminant,
@@ -53,8 +35,8 @@ function union(discriminant, union) {
                 transformAdditionalProperties: (additionalProperties, additionalPropertiesSchema) => additionalPropertiesSchema.parse(additionalProperties, opts),
                 breadcrumbsPrefix: opts === null || opts === void 0 ? void 0 : opts.breadcrumbsPrefix,
             });
-        }),
-        json: (parsed, opts) => __awaiter(this, void 0, void 0, function* () {
+        },
+        json: (parsed, opts) => {
             return transformAndValidateUnion({
                 value: parsed,
                 discriminant: parsedDiscriminant,
@@ -71,71 +53,74 @@ function union(discriminant, union) {
                 transformAdditionalProperties: (additionalProperties, additionalPropertiesSchema) => additionalPropertiesSchema.json(additionalProperties, opts),
                 breadcrumbsPrefix: opts === null || opts === void 0 ? void 0 : opts.breadcrumbsPrefix,
             });
-        }),
+        },
         getType: () => Schema_1.SchemaType.UNION,
     };
-    return Object.assign(Object.assign(Object.assign({}, (0, maybeSkipValidation_1.maybeSkipValidation)(baseSchema)), (0, schema_utils_1.getSchemaUtils)(baseSchema)), (0, object_like_1.getObjectLikeUtils)(baseSchema));
+    return Object.assign(Object.assign(Object.assign({}, (0, maybeSkipValidation_1.maybeSkipValidation)(baseSchema)), (0, index_2.getSchemaUtils)(baseSchema)), (0, object_like_1.getObjectLikeUtils)(baseSchema));
 }
-exports.union = union;
 function transformAndValidateUnion({ value, discriminant, transformedDiscriminant, transformDiscriminantValue, getAdditionalPropertiesSchema, allowUnrecognizedUnionMembers = false, transformAdditionalProperties, breadcrumbsPrefix = [], }) {
-    return __awaiter(this, void 0, void 0, function* () {
-        if (!(0, isPlainObject_1.isPlainObject)(value)) {
-            return {
-                ok: false,
-                errors: [
-                    {
-                        path: breadcrumbsPrefix,
-                        message: (0, getErrorMessageForIncorrectType_1.getErrorMessageForIncorrectType)(value, "object"),
-                    },
-                ],
-            };
-        }
-        const _a = value, _b = discriminant, discriminantValue = _a[_b], additionalProperties = __rest(_a, [typeof _b === "symbol" ? _b : _b + ""]);
-        if (discriminantValue == null) {
-            return {
-                ok: false,
-                errors: [
-                    {
-                        path: breadcrumbsPrefix,
-                        message: `Missing discriminant ("${discriminant}")`,
-                    },
-                ],
-            };
-        }
-        const transformedDiscriminantValue = yield transformDiscriminantValue(discriminantValue);
-        if (!transformedDiscriminantValue.ok) {
-            return {
-                ok: false,
-                errors: transformedDiscriminantValue.errors,
-            };
-        }
-        const additionalPropertiesSchema = getAdditionalPropertiesSchema(transformedDiscriminantValue.value);
-        if (additionalPropertiesSchema == null) {
-            if (allowUnrecognizedUnionMembers) {
-                return {
-                    ok: true,
-                    value: Object.assign({ [transformedDiscriminant]: transformedDiscriminantValue.value }, additionalProperties),
-                };
-            }
-            else {
-                return {
-                    ok: false,
-                    errors: [
-                        {
-                            path: [...breadcrumbsPrefix, discriminant],
-                            message: "Unexpected discriminant value",
-                        },
-                    ],
-                };
-            }
-        }
-        const transformedAdditionalProperties = yield transformAdditionalProperties(additionalProperties, additionalPropertiesSchema);
-        if (!transformedAdditionalProperties.ok) {
-            return transformedAdditionalProperties;
-        }
+    if (!(0, isPlainObject_1.isPlainObject)(value)) {
         return {
-            ok: true,
-            value: Object.assign({ [transformedDiscriminant]: discriminantValue }, transformedAdditionalProperties.value),
+            ok: false,
+            errors: [
+                {
+                    path: breadcrumbsPrefix,
+                    message: (0, getErrorMessageForIncorrectType_1.getErrorMessageForIncorrectType)(value, "object"),
+                },
+            ],
         };
-    });
+    }
+    const discriminantValue = value[discriminant];
+    const additionalProperties = {};
+    for (const key in value) {
+        if (_hasOwn.call(value, key) && key !== discriminant) {
+            additionalProperties[key] = value[key];
+        }
+    }
+    if (discriminantValue == null) {
+        return {
+            ok: false,
+            errors: [
+                {
+                    path: breadcrumbsPrefix,
+                    message: `Missing discriminant ("${discriminant}")`,
+                },
+            ],
+        };
+    }
+    const transformedDiscriminantValue = transformDiscriminantValue(discriminantValue);
+    if (!transformedDiscriminantValue.ok) {
+        return {
+            ok: false,
+            errors: transformedDiscriminantValue.errors,
+        };
+    }
+    const additionalPropertiesSchema = getAdditionalPropertiesSchema(transformedDiscriminantValue.value);
+    if (additionalPropertiesSchema == null) {
+        if (allowUnrecognizedUnionMembers) {
+            return {
+                ok: true,
+                value: Object.assign({ [transformedDiscriminant]: transformedDiscriminantValue.value }, additionalProperties),
+            };
+        }
+        else {
+            return {
+                ok: false,
+                errors: [
+                    {
+                        path: [...breadcrumbsPrefix, discriminant],
+                        message: "Unexpected discriminant value",
+                    },
+                ],
+            };
+        }
+    }
+    const transformedAdditionalProperties = transformAdditionalProperties(additionalProperties, additionalPropertiesSchema);
+    if (!transformedAdditionalProperties.ok) {
+        return transformedAdditionalProperties;
+    }
+    return {
+        ok: true,
+        value: Object.assign({ [transformedDiscriminant]: discriminantValue }, transformedAdditionalProperties.value),
+    };
 }

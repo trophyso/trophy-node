@@ -1,1 +1,1 @@
-export { MetricsEventRequest } from "./MetricsEventRequest";
+export type { MetricsEventRequest } from "./MetricsEventRequest";

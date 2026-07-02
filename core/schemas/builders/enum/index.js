@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.enum_ = void 0;
+exports.forwardCompatibleEnum_ = exports.enum_ = void 0;
 var enum_1 = require("./enum");
 Object.defineProperty(exports, "enum_", { enumerable: true, get: function () { return enum_1.enum_; } });
+Object.defineProperty(exports, "forwardCompatibleEnum_", { enumerable: true, get: function () { return enum_1.forwardCompatibleEnum_; } });

@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SchemaType = void 0;
 exports.SchemaType = {
+    BIGINT: "bigint",
     DATE: "date",
     ENUM: "enum",
     LIST: "list",
@@ -13,9 +14,12 @@ exports.SchemaType = {
     NUMBER: "number",
     STRING: "string",
     UNKNOWN: "unknown",
+    NEVER: "never",
     RECORD: "record",
     SET: "set",
     UNION: "union",
     UNDISCRIMINATED_UNION: "undiscriminatedUnion",
+    NULLABLE: "nullable",
     OPTIONAL: "optional",
+    OPTIONAL_NULLABLE: "optionalNullable",
 };

@@ -1,2 +1,2 @@
-export { AchievementsAllRequest } from "./AchievementsAllRequest";
-export { AchievementsCompleteRequest } from "./AchievementsCompleteRequest";
+export type { AchievementsAllRequest } from "./AchievementsAllRequest";
+export type { AchievementsCompleteRequest } from "./AchievementsCompleteRequest";

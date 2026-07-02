@@ -1,1 +1,2 @@
-export declare const number: () => import("../../Schema").Schema<number, number>;
+import { type Schema } from "../../Schema";
+export declare const number: () => Schema<number, number>;

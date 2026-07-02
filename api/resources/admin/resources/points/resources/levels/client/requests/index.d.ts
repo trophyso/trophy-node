@@ -1,2 +1,2 @@
-export { LevelsListRequest } from "./LevelsListRequest";
-export { LevelsDeleteRequest } from "./LevelsDeleteRequest";
+export type { LevelsDeleteRequest } from "./LevelsDeleteRequest";
+export type { LevelsListRequest } from "./LevelsListRequest";
