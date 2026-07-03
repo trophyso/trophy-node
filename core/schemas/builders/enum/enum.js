@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.enum_ = void 0;
+exports.enum_ = enum_;
+exports.forwardCompatibleEnum_ = forwardCompatibleEnum_;
 const Schema_1 = require("../../Schema");
 const createIdentitySchemaCreator_1 = require("../../utils/createIdentitySchemaCreator");
 const getErrorMessageForIncorrectType_1 = require("../../utils/getErrorMessageForIncorrectType");
@@ -36,4 +37,9 @@ function enum_(values) {
     });
     return schemaCreator();
 }
-exports.enum_ = enum_;
+function forwardCompatibleEnum_(values) {
+    return enum_(values).transform({
+        transform: (val) => val,
+        untransform: (val) => val,
+    });
+}

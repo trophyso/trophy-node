@@ -1,1 +1,1 @@
-export { RestoreStreaksRequest } from "./RestoreStreaksRequest";
+export type { RestoreStreaksRequest } from "./RestoreStreaksRequest";

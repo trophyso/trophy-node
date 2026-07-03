@@ -1,19 +1,33 @@
-import { APIResponse } from "./APIResponse";
-export declare type FetchFunction = <R = unknown>(args: Fetcher.Args) => Promise<APIResponse<R, Fetcher.Error>>;
+import { type LogConfig, type Logger } from "../logging/logger";
+import type { APIResponse } from "./APIResponse";
+import type { EndpointMetadata } from "./EndpointMetadata";
+export type FetchFunction = <R = unknown>(args: Fetcher.Args) => Promise<APIResponse<R, Fetcher.Error>>;
 export declare namespace Fetcher {
     interface Args {
         url: string;
         method: string;
         contentType?: string;
-        headers?: Record<string, string | undefined>;
-        queryParameters?: Record<string, string | string[]>;
+        headers?: Record<string, unknown>;
+        /**
+         * @deprecated Prefer `queryString` (produced by `core.url.queryBuilder()`).
+         * Retained for backwards compatibility with custom fetchers and callers that
+         * still construct request args with a query-parameter object.
+         */
+        queryParameters?: Record<string, unknown>;
+        queryString?: string;
         body?: unknown;
         timeoutMs?: number;
         maxRetries?: number;
         withCredentials?: boolean;
-        responseType?: "json" | "blob" | "streaming";
+        abortSignal?: AbortSignal;
+        requestType?: "json" | "file" | "bytes" | "form" | "other";
+        responseType?: "json" | "blob" | "sse" | "streaming" | "text" | "arrayBuffer" | "binary-response";
+        duplex?: "half";
+        endpointMetadata?: EndpointMetadata;
+        fetchFn?: typeof fetch;
+        logging?: LogConfig | Logger;
     }
-    type Error = FailedStatusCodeError | NonJsonError | TimeoutError | UnknownError;
+    type Error = FailedStatusCodeError | NonJsonError | BodyIsNullError | TimeoutError | UnknownError;
     interface FailedStatusCodeError {
         reason: "status-code";
         statusCode: number;
@@ -24,12 +38,19 @@ export declare namespace Fetcher {
         statusCode: number;
         rawBody: string;
     }
+    interface BodyIsNullError {
+        reason: "body-is-null";
+        statusCode: number;
+    }
     interface TimeoutError {
         reason: "timeout";
+        cause?: unknown;
     }
     interface UnknownError {
         reason: "unknown";
         errorMessage: string;
+        cause?: unknown;
     }
 }
+export declare function fetcherImpl<R = unknown>(args: Fetcher.Args): Promise<APIResponse<R, Fetcher.Error>>;
 export declare const fetcher: FetchFunction;

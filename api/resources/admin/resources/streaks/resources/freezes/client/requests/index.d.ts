@@ -1,1 +1,1 @@
-export { CreateStreakFreezesRequest } from "./CreateStreakFreezesRequest";
+export type { CreateStreakFreezesRequest } from "./CreateStreakFreezesRequest";

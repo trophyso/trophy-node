@@ -1,1 +1,2 @@
-export declare const unknown: () => import("../../Schema").Schema<unknown, unknown>;
+import { type Schema } from "../../Schema";
+export declare const unknown: () => Schema<unknown, unknown>;

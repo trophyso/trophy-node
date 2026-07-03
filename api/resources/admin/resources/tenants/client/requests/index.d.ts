@@ -1,2 +1,2 @@
-export { TenantsListRequest } from "./TenantsListRequest";
-export { TenantsDeleteRequest } from "./TenantsDeleteRequest";
+export type { TenantsDeleteRequest } from "./TenantsDeleteRequest";
+export type { TenantsListRequest } from "./TenantsListRequest";

@@ -1,2 +1,2 @@
-export { LeaderboardsAllRequest } from "./LeaderboardsAllRequest";
-export { LeaderboardsGetRequest } from "./LeaderboardsGetRequest";
+export type { LeaderboardsAllRequest } from "./LeaderboardsAllRequest";
+export type { LeaderboardsGetRequest } from "./LeaderboardsGetRequest";
