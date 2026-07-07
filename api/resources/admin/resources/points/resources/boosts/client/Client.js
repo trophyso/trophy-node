@@ -86,7 +86,7 @@ class BoostsClient {
             };
             const _authRequest = yield this._options.authProvider.getAuthRequest();
             const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
-                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.15.0",
+                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.16.0",
                 "Tenant-ID": (_e = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.tenantId) !== null && _e !== void 0 ? _e : (_f = this._options) === null || _f === void 0 ? void 0 : _f.tenantId,
             }), requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.headers);
             const _response = yield core.fetcher({
@@ -181,7 +181,7 @@ class BoostsClient {
             var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
             const _authRequest = yield this._options.authProvider.getAuthRequest();
             const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
-                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.15.0",
+                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.16.0",
                 "Tenant-ID": (_e = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.tenantId) !== null && _e !== void 0 ? _e : (_f = this._options) === null || _f === void 0 ? void 0 : _f.tenantId,
             }), requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.headers);
             const _response = yield core.fetcher({
@@ -256,7 +256,7 @@ class BoostsClient {
             };
             const _authRequest = yield this._options.authProvider.getAuthRequest();
             const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
-                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.15.0",
+                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.16.0",
                 "Tenant-ID": (_e = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.tenantId) !== null && _e !== void 0 ? _e : (_f = this._options) === null || _f === void 0 ? void 0 : _f.tenantId,
             }), requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.headers);
             const _response = yield core.fetcher({
@@ -330,7 +330,7 @@ class BoostsClient {
             var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
             const _authRequest = yield this._options.authProvider.getAuthRequest();
             const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
-                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.15.0",
+                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.16.0",
                 "Tenant-ID": (_e = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.tenantId) !== null && _e !== void 0 ? _e : (_f = this._options) === null || _f === void 0 ? void 0 : _f.tenantId,
             }), requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.headers);
             const _response = yield core.fetcher({
@@ -399,7 +399,7 @@ class BoostsClient {
             var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
             const _authRequest = yield this._options.authProvider.getAuthRequest();
             const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
-                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.15.0",
+                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.16.0",
                 "Tenant-ID": (_e = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.tenantId) !== null && _e !== void 0 ? _e : (_f = this._options) === null || _f === void 0 ? void 0 : _f.tenantId,
             }), requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.headers);
             const _response = yield core.fetcher({
