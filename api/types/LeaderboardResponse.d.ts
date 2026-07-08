@@ -29,6 +29,10 @@ export interface LeaderboardResponse {
     start: string;
     /** The end date of the leaderboard in YYYY-MM-DD format, or null if it runs forever. */
     end?: string;
+    /** When set, ranking only counts activity at or after this time of day in the user's timezone (HH:mm format). */
+    startTime?: string;
+    /** When set, ranking only counts activity before this time of day in the user's timezone (HH:mm format). */
+    endTime?: string;
     /** The maximum number of participants in the leaderboard. */
     maxParticipants?: number;
     /** The repetition type for recurring leaderboards, or null for one-time leaderboards. */

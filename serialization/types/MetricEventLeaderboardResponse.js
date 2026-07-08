@@ -60,6 +60,8 @@ exports.MetricEventLeaderboardResponse = core.serialization.object({
     pointsSystemName: core.serialization.string().optional(),
     description: core.serialization.string().optional(),
     start: core.serialization.string(),
+    startTime: core.serialization.string().optional(),
+    endTime: core.serialization.string().optional(),
     maxParticipants: core.serialization.number().optional(),
     runUnit: LeaderboardResponseRunUnit_1.LeaderboardResponseRunUnit.optional(),
     runInterval: core.serialization.number().optional(),

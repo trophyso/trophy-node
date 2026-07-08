@@ -52,6 +52,8 @@ exports.LeaderboardResponse = core.serialization.object({
     description: core.serialization.string().optional(),
     start: core.serialization.string(),
     end: core.serialization.string().optional(),
+    startTime: core.serialization.string().optional(),
+    endTime: core.serialization.string().optional(),
     maxParticipants: core.serialization.number().optional(),
     runUnit: LeaderboardResponseRunUnit_1.LeaderboardResponseRunUnit.optional(),
     runInterval: core.serialization.number().optional(),

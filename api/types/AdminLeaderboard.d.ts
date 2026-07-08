@@ -25,6 +25,10 @@ export interface AdminLeaderboard {
     start: string;
     /** The optional leaderboard end date in YYYY-MM-DD format. */
     end?: string;
+    /** When set, ranking only counts activity at or after this time of day in the user's timezone (HH:mm format). */
+    startTime?: string;
+    /** When set, ranking only counts activity before this time of day in the user's timezone (HH:mm format). */
+    endTime?: string;
     /** The UUIDs of the user attributes used for ranking breakdowns. */
     breakdownAttributes: string[];
     /** The recurrence unit when the leaderboard repeats. */

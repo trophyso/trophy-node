@@ -19,6 +19,8 @@ export declare namespace LeaderboardResponse {
         description?: string | null;
         start: string;
         end?: string | null;
+        startTime?: string | null;
+        endTime?: string | null;
         maxParticipants?: number | null;
         runUnit?: LeaderboardResponseRunUnit.Raw | null;
         runInterval?: number | null;
