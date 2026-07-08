@@ -18,6 +18,8 @@ export declare namespace AdminLeaderboard {
         maxParticipants?: number | null;
         start: string;
         end?: string | null;
+        startTime?: string | null;
+        endTime?: string | null;
         breakdownAttributes: string[];
         runUnit?: AdminLeaderboardRunUnit.Raw | null;
         runInterval?: number | null;

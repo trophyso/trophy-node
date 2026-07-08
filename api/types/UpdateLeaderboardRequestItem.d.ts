@@ -25,6 +25,10 @@ export interface UpdateLeaderboardRequestItem {
     start?: string;
     /** The updated end date in YYYY-MM-DD format, or `null` to clear it. */
     end?: string;
+    /** The updated start of the daily ranking time window in HH:mm format, or `null` to clear it. */
+    startTime?: string;
+    /** The updated end of the daily ranking time window in HH:mm format, or `null` to clear it. */
+    endTime?: string;
     /** The updated breakdown attribute UUIDs. */
     breakdownAttributes?: string[];
     /** The updated recurrence unit. */

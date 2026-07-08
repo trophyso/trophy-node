@@ -18,6 +18,8 @@ export declare namespace UpdateLeaderboardRequestItem {
         maxParticipants?: number | null;
         start?: string | null;
         end?: string | null;
+        startTime?: string | null;
+        endTime?: string | null;
         breakdownAttributes?: string[] | null;
         runUnit?: UpdateLeaderboardRequestItemRunUnit.Raw | null;
         runInterval?: number | null;

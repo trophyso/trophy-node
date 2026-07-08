@@ -51,6 +51,8 @@ exports.UpdateLeaderboardRequestItem = core.serialization.object({
     maxParticipants: core.serialization.number().optional(),
     start: core.serialization.string().optional(),
     end: core.serialization.string().optional(),
+    startTime: core.serialization.string().optional(),
+    endTime: core.serialization.string().optional(),
     breakdownAttributes: core.serialization.list(core.serialization.string()).optional(),
     runUnit: UpdateLeaderboardRequestItemRunUnit_1.UpdateLeaderboardRequestItemRunUnit.optional(),
     runInterval: core.serialization.number().optional(),

@@ -23,6 +23,10 @@ export interface CreateLeaderboardRequestItem {
     start?: string;
     /** The optional leaderboard end date in YYYY-MM-DD format. */
     end?: string;
+    /** When set, ranking only counts activity at or after this time of day in the user's timezone (HH:mm format). */
+    startTime?: string;
+    /** When set, ranking only counts activity before this time of day in the user's timezone (HH:mm format). */
+    endTime?: string;
     /** The UUIDs of the active user attributes to break rankings down by. */
     breakdownAttributes?: string[];
     /** How often the leaderboard repeats. Omit for a non-recurring leaderboard. Streak leaderboards cannot repeat. */

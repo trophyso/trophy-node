@@ -51,6 +51,8 @@ exports.AdminLeaderboard = core.serialization.object({
     maxParticipants: core.serialization.number().optional(),
     start: core.serialization.string(),
     end: core.serialization.string().optional(),
+    startTime: core.serialization.string().optional(),
+    endTime: core.serialization.string().optional(),
     breakdownAttributes: core.serialization.list(core.serialization.string()),
     runUnit: AdminLeaderboardRunUnit_1.AdminLeaderboardRunUnit.optional(),
     runInterval: core.serialization.number().optional(),
