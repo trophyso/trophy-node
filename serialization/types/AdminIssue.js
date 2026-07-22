@@ -38,6 +38,7 @@ exports.AdminIssue = void 0;
 const core = __importStar(require("../../core"));
 const AdminIssueSeverity_1 = require("./AdminIssueSeverity");
 exports.AdminIssue = core.serialization.object({
+    id: core.serialization.string().optional(),
     userId: core.serialization.string().optional(),
     boostId: core.serialization.string().optional(),
     index: core.serialization.number().optional(),
