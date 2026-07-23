@@ -5,6 +5,7 @@ import { AdminIssueSeverity } from "./AdminIssueSeverity";
 export declare const AdminIssue: core.serialization.ObjectSchema<serializers.AdminIssue.Raw, TrophyApi.AdminIssue>;
 export declare namespace AdminIssue {
     interface Raw {
+        id?: string | null;
         userId?: string | null;
         boostId?: string | null;
         index?: number | null;

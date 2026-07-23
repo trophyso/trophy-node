@@ -3,6 +3,8 @@ import type * as TrophyApi from "../index";
  * An issue encountered while processing an item in an admin API request.
  */
 export interface AdminIssue {
+    /** The ID of the resource the issue relates to, when applicable. */
+    id?: string;
     /** The ID of the user the issue relates to, when applicable. */
     userId?: string;
     /** The ID of the points boost the issue relates to, when applicable. */

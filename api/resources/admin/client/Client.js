@@ -3,39 +3,44 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AdminClient = void 0;
 const BaseClient_1 = require("../../../../BaseClient");
-const Client_1 = require("../resources/attributes/client/Client");
-const Client_2 = require("../resources/leaderboards/client/Client");
-const Client_3 = require("../resources/metrics/client/Client");
-const Client_4 = require("../resources/points/client/Client");
-const Client_5 = require("../resources/streaks/client/Client");
-const Client_6 = require("../resources/tenants/client/Client");
+const Client_1 = require("../resources/applicationApiKeys/client/Client");
+const Client_2 = require("../resources/attributes/client/Client");
+const Client_3 = require("../resources/leaderboards/client/Client");
+const Client_4 = require("../resources/metrics/client/Client");
+const Client_5 = require("../resources/points/client/Client");
+const Client_6 = require("../resources/streaks/client/Client");
+const Client_7 = require("../resources/tenants/client/Client");
 class AdminClient {
     constructor(options) {
         this._options = (0, BaseClient_1.normalizeClientOptionsWithAuth)(options);
     }
     get attributes() {
         var _a;
-        return ((_a = this._attributes) !== null && _a !== void 0 ? _a : (this._attributes = new Client_1.AttributesClient(this._options)));
+        return ((_a = this._attributes) !== null && _a !== void 0 ? _a : (this._attributes = new Client_2.AttributesClient(this._options)));
     }
     get metrics() {
         var _a;
-        return ((_a = this._metrics) !== null && _a !== void 0 ? _a : (this._metrics = new Client_3.MetricsClient(this._options)));
+        return ((_a = this._metrics) !== null && _a !== void 0 ? _a : (this._metrics = new Client_4.MetricsClient(this._options)));
     }
     get leaderboards() {
         var _a;
-        return ((_a = this._leaderboards) !== null && _a !== void 0 ? _a : (this._leaderboards = new Client_2.LeaderboardsClient(this._options)));
+        return ((_a = this._leaderboards) !== null && _a !== void 0 ? _a : (this._leaderboards = new Client_3.LeaderboardsClient(this._options)));
     }
     get streaks() {
         var _a;
-        return ((_a = this._streaks) !== null && _a !== void 0 ? _a : (this._streaks = new Client_5.StreaksClient(this._options)));
+        return ((_a = this._streaks) !== null && _a !== void 0 ? _a : (this._streaks = new Client_6.StreaksClient(this._options)));
+    }
+    get applicationApiKeys() {
+        var _a;
+        return ((_a = this._applicationApiKeys) !== null && _a !== void 0 ? _a : (this._applicationApiKeys = new Client_1.ApplicationApiKeysClient(this._options)));
     }
     get tenants() {
         var _a;
-        return ((_a = this._tenants) !== null && _a !== void 0 ? _a : (this._tenants = new Client_6.TenantsClient(this._options)));
+        return ((_a = this._tenants) !== null && _a !== void 0 ? _a : (this._tenants = new Client_7.TenantsClient(this._options)));
     }
     get points() {
         var _a;
-        return ((_a = this._points) !== null && _a !== void 0 ? _a : (this._points = new Client_4.PointsClient(this._options)));
+        return ((_a = this._points) !== null && _a !== void 0 ? _a : (this._points = new Client_5.PointsClient(this._options)));
     }
 }
 exports.AdminClient = AdminClient;
