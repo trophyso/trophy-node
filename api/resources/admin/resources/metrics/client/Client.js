@@ -84,7 +84,7 @@ class MetricsClient {
             };
             const _authRequest = yield this._options.authProvider.getAuthRequest();
             const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
-                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.18.0",
+                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.19.0",
                 "Tenant-ID": (_e = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.tenantId) !== null && _e !== void 0 ? _e : (_f = this._options) === null || _f === void 0 ? void 0 : _f.tenantId,
             }), requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.headers);
             const _response = yield core.fetcher({
@@ -158,7 +158,7 @@ class MetricsClient {
             var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
             const _authRequest = yield this._options.authProvider.getAuthRequest();
             const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
-                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.18.0",
+                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.19.0",
                 "Tenant-ID": (_e = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.tenantId) !== null && _e !== void 0 ? _e : (_f = this._options) === null || _f === void 0 ? void 0 : _f.tenantId,
             }), requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.headers);
             const _response = yield core.fetcher({
@@ -229,7 +229,7 @@ class MetricsClient {
             };
             const _authRequest = yield this._options.authProvider.getAuthRequest();
             const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
-                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.18.0",
+                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.19.0",
                 "Tenant-ID": (_e = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.tenantId) !== null && _e !== void 0 ? _e : (_f = this._options) === null || _f === void 0 ? void 0 : _f.tenantId,
             }), requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.headers);
             const _response = yield core.fetcher({
@@ -303,7 +303,7 @@ class MetricsClient {
             var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
             const _authRequest = yield this._options.authProvider.getAuthRequest();
             const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
-                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.18.0",
+                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.19.0",
                 "Tenant-ID": (_e = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.tenantId) !== null && _e !== void 0 ? _e : (_f = this._options) === null || _f === void 0 ? void 0 : _f.tenantId,
             }), requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.headers);
             const _response = yield core.fetcher({
@@ -369,7 +369,7 @@ class MetricsClient {
             var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
             const _authRequest = yield this._options.authProvider.getAuthRequest();
             const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
-                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.18.0",
+                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.19.0",
                 "Tenant-ID": (_e = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.tenantId) !== null && _e !== void 0 ? _e : (_f = this._options) === null || _f === void 0 ? void 0 : _f.tenantId,
             }), requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.headers);
             const _response = yield core.fetcher({
@@ -411,6 +411,96 @@ class MetricsClient {
                 }
             }
             return (0, handleNonStatusCodeError_1.handleNonStatusCodeError)(_response.error, _response.rawResponse, "GET", "/metrics/{id}");
+        });
+    }
+    /**
+     * Submit up to 1,000 metric events for asynchronous processing.
+     *
+     * @param {TrophyApi.BatchMetricEvent[]} request
+     * @param {MetricsClient.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link TrophyApi.BadRequestError}
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await client.admin.metrics.batchEvents([{
+     *             key: "words-written",
+     *             user: {
+     *                 id: "18",
+     *                 email: "user@example.com",
+     *                 tz: "Europe/London",
+     *                 attributes: {
+     *                     "department": "engineering",
+     *                     "role": "developer"
+     *                 }
+     *             },
+     *             value: 750,
+     *             attributes: {
+     *                 "category": "writing",
+     *                 "source": "mobile-app"
+     *             },
+     *             idempotencyKey: "e4296e4b-8493-4bd1-9c30-5a1a9ac4d78f"
+     *         }])
+     */
+    batchEvents(request, requestOptions) {
+        return core.HttpResponsePromise.fromPromise(this.__batchEvents(request, requestOptions));
+    }
+    __batchEvents(request, requestOptions) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+            const _authRequest = yield this._options.authProvider.getAuthRequest();
+            const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
+                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.19.0",
+                "Tenant-ID": (_e = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.tenantId) !== null && _e !== void 0 ? _e : (_f = this._options) === null || _f === void 0 ? void 0 : _f.tenantId,
+            }), requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.headers);
+            const _response = yield core.fetcher({
+                url: core.url.join((_g = (yield core.Supplier.get(this._options.baseUrl))) !== null && _g !== void 0 ? _g : ((_h = (yield core.Supplier.get(this._options.environment))) !== null && _h !== void 0 ? _h : environments.TrophyApiEnvironment.Production).admin, "metrics/events"),
+                method: "POST",
+                headers: _headers,
+                contentType: "application/json",
+                queryString: core.url.queryBuilder().mergeAdditional(requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.queryParams).build(),
+                requestType: "json",
+                body: serializers.admin.metrics.batchEvents.Request.jsonOrThrow(request, {
+                    unrecognizedObjectKeys: "strip",
+                }),
+                timeoutMs: ((_l = (_j = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) !== null && _j !== void 0 ? _j : (_k = this._options) === null || _k === void 0 ? void 0 : _k.timeoutInSeconds) !== null && _l !== void 0 ? _l : 60) * 1000,
+                maxRetries: (_m = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries) !== null && _m !== void 0 ? _m : (_o = this._options) === null || _o === void 0 ? void 0 : _o.maxRetries,
+                abortSignal: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.abortSignal,
+                fetchFn: (_p = this._options) === null || _p === void 0 ? void 0 : _p.fetch,
+                logging: this._options.logging,
+            });
+            if (_response.ok) {
+                return {
+                    data: serializers.BatchEventsResponse.parseOrThrow(_response.body, {
+                        unrecognizedObjectKeys: "passthrough",
+                        allowUnrecognizedUnionMembers: true,
+                        allowUnrecognizedEnumValues: true,
+                        breadcrumbsPrefix: ["response"],
+                    }),
+                    rawResponse: _response.rawResponse,
+                };
+            }
+            if (_response.error.reason === "status-code") {
+                switch (_response.error.statusCode) {
+                    case 400:
+                        throw new TrophyApi.BadRequestError(_response.error.body, _response.rawResponse);
+                    case 401:
+                        throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 404:
+                        throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
+                    case 422:
+                        throw new TrophyApi.UnprocessableEntityError(_response.error.body, _response.rawResponse);
+                    default:
+                        throw new errors.TrophyApiError({
+                            statusCode: _response.error.statusCode,
+                            body: _response.error.body,
+                            rawResponse: _response.rawResponse,
+                        });
+                }
+            }
+            return (0, handleNonStatusCodeError_1.handleNonStatusCodeError)(_response.error, _response.rawResponse, "POST", "/metrics/events");
         });
     }
 }
