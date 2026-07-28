@@ -102,4 +102,37 @@ export declare class MetricsClient {
      */
     get(id: string, requestOptions?: MetricsClient.RequestOptions): core.HttpResponsePromise<TrophyApi.CreatedMetric>;
     private __get;
+    /**
+     * Submit up to 1,000 metric events for asynchronous processing.
+     *
+     * @param {TrophyApi.BatchMetricEvent[]} request
+     * @param {MetricsClient.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link TrophyApi.BadRequestError}
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await client.admin.metrics.batchEvents([{
+     *             key: "words-written",
+     *             user: {
+     *                 id: "18",
+     *                 email: "user@example.com",
+     *                 tz: "Europe/London",
+     *                 attributes: {
+     *                     "department": "engineering",
+     *                     "role": "developer"
+     *                 }
+     *             },
+     *             value: 750,
+     *             attributes: {
+     *                 "category": "writing",
+     *                 "source": "mobile-app"
+     *             },
+     *             idempotencyKey: "e4296e4b-8493-4bd1-9c30-5a1a9ac4d78f"
+     *         }])
+     */
+    batchEvents(request: TrophyApi.BatchMetricEvent[], requestOptions?: MetricsClient.RequestOptions): core.HttpResponsePromise<TrophyApi.BatchEventsResponse>;
+    private __batchEvents;
 }

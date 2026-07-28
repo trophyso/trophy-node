@@ -32,12 +32,6 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.streaks = exports.metrics = void 0;
-exports.metrics = __importStar(require("./metrics"));
-exports.streaks = __importStar(require("./streaks"));
-__exportStar(require("./streaks/client/requests"), exports);
-__exportStar(require("./streaks/types"), exports);
+exports.batchEvents = void 0;
+exports.batchEvents = __importStar(require("./batchEvents"));
