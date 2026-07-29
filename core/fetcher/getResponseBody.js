@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getResponseBody = getResponseBody;
 const json_1 = require("../json");
 const BinaryResponse_1 = require("./BinaryResponse");
-const chooseStreamWrapper_1 = require("./stream-wrappers/chooseStreamWrapper");
 // Pins the upstream Response so undici's FinalizationRegistry can't GC it and cancel the body stream.
 function retainResponse(target, response) {
     Object.defineProperty(target, "__fern_response_ref", {
@@ -43,7 +42,7 @@ function getResponseBody(response, responseType) {
                 }
                 retainResponse(response.body, response);
                 return response.body;
-            case "streaming": {
+            case "streaming":
                 if (response.body == null) {
                     return {
                         ok: false,
@@ -53,10 +52,8 @@ function getResponseBody(response, responseType) {
                         },
                     };
                 }
-                const wrapper = yield (0, chooseStreamWrapper_1.chooseStreamWrapper)(response.body);
-                retainResponse(wrapper, response);
-                return wrapper;
-            }
+                retainResponse(response.body, response);
+                return response.body;
             case "text":
                 return yield response.text();
         }

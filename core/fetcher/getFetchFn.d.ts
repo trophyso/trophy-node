@@ -1,4 +1,1 @@
-/**
- * Returns a fetch function based on the runtime
- */
-export declare function getFetchFn(): Promise<any>;
+export declare function getFetchFn(): Promise<typeof fetch>;
