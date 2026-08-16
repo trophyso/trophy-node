@@ -37,10 +37,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.StreakResponse = void 0;
 const core = __importStar(require("../../core"));
 const BaseStreakResponse_1 = require("./BaseStreakResponse");
+const StreakResponsePausesItem_1 = require("./StreakResponsePausesItem");
 const StreakResponseStreakHistoryItem_1 = require("./StreakResponseStreakHistoryItem");
 exports.StreakResponse = core.serialization
     .object({
     extended: core.serialization.date().optional(),
     streakHistory: core.serialization.list(StreakResponseStreakHistoryItem_1.StreakResponseStreakHistoryItem),
+    pauses: core.serialization.list(StreakResponsePausesItem_1.StreakResponsePausesItem),
 })
     .extend(BaseStreakResponse_1.BaseStreakResponse);

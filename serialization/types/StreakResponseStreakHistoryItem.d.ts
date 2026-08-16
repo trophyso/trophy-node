@@ -8,5 +8,6 @@ export declare namespace StreakResponseStreakHistoryItem {
         periodEnd: string;
         length: number;
         usedFreeze?: boolean | null;
+        usedPause?: boolean | null;
     }
 }

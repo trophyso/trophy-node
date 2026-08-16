@@ -53,6 +53,7 @@ const errors = __importStar(require("../../../../../../errors/index"));
 const serializers = __importStar(require("../../../../../../serialization/index"));
 const TrophyApi = __importStar(require("../../../../../index"));
 const Client_1 = require("../resources/freezes/client/Client");
+const Client_2 = require("../resources/pauses/client/Client");
 class StreaksClient {
     constructor(options) {
         this._options = (0, BaseClient_1.normalizeClientOptionsWithAuth)(options);
@@ -60,6 +61,10 @@ class StreaksClient {
     get freezes() {
         var _a;
         return ((_a = this._freezes) !== null && _a !== void 0 ? _a : (this._freezes = new Client_1.FreezesClient(this._options)));
+    }
+    get pauses() {
+        var _a;
+        return ((_a = this._pauses) !== null && _a !== void 0 ? _a : (this._pauses = new Client_2.PausesClient(this._options)));
     }
     /**
      * Restore streaks for multiple users to the maximum previously achieved streak length found within the current restore window: the last 90 days for daily streaks, weekly periods starting with the week containing the start of the current calendar year for weekly streaks, and monthly periods starting at the beginning of the previous calendar year for monthly streaks.
@@ -88,7 +93,7 @@ class StreaksClient {
             var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
             const _authRequest = yield this._options.authProvider.getAuthRequest();
             const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
-                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.20.1",
+                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.21.0",
                 "Tenant-ID": (_e = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.tenantId) !== null && _e !== void 0 ? _e : (_f = this._options) === null || _f === void 0 ? void 0 : _f.tenantId,
             }), requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.headers);
             const _response = yield core.fetcher({

@@ -36,7 +36,10 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.freezes = void 0;
+exports.pauses = exports.freezes = void 0;
 exports.freezes = __importStar(require("./freezes"));
 __exportStar(require("./freezes/client/requests"), exports);
 __exportStar(require("./freezes/types"), exports);
+exports.pauses = __importStar(require("./pauses"));
+__exportStar(require("./pauses/client/requests"), exports);
+__exportStar(require("./pauses/types"), exports);
