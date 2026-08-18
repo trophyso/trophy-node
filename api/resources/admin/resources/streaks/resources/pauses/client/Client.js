@@ -57,7 +57,7 @@ class PausesClient {
         this._options = (0, BaseClient_1.normalizeClientOptionsWithAuth)(options);
     }
     /**
-     * Create streak pauses for multiple users. A pause covers a specific date range and maintains the user's streak length during that range instead of ending the streak.
+     * Create streak pauses for multiple users. A pause covers a specific date range and maintains the user's streak length during that range instead of ending the streak. Start dates in the past are rejected.
      *
      * @param {TrophyApi.admin.streaks.CreateStreakPausesRequest} request
      * @param {PausesClient.RequestOptions} requestOptions - Request-specific configuration.
@@ -134,34 +134,43 @@ class PausesClient {
         });
     }
     /**
-     * Archive a streak pause by ID. The pause record is not deleted; its status is set to archived so it no longer applies to streak logic.
+     * Archive streak pauses by ID. Pause records are not deleted; their status is set to archived so they no longer apply to streak logic.
      *
-     * @param {string} id - The UUID of the streak pause to archive.
+     * @param {TrophyApi.admin.streaks.PausesDeleteRequest} request
      * @param {PausesClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
-     * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await client.admin.streaks.pauses.delete("550e8400-e29b-41d4-a716-446655440000")
+     *     await client.admin.streaks.pauses.delete({
+     *         ids: ["550e8400-e29b-41d4-a716-446655440000", "550e8400-e29b-41d4-a716-446655440001"]
+     *     })
      */
-    delete(id, requestOptions) {
-        return core.HttpResponsePromise.fromPromise(this.__delete(id, requestOptions));
+    delete(request = {}, requestOptions) {
+        return core.HttpResponsePromise.fromPromise(this.__delete(request, requestOptions));
     }
-    __delete(id, requestOptions) {
-        return __awaiter(this, void 0, void 0, function* () {
+    __delete() {
+        return __awaiter(this, arguments, void 0, function* (request = {}, requestOptions) {
             var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+            const { ids } = request;
+            const _queryParams = {
+                ids,
+            };
             const _authRequest = yield this._options.authProvider.getAuthRequest();
             const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
                 "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.21.0",
                 "Tenant-ID": (_e = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.tenantId) !== null && _e !== void 0 ? _e : (_f = this._options) === null || _f === void 0 ? void 0 : _f.tenantId,
             }), requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.headers);
             const _response = yield core.fetcher({
-                url: core.url.join((_g = (yield core.Supplier.get(this._options.baseUrl))) !== null && _g !== void 0 ? _g : ((_h = (yield core.Supplier.get(this._options.environment))) !== null && _h !== void 0 ? _h : environments.TrophyApiEnvironment.Production).admin, `streaks/pauses/${core.url.encodePathParam(id)}`),
+                url: core.url.join((_g = (yield core.Supplier.get(this._options.baseUrl))) !== null && _g !== void 0 ? _g : ((_h = (yield core.Supplier.get(this._options.environment))) !== null && _h !== void 0 ? _h : environments.TrophyApiEnvironment.Production).admin, "streaks/pauses"),
                 method: "DELETE",
                 headers: _headers,
-                queryString: core.url.queryBuilder().mergeAdditional(requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.queryParams).build(),
+                queryString: core.url
+                    .queryBuilder()
+                    .addMany(_queryParams)
+                    .mergeAdditional(requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.queryParams)
+                    .build(),
                 timeoutMs: ((_l = (_j = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) !== null && _j !== void 0 ? _j : (_k = this._options) === null || _k === void 0 ? void 0 : _k.timeoutInSeconds) !== null && _l !== void 0 ? _l : 60) * 1000,
                 maxRetries: (_m = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries) !== null && _m !== void 0 ? _m : (_o = this._options) === null || _o === void 0 ? void 0 : _o.maxRetries,
                 abortSignal: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.abortSignal,
@@ -183,8 +192,6 @@ class PausesClient {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
-                    case 404:
-                        throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 422:
                         throw new TrophyApi.UnprocessableEntityError(_response.error.body, _response.rawResponse);
                     default:
@@ -195,7 +202,7 @@ class PausesClient {
                         });
                 }
             }
-            return (0, handleNonStatusCodeError_1.handleNonStatusCodeError)(_response.error, _response.rawResponse, "DELETE", "/streaks/pauses/{id}");
+            return (0, handleNonStatusCodeError_1.handleNonStatusCodeError)(_response.error, _response.rawResponse, "DELETE", "/streaks/pauses");
         });
     }
 }
