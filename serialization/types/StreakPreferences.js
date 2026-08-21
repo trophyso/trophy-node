@@ -42,4 +42,5 @@ exports.StreakPreferences = core.serialization.object({
     enabled: core.serialization.boolean().optional(),
     evaluationMode: StreakEvaluationModePreference_1.StreakEvaluationModePreference.optional(),
     metrics: core.serialization.list(StreakMetricPreference_1.StreakMetricPreference).optional(),
+    daysOff: core.serialization.list(core.serialization.number()).optional(),
 });
