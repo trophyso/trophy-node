@@ -41,4 +41,5 @@ exports.StreakResponseStreakHistoryItem = core.serialization.object({
     periodEnd: core.serialization.string(),
     length: core.serialization.number(),
     usedFreeze: core.serialization.boolean().optional(),
+    usedPause: core.serialization.boolean(),
 });
