@@ -5,6 +5,6 @@
  *     }
  */
 export interface PausesDeleteRequest {
-    /** Streak pause IDs to archive. Repeat the query param or provide a comma-separated list. */
+    /** Streak pause IDs to delete. Repeat the query param or provide a comma-separated list. */
     ids?: string | string[];
 }

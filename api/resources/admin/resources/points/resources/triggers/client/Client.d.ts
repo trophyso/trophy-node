@@ -49,7 +49,7 @@ export declare class TriggersClient {
     create(systemId: string, request: TrophyApi.CreatePointsTriggersRequest, requestOptions?: TriggersClient.RequestOptions): core.HttpResponsePromise<TrophyApi.CreatePointsTriggersResponse>;
     private __create;
     /**
-     * Delete (archive) points triggers by ID. Maximum 100 trigger IDs per request.
+     * Delete points triggers by ID. Maximum 100 trigger IDs per request.
      *
      * @param {string} systemId - The UUID of the points system.
      * @param {TrophyApi.admin.points.TriggersDeleteRequest} request

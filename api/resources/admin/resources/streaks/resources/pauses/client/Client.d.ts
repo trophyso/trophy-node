@@ -35,7 +35,7 @@ export declare class PausesClient {
     create(request: TrophyApi.admin.streaks.CreateStreakPausesRequest, requestOptions?: PausesClient.RequestOptions): core.HttpResponsePromise<TrophyApi.CreateStreakPausesResponse>;
     private __create;
     /**
-     * Archive streak pauses by ID. Pause records are not deleted; their status is set to archived so they no longer apply to streak logic.
+     * Delete streak pauses by ID.
      *
      * @param {TrophyApi.admin.streaks.PausesDeleteRequest} request
      * @param {PausesClient.RequestOptions} requestOptions - Request-specific configuration.

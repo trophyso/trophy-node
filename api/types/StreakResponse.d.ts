@@ -7,6 +7,6 @@ export interface StreakResponse extends TrophyApi.BaseStreakResponse {
     extended?: Date;
     /** A list of the user's past streak periods up through the current period. Each period includes the start and end dates and the length of the streak. */
     streakHistory: TrophyApi.StreakResponseStreakHistoryItem[];
-    /** Upcoming and currently active streak pauses for the user. Past and archived pauses are omitted. */
+    /** Upcoming and currently active streak pauses for the user. */
     pauses: TrophyApi.StreakResponsePausesItem[];
 }
