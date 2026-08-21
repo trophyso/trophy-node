@@ -55,7 +55,7 @@ export declare class SystemsClient {
     create(request: TrophyApi.CreatePointsSystemsRequest, requestOptions?: SystemsClient.RequestOptions): core.HttpResponsePromise<TrophyApi.CreatePointsSystemsResponse>;
     private __create;
     /**
-     * Delete (archive) points systems by ID.
+     * Delete points systems by ID.
      *
      * @param {TrophyApi.admin.points.SystemsDeleteRequest} request
      * @param {SystemsClient.RequestOptions} requestOptions - Request-specific configuration.
