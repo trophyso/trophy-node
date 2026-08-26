@@ -105,7 +105,7 @@ export declare class UsersClient {
     getPreferences(id: string, requestOptions?: UsersClient.RequestOptions): core.HttpResponsePromise<TrophyApi.UserPreferencesResponse>;
     private __getPreferences;
     /**
-     * Update a user's notification and streak preferences. Streak preferences require streak customization to be enabled in your Trophy dashboard settings.
+     * Update a user's notification and streak preferences. Streak preferences other than `streak.enabled` require streak customization to be enabled in your Trophy dashboard settings.
      *
      * @param {string} id - The user's ID in your database.
      * @param {TrophyApi.UpdateUserPreferencesRequest} request
@@ -144,7 +144,8 @@ export declare class UsersClient {
      *             metrics: [{
      *                     key: "words-written",
      *                     threshold: 500
-     *                 }]
+     *                 }],
+     *             daysOff: [0, 6]
      *         }
      *     })
      */

@@ -28,7 +28,8 @@ import type * as TrophyApi from "../../../../index";
  *             metrics: [{
  *                     key: "words-written",
  *                     threshold: 500
- *                 }]
+ *                 }],
+ *             daysOff: [0, 6]
  *         }
  *     }
  */

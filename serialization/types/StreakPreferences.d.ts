@@ -9,5 +9,6 @@ export declare namespace StreakPreferences {
         enabled?: boolean | null;
         evaluationMode?: StreakEvaluationModePreference.Raw | null;
         metrics?: StreakMetricPreference.Raw[] | null;
+        daysOff?: number[] | null;
     }
 }
