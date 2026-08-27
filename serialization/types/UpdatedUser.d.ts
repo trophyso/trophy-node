@@ -7,6 +7,7 @@ export declare namespace UpdatedUser {
         email?: string | null;
         name?: string | null;
         tz?: string | null;
+        signUpDate?: string | null;
         deviceTokens?: string[] | null;
         subscribeToEmails?: boolean | null;
         attributes?: Record<string, string> | null;

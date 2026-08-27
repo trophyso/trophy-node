@@ -8,6 +8,8 @@ export interface UpdatedUser {
     name?: string;
     /** The user's timezone (used for email scheduling). */
     tz?: string;
+    /** The date the user signed up on your platform, in ISO 8601 format. Must not be in the future. Required for anniversary achievements. Users without a signUpDate are not eligible. */
+    signUpDate?: Date;
     /** The user's device tokens, used for push notifications. */
     deviceTokens?: string[];
     /** Whether the user should receive Trophy-powered emails. If false, Trophy will not store the user's email address. */
