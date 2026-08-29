@@ -10,8 +10,8 @@ export interface User {
     name?: string;
     /** The user's timezone. */
     tz?: string;
-    /** The date the user signed up on your platform, in ISO 8601 format. Required for anniversary achievements. Null if not set, in which case the user is not eligible for anniversary achievements. */
-    signUpDate?: Date;
+    /** The date the user signed up on your platform, as YYYY-MM-DD. Required for anniversary achievements. Null if not set, in which case the user is not eligible for anniversary achievements. */
+    signUpDate?: string;
     /** The user's device tokens. */
     deviceTokens?: string[];
     /** Whether the user is opted into receiving Trophy-powered emails. */
