@@ -36,4 +36,4 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AchievementResponseTrigger = void 0;
 const core = __importStar(require("../../core"));
-exports.AchievementResponseTrigger = core.serialization.enum_(["metric", "streak", "api", "achievement"]);
+exports.AchievementResponseTrigger = core.serialization.enum_(["metric", "streak", "api", "achievement", "anniversary"]);

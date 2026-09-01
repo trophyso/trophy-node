@@ -8,6 +8,7 @@ export declare namespace User {
         email?: string | null;
         name?: string | null;
         tz?: string | null;
+        signUpDate?: string | null;
         deviceTokens?: string[] | null;
         subscribeToEmails: boolean;
         attributes: Record<string, string>;

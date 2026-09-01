@@ -57,6 +57,7 @@ export declare class UsersClient {
      *     await client.users.identify("id", {
      *         email: "user@example.com",
      *         tz: "Europe/London",
+     *         signUpDate: "2020-08-20",
      *         attributes: {
      *             "department": "engineering",
      *             "role": "developer"
