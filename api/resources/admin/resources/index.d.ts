@@ -7,6 +7,8 @@ export * from "./leaderboards/client/requests";
 export * as metrics from "./metrics";
 export * from "./metrics/client/requests";
 export * as points from "./points";
+export * as settings from "./settings";
+export * from "./settings/client/requests";
 export * as streaks from "./streaks";
 export * from "./streaks/client/requests";
 export * from "./streaks/types";

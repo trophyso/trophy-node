@@ -8,8 +8,9 @@ const Client_2 = require("../resources/attributes/client/Client");
 const Client_3 = require("../resources/leaderboards/client/Client");
 const Client_4 = require("../resources/metrics/client/Client");
 const Client_5 = require("../resources/points/client/Client");
-const Client_6 = require("../resources/streaks/client/Client");
-const Client_7 = require("../resources/tenants/client/Client");
+const Client_6 = require("../resources/settings/client/Client");
+const Client_7 = require("../resources/streaks/client/Client");
+const Client_8 = require("../resources/tenants/client/Client");
 class AdminClient {
     constructor(options) {
         this._options = (0, BaseClient_1.normalizeClientOptionsWithAuth)(options);
@@ -28,7 +29,11 @@ class AdminClient {
     }
     get streaks() {
         var _a;
-        return ((_a = this._streaks) !== null && _a !== void 0 ? _a : (this._streaks = new Client_6.StreaksClient(this._options)));
+        return ((_a = this._streaks) !== null && _a !== void 0 ? _a : (this._streaks = new Client_7.StreaksClient(this._options)));
+    }
+    get settings() {
+        var _a;
+        return ((_a = this._settings) !== null && _a !== void 0 ? _a : (this._settings = new Client_6.SettingsClient(this._options)));
     }
     get applicationApiKeys() {
         var _a;
@@ -36,7 +41,7 @@ class AdminClient {
     }
     get tenants() {
         var _a;
-        return ((_a = this._tenants) !== null && _a !== void 0 ? _a : (this._tenants = new Client_7.TenantsClient(this._options)));
+        return ((_a = this._tenants) !== null && _a !== void 0 ? _a : (this._tenants = new Client_8.TenantsClient(this._options)));
     }
     get points() {
         var _a;

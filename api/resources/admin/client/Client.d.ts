@@ -5,6 +5,7 @@ import { AttributesClient } from "../resources/attributes/client/Client";
 import { LeaderboardsClient } from "../resources/leaderboards/client/Client";
 import { MetricsClient } from "../resources/metrics/client/Client";
 import { PointsClient } from "../resources/points/client/Client";
+import { SettingsClient } from "../resources/settings/client/Client";
 import { StreaksClient } from "../resources/streaks/client/Client";
 import { TenantsClient } from "../resources/tenants/client/Client";
 export declare namespace AdminClient {
@@ -16,6 +17,7 @@ export declare class AdminClient {
     protected _metrics: MetricsClient | undefined;
     protected _leaderboards: LeaderboardsClient | undefined;
     protected _streaks: StreaksClient | undefined;
+    protected _settings: SettingsClient | undefined;
     protected _applicationApiKeys: ApplicationApiKeysClient | undefined;
     protected _tenants: TenantsClient | undefined;
     protected _points: PointsClient | undefined;
@@ -24,6 +26,7 @@ export declare class AdminClient {
     get metrics(): MetricsClient;
     get leaderboards(): LeaderboardsClient;
     get streaks(): StreaksClient;
+    get settings(): SettingsClient;
     get applicationApiKeys(): ApplicationApiKeysClient;
     get tenants(): TenantsClient;
     get points(): PointsClient;
