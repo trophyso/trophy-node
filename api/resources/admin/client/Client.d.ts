@@ -1,5 +1,6 @@
 import type { BaseClientOptions } from "../../../../BaseClient";
 import { type NormalizedClientOptionsWithAuth } from "../../../../BaseClient";
+import { AchievementsClient } from "../resources/achievements/client/Client";
 import { ApplicationApiKeysClient } from "../resources/applicationApiKeys/client/Client";
 import { AttributesClient } from "../resources/attributes/client/Client";
 import { LeaderboardsClient } from "../resources/leaderboards/client/Client";
@@ -14,6 +15,7 @@ export declare namespace AdminClient {
 export declare class AdminClient {
     protected readonly _options: NormalizedClientOptionsWithAuth<AdminClient.Options>;
     protected _attributes: AttributesClient | undefined;
+    protected _achievements: AchievementsClient | undefined;
     protected _metrics: MetricsClient | undefined;
     protected _leaderboards: LeaderboardsClient | undefined;
     protected _streaks: StreaksClient | undefined;
@@ -23,6 +25,7 @@ export declare class AdminClient {
     protected _points: PointsClient | undefined;
     constructor(options: AdminClient.Options);
     get attributes(): AttributesClient;
+    get achievements(): AchievementsClient;
     get metrics(): MetricsClient;
     get leaderboards(): LeaderboardsClient;
     get streaks(): StreaksClient;

@@ -1,3 +1,5 @@
+export * as achievements from "./achievements";
+export * from "./achievements/client/requests";
 export * as applicationApiKeys from "./applicationApiKeys";
 export * from "./applicationApiKeys/client/requests";
 export * as attributes from "./attributes";

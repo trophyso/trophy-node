@@ -1,0 +1,13 @@
+/**
+ * @example
+ *     {
+ *         limit: 1,
+ *         skip: 1
+ *     }
+ */
+export interface AchievementsListRequest {
+    /** Number of records to return. */
+    limit?: number;
+    /** Number of records to skip from the start of the list. */
+    skip?: number;
+}

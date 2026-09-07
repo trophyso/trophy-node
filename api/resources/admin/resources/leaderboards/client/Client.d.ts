@@ -28,7 +28,7 @@ export declare class LeaderboardsClient {
     list(request?: TrophyApi.admin.LeaderboardsListRequest, requestOptions?: LeaderboardsClient.RequestOptions): core.HttpResponsePromise<TrophyApi.ListLeaderboardsResponse>;
     private __list;
     /**
-     * Create leaderboards. Maximum 100 leaderboards per request.
+     * Create leaderboards.
      *
      * @param {TrophyApi.CreateLeaderboardsRequest} request
      * @param {LeaderboardsClient.RequestOptions} requestOptions - Request-specific configuration.
