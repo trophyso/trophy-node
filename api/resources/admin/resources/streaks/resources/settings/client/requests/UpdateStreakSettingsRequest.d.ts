@@ -26,7 +26,7 @@ export interface UpdateStreakSettingsRequest {
     evaluationMode?: TrophyApi.AdminStreakEvaluationMode;
     /** Whether users can override streak evaluation mode, metric thresholds, and days off via preferences. */
     customizationEnabled?: boolean;
-    /** Days of the week that do not count toward the daily streak. A non-empty array is only allowed when the resulting frequency is `daily`. */
+    /** Days of the week that do not count toward the daily streak. A non-empty array is only allowed when the resulting frequency is `daily`. Changing frequency away from `daily` clears stored days off even when this field is omitted. */
     daysOff?: number[];
     /** Replacement list of streak metrics. Keys must be unique and must exist on the organization. */
     metrics?: TrophyApi.StreakSettingsMetric[];
