@@ -54,6 +54,7 @@ const serializers = __importStar(require("../../../../../../serialization/index"
 const TrophyApi = __importStar(require("../../../../../index"));
 const Client_1 = require("../resources/freezes/client/Client");
 const Client_2 = require("../resources/pauses/client/Client");
+const Client_3 = require("../resources/settings/client/Client");
 class StreaksClient {
     constructor(options) {
         this._options = (0, BaseClient_1.normalizeClientOptionsWithAuth)(options);
@@ -65,6 +66,10 @@ class StreaksClient {
     get pauses() {
         var _a;
         return ((_a = this._pauses) !== null && _a !== void 0 ? _a : (this._pauses = new Client_2.PausesClient(this._options)));
+    }
+    get settings() {
+        var _a;
+        return ((_a = this._settings) !== null && _a !== void 0 ? _a : (this._settings = new Client_3.SettingsClient(this._options)));
     }
     /**
      * Restore streaks for multiple users to the maximum previously achieved streak length found within the current restore window: the last 90 days for daily streaks, weekly periods starting with the week containing the start of the current calendar year for weekly streaks, and monthly periods starting at the beginning of the previous calendar year for monthly streaks.

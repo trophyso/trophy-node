@@ -4,6 +4,7 @@ import * as core from "../../../../../../core";
 import * as TrophyApi from "../../../../../index";
 import { FreezesClient } from "../resources/freezes/client/Client";
 import { PausesClient } from "../resources/pauses/client/Client";
+import { SettingsClient } from "../resources/settings/client/Client";
 export declare namespace StreaksClient {
     type Options = BaseClientOptions;
     interface RequestOptions extends BaseRequestOptions {
@@ -13,9 +14,11 @@ export declare class StreaksClient {
     protected readonly _options: NormalizedClientOptionsWithAuth<StreaksClient.Options>;
     protected _freezes: FreezesClient | undefined;
     protected _pauses: PausesClient | undefined;
+    protected _settings: SettingsClient | undefined;
     constructor(options: StreaksClient.Options);
     get freezes(): FreezesClient;
     get pauses(): PausesClient;
+    get settings(): SettingsClient;
     /**
      * Restore streaks for multiple users to the maximum previously achieved streak length found within the current restore window: the last 90 days for daily streaks, weekly periods starting with the week containing the start of the current calendar year for weekly streaks, and monthly periods starting at the beginning of the previous calendar year for monthly streaks.
      *

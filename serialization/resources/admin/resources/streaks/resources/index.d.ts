@@ -4,3 +4,5 @@ export * from "./freezes/types";
 export * as pauses from "./pauses";
 export * from "./pauses/client/requests";
 export * from "./pauses/types";
+export * as settings from "./settings";
+export * from "./settings/client/requests";
