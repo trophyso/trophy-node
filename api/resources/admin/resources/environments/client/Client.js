@@ -42,82 +42,47 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MetricsClient = void 0;
-const BaseClient_1 = require("../../../../BaseClient");
-const core = __importStar(require("../../../../core"));
-const headers_1 = require("../../../../core/headers");
-const environments = __importStar(require("../../../../environments"));
-const handleNonStatusCodeError_1 = require("../../../../errors/handleNonStatusCodeError");
-const errors = __importStar(require("../../../../errors/index"));
-const serializers = __importStar(require("../../../../serialization/index"));
-const TrophyApi = __importStar(require("../../../index"));
-class MetricsClient {
+exports.EnvironmentsClient = void 0;
+const BaseClient_1 = require("../../../../../../BaseClient");
+const core = __importStar(require("../../../../../../core"));
+const headers_1 = require("../../../../../../core/headers");
+const environments = __importStar(require("../../../../../../environments"));
+const handleNonStatusCodeError_1 = require("../../../../../../errors/handleNonStatusCodeError");
+const errors = __importStar(require("../../../../../../errors/index"));
+const serializers = __importStar(require("../../../../../../serialization/index"));
+const TrophyApi = __importStar(require("../../../../../index"));
+class EnvironmentsClient {
     constructor(options) {
         this._options = (0, BaseClient_1.normalizeClientOptionsWithAuth)(options);
     }
     /**
-     * Increment or decrement the value of a metric for a user.
+     * List active environments.
      *
-     * @param {string} key - Unique reference of the metric as set when created.
-     * @param {TrophyApi.MetricsEventRequest} request
-     * @param {MetricsClient.RequestOptions} requestOptions - Request-specific configuration.
+     * @param {EnvironmentsClient.RequestOptions} requestOptions - Request-specific configuration.
      *
-     * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await client.metrics.event("words-written", {
-     *         idempotencyKey: "e4296e4b-8493-4bd1-9c30-5a1a9ac4d78f",
-     *         user: {
-     *             email: "user@example.com",
-     *             tz: "Europe/London",
-     *             attributes: {
-     *                 "department": "engineering",
-     *                 "role": "developer"
-     *             },
-     *             id: "18"
-     *         },
-     *         value: 750,
-     *         attributes: {
-     *             "category": "writing",
-     *             "source": "mobile-app"
-     *         }
-     *     })
+     *     await client.admin.environments.list()
      */
-    event(key, request, requestOptions) {
-        return core.HttpResponsePromise.fromPromise(this.__event(key, request, requestOptions));
+    list(requestOptions) {
+        return core.HttpResponsePromise.fromPromise(this.__list(requestOptions));
     }
-    __event(key, request, requestOptions) {
+    __list(requestOptions) {
         return __awaiter(this, void 0, void 0, function* () {
             var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-            const { idempotencyKey } = request, _body = __rest(request, ["idempotencyKey"]);
             const _authRequest = yield this._options.authProvider.getAuthRequest();
             const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
-                "Idempotency-Key": idempotencyKey,
                 "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.25.0",
                 "Tenant-ID": (_e = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.tenantId) !== null && _e !== void 0 ? _e : (_f = this._options) === null || _f === void 0 ? void 0 : _f.tenantId,
             }), requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.headers);
             const _response = yield core.fetcher({
-                url: core.url.join((_g = (yield core.Supplier.get(this._options.baseUrl))) !== null && _g !== void 0 ? _g : ((_h = (yield core.Supplier.get(this._options.environment))) !== null && _h !== void 0 ? _h : environments.TrophyApiEnvironment.Production).api, `metrics/${core.url.encodePathParam(key)}/event`),
-                method: "POST",
+                url: core.url.join((_g = (yield core.Supplier.get(this._options.baseUrl))) !== null && _g !== void 0 ? _g : ((_h = (yield core.Supplier.get(this._options.environment))) !== null && _h !== void 0 ? _h : environments.TrophyApiEnvironment.Production).admin, "environments"),
+                method: "GET",
                 headers: _headers,
-                contentType: "application/json",
                 queryString: core.url.queryBuilder().mergeAdditional(requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.queryParams).build(),
-                requestType: "json",
-                body: serializers.MetricsEventRequest.jsonOrThrow(_body, { unrecognizedObjectKeys: "strip" }),
                 timeoutMs: ((_l = (_j = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) !== null && _j !== void 0 ? _j : (_k = this._options) === null || _k === void 0 ? void 0 : _k.timeoutInSeconds) !== null && _l !== void 0 ? _l : 60) * 1000,
                 maxRetries: (_m = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries) !== null && _m !== void 0 ? _m : (_o = this._options) === null || _o === void 0 ? void 0 : _o.maxRetries,
                 abortSignal: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.abortSignal,
@@ -126,7 +91,7 @@ class MetricsClient {
             });
             if (_response.ok) {
                 return {
-                    data: serializers.EventResponse.parseOrThrow(_response.body, {
+                    data: serializers.ListEnvironmentsResponse.parseOrThrow(_response.body, {
                         unrecognizedObjectKeys: "passthrough",
                         allowUnrecognizedUnionMembers: true,
                         allowUnrecognizedEnumValues: true,
@@ -137,8 +102,6 @@ class MetricsClient {
             }
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
-                    case 400:
-                        throw new TrophyApi.BadRequestError(_response.error.body, _response.rawResponse);
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
                     case 422:
@@ -151,8 +114,8 @@ class MetricsClient {
                         });
                 }
             }
-            return (0, handleNonStatusCodeError_1.handleNonStatusCodeError)(_response.error, _response.rawResponse, "POST", "/metrics/{key}/event");
+            return (0, handleNonStatusCodeError_1.handleNonStatusCodeError)(_response.error, _response.rawResponse, "GET", "/environments");
         });
     }
 }
-exports.MetricsClient = MetricsClient;
+exports.EnvironmentsClient = EnvironmentsClient;
