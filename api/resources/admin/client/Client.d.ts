@@ -3,6 +3,7 @@ import { type NormalizedClientOptionsWithAuth } from "../../../../BaseClient";
 import { AchievementsClient } from "../resources/achievements/client/Client";
 import { ApplicationApiKeysClient } from "../resources/applicationApiKeys/client/Client";
 import { AttributesClient } from "../resources/attributes/client/Client";
+import { EnvironmentsClient } from "../resources/environments/client/Client";
 import { LeaderboardsClient } from "../resources/leaderboards/client/Client";
 import { MetricsClient } from "../resources/metrics/client/Client";
 import { PointsClient } from "../resources/points/client/Client";
@@ -21,6 +22,7 @@ export declare class AdminClient {
     protected _streaks: StreaksClient | undefined;
     protected _settings: SettingsClient | undefined;
     protected _applicationApiKeys: ApplicationApiKeysClient | undefined;
+    protected _environments: EnvironmentsClient | undefined;
     protected _tenants: TenantsClient | undefined;
     protected _points: PointsClient | undefined;
     constructor(options: AdminClient.Options);
@@ -31,6 +33,7 @@ export declare class AdminClient {
     get streaks(): StreaksClient;
     get settings(): SettingsClient;
     get applicationApiKeys(): ApplicationApiKeysClient;
+    get environments(): EnvironmentsClient;
     get tenants(): TenantsClient;
     get points(): PointsClient;
 }

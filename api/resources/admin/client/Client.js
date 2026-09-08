@@ -6,12 +6,13 @@ const BaseClient_1 = require("../../../../BaseClient");
 const Client_1 = require("../resources/achievements/client/Client");
 const Client_2 = require("../resources/applicationApiKeys/client/Client");
 const Client_3 = require("../resources/attributes/client/Client");
-const Client_4 = require("../resources/leaderboards/client/Client");
-const Client_5 = require("../resources/metrics/client/Client");
-const Client_6 = require("../resources/points/client/Client");
-const Client_7 = require("../resources/settings/client/Client");
-const Client_8 = require("../resources/streaks/client/Client");
-const Client_9 = require("../resources/tenants/client/Client");
+const Client_4 = require("../resources/environments/client/Client");
+const Client_5 = require("../resources/leaderboards/client/Client");
+const Client_6 = require("../resources/metrics/client/Client");
+const Client_7 = require("../resources/points/client/Client");
+const Client_8 = require("../resources/settings/client/Client");
+const Client_9 = require("../resources/streaks/client/Client");
+const Client_10 = require("../resources/tenants/client/Client");
 class AdminClient {
     constructor(options) {
         this._options = (0, BaseClient_1.normalizeClientOptionsWithAuth)(options);
@@ -26,31 +27,35 @@ class AdminClient {
     }
     get metrics() {
         var _a;
-        return ((_a = this._metrics) !== null && _a !== void 0 ? _a : (this._metrics = new Client_5.MetricsClient(this._options)));
+        return ((_a = this._metrics) !== null && _a !== void 0 ? _a : (this._metrics = new Client_6.MetricsClient(this._options)));
     }
     get leaderboards() {
         var _a;
-        return ((_a = this._leaderboards) !== null && _a !== void 0 ? _a : (this._leaderboards = new Client_4.LeaderboardsClient(this._options)));
+        return ((_a = this._leaderboards) !== null && _a !== void 0 ? _a : (this._leaderboards = new Client_5.LeaderboardsClient(this._options)));
     }
     get streaks() {
         var _a;
-        return ((_a = this._streaks) !== null && _a !== void 0 ? _a : (this._streaks = new Client_8.StreaksClient(this._options)));
+        return ((_a = this._streaks) !== null && _a !== void 0 ? _a : (this._streaks = new Client_9.StreaksClient(this._options)));
     }
     get settings() {
         var _a;
-        return ((_a = this._settings) !== null && _a !== void 0 ? _a : (this._settings = new Client_7.SettingsClient(this._options)));
+        return ((_a = this._settings) !== null && _a !== void 0 ? _a : (this._settings = new Client_8.SettingsClient(this._options)));
     }
     get applicationApiKeys() {
         var _a;
         return ((_a = this._applicationApiKeys) !== null && _a !== void 0 ? _a : (this._applicationApiKeys = new Client_2.ApplicationApiKeysClient(this._options)));
     }
+    get environments() {
+        var _a;
+        return ((_a = this._environments) !== null && _a !== void 0 ? _a : (this._environments = new Client_4.EnvironmentsClient(this._options)));
+    }
     get tenants() {
         var _a;
-        return ((_a = this._tenants) !== null && _a !== void 0 ? _a : (this._tenants = new Client_9.TenantsClient(this._options)));
+        return ((_a = this._tenants) !== null && _a !== void 0 ? _a : (this._tenants = new Client_10.TenantsClient(this._options)));
     }
     get points() {
         var _a;
-        return ((_a = this._points) !== null && _a !== void 0 ? _a : (this._points = new Client_6.PointsClient(this._options)));
+        return ((_a = this._points) !== null && _a !== void 0 ? _a : (this._points = new Client_7.PointsClient(this._options)));
     }
 }
 exports.AdminClient = AdminClient;
