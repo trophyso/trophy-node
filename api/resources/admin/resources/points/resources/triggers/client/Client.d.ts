@@ -30,7 +30,7 @@ export declare class TriggersClient {
     list(systemId: string, request?: TrophyApi.admin.points.TriggersListRequest, requestOptions?: TriggersClient.RequestOptions): core.HttpResponsePromise<TrophyApi.ListPointsTriggersResponse>;
     private __list;
     /**
-     * Create points triggers in bulk. Maximum 100 triggers per request.
+     * Create points triggers in bulk.
      *
      * @param {string} systemId - The UUID of the points system.
      * @param {TrophyApi.CreatePointsTriggersRequest} request

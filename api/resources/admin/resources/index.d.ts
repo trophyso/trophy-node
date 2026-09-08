@@ -1,3 +1,5 @@
+export * as achievements from "./achievements";
+export * from "./achievements/client/requests";
 export * as applicationApiKeys from "./applicationApiKeys";
 export * from "./applicationApiKeys/client/requests";
 export * as attributes from "./attributes";
@@ -7,6 +9,8 @@ export * from "./leaderboards/client/requests";
 export * as metrics from "./metrics";
 export * from "./metrics/client/requests";
 export * as points from "./points";
+export * as settings from "./settings";
+export * from "./settings/client/requests";
 export * as streaks from "./streaks";
 export * from "./streaks/client/requests";
 export * from "./streaks/types";

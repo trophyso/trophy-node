@@ -30,7 +30,7 @@ export declare class LevelsClient {
     list(systemId: string, request?: TrophyApi.admin.points.LevelsListRequest, requestOptions?: LevelsClient.RequestOptions): core.HttpResponsePromise<TrophyApi.ListPointsLevelsResponse>;
     private __list;
     /**
-     * Create points levels. Maximum 100 levels per request.
+     * Create points levels.
      *
      * @param {string} systemId - The UUID of the points system.
      * @param {TrophyApi.CreatePointsLevelsRequest} request
