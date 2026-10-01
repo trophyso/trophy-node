@@ -203,6 +203,7 @@ __exportStar(require("./PointsTriggerStatus"), exports);
 __exportStar(require("./PointsTriggerTimeUnit"), exports);
 __exportStar(require("./PointsTriggerType"), exports);
 __exportStar(require("./PointsTriggerUserAttributesItem"), exports);
+__exportStar(require("./ResetStreaksResponse"), exports);
 __exportStar(require("./RestoreStreaksResponse"), exports);
 __exportStar(require("./StreakEvaluationModePreference"), exports);
 __exportStar(require("./StreakFrequency"), exports);

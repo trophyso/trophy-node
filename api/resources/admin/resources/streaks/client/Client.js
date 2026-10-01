@@ -98,7 +98,7 @@ class StreaksClient {
             var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
             const _authRequest = yield this._options.authProvider.getAuthRequest();
             const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
-                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.25.0",
+                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.26.0",
                 "Tenant-ID": (_e = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.tenantId) !== null && _e !== void 0 ? _e : (_f = this._options) === null || _f === void 0 ? void 0 : _f.tenantId,
             }), requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.headers);
             const _response = yield core.fetcher({
@@ -143,6 +143,80 @@ class StreaksClient {
                 }
             }
             return (0, handleNonStatusCodeError_1.handleNonStatusCodeError)(_response.error, _response.rawResponse, "POST", "/streaks/restore");
+        });
+    }
+    /**
+     * Reset the current streak to zero for multiple users.
+     *
+     * @param {TrophyApi.admin.ResetStreaksRequest} request
+     * @param {StreaksClient.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link TrophyApi.BadRequestError}
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await client.admin.streaks.reset({
+     *         users: [{
+     *                 id: "user-123"
+     *             }, {
+     *                 id: "user-456"
+     *             }]
+     *     })
+     */
+    reset(request, requestOptions) {
+        return core.HttpResponsePromise.fromPromise(this.__reset(request, requestOptions));
+    }
+    __reset(request, requestOptions) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+            const _authRequest = yield this._options.authProvider.getAuthRequest();
+            const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
+                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.26.0",
+                "Tenant-ID": (_e = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.tenantId) !== null && _e !== void 0 ? _e : (_f = this._options) === null || _f === void 0 ? void 0 : _f.tenantId,
+            }), requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.headers);
+            const _response = yield core.fetcher({
+                url: core.url.join((_g = (yield core.Supplier.get(this._options.baseUrl))) !== null && _g !== void 0 ? _g : ((_h = (yield core.Supplier.get(this._options.environment))) !== null && _h !== void 0 ? _h : environments.TrophyApiEnvironment.Production).admin, "streaks/reset"),
+                method: "POST",
+                headers: _headers,
+                contentType: "application/json",
+                queryString: core.url.queryBuilder().mergeAdditional(requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.queryParams).build(),
+                requestType: "json",
+                body: serializers.admin.ResetStreaksRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
+                timeoutMs: ((_l = (_j = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) !== null && _j !== void 0 ? _j : (_k = this._options) === null || _k === void 0 ? void 0 : _k.timeoutInSeconds) !== null && _l !== void 0 ? _l : 60) * 1000,
+                maxRetries: (_m = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries) !== null && _m !== void 0 ? _m : (_o = this._options) === null || _o === void 0 ? void 0 : _o.maxRetries,
+                abortSignal: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.abortSignal,
+                fetchFn: (_p = this._options) === null || _p === void 0 ? void 0 : _p.fetch,
+                logging: this._options.logging,
+            });
+            if (_response.ok) {
+                return {
+                    data: serializers.ResetStreaksResponse.parseOrThrow(_response.body, {
+                        unrecognizedObjectKeys: "passthrough",
+                        allowUnrecognizedUnionMembers: true,
+                        allowUnrecognizedEnumValues: true,
+                        breadcrumbsPrefix: ["response"],
+                    }),
+                    rawResponse: _response.rawResponse,
+                };
+            }
+            if (_response.error.reason === "status-code") {
+                switch (_response.error.statusCode) {
+                    case 400:
+                        throw new TrophyApi.BadRequestError(_response.error.body, _response.rawResponse);
+                    case 401:
+                        throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 422:
+                        throw new TrophyApi.UnprocessableEntityError(_response.error.body, _response.rawResponse);
+                    default:
+                        throw new errors.TrophyApiError({
+                            statusCode: _response.error.statusCode,
+                            body: _response.error.body,
+                            rawResponse: _response.rawResponse,
+                        });
+                }
+            }
+            return (0, handleNonStatusCodeError_1.handleNonStatusCodeError)(_response.error, _response.rawResponse, "POST", "/streaks/reset");
         });
     }
 }

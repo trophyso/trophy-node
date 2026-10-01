@@ -40,4 +40,25 @@ export declare class StreaksClient {
      */
     restore(request: TrophyApi.admin.RestoreStreaksRequest, requestOptions?: StreaksClient.RequestOptions): core.HttpResponsePromise<TrophyApi.RestoreStreaksResponse>;
     private __restore;
+    /**
+     * Reset the current streak to zero for multiple users.
+     *
+     * @param {TrophyApi.admin.ResetStreaksRequest} request
+     * @param {StreaksClient.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link TrophyApi.BadRequestError}
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await client.admin.streaks.reset({
+     *         users: [{
+     *                 id: "user-123"
+     *             }, {
+     *                 id: "user-456"
+     *             }]
+     *     })
+     */
+    reset(request: TrophyApi.admin.ResetStreaksRequest, requestOptions?: StreaksClient.RequestOptions): core.HttpResponsePromise<TrophyApi.ResetStreaksResponse>;
+    private __reset;
 }

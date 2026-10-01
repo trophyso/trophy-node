@@ -12,4 +12,6 @@ export interface StreakResponseStreakHistoryItem {
     usedFreeze?: boolean;
     /** Whether the user's streak was paused during this period. */
     usedPause: boolean;
+    /** The timestamp the streak was reset to zero using the admin API. */
+    resetAt?: Date;
 }
