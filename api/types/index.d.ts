@@ -187,6 +187,7 @@ export * from "./PointsTriggerStatus";
 export * from "./PointsTriggerTimeUnit";
 export * from "./PointsTriggerType";
 export * from "./PointsTriggerUserAttributesItem";
+export * from "./ResetStreaksResponse";
 export * from "./RestoreStreaksResponse";
 export * from "./StreakEvaluationModePreference";
 export * from "./StreakFrequency";
