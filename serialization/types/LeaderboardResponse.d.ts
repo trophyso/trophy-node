@@ -3,6 +3,7 @@ import * as core from "../../core";
 import type * as serializers from "../index";
 import { LeaderboardResponseRankBy } from "./LeaderboardResponseRankBy";
 import { LeaderboardResponseRunUnit } from "./LeaderboardResponseRunUnit";
+import { LeaderboardResponseUserAttributesItem } from "./LeaderboardResponseUserAttributesItem";
 export declare const LeaderboardResponse: core.serialization.ObjectSchema<serializers.LeaderboardResponse.Raw, TrophyApi.LeaderboardResponse>;
 export declare namespace LeaderboardResponse {
     interface Raw {
@@ -24,5 +25,6 @@ export declare namespace LeaderboardResponse {
         maxParticipants?: number | null;
         runUnit?: LeaderboardResponseRunUnit.Raw | null;
         runInterval?: number | null;
+        userAttributes: LeaderboardResponseUserAttributesItem.Raw[];
     }
 }

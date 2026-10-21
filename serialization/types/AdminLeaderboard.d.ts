@@ -4,6 +4,7 @@ import type * as serializers from "../index";
 import { AdminLeaderboardRankBy } from "./AdminLeaderboardRankBy";
 import { AdminLeaderboardRunUnit } from "./AdminLeaderboardRunUnit";
 import { AdminLeaderboardStatus } from "./AdminLeaderboardStatus";
+import { AdminLeaderboardUserAttributesItem } from "./AdminLeaderboardUserAttributesItem";
 export declare const AdminLeaderboard: core.serialization.ObjectSchema<serializers.AdminLeaderboard.Raw, TrophyApi.AdminLeaderboard>;
 export declare namespace AdminLeaderboard {
     interface Raw {
@@ -23,5 +24,6 @@ export declare namespace AdminLeaderboard {
         breakdownAttributes: string[];
         runUnit?: AdminLeaderboardRunUnit.Raw | null;
         runInterval?: number | null;
+        userAttributes: AdminLeaderboardUserAttributesItem.Raw[];
     }
 }

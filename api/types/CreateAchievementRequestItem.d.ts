@@ -13,7 +13,7 @@ export interface CreateAchievementRequestItem {
     status?: TrophyApi.CreateAchievementRequestItemStatus;
     /** An optional badge for the achievement. */
     badge?: TrophyApi.CreateAchievementRequestItemBadge;
-    /** User attribute filters applied to the achievement. Each `attributeId` must be an active user attribute. */
+    /** User attribute filters applied to the achievement. */
     userAttributes?: TrophyApi.CreateAchievementRequestItemUserAttributesItem[];
     /** Required if trigger is `api`. Only alphanumeric characters, hyphens, and underscores are permitted. */
     key?: string;

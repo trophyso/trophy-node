@@ -46,4 +46,6 @@ export interface MetricEventLeaderboardResponse {
     runUnit?: TrophyApi.LeaderboardResponseRunUnit;
     /** The interval between repetitions, relative to the start date and repetition type. Null for one-time leaderboards. */
     runInterval?: number;
+    /** User attribute filters that a user must match to participate in this leaderboard and appear in its rankings. */
+    userAttributes: TrophyApi.LeaderboardResponseUserAttributesItem[];
 }

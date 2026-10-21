@@ -33,4 +33,6 @@ export interface CreateLeaderboardRequestItem {
     runUnit?: TrophyApi.CreateLeaderboardRequestItemRunUnit;
     /** The number of `runUnit`s between repeats. Required when `runUnit` is set. */
     runInterval?: number;
+    /** User attribute filters. Omit to allow every user. */
+    userAttributes?: TrophyApi.CreateLeaderboardRequestItemUserAttributesItem[];
 }

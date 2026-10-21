@@ -38,6 +38,7 @@ exports.MetricEventLeaderboardResponse = void 0;
 const core = __importStar(require("../../core"));
 const LeaderboardResponseRankBy_1 = require("./LeaderboardResponseRankBy");
 const LeaderboardResponseRunUnit_1 = require("./LeaderboardResponseRunUnit");
+const LeaderboardResponseUserAttributesItem_1 = require("./LeaderboardResponseUserAttributesItem");
 const MetricEventLeaderboardResponseBreakdownAttributeValuesItem_1 = require("./MetricEventLeaderboardResponseBreakdownAttributeValuesItem");
 exports.MetricEventLeaderboardResponse = core.serialization.object({
     end: core.serialization.string().optional(),
@@ -65,4 +66,5 @@ exports.MetricEventLeaderboardResponse = core.serialization.object({
     maxParticipants: core.serialization.number().optional(),
     runUnit: LeaderboardResponseRunUnit_1.LeaderboardResponseRunUnit.optional(),
     runInterval: core.serialization.number().optional(),
+    userAttributes: core.serialization.list(LeaderboardResponseUserAttributesItem_1.LeaderboardResponseUserAttributesItem),
 });

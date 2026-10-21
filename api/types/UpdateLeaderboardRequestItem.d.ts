@@ -35,4 +35,6 @@ export interface UpdateLeaderboardRequestItem {
     runUnit?: TrophyApi.UpdateLeaderboardRequestItemRunUnit;
     /** The updated recurrence interval. */
     runInterval?: number;
+    /** Replacement user attribute filters, or `null` to clear them. Omit to leave the current filters unchanged. This can only be changed while the leaderboard is inactive. */
+    userAttributes?: TrophyApi.UpdateLeaderboardRequestItemUserAttributesItem[];
 }

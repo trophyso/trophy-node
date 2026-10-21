@@ -15,7 +15,7 @@ export interface UpdateAchievementRequestItem {
     status?: TrophyApi.UpdateAchievementRequestItemStatus;
     /** The updated badge, or `null` to clear it. */
     badge?: TrophyApi.UpdateAchievementRequestItemBadge;
-    /** Updated user attribute filters. Send `null` to clear. Each `attributeId` must be an active user attribute. */
+    /** Updated user attribute filters. Send `null` to clear. */
     userAttributes?: TrophyApi.UpdateAchievementRequestItemUserAttributesItem[];
     /** Updated key. Only permitted for API achievements. */
     key?: string;
