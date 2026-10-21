@@ -39,6 +39,7 @@ const core = __importStar(require("../../core"));
 const UpdateLeaderboardRequestItemRankBy_1 = require("./UpdateLeaderboardRequestItemRankBy");
 const UpdateLeaderboardRequestItemRunUnit_1 = require("./UpdateLeaderboardRequestItemRunUnit");
 const UpdateLeaderboardRequestItemStatus_1 = require("./UpdateLeaderboardRequestItemStatus");
+const UpdateLeaderboardRequestItemUserAttributesItem_1 = require("./UpdateLeaderboardRequestItemUserAttributesItem");
 exports.UpdateLeaderboardRequestItem = core.serialization.object({
     id: core.serialization.string(),
     name: core.serialization.string().optional(),
@@ -56,4 +57,5 @@ exports.UpdateLeaderboardRequestItem = core.serialization.object({
     breakdownAttributes: core.serialization.list(core.serialization.string()).optional(),
     runUnit: UpdateLeaderboardRequestItemRunUnit_1.UpdateLeaderboardRequestItemRunUnit.optional(),
     runInterval: core.serialization.number().optional(),
+    userAttributes: core.serialization.list(UpdateLeaderboardRequestItemUserAttributesItem_1.UpdateLeaderboardRequestItemUserAttributesItem).optional(),
 });

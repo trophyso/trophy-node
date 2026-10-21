@@ -4,6 +4,7 @@ import type * as serializers from "../index";
 import { CreateLeaderboardRequestItemRankBy } from "./CreateLeaderboardRequestItemRankBy";
 import { CreateLeaderboardRequestItemRunUnit } from "./CreateLeaderboardRequestItemRunUnit";
 import { CreateLeaderboardRequestItemStatus } from "./CreateLeaderboardRequestItemStatus";
+import { CreateLeaderboardRequestItemUserAttributesItem } from "./CreateLeaderboardRequestItemUserAttributesItem";
 export declare const CreateLeaderboardRequestItem: core.serialization.ObjectSchema<serializers.CreateLeaderboardRequestItem.Raw, TrophyApi.CreateLeaderboardRequestItem>;
 export declare namespace CreateLeaderboardRequestItem {
     interface Raw {
@@ -22,5 +23,6 @@ export declare namespace CreateLeaderboardRequestItem {
         breakdownAttributes?: string[] | null;
         runUnit?: CreateLeaderboardRequestItemRunUnit.Raw | null;
         runInterval?: number | null;
+        userAttributes?: CreateLeaderboardRequestItemUserAttributesItem.Raw[] | null;
     }
 }

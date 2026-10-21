@@ -39,6 +39,7 @@ const core = __importStar(require("../../core"));
 const AdminLeaderboardRankBy_1 = require("./AdminLeaderboardRankBy");
 const AdminLeaderboardRunUnit_1 = require("./AdminLeaderboardRunUnit");
 const AdminLeaderboardStatus_1 = require("./AdminLeaderboardStatus");
+const AdminLeaderboardUserAttributesItem_1 = require("./AdminLeaderboardUserAttributesItem");
 exports.AdminLeaderboard = core.serialization.object({
     id: core.serialization.string(),
     name: core.serialization.string(),
@@ -56,4 +57,5 @@ exports.AdminLeaderboard = core.serialization.object({
     breakdownAttributes: core.serialization.list(core.serialization.string()),
     runUnit: AdminLeaderboardRunUnit_1.AdminLeaderboardRunUnit.optional(),
     runInterval: core.serialization.number().optional(),
+    userAttributes: core.serialization.list(AdminLeaderboardUserAttributesItem_1.AdminLeaderboardUserAttributesItem),
 });

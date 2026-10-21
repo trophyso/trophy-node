@@ -3,6 +3,7 @@ import * as core from "../../core";
 import type * as serializers from "../index";
 import { LeaderboardResponseRankBy } from "./LeaderboardResponseRankBy";
 import { LeaderboardResponseRunUnit } from "./LeaderboardResponseRunUnit";
+import { LeaderboardResponseUserAttributesItem } from "./LeaderboardResponseUserAttributesItem";
 import { MetricEventLeaderboardResponseBreakdownAttributeValuesItem } from "./MetricEventLeaderboardResponseBreakdownAttributeValuesItem";
 export declare const MetricEventLeaderboardResponse: core.serialization.ObjectSchema<serializers.MetricEventLeaderboardResponse.Raw, TrophyApi.MetricEventLeaderboardResponse>;
 export declare namespace MetricEventLeaderboardResponse {
@@ -30,5 +31,6 @@ export declare namespace MetricEventLeaderboardResponse {
         maxParticipants?: number | null;
         runUnit?: LeaderboardResponseRunUnit.Raw | null;
         runInterval?: number | null;
+        userAttributes: LeaderboardResponseUserAttributesItem.Raw[];
     }
 }

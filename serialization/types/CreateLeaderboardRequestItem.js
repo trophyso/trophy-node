@@ -39,6 +39,7 @@ const core = __importStar(require("../../core"));
 const CreateLeaderboardRequestItemRankBy_1 = require("./CreateLeaderboardRequestItemRankBy");
 const CreateLeaderboardRequestItemRunUnit_1 = require("./CreateLeaderboardRequestItemRunUnit");
 const CreateLeaderboardRequestItemStatus_1 = require("./CreateLeaderboardRequestItemStatus");
+const CreateLeaderboardRequestItemUserAttributesItem_1 = require("./CreateLeaderboardRequestItemUserAttributesItem");
 exports.CreateLeaderboardRequestItem = core.serialization.object({
     name: core.serialization.string(),
     key: core.serialization.string(),
@@ -55,4 +56,5 @@ exports.CreateLeaderboardRequestItem = core.serialization.object({
     breakdownAttributes: core.serialization.list(core.serialization.string()).optional(),
     runUnit: CreateLeaderboardRequestItemRunUnit_1.CreateLeaderboardRequestItemRunUnit.optional(),
     runInterval: core.serialization.number().optional(),
+    userAttributes: core.serialization.list(CreateLeaderboardRequestItemUserAttributesItem_1.CreateLeaderboardRequestItemUserAttributesItem).optional(),
 });

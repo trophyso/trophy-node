@@ -35,4 +35,6 @@ export interface AdminLeaderboard {
     runUnit?: TrophyApi.AdminLeaderboardRunUnit;
     /** The number of recurrence units between leaderboard runs. */
     runInterval?: number;
+    /** User attribute filters. */
+    userAttributes: TrophyApi.AdminLeaderboardUserAttributesItem[];
 }
