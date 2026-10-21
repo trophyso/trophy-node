@@ -42,6 +42,7 @@ export declare class AchievementsClient {
      *         user: {
      *             email: "user@example.com",
      *             tz: "Europe/London",
+     *             subscribeToEmails: true,
      *             id: "user-id"
      *         }
      *     })

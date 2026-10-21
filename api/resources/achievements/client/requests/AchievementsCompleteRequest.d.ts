@@ -5,6 +5,7 @@ import type * as TrophyApi from "../../../../index";
  *         user: {
  *             email: "user@example.com",
  *             tz: "Europe/London",
+ *             subscribeToEmails: true,
  *             id: "user-id"
  *         }
  *     }
