@@ -41,9 +41,9 @@ exports.UserRewardTrigger = core.serialization.object({
     id: core.serialization.string(),
     type: UserRewardTriggerType_1.UserRewardTriggerType,
     metricId: core.serialization.string().optional(),
-    threshold: core.serialization.number().optional(),
+    metricThreshold: core.serialization.number().optional(),
     achievementId: core.serialization.string().optional(),
-    streakLength: core.serialization.number().optional(),
+    streakLengthThreshold: core.serialization.number().optional(),
     leaderboardId: core.serialization.string().optional(),
     rank: core.serialization.number().optional(),
 });

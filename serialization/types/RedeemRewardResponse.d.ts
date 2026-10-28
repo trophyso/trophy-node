@@ -1,6 +1,7 @@
 import type * as TrophyApi from "../../api/index";
 import * as core from "../../core";
 import type * as serializers from "../index";
+import { MetricEventLeaderboardResponse } from "./MetricEventLeaderboardResponse";
 import { MetricEventPointsResponse } from "./MetricEventPointsResponse";
 import { RedeemedReward } from "./RedeemedReward";
 import { RewardSummary } from "./RewardSummary";
@@ -10,5 +11,6 @@ export declare namespace RedeemRewardResponse {
         reward: RewardSummary.Raw;
         redemptions: RedeemedReward.Raw[];
         points?: Record<string, MetricEventPointsResponse.Raw> | null;
+        leaderboards: Record<string, MetricEventLeaderboardResponse.Raw>;
     }
 }

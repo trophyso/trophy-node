@@ -8,9 +8,9 @@ export declare namespace UserRewardTrigger {
         id: string;
         type: UserRewardTriggerType.Raw;
         metricId?: string | null;
-        threshold?: number | null;
+        metricThreshold?: number | null;
         achievementId?: string | null;
-        streakLength?: number | null;
+        streakLengthThreshold?: number | null;
         leaderboardId?: string | null;
         rank?: number | null;
     }

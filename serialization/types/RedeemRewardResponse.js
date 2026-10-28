@@ -36,6 +36,7 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RedeemRewardResponse = void 0;
 const core = __importStar(require("../../core"));
+const MetricEventLeaderboardResponse_1 = require("./MetricEventLeaderboardResponse");
 const MetricEventPointsResponse_1 = require("./MetricEventPointsResponse");
 const RedeemedReward_1 = require("./RedeemedReward");
 const RewardSummary_1 = require("./RewardSummary");
@@ -43,4 +44,5 @@ exports.RedeemRewardResponse = core.serialization.object({
     reward: RewardSummary_1.RewardSummary,
     redemptions: core.serialization.list(RedeemedReward_1.RedeemedReward),
     points: core.serialization.record(core.serialization.string(), MetricEventPointsResponse_1.MetricEventPointsResponse).optional(),
+    leaderboards: core.serialization.record(core.serialization.string(), MetricEventLeaderboardResponse_1.MetricEventLeaderboardResponse),
 });
