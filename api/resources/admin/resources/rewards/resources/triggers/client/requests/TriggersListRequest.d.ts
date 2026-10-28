@@ -1,0 +1,13 @@
+/**
+ * @example
+ *     {
+ *         limit: 1,
+ *         skip: 1
+ *     }
+ */
+export interface TriggersListRequest {
+    /** Maximum number of results to return (1-100, default 10). */
+    limit?: number;
+    /** Number of results to skip for pagination (default 0). */
+    skip?: number;
+}

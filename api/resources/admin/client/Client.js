@@ -10,9 +10,10 @@ const Client_4 = require("../resources/environments/client/Client");
 const Client_5 = require("../resources/leaderboards/client/Client");
 const Client_6 = require("../resources/metrics/client/Client");
 const Client_7 = require("../resources/points/client/Client");
-const Client_8 = require("../resources/settings/client/Client");
-const Client_9 = require("../resources/streaks/client/Client");
-const Client_10 = require("../resources/tenants/client/Client");
+const Client_8 = require("../resources/rewards/client/Client");
+const Client_9 = require("../resources/settings/client/Client");
+const Client_10 = require("../resources/streaks/client/Client");
+const Client_11 = require("../resources/tenants/client/Client");
 class AdminClient {
     constructor(options) {
         this._options = (0, BaseClient_1.normalizeClientOptionsWithAuth)(options);
@@ -25,6 +26,10 @@ class AdminClient {
         var _a;
         return ((_a = this._achievements) !== null && _a !== void 0 ? _a : (this._achievements = new Client_1.AchievementsClient(this._options)));
     }
+    get rewards() {
+        var _a;
+        return ((_a = this._rewards) !== null && _a !== void 0 ? _a : (this._rewards = new Client_8.RewardsClient(this._options)));
+    }
     get metrics() {
         var _a;
         return ((_a = this._metrics) !== null && _a !== void 0 ? _a : (this._metrics = new Client_6.MetricsClient(this._options)));
@@ -35,11 +40,11 @@ class AdminClient {
     }
     get streaks() {
         var _a;
-        return ((_a = this._streaks) !== null && _a !== void 0 ? _a : (this._streaks = new Client_9.StreaksClient(this._options)));
+        return ((_a = this._streaks) !== null && _a !== void 0 ? _a : (this._streaks = new Client_10.StreaksClient(this._options)));
     }
     get settings() {
         var _a;
-        return ((_a = this._settings) !== null && _a !== void 0 ? _a : (this._settings = new Client_8.SettingsClient(this._options)));
+        return ((_a = this._settings) !== null && _a !== void 0 ? _a : (this._settings = new Client_9.SettingsClient(this._options)));
     }
     get applicationApiKeys() {
         var _a;
@@ -51,7 +56,7 @@ class AdminClient {
     }
     get tenants() {
         var _a;
-        return ((_a = this._tenants) !== null && _a !== void 0 ? _a : (this._tenants = new Client_10.TenantsClient(this._options)));
+        return ((_a = this._tenants) !== null && _a !== void 0 ? _a : (this._tenants = new Client_11.TenantsClient(this._options)));
     }
     get points() {
         var _a;

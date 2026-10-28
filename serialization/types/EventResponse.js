@@ -40,6 +40,7 @@ const MetricEventLeaderboardResponse_1 = require("./MetricEventLeaderboardRespon
 const MetricEventPointsResponse_1 = require("./MetricEventPointsResponse");
 const MetricEventStreakResponse_1 = require("./MetricEventStreakResponse");
 const UserAchievementResponse_1 = require("./UserAchievementResponse");
+const UserRewardResponse_1 = require("./UserRewardResponse");
 exports.EventResponse = core.serialization.object({
     eventId: core.serialization.string(),
     metricId: core.serialization.string(),
@@ -48,6 +49,7 @@ exports.EventResponse = core.serialization.object({
     currentStreak: MetricEventStreakResponse_1.MetricEventStreakResponse,
     points: core.serialization.record(core.serialization.string(), MetricEventPointsResponse_1.MetricEventPointsResponse),
     leaderboards: core.serialization.record(core.serialization.string(), MetricEventLeaderboardResponse_1.MetricEventLeaderboardResponse),
+    rewards: core.serialization.list(UserRewardResponse_1.UserRewardResponse),
     idempotencyKey: core.serialization.string().optional(),
     idempotentReplayed: core.serialization.boolean().optional(),
 });

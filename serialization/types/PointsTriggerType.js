@@ -36,4 +36,4 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PointsTriggerType = void 0;
 const core = __importStar(require("../../core"));
-exports.PointsTriggerType = core.serialization.enum_(["metric", "achievement", "streak", "time", "user_creation"]);
+exports.PointsTriggerType = core.serialization.enum_(["metric", "achievement", "streak", "time", "user_creation", "reward"]);

@@ -14,6 +14,8 @@ export interface EventResponse {
     points: Record<string, TrophyApi.MetricEventPointsResponse>;
     /** A map of leaderboards by key. Only contains leaderboards that were affected by the event. */
     leaderboards: Record<string, TrophyApi.MetricEventLeaderboardResponse>;
+    /** Rewards awarded as a result of this event. */
+    rewards: TrophyApi.UserRewardResponse[];
     /** The idempotency key used for the event, if one was provided. */
     idempotencyKey?: string;
     /** Whether the event was replayed due to idempotency. */

@@ -6,6 +6,8 @@ export * from "./leaderboards/types";
 export * as metrics from "./metrics";
 export * from "./metrics/client/requests";
 export * as points from "./points";
+export * as rewards from "./rewards";
+export * from "./rewards/client/requests";
 export * as users from "./users";
 export * from "./users/client/requests";
 export * from "./users/types";

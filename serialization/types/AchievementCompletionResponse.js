@@ -38,8 +38,10 @@ exports.AchievementCompletionResponse = void 0;
 const core = __importStar(require("../../core"));
 const MetricEventPointsResponse_1 = require("./MetricEventPointsResponse");
 const UserAchievementResponse_1 = require("./UserAchievementResponse");
+const UserRewardResponse_1 = require("./UserRewardResponse");
 exports.AchievementCompletionResponse = core.serialization.object({
     completionId: core.serialization.string(),
     achievement: UserAchievementResponse_1.UserAchievementResponse,
     points: core.serialization.record(core.serialization.string(), MetricEventPointsResponse_1.MetricEventPointsResponse),
+    rewards: core.serialization.list(UserRewardResponse_1.UserRewardResponse),
 });

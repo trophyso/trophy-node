@@ -5,5 +5,6 @@ export declare const PointsTriggerType: {
     readonly Streak: "streak";
     readonly Time: "time";
     readonly UserCreation: "user_creation";
+    readonly Reward: "reward";
 };
 export type PointsTriggerType = (typeof PointsTriggerType)[keyof typeof PointsTriggerType];

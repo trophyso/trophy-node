@@ -8,6 +8,8 @@ export * as metrics from "./metrics";
 export * from "./metrics/client/requests";
 export * as points from "./points";
 export * from "./points/client/requests";
+export * as rewards from "./rewards";
+export * from "./rewards/client/requests";
 export * as streaks from "./streaks";
 export * from "./streaks/client/requests";
 export * as users from "./users";

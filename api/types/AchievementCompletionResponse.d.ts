@@ -5,4 +5,6 @@ export interface AchievementCompletionResponse {
     achievement: TrophyApi.UserAchievementResponse;
     /** A map of points systems by key that were affected by this achievement completion. */
     points: Record<string, TrophyApi.MetricEventPointsResponse>;
+    /** Rewards awarded as a result of this achievement completion. */
+    rewards: TrophyApi.UserRewardResponse[];
 }

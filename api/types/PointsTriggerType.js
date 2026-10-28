@@ -9,4 +9,5 @@ exports.PointsTriggerType = {
     Streak: "streak",
     Time: "time",
     UserCreation: "user_creation",
+    Reward: "reward",
 };
