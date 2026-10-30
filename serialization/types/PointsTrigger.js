@@ -53,6 +53,8 @@ exports.PointsTrigger = core.serialization.object({
     metricThreshold: core.serialization.number().optional(),
     streakLengthThreshold: core.serialization.number().optional(),
     achievementName: core.serialization.string().optional(),
+    rewardKey: core.serialization.string().optional(),
+    rewardName: core.serialization.string().optional(),
     timeUnit: PointsTriggerTimeUnit_1.PointsTriggerTimeUnit.optional(),
     timeInterval: core.serialization.number().optional(),
     userAttributes: core.serialization.list(PointsTriggerUserAttributesItem_1.PointsTriggerUserAttributesItem),

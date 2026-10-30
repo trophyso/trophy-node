@@ -36,10 +36,14 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AchievementCompletionResponse = void 0;
 const core = __importStar(require("../../core"));
+const MetricEventLeaderboardResponse_1 = require("./MetricEventLeaderboardResponse");
 const MetricEventPointsResponse_1 = require("./MetricEventPointsResponse");
 const UserAchievementResponse_1 = require("./UserAchievementResponse");
+const UserRewardResponse_1 = require("./UserRewardResponse");
 exports.AchievementCompletionResponse = core.serialization.object({
     completionId: core.serialization.string(),
     achievement: UserAchievementResponse_1.UserAchievementResponse,
     points: core.serialization.record(core.serialization.string(), MetricEventPointsResponse_1.MetricEventPointsResponse),
+    leaderboards: core.serialization.record(core.serialization.string(), MetricEventLeaderboardResponse_1.MetricEventLeaderboardResponse),
+    rewards: core.serialization.list(UserRewardResponse_1.UserRewardResponse),
 });

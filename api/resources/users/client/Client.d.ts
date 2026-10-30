@@ -223,6 +223,27 @@ export declare class UsersClient {
     achievements(id: string, request?: TrophyApi.UsersAchievementsRequest, requestOptions?: UsersClient.RequestOptions): core.HttpResponsePromise<TrophyApi.UserAchievementWithStatsResponse[]>;
     private __achievements;
     /**
+     * Get rewards awarded to a user. Filter by redeemed state and the date the reward was awarded.
+     *
+     * @param {string} id - The ID of the user in your database.
+     * @param {TrophyApi.UsersRewardsRequest} request
+     * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await client.users.rewards("id", {
+     *         redeemed: true,
+     *         startDate: "startDate",
+     *         endDate: "endDate",
+     *         skip: 1,
+     *         limit: 1
+     *     })
+     */
+    rewards(id: string, request?: TrophyApi.UsersRewardsRequest, requestOptions?: UsersClient.RequestOptions): core.HttpResponsePromise<TrophyApi.UserRewardResponse[]>;
+    private __rewards;
+    /**
      * Get a user's streak data.
      *
      * @param {string} id - ID of the user.

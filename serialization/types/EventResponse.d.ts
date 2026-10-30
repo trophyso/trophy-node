@@ -5,6 +5,7 @@ import { MetricEventLeaderboardResponse } from "./MetricEventLeaderboardResponse
 import { MetricEventPointsResponse } from "./MetricEventPointsResponse";
 import { MetricEventStreakResponse } from "./MetricEventStreakResponse";
 import { UserAchievementResponse } from "./UserAchievementResponse";
+import { UserRewardResponse } from "./UserRewardResponse";
 export declare const EventResponse: core.serialization.ObjectSchema<serializers.EventResponse.Raw, TrophyApi.EventResponse>;
 export declare namespace EventResponse {
     interface Raw {
@@ -15,6 +16,7 @@ export declare namespace EventResponse {
         currentStreak: MetricEventStreakResponse.Raw;
         points: Record<string, MetricEventPointsResponse.Raw>;
         leaderboards: Record<string, MetricEventLeaderboardResponse.Raw>;
+        rewards: UserRewardResponse.Raw[];
         idempotencyKey?: string | null;
         idempotentReplayed?: boolean | null;
     }

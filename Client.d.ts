@@ -3,6 +3,7 @@ import { AdminClient } from "./api/resources/admin/client/Client";
 import { LeaderboardsClient } from "./api/resources/leaderboards/client/Client";
 import { MetricsClient } from "./api/resources/metrics/client/Client";
 import { PointsClient } from "./api/resources/points/client/Client";
+import { RewardsClient } from "./api/resources/rewards/client/Client";
 import { StreaksClient } from "./api/resources/streaks/client/Client";
 import { UsersClient } from "./api/resources/users/client/Client";
 import type { BaseClientOptions, BaseRequestOptions } from "./BaseClient";
@@ -16,6 +17,7 @@ export declare namespace TrophyApiClient {
 export declare class TrophyApiClient {
     protected readonly _options: NormalizedClientOptionsWithAuth<TrophyApiClient.Options>;
     protected _achievements: AchievementsClient | undefined;
+    protected _rewards: RewardsClient | undefined;
     protected _metrics: MetricsClient | undefined;
     protected _users: UsersClient | undefined;
     protected _streaks: StreaksClient | undefined;
@@ -24,6 +26,7 @@ export declare class TrophyApiClient {
     protected _admin: AdminClient | undefined;
     constructor(options: TrophyApiClient.Options);
     get achievements(): AchievementsClient;
+    get rewards(): RewardsClient;
     get metrics(): MetricsClient;
     get users(): UsersClient;
     get streaks(): StreaksClient;

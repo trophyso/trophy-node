@@ -49,8 +49,9 @@ const Client_2 = require("./api/resources/admin/client/Client");
 const Client_3 = require("./api/resources/leaderboards/client/Client");
 const Client_4 = require("./api/resources/metrics/client/Client");
 const Client_5 = require("./api/resources/points/client/Client");
-const Client_6 = require("./api/resources/streaks/client/Client");
-const Client_7 = require("./api/resources/users/client/Client");
+const Client_6 = require("./api/resources/rewards/client/Client");
+const Client_7 = require("./api/resources/streaks/client/Client");
+const Client_8 = require("./api/resources/users/client/Client");
 const BaseClient_1 = require("./BaseClient");
 const core = __importStar(require("./core"));
 const environments = __importStar(require("./environments"));
@@ -62,17 +63,21 @@ class TrophyApiClient {
         var _a;
         return ((_a = this._achievements) !== null && _a !== void 0 ? _a : (this._achievements = new Client_1.AchievementsClient(this._options)));
     }
+    get rewards() {
+        var _a;
+        return ((_a = this._rewards) !== null && _a !== void 0 ? _a : (this._rewards = new Client_6.RewardsClient(this._options)));
+    }
     get metrics() {
         var _a;
         return ((_a = this._metrics) !== null && _a !== void 0 ? _a : (this._metrics = new Client_4.MetricsClient(this._options)));
     }
     get users() {
         var _a;
-        return ((_a = this._users) !== null && _a !== void 0 ? _a : (this._users = new Client_7.UsersClient(this._options)));
+        return ((_a = this._users) !== null && _a !== void 0 ? _a : (this._users = new Client_8.UsersClient(this._options)));
     }
     get streaks() {
         var _a;
-        return ((_a = this._streaks) !== null && _a !== void 0 ? _a : (this._streaks = new Client_6.StreaksClient(this._options)));
+        return ((_a = this._streaks) !== null && _a !== void 0 ? _a : (this._streaks = new Client_7.StreaksClient(this._options)));
     }
     get points() {
         var _a;

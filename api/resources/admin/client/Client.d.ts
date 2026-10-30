@@ -7,6 +7,7 @@ import { EnvironmentsClient } from "../resources/environments/client/Client";
 import { LeaderboardsClient } from "../resources/leaderboards/client/Client";
 import { MetricsClient } from "../resources/metrics/client/Client";
 import { PointsClient } from "../resources/points/client/Client";
+import { RewardsClient } from "../resources/rewards/client/Client";
 import { SettingsClient } from "../resources/settings/client/Client";
 import { StreaksClient } from "../resources/streaks/client/Client";
 import { TenantsClient } from "../resources/tenants/client/Client";
@@ -17,6 +18,7 @@ export declare class AdminClient {
     protected readonly _options: NormalizedClientOptionsWithAuth<AdminClient.Options>;
     protected _attributes: AttributesClient | undefined;
     protected _achievements: AchievementsClient | undefined;
+    protected _rewards: RewardsClient | undefined;
     protected _metrics: MetricsClient | undefined;
     protected _leaderboards: LeaderboardsClient | undefined;
     protected _streaks: StreaksClient | undefined;
@@ -28,6 +30,7 @@ export declare class AdminClient {
     constructor(options: AdminClient.Options);
     get attributes(): AttributesClient;
     get achievements(): AchievementsClient;
+    get rewards(): RewardsClient;
     get metrics(): MetricsClient;
     get leaderboards(): LeaderboardsClient;
     get streaks(): StreaksClient;

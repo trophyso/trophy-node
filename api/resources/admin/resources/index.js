@@ -36,7 +36,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.tenants = exports.streaks = exports.settings = exports.points = exports.metrics = exports.leaderboards = exports.environments = exports.attributes = exports.applicationApiKeys = exports.achievements = void 0;
+exports.tenants = exports.streaks = exports.settings = exports.rewards = exports.points = exports.metrics = exports.leaderboards = exports.environments = exports.attributes = exports.applicationApiKeys = exports.achievements = void 0;
 exports.achievements = __importStar(require("./achievements"));
 __exportStar(require("./achievements/client/requests"), exports);
 exports.applicationApiKeys = __importStar(require("./applicationApiKeys"));
@@ -49,6 +49,8 @@ __exportStar(require("./leaderboards/client/requests"), exports);
 exports.metrics = __importStar(require("./metrics"));
 __exportStar(require("./metrics/client/requests"), exports);
 exports.points = __importStar(require("./points"));
+exports.rewards = __importStar(require("./rewards"));
+__exportStar(require("./rewards/client/requests"), exports);
 exports.settings = __importStar(require("./settings"));
 __exportStar(require("./settings/client/requests"), exports);
 exports.streaks = __importStar(require("./streaks"));
