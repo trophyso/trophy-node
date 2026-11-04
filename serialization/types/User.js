@@ -46,6 +46,7 @@ exports.User = core.serialization.object({
     subscribeToEmails: core.serialization.boolean(),
     attributes: core.serialization.record(core.serialization.string(), core.serialization.string()),
     control: core.serialization.boolean(),
+    agenticMessagingEnabled: core.serialization.boolean(),
     created: core.serialization.date(),
     updated: core.serialization.date(),
 });

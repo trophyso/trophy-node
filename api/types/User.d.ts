@@ -20,6 +20,8 @@ export interface User {
     attributes: Record<string, string>;
     /** Whether the user is in the control group, meaning they do not receive emails or other communications from Trophy. */
     control: boolean;
+    /** Whether the user is opted into Trophy's agentic messaging. */
+    agenticMessagingEnabled: boolean;
     /** The date and time the user was created, in ISO 8601 format. */
     created: Date;
     /** The date and time the user was last updated, in ISO 8601 format. */

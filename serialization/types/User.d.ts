@@ -13,6 +13,7 @@ export declare namespace User {
         subscribeToEmails: boolean;
         attributes: Record<string, string>;
         control: boolean;
+        agenticMessagingEnabled: boolean;
         created: string;
         updated: string;
     }
