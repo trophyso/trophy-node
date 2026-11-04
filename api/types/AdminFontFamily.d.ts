@@ -6,6 +6,7 @@ export declare const AdminFontFamily: {
     readonly GeometricSans: "GEOMETRIC_SANS";
     readonly HeavySans: "HEAVY_SANS";
     readonly RoundedSans: "ROUNDED_SANS";
+    readonly SystemSans: "SYSTEM_SANS";
     readonly ModernSerif: "MODERN_SERIF";
     readonly BookSerif: "BOOK_SERIF";
     readonly Monospace: "MONOSPACE";

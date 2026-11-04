@@ -10,6 +10,7 @@ exports.AdminFontFamily = {
     GeometricSans: "GEOMETRIC_SANS",
     HeavySans: "HEAVY_SANS",
     RoundedSans: "ROUNDED_SANS",
+    SystemSans: "SYSTEM_SANS",
     ModernSerif: "MODERN_SERIF",
     BookSerif: "BOOK_SERIF",
     Monospace: "MONOSPACE",
