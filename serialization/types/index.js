@@ -188,6 +188,7 @@ __exportStar(require("./ListPointsTriggersResponse"), exports);
 __exportStar(require("./ListRewardsResponse"), exports);
 __exportStar(require("./ListRewardTriggersResponse"), exports);
 __exportStar(require("./ListTenantsResponse"), exports);
+__exportStar(require("./MessagingPreferences"), exports);
 __exportStar(require("./MetricEventLeaderboardResponse"), exports);
 __exportStar(require("./MetricEventLeaderboardResponseBreakdownAttributeValuesItem"), exports);
 __exportStar(require("./MetricEventPointsResponse"), exports);

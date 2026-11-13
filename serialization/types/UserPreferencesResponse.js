@@ -36,9 +36,11 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserPreferencesResponse = void 0;
 const core = __importStar(require("../../core"));
+const MessagingPreferences_1 = require("./MessagingPreferences");
 const NotificationPreferences_1 = require("./NotificationPreferences");
 const StreakPreferences_1 = require("./StreakPreferences");
 exports.UserPreferencesResponse = core.serialization.object({
     notifications: NotificationPreferences_1.NotificationPreferences,
     streak: StreakPreferences_1.StreakPreferences.optional(),
+    messaging: MessagingPreferences_1.MessagingPreferences,
 });
