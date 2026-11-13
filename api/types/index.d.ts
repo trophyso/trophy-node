@@ -172,6 +172,7 @@ export * from "./ListPointsTriggersResponse";
 export * from "./ListRewardsResponse";
 export * from "./ListRewardTriggersResponse";
 export * from "./ListTenantsResponse";
+export * from "./MessagingPreferences";
 export * from "./MetricEventLeaderboardResponse";
 export * from "./MetricEventLeaderboardResponseBreakdownAttributeValuesItem";
 export * from "./MetricEventPointsResponse";

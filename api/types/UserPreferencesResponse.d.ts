@@ -5,4 +5,5 @@ import type * as TrophyApi from "../index";
 export interface UserPreferencesResponse {
     notifications: TrophyApi.NotificationPreferences;
     streak?: TrophyApi.StreakPreferences;
+    messaging: TrophyApi.MessagingPreferences;
 }

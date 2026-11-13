@@ -91,7 +91,7 @@ export declare class UsersClient {
     update(id: string, request: TrophyApi.UpdatedUser, requestOptions?: UsersClient.RequestOptions): core.HttpResponsePromise<TrophyApi.User>;
     private __update;
     /**
-     * Get a user's notification preferences.
+     * Get a user's notification, streak and agentic messaging preferences.
      *
      * @param {string} id - The user's ID in your database.
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
@@ -106,7 +106,7 @@ export declare class UsersClient {
     getPreferences(id: string, requestOptions?: UsersClient.RequestOptions): core.HttpResponsePromise<TrophyApi.UserPreferencesResponse>;
     private __getPreferences;
     /**
-     * Update a user's notification and streak preferences. Streak preferences other than `streak.enabled` require streak customization to be enabled in your Trophy dashboard settings.
+     * Update a user's notification, streak and agentic messaging preferences. Streak preferences other than `streak.enabled` require streak customization to be enabled in your Trophy dashboard settings.
      *
      * @param {string} id - The user's ID in your database.
      * @param {TrophyApi.UpdateUserPreferencesRequest} request

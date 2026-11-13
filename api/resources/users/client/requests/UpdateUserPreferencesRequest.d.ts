@@ -36,4 +36,5 @@ import type * as TrophyApi from "../../../../index";
 export interface UpdateUserPreferencesRequest {
     notifications?: TrophyApi.NotificationPreferences;
     streak?: TrophyApi.StreakPreferences;
+    messaging?: TrophyApi.MessagingPreferences;
 }
