@@ -14,6 +14,8 @@ export interface EventResponse {
     points: Record<string, TrophyApi.MetricEventPointsResponse>;
     /** A map of leaderboards by key. Only contains leaderboards that were affected by the event. */
     leaderboards: Record<string, TrophyApi.MetricEventLeaderboardResponse>;
+    /** A map of the user's metric goals and steps by key. Only contains those for the event's metric that weren't completed before the event and whose total it counted towards, including any it completed. */
+    goals: Record<string, TrophyApi.GoalResponse>;
     /** Rewards awarded as a result of this event. */
     rewards: TrophyApi.UserRewardResponse[];
     /** The idempotency key used for the event, if one was provided. */

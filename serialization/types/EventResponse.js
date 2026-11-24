@@ -36,6 +36,7 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EventResponse = void 0;
 const core = __importStar(require("../../core"));
+const serializers = __importStar(require("../index"));
 const MetricEventLeaderboardResponse_1 = require("./MetricEventLeaderboardResponse");
 const MetricEventPointsResponse_1 = require("./MetricEventPointsResponse");
 const MetricEventStreakResponse_1 = require("./MetricEventStreakResponse");
@@ -49,6 +50,7 @@ exports.EventResponse = core.serialization.object({
     currentStreak: MetricEventStreakResponse_1.MetricEventStreakResponse,
     points: core.serialization.record(core.serialization.string(), MetricEventPointsResponse_1.MetricEventPointsResponse),
     leaderboards: core.serialization.record(core.serialization.string(), MetricEventLeaderboardResponse_1.MetricEventLeaderboardResponse),
+    goals: core.serialization.record(core.serialization.string(), core.serialization.lazyObject(() => serializers.GoalResponse)),
     rewards: core.serialization.list(UserRewardResponse_1.UserRewardResponse),
     idempotencyKey: core.serialization.string().optional(),
     idempotentReplayed: core.serialization.boolean().optional(),
