@@ -1,3 +1,5 @@
+export type { CreateGoalRequest } from "./CreateGoalRequest";
+export type { UpdateGoalRequest } from "./UpdateGoalRequest";
 export type { UpdateUserPreferencesRequest } from "./UpdateUserPreferencesRequest";
 export type { UsersAchievementsRequest } from "./UsersAchievementsRequest";
 export type { UsersLeaderboardRequest } from "./UsersLeaderboardRequest";

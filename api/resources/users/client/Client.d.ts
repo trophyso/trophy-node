@@ -244,6 +244,138 @@ export declare class UsersClient {
     rewards(id: string, request?: TrophyApi.UsersRewardsRequest, requestOptions?: UsersClient.RequestOptions): core.HttpResponsePromise<TrophyApi.UserRewardResponse[]>;
     private __rewards;
     /**
+     * Get all of a user's goals.
+     *
+     * @param {string} id - The user's ID in your database.
+     * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await client.users.goals("user-123")
+     */
+    goals(id: string, requestOptions?: UsersClient.RequestOptions): core.HttpResponsePromise<TrophyApi.GoalResponse[]>;
+    private __goals;
+    /**
+     * Create a goal for a user, or with `parent` a step at the end of that goal's steps.
+     *
+     * @param {string} id - The user's ID in your database.
+     * @param {TrophyApi.CreateGoalRequest} request
+     * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.ConflictError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await client.users.createGoal("user-123", {
+     *         key: "spanish-exam",
+     *         label: "Spanish B1 exam",
+     *         completion: "none",
+     *         dueAt: new Date("2026-11-20T09:00:00.000Z")
+     *     })
+     *
+     * @example
+     *     await client.users.createGoal("user-123", {
+     *         key: "first-essay",
+     *         label: "First essay",
+     *         dueAt: new Date("2026-11-12T17:00:00.000Z")
+     *     })
+     *
+     * @example
+     *     await client.users.createGoal("user-123", {
+     *         key: "spanish-exam",
+     *         label: "Spanish B1 exam",
+     *         completion: "none",
+     *         dueAt: new Date("2026-11-20T09:00:00.000Z"),
+     *         steps: [{
+     *                 key: "unit-1",
+     *                 label: "Unit 1 vocabulary",
+     *                 dueAt: new Date("2026-11-10T09:00:00.000Z")
+     *             }, {
+     *                 key: "unit-2",
+     *                 label: "Unit 2 grammar",
+     *                 dueAt: new Date("2026-11-14T09:00:00.000Z")
+     *             }]
+     *     })
+     *
+     * @example
+     *     await client.users.createGoal("user-123", {
+     *         key: "lessons",
+     *         label: "50 lessons",
+     *         completion: "metric",
+     *         metric: "lessons",
+     *         target: 50
+     *     })
+     *
+     * @example
+     *     await client.users.createGoal("user-123", {
+     *         key: "unit-3",
+     *         parent: "spanish-exam",
+     *         label: "Unit 3 listening",
+     *         dueAt: new Date("2026-11-17T09:00:00.000Z")
+     *     })
+     */
+    createGoal(id: string, request: TrophyApi.CreateGoalRequest, requestOptions?: UsersClient.RequestOptions): core.HttpResponsePromise<TrophyApi.GoalResponse>;
+    private __createGoal;
+    /**
+     * Delete a user's goal.
+     *
+     * @param {string} id - The user's ID in your database.
+     * @param {string} key - The goal's key.
+     * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await client.users.deleteGoal("user-123", "spanish-exam")
+     */
+    deleteGoal(id: string, key: string, requestOptions?: UsersClient.RequestOptions): core.HttpResponsePromise<void>;
+    private __deleteGoal;
+    /**
+     * Update a goal for a user.
+     *
+     * @param {string} id - The user's ID in your database.
+     * @param {string} key - The goal's key.
+     * @param {TrophyApi.UpdateGoalRequest} request
+     * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.ConflictError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await client.users.updateGoal("user-123", "first-essay", {
+     *         completed: true
+     *     })
+     *
+     * @example
+     *     await client.users.updateGoal("user-123", "first-essay", {
+     *         dueAt: new Date("2026-11-13T17:00:00.000Z")
+     *     })
+     *
+     * @example
+     *     await client.users.updateGoal("user-123", "first-essay", {
+     *         steps: [{
+     *                 key: "unit-1"
+     *             }, {
+     *                 key: "unit-2",
+     *                 dueAt: new Date("2026-11-15T09:00:00.000Z")
+     *             }, {
+     *                 key: "unit-3",
+     *                 label: "Unit 3 listening"
+     *             }]
+     *     })
+     */
+    updateGoal(id: string, key: string, request?: TrophyApi.UpdateGoalRequest, requestOptions?: UsersClient.RequestOptions): core.HttpResponsePromise<TrophyApi.GoalResponse>;
+    private __updateGoal;
+    /**
      * Get a user's streak data.
      *
      * @param {string} id - ID of the user.
