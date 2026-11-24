@@ -76,6 +76,7 @@ class MetricsClient {
      *
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
@@ -141,6 +142,8 @@ class MetricsClient {
                         throw new TrophyApi.BadRequestError(_response.error.body, _response.rawResponse);
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 422:
                         throw new TrophyApi.UnprocessableEntityError(_response.error.body, _response.rawResponse);
                     default:

@@ -38,19 +38,22 @@ exports.GoalResponse = void 0;
 const core = __importStar(require("../../core"));
 const serializers = __importStar(require("../index"));
 const GoalCompletion_1 = require("./GoalCompletion");
-const GoalResponseStatus_1 = require("./GoalResponseStatus");
+const GoalStatus_1 = require("./GoalStatus");
 exports.GoalResponse = core.serialization.object({
+    id: core.serialization.string(),
     key: core.serialization.string(),
     label: core.serialization.string().optional(),
     completion: GoalCompletion_1.GoalCompletion,
     dueAt: core.serialization.date().optional(),
     completedAt: core.serialization.date().optional(),
-    status: GoalResponseStatus_1.GoalResponseStatus,
-    steps: core.serialization.list(core.serialization.lazyObject(() => serializers.GoalResponse)).optional(),
-    done: core.serialization.number().optional(),
-    total: core.serialization.number().optional(),
+    status: GoalStatus_1.GoalStatus,
+    steps: core.serialization.list(core.serialization.lazyObject(() => serializers.GoalResponse)),
+    done: core.serialization.number(),
+    total: core.serialization.number(),
     metric: core.serialization.string().optional(),
     target: core.serialization.number().optional(),
     start: core.serialization.string().optional(),
     current: core.serialization.number().optional(),
+    created: core.serialization.date(),
+    updated: core.serialization.date(),
 });

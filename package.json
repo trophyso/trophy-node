@@ -1,13 +1,16 @@
 {
   "name": "@trophyso/node",
   "version": "1.32.0-beta",
-  "description": "NodeJS SDK for the Trophy API",
+  "description": "NodeJS SDK for Trophy, the 1:1 customer engagement platform for consumer web and mobile apps",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "trophy",
+    "customer-engagement",
+    "lifecycle-marketing",
+    "personalization",
     "gamification",
     "node",
     "api"

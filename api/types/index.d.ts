@@ -154,7 +154,7 @@ export * from "./EventResponse";
 export * from "./GetUserPointsResponse";
 export * from "./GoalCompletion";
 export * from "./GoalResponse";
-export * from "./GoalResponseStatus";
+export * from "./GoalStatus";
 export * from "./GoalStepRequest";
 export * from "./LeaderboardEvent";
 export * from "./LeaderboardRanking";

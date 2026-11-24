@@ -11,7 +11,7 @@ export declare namespace CreateGoalRequest {
         label?: string | null;
         completion?: GoalCompletion.Raw | null;
         dueAt?: string | null;
-        completed?: boolean | null;
+        completedAt?: string | null;
         metric?: string | null;
         target?: number | null;
         start?: string | null;

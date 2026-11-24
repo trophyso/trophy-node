@@ -17,6 +17,7 @@ export declare class RewardsClient {
      * @param {TrophyApi.RewardsRedeemRequest} request
      * @param {RewardsClient.RequestOptions} requestOptions - Request-specific configuration.
      *
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.ConflictError}
      * @throws {@link TrophyApi.UnprocessableEntityError}

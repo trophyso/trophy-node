@@ -34,6 +34,6 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GoalResponseStatus = void 0;
+exports.GoalStatus = void 0;
 const core = __importStar(require("../../core"));
-exports.GoalResponseStatus = core.serialization.enum_(["active", "completed", "missed", "ended"]);
+exports.GoalStatus = core.serialization.enum_(["active", "completed", "missed", "ended"]);

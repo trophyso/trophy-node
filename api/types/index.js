@@ -170,7 +170,7 @@ __exportStar(require("./EventResponse"), exports);
 __exportStar(require("./GetUserPointsResponse"), exports);
 __exportStar(require("./GoalCompletion"), exports);
 __exportStar(require("./GoalResponse"), exports);
-__exportStar(require("./GoalResponseStatus"), exports);
+__exportStar(require("./GoalStatus"), exports);
 __exportStar(require("./GoalStepRequest"), exports);
 __exportStar(require("./LeaderboardEvent"), exports);
 __exportStar(require("./LeaderboardRanking"), exports);

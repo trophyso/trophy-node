@@ -2,7 +2,7 @@ import type * as TrophyApi from "../../../../index";
 /**
  * @example
  *     {
- *         completed: true
+ *         completedAt: "2026-11-12T14:21:08Z"
  *     }
  *
  * @example
@@ -30,8 +30,8 @@ export interface UpdateGoalRequest {
     completion?: TrophyApi.GoalCompletion;
     /** When the goal is due, as an ISO 8601 date and time. Without an offset, it's in the user's timezone. Null clears it, except with `completion: none`. */
     dueAt?: string;
-    /** Whether the user has completed the goal. `true` on a completed goal keeps when it was completed. Only `false` with `completion: none`, and not with `completion: metric`. */
-    completed?: boolean;
+    /** When the user completed the goal, as an ISO 8601 date and time. Without an offset, it's in the user's timezone, and a time after now is read as now. Null uncompletes it. Not with `completion: none`, which is never completed, or `completion: metric`, which completes when its metric reaches the target. */
+    completedAt?: string;
     /** The metric's key, with `completion: metric`. Changing the metric, target or start checks the goal against its target again. */
     metric?: string;
     /** The metric total that completes it, with `completion: metric`. */

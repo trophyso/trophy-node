@@ -42,7 +42,7 @@ exports.UpdateGoalRequest = core.serialization.object({
     label: core.serialization.string().optional(),
     completion: GoalCompletion_1.GoalCompletion.optional(),
     dueAt: core.serialization.string().optional(),
-    completed: core.serialization.boolean().optional(),
+    completedAt: core.serialization.string().optional(),
     metric: core.serialization.string().optional(),
     target: core.serialization.number().optional(),
     start: core.serialization.string().optional(),

@@ -64,6 +64,7 @@ class UsersClient {
      *
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
@@ -113,6 +114,8 @@ class UsersClient {
                         throw new TrophyApi.BadRequestError(_response.error.body, _response.rawResponse);
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 422:
                         throw new TrophyApi.UnprocessableEntityError(_response.error.body, _response.rawResponse);
                     default:
@@ -134,6 +137,7 @@ class UsersClient {
      *
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
@@ -178,6 +182,8 @@ class UsersClient {
                         throw new TrophyApi.BadRequestError(_response.error.body, _response.rawResponse);
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 422:
                         throw new TrophyApi.UnprocessableEntityError(_response.error.body, _response.rawResponse);
                     default:
@@ -200,6 +206,7 @@ class UsersClient {
      *
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
@@ -255,6 +262,8 @@ class UsersClient {
                         throw new TrophyApi.BadRequestError(_response.error.body, _response.rawResponse);
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 422:
                         throw new TrophyApi.UnprocessableEntityError(_response.error.body, _response.rawResponse);
                     default:
@@ -277,6 +286,7 @@ class UsersClient {
      *
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -332,6 +342,8 @@ class UsersClient {
                         throw new TrophyApi.BadRequestError(_response.error.body, _response.rawResponse);
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 422:
@@ -354,6 +366,7 @@ class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -397,6 +410,8 @@ class UsersClient {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 422:
@@ -521,6 +536,7 @@ class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -564,6 +580,8 @@ class UsersClient {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 422:
@@ -587,6 +605,7 @@ class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -630,6 +649,8 @@ class UsersClient {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 422:
@@ -654,6 +675,7 @@ class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -713,6 +735,8 @@ class UsersClient {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 422:
@@ -736,6 +760,7 @@ class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -789,6 +814,8 @@ class UsersClient {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 422:
@@ -811,6 +838,7 @@ class UsersClient {
      * @param {TrophyApi.UsersRewardsRequest} request
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -870,6 +898,8 @@ class UsersClient {
             }
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 422:
@@ -886,24 +916,38 @@ class UsersClient {
         });
     }
     /**
-     * Get all of a user's goals.
+     * Get a user's goals, each with its steps. Filter by status, and page through them with `skip` and `limit`.
      *
      * @param {string} id - The user's ID in your database.
+     * @param {TrophyApi.UsersGoalsRequest} request
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await client.users.goals("user-123")
+     *     await client.users.goals("user-123", {
+     *         status: "active",
+     *         skip: 1,
+     *         limit: 1
+     *     })
      */
-    goals(id, requestOptions) {
-        return core.HttpResponsePromise.fromPromise(this.__goals(id, requestOptions));
+    goals(id, request = {}, requestOptions) {
+        return core.HttpResponsePromise.fromPromise(this.__goals(id, request, requestOptions));
     }
-    __goals(id, requestOptions) {
-        return __awaiter(this, void 0, void 0, function* () {
+    __goals(id_1) {
+        return __awaiter(this, arguments, void 0, function* (id, request = {}, requestOptions) {
             var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+            const { status, skip, limit } = request;
+            const _queryParams = {
+                status: status != null
+                    ? serializers.GoalStatus.jsonOrThrow(status, { unrecognizedObjectKeys: "strip" })
+                    : undefined,
+                skip,
+                limit,
+            };
             const _authRequest = yield this._options.authProvider.getAuthRequest();
             const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
                 "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.32.0",
@@ -913,7 +957,11 @@ class UsersClient {
                 url: core.url.join((_g = (yield core.Supplier.get(this._options.baseUrl))) !== null && _g !== void 0 ? _g : ((_h = (yield core.Supplier.get(this._options.environment))) !== null && _h !== void 0 ? _h : environments.TrophyApiEnvironment.Production).api, `users/${core.url.encodePathParam(id)}/goals`),
                 method: "GET",
                 headers: _headers,
-                queryString: core.url.queryBuilder().mergeAdditional(requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.queryParams).build(),
+                queryString: core.url
+                    .queryBuilder()
+                    .addMany(_queryParams)
+                    .mergeAdditional(requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.queryParams)
+                    .build(),
                 timeoutMs: ((_l = (_j = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) !== null && _j !== void 0 ? _j : (_k = this._options) === null || _k === void 0 ? void 0 : _k.timeoutInSeconds) !== null && _l !== void 0 ? _l : 60) * 1000,
                 maxRetries: (_m = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries) !== null && _m !== void 0 ? _m : (_o = this._options) === null || _o === void 0 ? void 0 : _o.maxRetries,
                 abortSignal: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.abortSignal,
@@ -935,6 +983,8 @@ class UsersClient {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 422:
@@ -958,6 +1008,7 @@ class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.ConflictError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
@@ -1051,6 +1102,8 @@ class UsersClient {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 409:
@@ -1074,6 +1127,75 @@ class UsersClient {
         });
     }
     /**
+     * Get a user's goal or step by its key, with a goal's steps.
+     *
+     * @param {string} id - The user's ID in your database.
+     * @param {string} key - The goal's or step's key.
+     * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await client.users.getGoal("user-123", "spanish-exam")
+     */
+    getGoal(id, key, requestOptions) {
+        return core.HttpResponsePromise.fromPromise(this.__getGoal(id, key, requestOptions));
+    }
+    __getGoal(id, key, requestOptions) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+            const _authRequest = yield this._options.authProvider.getAuthRequest();
+            const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
+                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.32.0",
+                "Tenant-ID": (_e = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.tenantId) !== null && _e !== void 0 ? _e : (_f = this._options) === null || _f === void 0 ? void 0 : _f.tenantId,
+            }), requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.headers);
+            const _response = yield core.fetcher({
+                url: core.url.join((_g = (yield core.Supplier.get(this._options.baseUrl))) !== null && _g !== void 0 ? _g : ((_h = (yield core.Supplier.get(this._options.environment))) !== null && _h !== void 0 ? _h : environments.TrophyApiEnvironment.Production).api, `users/${core.url.encodePathParam(id)}/goals/${core.url.encodePathParam(key)}`),
+                method: "GET",
+                headers: _headers,
+                queryString: core.url.queryBuilder().mergeAdditional(requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.queryParams).build(),
+                timeoutMs: ((_l = (_j = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.timeoutInSeconds) !== null && _j !== void 0 ? _j : (_k = this._options) === null || _k === void 0 ? void 0 : _k.timeoutInSeconds) !== null && _l !== void 0 ? _l : 60) * 1000,
+                maxRetries: (_m = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.maxRetries) !== null && _m !== void 0 ? _m : (_o = this._options) === null || _o === void 0 ? void 0 : _o.maxRetries,
+                abortSignal: requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.abortSignal,
+                fetchFn: (_p = this._options) === null || _p === void 0 ? void 0 : _p.fetch,
+                logging: this._options.logging,
+            });
+            if (_response.ok) {
+                return {
+                    data: serializers.GoalResponse.parseOrThrow(_response.body, {
+                        unrecognizedObjectKeys: "passthrough",
+                        allowUnrecognizedUnionMembers: true,
+                        allowUnrecognizedEnumValues: true,
+                        breadcrumbsPrefix: ["response"],
+                    }),
+                    rawResponse: _response.rawResponse,
+                };
+            }
+            if (_response.error.reason === "status-code") {
+                switch (_response.error.statusCode) {
+                    case 401:
+                        throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
+                    case 404:
+                        throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
+                    case 422:
+                        throw new TrophyApi.UnprocessableEntityError(_response.error.body, _response.rawResponse);
+                    default:
+                        throw new errors.TrophyApiError({
+                            statusCode: _response.error.statusCode,
+                            body: _response.error.body,
+                            rawResponse: _response.rawResponse,
+                        });
+                }
+            }
+            return (0, handleNonStatusCodeError_1.handleNonStatusCodeError)(_response.error, _response.rawResponse, "GET", "/users/{id}/goals/{key}");
+        });
+    }
+    /**
      * Delete a user's goal.
      *
      * @param {string} id - The user's ID in your database.
@@ -1081,6 +1203,7 @@ class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -1116,6 +1239,8 @@ class UsersClient {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 422:
@@ -1140,13 +1265,14 @@ class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.ConflictError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
      *     await client.users.updateGoal("user-123", "first-essay", {
-     *         completed: true
+     *         completedAt: "2026-11-12T14:21:08Z"
      *     })
      *
      * @example
@@ -1207,6 +1333,8 @@ class UsersClient {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 409:
@@ -1237,6 +1365,7 @@ class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -1290,6 +1419,8 @@ class UsersClient {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 422:
@@ -1314,6 +1445,7 @@ class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -1367,6 +1499,8 @@ class UsersClient {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 422:
@@ -1390,6 +1524,7 @@ class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -1433,6 +1568,8 @@ class UsersClient {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 422:
@@ -1457,6 +1594,7 @@ class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -1516,6 +1654,8 @@ class UsersClient {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 422:
@@ -1540,6 +1680,7 @@ class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -1595,6 +1736,8 @@ class UsersClient {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 422:
@@ -1618,6 +1761,7 @@ class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -1671,6 +1815,8 @@ class UsersClient {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 422:

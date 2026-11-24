@@ -63,6 +63,7 @@ class RewardsClient {
      * @param {TrophyApi.RewardsRedeemRequest} request
      * @param {RewardsClient.RequestOptions} requestOptions - Request-specific configuration.
      *
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.ConflictError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
@@ -112,6 +113,8 @@ class RewardsClient {
             }
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 409:

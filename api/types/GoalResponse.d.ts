@@ -3,6 +3,8 @@ import type * as TrophyApi from "../index";
  * A user's goal or step.
  */
 export interface GoalResponse {
+    /** The goal's unique ID. A goal deleted and created again with the same key gets a new one. */
+    id: string;
     /** The goal's key, unique per user. */
     key: string;
     /** What the goal is, as messages name it. */
@@ -12,14 +14,13 @@ export interface GoalResponse {
     dueAt?: Date;
     /** When the user completed the goal, or null if they haven't. */
     completedAt?: Date;
-    /** `completed` when `completedAt` is set. Otherwise, once `dueAt` has passed, `missed` for a goal with `completion: manual` or `metric` and `ended` for one with `completion: none`. Otherwise `active`. */
-    status: TrophyApi.GoalResponseStatus;
-    /** A goal with steps only. Its steps, in order. */
-    steps?: TrophyApi.GoalResponse[];
-    /** A goal with steps only. How many of its steps are completed. */
-    done?: number;
-    /** A goal with steps only. How many steps it has. */
-    total?: number;
+    status: TrophyApi.GoalStatus;
+    /** Its steps, in order. Empty for a goal without steps, and for a step. */
+    steps: TrophyApi.GoalResponse[];
+    /** How many of its steps are completed. */
+    done: number;
+    /** How many steps it has. */
+    total: number;
     /** `completion: metric` only. The metric's key. */
     metric?: string;
     /** `completion: metric` only. The metric total that completes it. */
@@ -28,4 +29,8 @@ export interface GoalResponse {
     start?: string;
     /** `completion: metric` only. The metric total since `start`. */
     current?: number;
+    /** When the goal was created. */
+    created: Date;
+    /** When the goal was last changed. */
+    updated: Date;
 }

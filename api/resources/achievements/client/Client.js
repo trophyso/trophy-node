@@ -136,6 +136,7 @@ class AchievementsClient {
      * @param {AchievementsClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -189,6 +190,8 @@ class AchievementsClient {
                 switch (_response.error.statusCode) {
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 404:
                         throw new TrophyApi.NotFoundError(_response.error.body, _response.rawResponse);
                     case 422:

@@ -11,8 +11,8 @@ export interface GoalStepRequest {
     completion?: TrophyApi.GoalCompletion;
     /** When the step is due, as an ISO 8601 date and time. Without an offset, it's in the user's timezone. */
     dueAt?: string;
-    /** Whether the user has completed the step. */
-    completed?: boolean;
+    /** When the user completed the step, as an ISO 8601 date and time. Without an offset, it's in the user's timezone, and a time after now is read as now. Null uncompletes it. Not with `completion: none`, which is never completed, or `completion: metric`, which completes when its metric reaches the target. */
+    completedAt?: string;
     /** The metric's key, required with `completion: metric`. */
     metric?: string;
     /** The metric total that completes it, required with `completion: metric`. */

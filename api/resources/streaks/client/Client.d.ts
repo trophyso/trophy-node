@@ -17,6 +17,7 @@ export declare class StreaksClient {
      * @param {StreaksClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example

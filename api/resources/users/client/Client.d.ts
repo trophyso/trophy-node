@@ -18,6 +18,7 @@ export declare class UsersClient {
      *
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
@@ -35,6 +36,7 @@ export declare class UsersClient {
      *
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
@@ -51,6 +53,7 @@ export declare class UsersClient {
      *
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
@@ -75,6 +78,7 @@ export declare class UsersClient {
      *
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -97,6 +101,7 @@ export declare class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -159,6 +164,7 @@ export declare class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -175,6 +181,7 @@ export declare class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -192,6 +199,7 @@ export declare class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -212,6 +220,7 @@ export declare class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -229,6 +238,7 @@ export declare class UsersClient {
      * @param {TrophyApi.UsersRewardsRequest} request
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -244,19 +254,25 @@ export declare class UsersClient {
     rewards(id: string, request?: TrophyApi.UsersRewardsRequest, requestOptions?: UsersClient.RequestOptions): core.HttpResponsePromise<TrophyApi.UserRewardResponse[]>;
     private __rewards;
     /**
-     * Get all of a user's goals.
+     * Get a user's goals, each with its steps. Filter by status, and page through them with `skip` and `limit`.
      *
      * @param {string} id - The user's ID in your database.
+     * @param {TrophyApi.UsersGoalsRequest} request
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
-     *     await client.users.goals("user-123")
+     *     await client.users.goals("user-123", {
+     *         status: "active",
+     *         skip: 1,
+     *         limit: 1
+     *     })
      */
-    goals(id: string, requestOptions?: UsersClient.RequestOptions): core.HttpResponsePromise<TrophyApi.GoalResponse[]>;
+    goals(id: string, request?: TrophyApi.UsersGoalsRequest, requestOptions?: UsersClient.RequestOptions): core.HttpResponsePromise<TrophyApi.GoalResponse[]>;
     private __goals;
     /**
      * Create a goal for a user, or with `parent` a step at the end of that goal's steps.
@@ -266,6 +282,7 @@ export declare class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.ConflictError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
@@ -322,6 +339,23 @@ export declare class UsersClient {
     createGoal(id: string, request: TrophyApi.CreateGoalRequest, requestOptions?: UsersClient.RequestOptions): core.HttpResponsePromise<TrophyApi.GoalResponse>;
     private __createGoal;
     /**
+     * Get a user's goal or step by its key, with a goal's steps.
+     *
+     * @param {string} id - The user's ID in your database.
+     * @param {string} key - The goal's or step's key.
+     * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
+     *
+     * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
+     * @throws {@link TrophyApi.NotFoundError}
+     * @throws {@link TrophyApi.UnprocessableEntityError}
+     *
+     * @example
+     *     await client.users.getGoal("user-123", "spanish-exam")
+     */
+    getGoal(id: string, key: string, requestOptions?: UsersClient.RequestOptions): core.HttpResponsePromise<TrophyApi.GoalResponse>;
+    private __getGoal;
+    /**
      * Delete a user's goal.
      *
      * @param {string} id - The user's ID in your database.
@@ -329,6 +363,7 @@ export declare class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -346,13 +381,14 @@ export declare class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.ConflictError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
      *     await client.users.updateGoal("user-123", "first-essay", {
-     *         completed: true
+     *         completedAt: "2026-11-12T14:21:08Z"
      *     })
      *
      * @example
@@ -383,6 +419,7 @@ export declare class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -402,6 +439,7 @@ export declare class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -420,6 +458,7 @@ export declare class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -437,6 +476,7 @@ export declare class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -458,6 +498,7 @@ export declare class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
@@ -477,6 +518,7 @@ export declare class UsersClient {
      * @param {UsersClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
