@@ -19,6 +19,7 @@ export declare class MetricsClient {
      *
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example

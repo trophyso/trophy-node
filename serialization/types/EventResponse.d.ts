@@ -1,6 +1,6 @@
 import type * as TrophyApi from "../../api/index";
 import * as core from "../../core";
-import type * as serializers from "../index";
+import * as serializers from "../index";
 import { MetricEventLeaderboardResponse } from "./MetricEventLeaderboardResponse";
 import { MetricEventPointsResponse } from "./MetricEventPointsResponse";
 import { MetricEventStreakResponse } from "./MetricEventStreakResponse";
@@ -16,6 +16,7 @@ export declare namespace EventResponse {
         currentStreak: MetricEventStreakResponse.Raw;
         points: Record<string, MetricEventPointsResponse.Raw>;
         leaderboards: Record<string, MetricEventLeaderboardResponse.Raw>;
+        goals: Record<string, serializers.GoalResponse.Raw>;
         rewards: UserRewardResponse.Raw[];
         idempotencyKey?: string | null;
         idempotentReplayed?: boolean | null;

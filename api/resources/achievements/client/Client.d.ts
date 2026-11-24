@@ -34,6 +34,7 @@ export declare class AchievementsClient {
      * @param {AchievementsClient.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.NotFoundError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *

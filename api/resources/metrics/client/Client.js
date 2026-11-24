@@ -76,6 +76,7 @@ class MetricsClient {
      *
      * @throws {@link TrophyApi.BadRequestError}
      * @throws {@link TrophyApi.UnauthorizedError}
+     * @throws {@link TrophyApi.ForbiddenError}
      * @throws {@link TrophyApi.UnprocessableEntityError}
      *
      * @example
@@ -107,7 +108,7 @@ class MetricsClient {
             const _authRequest = yield this._options.authProvider.getAuthRequest();
             const _headers = (0, headers_1.mergeHeaders)(_authRequest.headers, (_a = this._options) === null || _a === void 0 ? void 0 : _a.headers, (0, headers_1.mergeOnlyDefinedHeaders)({
                 "Idempotency-Key": idempotencyKey,
-                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.29.0",
+                "X-SDK-VERSION": (_d = (_b = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.sdkVersion) !== null && _b !== void 0 ? _b : (_c = this._options) === null || _c === void 0 ? void 0 : _c.sdkVersion) !== null && _d !== void 0 ? _d : "1.32.0",
                 "Tenant-ID": (_e = requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.tenantId) !== null && _e !== void 0 ? _e : (_f = this._options) === null || _f === void 0 ? void 0 : _f.tenantId,
             }), requestOptions === null || requestOptions === void 0 ? void 0 : requestOptions.headers);
             const _response = yield core.fetcher({
@@ -141,6 +142,8 @@ class MetricsClient {
                         throw new TrophyApi.BadRequestError(_response.error.body, _response.rawResponse);
                     case 401:
                         throw new TrophyApi.UnauthorizedError(_response.error.body, _response.rawResponse);
+                    case 403:
+                        throw new TrophyApi.ForbiddenError(_response.error.body, _response.rawResponse);
                     case 422:
                         throw new TrophyApi.UnprocessableEntityError(_response.error.body, _response.rawResponse);
                     default:
