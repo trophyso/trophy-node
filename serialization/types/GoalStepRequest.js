@@ -41,7 +41,7 @@ exports.GoalStepRequest = core.serialization.object({
     key: core.serialization.string(),
     label: core.serialization.string().optional(),
     completion: GoalCompletion_1.GoalCompletion.optional(),
-    dueAt: core.serialization.date().optional(),
+    dueAt: core.serialization.string().optional(),
     completed: core.serialization.boolean().optional(),
     metric: core.serialization.string().optional(),
     target: core.serialization.number().optional(),

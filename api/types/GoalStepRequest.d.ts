@@ -10,7 +10,7 @@ export interface GoalStepRequest {
     /** How the step is completed. Defaults to `manual`. */
     completion?: TrophyApi.GoalCompletion;
     /** When the step is due, as an ISO 8601 date and time. Without an offset, it's in the user's timezone. */
-    dueAt?: Date;
+    dueAt?: string;
     /** Whether the user has completed the step. */
     completed?: boolean;
     /** The metric's key, required with `completion: metric`. */

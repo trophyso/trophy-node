@@ -5,14 +5,14 @@ import type * as TrophyApi from "../../../../index";
  *         key: "spanish-exam",
  *         label: "Spanish B1 exam",
  *         completion: "none",
- *         dueAt: new Date("2026-11-20T09:00:00.000Z")
+ *         dueAt: "2026-11-20T09:00:00Z"
  *     }
  *
  * @example
  *     {
  *         key: "first-essay",
  *         label: "First essay",
- *         dueAt: new Date("2026-11-12T17:00:00.000Z")
+ *         dueAt: "2026-11-12T17:00:00Z"
  *     }
  *
  * @example
@@ -20,15 +20,15 @@ import type * as TrophyApi from "../../../../index";
  *         key: "spanish-exam",
  *         label: "Spanish B1 exam",
  *         completion: "none",
- *         dueAt: new Date("2026-11-20T09:00:00.000Z"),
+ *         dueAt: "2026-11-20T09:00:00Z",
  *         steps: [{
  *                 key: "unit-1",
  *                 label: "Unit 1 vocabulary",
- *                 dueAt: new Date("2026-11-10T09:00:00.000Z")
+ *                 dueAt: "2026-11-10T09:00:00Z"
  *             }, {
  *                 key: "unit-2",
  *                 label: "Unit 2 grammar",
- *                 dueAt: new Date("2026-11-14T09:00:00.000Z")
+ *                 dueAt: "2026-11-14T09:00:00Z"
  *             }]
  *     }
  *
@@ -46,7 +46,7 @@ import type * as TrophyApi from "../../../../index";
  *         key: "unit-3",
  *         parent: "spanish-exam",
  *         label: "Unit 3 listening",
- *         dueAt: new Date("2026-11-17T09:00:00.000Z")
+ *         dueAt: "2026-11-17T09:00:00Z"
  *     }
  */
 export interface CreateGoalRequest {
@@ -59,7 +59,7 @@ export interface CreateGoalRequest {
     /** How the goal is completed. Defaults to `manual`. */
     completion?: TrophyApi.GoalCompletion;
     /** When the goal is due, as an ISO 8601 date and time. Without an offset, it's in the user's timezone. Required with `completion: none`. */
-    dueAt?: Date;
+    dueAt?: string;
     /** Whether the user has already completed the goal. Defaults to `false`, the only value allowed with `completion: none`. Not with `completion: metric`, which completes when its metric reaches the target. */
     completed?: boolean;
     /** The metric's key, required with `completion: metric`. */

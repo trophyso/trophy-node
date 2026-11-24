@@ -275,14 +275,14 @@ export declare class UsersClient {
      *         key: "spanish-exam",
      *         label: "Spanish B1 exam",
      *         completion: "none",
-     *         dueAt: new Date("2026-11-20T09:00:00.000Z")
+     *         dueAt: "2026-11-20T09:00:00Z"
      *     })
      *
      * @example
      *     await client.users.createGoal("user-123", {
      *         key: "first-essay",
      *         label: "First essay",
-     *         dueAt: new Date("2026-11-12T17:00:00.000Z")
+     *         dueAt: "2026-11-12T17:00:00Z"
      *     })
      *
      * @example
@@ -290,15 +290,15 @@ export declare class UsersClient {
      *         key: "spanish-exam",
      *         label: "Spanish B1 exam",
      *         completion: "none",
-     *         dueAt: new Date("2026-11-20T09:00:00.000Z"),
+     *         dueAt: "2026-11-20T09:00:00Z",
      *         steps: [{
      *                 key: "unit-1",
      *                 label: "Unit 1 vocabulary",
-     *                 dueAt: new Date("2026-11-10T09:00:00.000Z")
+     *                 dueAt: "2026-11-10T09:00:00Z"
      *             }, {
      *                 key: "unit-2",
      *                 label: "Unit 2 grammar",
-     *                 dueAt: new Date("2026-11-14T09:00:00.000Z")
+     *                 dueAt: "2026-11-14T09:00:00Z"
      *             }]
      *     })
      *
@@ -316,7 +316,7 @@ export declare class UsersClient {
      *         key: "unit-3",
      *         parent: "spanish-exam",
      *         label: "Unit 3 listening",
-     *         dueAt: new Date("2026-11-17T09:00:00.000Z")
+     *         dueAt: "2026-11-17T09:00:00Z"
      *     })
      */
     createGoal(id: string, request: TrophyApi.CreateGoalRequest, requestOptions?: UsersClient.RequestOptions): core.HttpResponsePromise<TrophyApi.GoalResponse>;
@@ -357,7 +357,7 @@ export declare class UsersClient {
      *
      * @example
      *     await client.users.updateGoal("user-123", "first-essay", {
-     *         dueAt: new Date("2026-11-13T17:00:00.000Z")
+     *         dueAt: "2026-11-13T17:00:00Z"
      *     })
      *
      * @example
@@ -366,7 +366,7 @@ export declare class UsersClient {
      *                 key: "unit-1"
      *             }, {
      *                 key: "unit-2",
-     *                 dueAt: new Date("2026-11-15T09:00:00.000Z")
+     *                 dueAt: "2026-11-15T09:00:00Z"
      *             }, {
      *                 key: "unit-3",
      *                 label: "Unit 3 listening"
