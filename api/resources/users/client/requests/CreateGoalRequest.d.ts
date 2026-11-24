@@ -62,11 +62,11 @@ export interface CreateGoalRequest {
     dueAt?: string;
     /** When the user completed the goal, if they already have, as an ISO 8601 date and time. Without an offset, it's in the user's timezone, and a time after now is read as now. Not with `completion: none`, which is never completed, or `completion: metric`, which completes when its metric reaches the target. */
     completedAt?: string;
-    /** The metric's key, required with `completion: metric`. */
+    /** The metric's key. Required with `completion: metric`, and only for it. */
     metric?: string;
-    /** The metric total that completes it, required with `completion: metric`. */
+    /** The metric total that completes it. Required with `completion: metric`, and only for it. */
     target?: number;
-    /** With `completion: metric`, the date, in the user's timezone, the metric total counts from. Defaults to today. */
+    /** `completion: metric` only. The date, in the user's timezone, the metric total counts from. Defaults to today. */
     start?: string;
     /** The goal's steps, in order, each with its own key. */
     steps?: TrophyApi.GoalStepRequest[];

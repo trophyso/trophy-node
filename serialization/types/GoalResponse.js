@@ -42,6 +42,7 @@ const GoalStatus_1 = require("./GoalStatus");
 exports.GoalResponse = core.serialization.object({
     id: core.serialization.string(),
     key: core.serialization.string(),
+    parent: core.serialization.string().optional(),
     label: core.serialization.string().optional(),
     completion: GoalCompletion_1.GoalCompletion,
     dueAt: core.serialization.date().optional(),

@@ -32,11 +32,11 @@ export interface UpdateGoalRequest {
     dueAt?: string;
     /** When the user completed the goal, as an ISO 8601 date and time. Without an offset, it's in the user's timezone, and a time after now is read as now. Null uncompletes it. Not with `completion: none`, which is never completed, or `completion: metric`, which completes when its metric reaches the target. */
     completedAt?: string;
-    /** The metric's key, with `completion: metric`. Changing the metric, target or start checks the goal against its target again. */
+    /** `completion: metric` only. The metric's key. Changing the metric, target or start checks the goal against its target again, which can complete or uncomplete it; other changes leave a completed goal completed. */
     metric?: string;
-    /** The metric total that completes it, with `completion: metric`. */
+    /** `completion: metric` only. The metric total that completes it. */
     target?: number;
-    /** With `completion: metric`, the date, in the user's timezone, the metric total counts from. */
+    /** `completion: metric` only. The date, in the user's timezone, the metric total counts from. */
     start?: string;
     /** Replaces the goal's steps, in order: a step whose key the goal has is updated, the others are added, and steps left out are deleted. Not for a step, since steps are one level deep. */
     steps?: TrophyApi.GoalStepRequest[];

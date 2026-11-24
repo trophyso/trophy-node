@@ -7,6 +7,8 @@ export interface GoalResponse {
     id: string;
     /** The goal's key, unique per user. */
     key: string;
+    /** The key of the goal it's a step of, or null if it has no parent. */
+    parent?: string;
     /** What the goal is, as messages name it. */
     label?: string;
     completion: TrophyApi.GoalCompletion;

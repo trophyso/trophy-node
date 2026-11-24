@@ -8,6 +8,7 @@ export declare namespace GoalResponse {
     interface Raw {
         id: string;
         key: string;
+        parent?: string | null;
         label?: string | null;
         completion: GoalCompletion.Raw;
         dueAt?: string | null;
